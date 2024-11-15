@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - budpersonal
+id: budpersonal_budcustomers_delete_action
+label: 'Delete budcustomerss'
+type: budpersonal_budcustomers
+plugin: entity:delete_action:budpersonal_budcustomers
+configuration: {  }

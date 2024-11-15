@@ -1,0 +1,9 @@
+entity.budpersonal_budcustomers.settings:
+  title: 'Settings'
+  route_name: entity.budpersonal_budcustomers.settings
+  base_route: entity.budpersonal_budcustomers.settings
+entity.budpersonal_budcustomers.collection:
+  title: 'BudCustomerss'
+  route_name: entity.budpersonal_budcustomers.collection
+  base_route: system.admin_content
+  weight: 10

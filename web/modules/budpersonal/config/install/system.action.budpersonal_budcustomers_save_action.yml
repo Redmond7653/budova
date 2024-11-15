@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - budpersonal
+id: budpersonal_budcustomers_save_action
+label: 'Save budcustomerss'
+type: budpersonal_budcustomers
+plugin: entity:save_action:budpersonal_budcustomers
+configuration: {  }

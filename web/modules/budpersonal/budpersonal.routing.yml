@@ -1,0 +1,15 @@
+budpersonal.budpersonal:
+  path: '/budpersonal/budpersonal'
+  defaults:
+    _title: 'Budpersonal'
+    _form: 'Drupal\budpersonal\Form\BudpersonalForm'
+  requirements:
+    _permission: 'access content'
+
+entity.budpersonal_budcustomers.settings:
+  path: 'admin/structure/budpersonal-budcustomers'
+  defaults:
+    _form: '\Drupal\budpersonal\Form\BudCustomersSettingsForm'
+    _title: 'BudCustomers'
+  requirements:
+    _permission: 'administer budpersonal_budcustomers'

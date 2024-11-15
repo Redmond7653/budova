@@ -1,0 +1,3 @@
+administer budpersonal_budcustomers:
+  title: 'Administer budcustomerss'
+  restrict access: true

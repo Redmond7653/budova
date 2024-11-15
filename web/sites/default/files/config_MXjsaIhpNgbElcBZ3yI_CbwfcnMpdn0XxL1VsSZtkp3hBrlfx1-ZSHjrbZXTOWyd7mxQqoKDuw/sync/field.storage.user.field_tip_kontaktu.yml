@@ -1,0 +1,54 @@
+uuid: 341e08e7-c79b-4ffa-8195-42b27f66e785
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - user
+id: user.field_tip_kontaktu
+field_name: field_tip_kontaktu
+entity_type: user
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: none
+      label: None
+    -
+      value: email
+      label: Email
+    -
+      value: internet_sayt
+      label: 'Інтернет сайт'
+    -
+      value: telefon
+      label: Телефон
+    -
+      value: faks
+      label: Факс
+    -
+      value: adresa
+      label: Адреса
+    -
+      value: yutub
+      label: Ютуб
+    -
+      value: vayber
+      label: Вайбер
+    -
+      value: skayp
+      label: Скайп
+    -
+      value: facebook
+      label: Facebook
+    -
+      value: icq
+      label: icq
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

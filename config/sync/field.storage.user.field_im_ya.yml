@@ -1,0 +1,21 @@
+uuid: 7dca7e2d-521d-4109-af10-d102e05e3d4d
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_im_ya
+field_name: field_im_ya
+entity_type: user
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

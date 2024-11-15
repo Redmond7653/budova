@@ -1,0 +1,21 @@
+uuid: 8ff0ce2a-6cb8-4aa4-b16b-ac648b7f0063
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_pasport
+field_name: field_pasport
+entity_type: user
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

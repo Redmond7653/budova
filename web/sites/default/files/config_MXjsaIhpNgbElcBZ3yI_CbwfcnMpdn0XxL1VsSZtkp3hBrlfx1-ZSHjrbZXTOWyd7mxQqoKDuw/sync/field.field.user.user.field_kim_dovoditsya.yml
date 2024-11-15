@@ -1,0 +1,21 @@
+uuid: efaa33c5-8616-4e87-b29b-aad171f3280e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_kim_dovoditsya
+  module:
+    - options
+    - user
+id: user.user.field_kim_dovoditsya
+field_name: field_kim_dovoditsya
+entity_type: user
+bundle: user
+label: 'Ким доводиться'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

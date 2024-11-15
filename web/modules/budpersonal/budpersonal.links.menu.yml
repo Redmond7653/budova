@@ -1,0 +1,11 @@
+entity.budpersonal_budcustomers.settings:
+  title: 'BudCustomers'
+  description: 'Configure a BudCustomers entity type.'
+  route_name:  entity.budpersonal_budcustomers.settings
+  parent: system.admin_structure
+
+entity.budpersonal_budcustomers.collection:
+  title: 'BudCustomerss'
+  description: 'List of budcustomerss.'
+  route_name: entity.budpersonal_budcustomers.collection
+  parent: system.admin_content

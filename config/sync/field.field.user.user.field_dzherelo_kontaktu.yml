@@ -1,0 +1,21 @@
+uuid: 9a15d4ac-3379-4f20-9673-e28b6b55d097
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_dzherelo_kontaktu
+  module:
+    - options
+    - user
+id: user.user.field_dzherelo_kontaktu
+field_name: field_dzherelo_kontaktu
+entity_type: user
+bundle: user
+label: 'Джерело контакту'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

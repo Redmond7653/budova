@@ -1,0 +1,5 @@
+budpersonal_budcustomers.add_form:
+  title: 'Add budcustomers'
+  route_name: entity.budpersonal_budcustomers.add_form
+  appears_on:
+    - entity.budpersonal_budcustomers.collection

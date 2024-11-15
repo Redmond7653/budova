@@ -1,0 +1,20 @@
+uuid: 65654d8a-829d-48cd-bc99-f764a0d4e965
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_kod
+  module:
+    - user
+id: user.user.field_kod
+field_name: field_kod
+entity_type: user
+bundle: user
+label: Код
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

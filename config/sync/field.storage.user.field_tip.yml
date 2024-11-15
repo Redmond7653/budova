@@ -1,0 +1,36 @@
+uuid: c5d05e93-f92d-4db7-b422-fefbfc9fefdb
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - user
+id: user.field_tip
+field_name: field_tip
+entity_type: user
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: none
+      label: None
+    -
+      value: pokupec_prodavec
+      label: 'Покупець + продавець'
+    -
+      value: pokupec
+      label: Покупець
+    -
+      value: prodavec
+      label: Продавець
+    -
+      value: kolega
+      label: Колега
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
