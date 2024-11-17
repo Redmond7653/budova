@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+id: budova_real_estate_save_action
+label: 'Save real_estates'
+type: budova_real_estate
+plugin: entity:save_action:budova_real_estate
+configuration: {  }

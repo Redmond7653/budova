@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+id: budova_real_estate_delete_action
+label: 'Delete real_estates'
+type: budova_real_estate
+plugin: entity:delete_action:budova_real_estate
+configuration: {  }

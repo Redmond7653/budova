@@ -1,0 +1,7 @@
+entity.budova_real_estate.settings:
+  path: 'admin/structure/budova-real-estate'
+  defaults:
+    _form: '\Drupal\budova\Form\RealEstateSettingsForm'
+    _title: 'real_estate'
+  requirements:
+    _permission: 'administer budova_real_estate'

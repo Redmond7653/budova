@@ -1,0 +1,3 @@
+administer budova_real_estate:
+  title: 'Administer real_estates'
+  restrict access: true

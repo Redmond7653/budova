@@ -13,8 +13,8 @@ dependencies:
     - field.field.user.user.field_opis
     - field.field.user.user.field_pasport
     - field.field.user.user.field_prizvishche
-    - field.field.user.user.field_tip
     - field.field.user.user.field_tip_kontaktu
+    - field.field.user.user.field_type
     - field.field.user.user.field_vidpovidalniy
     - field.field.user.user.field_yuridichna_osoba
     - field.field.user.user.user_picture
@@ -50,8 +50,8 @@ hidden:
   field_opis: true
   field_pasport: true
   field_prizvishche: true
-  field_tip: true
   field_tip_kontaktu: true
+  field_type: true
   field_vidpovidalniy: true
   field_yuridichna_osoba: true
   member_for: true

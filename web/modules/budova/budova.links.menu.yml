@@ -1,0 +1,11 @@
+entity.budova_real_estate.settings:
+  title: 'real_estate'
+  description: 'Configure a real_estate entity type.'
+  route_name:  entity.budova_real_estate.settings
+  parent: system.admin_structure
+
+entity.budova_real_estate.collection:
+  title: 'real_estates'
+  description: 'List of real_estates.'
+  route_name: entity.budova_real_estate.collection
+  parent: system.admin_content

@@ -1,0 +1,13 @@
+uuid: 2989b2a4-5699-410e-80f7-6fc4d4c34a3f
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+_core:
+  default_config_hash: CjgYPRntd0-cKSfZeOVMAAWoAn869qzxQ6CsZr3gssk
+id: budova_real_estate_save_action
+label: 'Save real_estates'
+type: budova_real_estate
+plugin: 'entity:save_action:budova_real_estate'
+configuration: {  }

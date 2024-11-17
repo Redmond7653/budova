@@ -1,0 +1,9 @@
+entity.budova_real_estate.settings:
+  title: 'Settings'
+  route_name: entity.budova_real_estate.settings
+  base_route: entity.budova_real_estate.settings
+entity.budova_real_estate.collection:
+  title: 'real_estates'
+  route_name: entity.budova_real_estate.collection
+  base_route: system.admin_content
+  weight: 10

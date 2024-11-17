@@ -1,0 +1,12 @@
+budova_real_estate.add_form:
+  title: 'Add real_estate'
+  route_name: entity.budova_real_estate.add_form
+  appears_on:
+    - entity.budova_real_estate.collection
+
+
+budova.add_user:
+  title: 'Додати клієнта'
+  route_name: user.admin_create
+  appears_on:
+    - view.clients.page_1

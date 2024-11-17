@@ -1,0 +1,13 @@
+uuid: 701251b0-6951-437e-b154-8f4eaf4c4617
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+_core:
+  default_config_hash: ZefLXQadeMSSMoIPS9N-HPhL1dnjnYDAiwdHIHDhMiQ
+id: budova_real_estate_delete_action
+label: 'Delete real_estates'
+type: budova_real_estate
+plugin: 'entity:delete_action:budova_real_estate'
+configuration: {  }

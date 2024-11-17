@@ -12,8 +12,8 @@ dependencies:
     - field.field.user.user.field_opis
     - field.field.user.user.field_pasport
     - field.field.user.user.field_prizvishche
-    - field.field.user.user.field_tip
     - field.field.user.user.field_tip_kontaktu
+    - field.field.user.user.field_type
     - field.field.user.user.field_vidpovidalniy
     - field.field.user.user.field_yuridichna_osoba
     - field.field.user.user.user_picture
@@ -100,15 +100,15 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_tip:
-    type: options_select
-    weight: 8
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_tip_kontaktu:
     type: options_select
     weight: 19
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_type:
+    type: options_select
+    weight: 20
     region: content
     settings: {  }
     third_party_settings: {  }

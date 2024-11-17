@@ -1,0 +1,27 @@
+uuid: 961e7e78-f40c-4e26-9da3-ff20ee915383
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - user
+id: user.field_type
+field_name: field_type
+entity_type: user
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: fizichna_osoba
+      label: 'Фізична особа'
+    -
+      value: yuridichna_osoba
+      label: 'Юридична особа'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
