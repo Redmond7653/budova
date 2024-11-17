@@ -1,0 +1,14 @@
+uuid: a8fe7c5c-d7c9-46d7-bbf4-2d55c8a4591b
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.seller
+  module:
+    - user
+id: user_remove_role_action.seller
+label: 'Remove the Продавець role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: seller

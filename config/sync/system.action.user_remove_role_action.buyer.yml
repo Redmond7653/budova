@@ -1,0 +1,14 @@
+uuid: 46855fb2-55bc-4980-9e36-b920601578c8
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.buyer
+  module:
+    - user
+id: user_remove_role_action.buyer
+label: 'Remove the Покупець role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: buyer

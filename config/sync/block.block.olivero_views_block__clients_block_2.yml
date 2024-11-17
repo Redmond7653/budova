@@ -1,0 +1,29 @@
+uuid: 6d1fd5ea-568d-455c-b032-9e14e2c1e487
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.clients
+  module:
+    - system
+    - views
+  theme:
+    - olivero
+id: olivero_views_block__clients_block_2
+theme: olivero
+region: content
+weight: -6
+provider: null
+plugin: 'views_block:clients-block_2'
+settings:
+  id: 'views_block:clients-block_2'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /clients

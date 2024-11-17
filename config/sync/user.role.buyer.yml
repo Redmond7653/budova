@@ -1,0 +1,9 @@
+uuid: 2739a444-b947-4a6c-a8fb-aae03d231c2d
+langcode: en
+status: true
+dependencies: {  }
+id: buyer
+label: Покупець
+weight: 4
+is_admin: null
+permissions: {  }

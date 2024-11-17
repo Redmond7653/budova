@@ -6,7 +6,7 @@ dependencies:
     - options
     - user
 id: clients
-label: Clients
+label: Cleints
 module: views
 description: ''
 tag: ''
@@ -19,7 +19,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'Технічні характеристики'
+      title: Клієнти
       fields:
         nothing:
           id: nothing
@@ -491,6 +491,460 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
+        field_im_ya_value_1:
+          id: field_im_ya_value_1
+          table: user__field_im_ya
+          field: field_im_ya_value
+          plugin_id: string
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      style:
+        type: default
+      row:
+        type: fields
+        options:
+          default_field_elements: true
+          inline:
+            nothing: nothing
+          separator: ''
+          hide_empty: false
+      query:
+        type: views_query
+        options:
+          query_comment: ''
+          disable_sql_rewrite: false
+          distinct: false
+          replica: false
+          query_tags: {  }
+      relationships: {  }
+      header: {  }
+      footer: {  }
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - user.permissions
+      tags: {  }
+  block_1:
+    id: block_1
+    display_title: Block
+    display_plugin: block
+    position: 2
+    display_options:
+      title: 'Технічні параметри'
+      filters:
+        field_kod_value:
+          id: field_kod_value
+          table: user__field_kod
+          field: field_kod_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: string
+          operator: '='
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_kod_value_op
+            label: 'Код '
+            description: ''
+            use_operator: false
+            operator: field_kod_value_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_kod_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        field_tip_value:
+          id: field_tip_value
+          table: user__field_tip
+          field: field_tip_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: list_field
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_tip_value_op
+            label: 'Тип '
+            description: ''
+            use_operator: false
+            operator: field_tip_value_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_tip_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+        field_dzherelo_kontaktu_value:
+          id: field_dzherelo_kontaktu_value
+          table: user__field_dzherelo_kontaktu
+          field: field_dzherelo_kontaktu_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: list_field
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_dzherelo_kontaktu_value_op
+            label: 'Джерело контакту '
+            description: ''
+            use_operator: false
+            operator: field_dzherelo_kontaktu_value_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_dzherelo_kontaktu_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+        field_yuridichna_osoba_value:
+          id: field_yuridichna_osoba_value
+          table: user__field_yuridichna_osoba
+          field: field_yuridichna_osoba_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: list_field
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_yuridichna_osoba_value_op
+            label: 'Юридична особа '
+            description: ''
+            use_operator: false
+            operator: field_yuridichna_osoba_value_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_yuridichna_osoba_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+        field_im_ya_value:
+          id: field_im_ya_value
+          table: user__field_im_ya
+          field: field_im_ya_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: string
+          operator: '='
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_im_ya_value_op
+            label: "Ім'я "
+            description: ''
+            use_operator: false
+            operator: field_im_ya_value_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_im_ya_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        field_prizvishche_value:
+          id: field_prizvishche_value
+          table: user__field_prizvishche
+          field: field_prizvishche_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: string
+          operator: '='
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_prizvishche_value_op
+            label: 'Призвіще '
+            description: ''
+            use_operator: false
+            operator: field_prizvishche_value_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_prizvishche_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        field_pasport_value:
+          id: field_pasport_value
+          table: user__field_pasport
+          field: field_pasport_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: string
+          operator: '='
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_pasport_value_op
+            label: 'Паспорт '
+            description: ''
+            use_operator: false
+            operator: field_pasport_value_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_pasport_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        field_kim_vidaniy_value:
+          id: field_kim_vidaniy_value
+          table: user__field_kim_vidaniy
+          field: field_kim_vidaniy_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: string
+          operator: '='
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_kim_vidaniy_value_op
+            label: 'Ким виданий '
+            description: ''
+            use_operator: false
+            operator: field_kim_vidaniy_value_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_kim_vidaniy_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        field_opis_value:
+          id: field_opis_value
+          table: user__field_opis
+          field: field_opis_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: string
+          operator: '='
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_opis_value_op
+            label: 'Опис '
+            description: ''
+            use_operator: false
+            operator: field_opis_value_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_opis_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      defaults:
+        title: false
+        filters: false
+        filter_groups: false
+      display_extenders: {  }
+      block_description: 'Techical parametres'
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - user.permissions
+      tags: {  }
+  block_2:
+    id: block_2
+    display_title: 'Block 2'
+    display_plugin: block
+    position: 3
+    display_options:
+      title: 'Довірена особа'
+      filters:
         field_dovirena_osoba_value:
           id: field_dovirena_osoba_value
           table: user__field_dovirena_osoba
@@ -548,7 +1002,7 @@ display:
           exposed: true
           expose:
             operator_id: field_kim_dovoditsya_value_op
-            label: 'Ким доводиться '
+            label: 'Ким доводиться'
             description: ''
             use_operator: false
             operator: field_kim_dovoditsya_value_op
@@ -577,6 +1031,31 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: false
+      filter_groups:
+        operator: AND
+        groups: {  }
+      defaults:
+        title: false
+        filters: false
+        filter_groups: false
+      display_extenders: {  }
+      block_description: 'Trusted persona'
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - user.permissions
+      tags: {  }
+  block_3:
+    id: block_3
+    display_title: 'Block 3'
+    display_plugin: block
+    position: 4
+    display_options:
+      title: 'Додаткові параметри'
+      filters:
         field_vidpovidalniy_value:
           id: field_vidpovidalniy_value
           table: user__field_vidpovidalniy
@@ -634,7 +1113,7 @@ display:
           exposed: true
           expose:
             operator_id: field_tip_kontaktu_value_op
-            label: 'Тип контакту '
+            label: 'Тип контакту (field_tip_kontaktu)'
             description: ''
             use_operator: false
             operator: field_tip_kontaktu_value_op
@@ -665,30 +1144,13 @@ display:
           reduce_duplicates: false
       filter_groups:
         operator: AND
-        groups:
-          1: AND
-      style:
-        type: default
-      row:
-        type: fields
-        options:
-          default_field_elements: true
-          inline:
-            nothing: nothing
-          separator: ''
-          hide_empty: false
-      query:
-        type: views_query
-        options:
-          query_comment: ''
-          disable_sql_rewrite: false
-          distinct: false
-          replica: false
-          query_tags: {  }
-      relationships: {  }
-      header: {  }
-      footer: {  }
+        groups: {  }
+      defaults:
+        title: false
+        filters: false
+        filter_groups: false
       display_extenders: {  }
+      block_description: 'Additonal parametres'
     cache_metadata:
       max-age: -1
       contexts:
@@ -703,13 +1165,19 @@ display:
     display_plugin: page
     position: 1
     display_options:
+      filters: {  }
+      filter_groups:
+        operator: AND
+        groups: {  }
+      defaults:
+        filters: false
+        filter_groups: false
       display_extenders: {  }
       path: clients
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_interface'
-        - url
         - url.query_args
         - user.permissions
       tags: {  }

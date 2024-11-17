@@ -1,0 +1,14 @@
+uuid: 28d03e82-45de-4111-8434-1c6d41bd0d23
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.buyer
+  module:
+    - user
+id: user_add_role_action.buyer
+label: 'Add the Покупець role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: buyer

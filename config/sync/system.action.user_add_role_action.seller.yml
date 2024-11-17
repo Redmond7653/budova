@@ -1,0 +1,14 @@
+uuid: 45e33fca-330e-4e03-bc3b-83e7d029577c
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.seller
+  module:
+    - user
+id: user_add_role_action.seller
+label: 'Add the Продавець role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: seller

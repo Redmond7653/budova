@@ -1,0 +1,9 @@
+uuid: efbdb34c-91b9-436b-b189-0b34a0ddcde8
+langcode: en
+status: true
+dependencies: {  }
+id: seller
+label: Продавець
+weight: 5
+is_admin: null
+permissions: {  }
