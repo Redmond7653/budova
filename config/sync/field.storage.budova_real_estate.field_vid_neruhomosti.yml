@@ -1,0 +1,33 @@
+uuid: 6f4847df-1fe3-4708-a3f9-463cd53228d3
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+    - options
+id: budova_real_estate.field_vid_neruhomosti
+field_name: field_vid_neruhomosti
+entity_type: budova_real_estate
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: privatniy_sektor
+      label: 'Приватний сектор'
+    -
+      value: zemelna_dilyanka
+      label: 'Земельна ділянка'
+    -
+      value: kvartiri
+      label: Квартири
+    -
+      value: komerciyna_neruhomist
+      label: 'Комерційна нерухомість'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

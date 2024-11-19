@@ -1,0 +1,21 @@
+uuid: 01a1cd0e-c3a7-4247-a40c-913ff840b653
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_real_estate.field_stan_ob_iekta
+  module:
+    - budova
+    - options
+id: budova_real_estate.budova_real_estate.field_stan_ob_iekta
+field_name: field_stan_ob_iekta
+entity_type: budova_real_estate
+bundle: budova_real_estate
+label: "Стан об'єкта"
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

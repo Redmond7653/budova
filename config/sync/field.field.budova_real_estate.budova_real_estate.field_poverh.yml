@@ -1,0 +1,20 @@
+uuid: ebe58d3b-133e-4eca-b7da-f82e6ddc5d38
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_real_estate.field_poverh
+  module:
+    - budova
+id: budova_real_estate.budova_real_estate.field_poverh
+field_name: field_poverh
+entity_type: budova_real_estate
+bundle: budova_real_estate
+label: Поверх
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

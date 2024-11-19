@@ -1,0 +1,22 @@
+uuid: b12f0c54-25b8-466d-9d98-471ada1f9fde
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_real_estate.field_metro
+  module:
+    - budova
+id: budova_real_estate.budova_real_estate.field_metro
+field_name: field_metro
+entity_type: budova_real_estate
+bundle: budova_real_estate
+label: Метро
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: Так
+  off_label: Ні
+field_type: boolean

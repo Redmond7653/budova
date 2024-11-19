@@ -1,0 +1,21 @@
+uuid: 79c7370b-b664-407b-bed4-4ecc555885d4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_real_estate.field_material_stin
+  module:
+    - budova
+    - options
+id: budova_real_estate.budova_real_estate.field_material_stin
+field_name: field_material_stin
+entity_type: budova_real_estate
+bundle: budova_real_estate
+label: 'Матеріал стін'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

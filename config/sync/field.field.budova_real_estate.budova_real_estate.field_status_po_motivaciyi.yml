@@ -1,0 +1,21 @@
+uuid: 3d2499c3-dc2b-476d-8c85-b6d86002e4aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_real_estate.field_status_po_motivaciyi
+  module:
+    - budova
+    - options
+id: budova_real_estate.budova_real_estate.field_status_po_motivaciyi
+field_name: field_status_po_motivaciyi
+entity_type: budova_real_estate
+bundle: budova_real_estate
+label: 'Статус по мотивації'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

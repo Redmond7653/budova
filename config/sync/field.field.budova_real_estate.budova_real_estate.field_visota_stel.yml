@@ -1,0 +1,20 @@
+uuid: a5c81e8b-9680-4182-8a50-fcf4abc930ec
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_real_estate.field_visota_stel
+  module:
+    - budova
+id: budova_real_estate.budova_real_estate.field_visota_stel
+field_name: field_visota_stel
+entity_type: budova_real_estate
+bundle: budova_real_estate
+label: 'Висота стель'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

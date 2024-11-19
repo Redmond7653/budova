@@ -1,0 +1,30 @@
+uuid: ab673618-d436-4838-bff1-4bddc5618578
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+    - options
+id: budova_real_estate.field_avtonomne_opalennya
+field_name: field_avtonomne_opalennya
+entity_type: budova_real_estate
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: none
+      label: None
+    -
+      value: gazove
+      label: Газове
+    -
+      value: elektrichne
+      label: Електричне
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

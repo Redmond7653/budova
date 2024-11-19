@@ -1,0 +1,21 @@
+uuid: 104cad64-8535-448e-93b1-8124a83ca7e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_real_estate.field_kategoriya_uchastku
+  module:
+    - budova
+    - options
+id: budova_real_estate.budova_real_estate.field_kategoriya_uchastku
+field_name: field_kategoriya_uchastku
+entity_type: budova_real_estate
+bundle: budova_real_estate
+label: 'Категорія участку'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

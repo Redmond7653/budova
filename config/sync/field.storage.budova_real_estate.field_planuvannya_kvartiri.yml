@@ -1,0 +1,21 @@
+uuid: 64d6465f-202d-430c-beb4-9b256f7fe098
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+id: budova_real_estate.field_planuvannya_kvartiri
+field_name: field_planuvannya_kvartiri
+entity_type: budova_real_estate
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

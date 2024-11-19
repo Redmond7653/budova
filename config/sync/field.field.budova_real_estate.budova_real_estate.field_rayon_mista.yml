@@ -1,0 +1,21 @@
+uuid: b0ddc1f2-ef78-4a48-9964-18b8e82ddb50
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_real_estate.field_rayon_mista
+  module:
+    - budova
+    - options
+id: budova_real_estate.budova_real_estate.field_rayon_mista
+field_name: field_rayon_mista
+entity_type: budova_real_estate
+bundle: budova_real_estate
+label: 'Район міста'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

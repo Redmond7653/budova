@@ -1,0 +1,21 @@
+uuid: c959fbd3-6657-4635-8b5b-23fa5cc77de8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_real_estate.field_avtonomne_opalennya
+  module:
+    - budova
+    - options
+id: budova_real_estate.budova_real_estate.field_avtonomne_opalennya
+field_name: field_avtonomne_opalennya
+entity_type: budova_real_estate
+bundle: budova_real_estate
+label: 'Автономне опалення'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,20 @@
+uuid: 5796250c-5897-4732-9621-bccace4582b4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_real_estate.field_poverhovist
+  module:
+    - budova
+id: budova_real_estate.budova_real_estate.field_poverhovist
+field_name: field_poverhovist
+entity_type: budova_real_estate
+bundle: budova_real_estate
+label: Поверховість
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

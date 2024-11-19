@@ -1,0 +1,20 @@
+uuid: 13930c20-89bc-4120-b4e4-5071ef183327
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_real_estate.field_vartist
+  module:
+    - budova
+id: budova_real_estate.budova_real_estate.field_vartist
+field_name: field_vartist
+entity_type: budova_real_estate
+bundle: budova_real_estate
+label: Вартість
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

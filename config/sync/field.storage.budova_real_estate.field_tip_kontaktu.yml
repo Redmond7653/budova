@@ -1,0 +1,54 @@
+uuid: 65e60559-52e8-4c43-96d5-2999ab6c7f7b
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+    - options
+id: budova_real_estate.field_tip_kontaktu
+field_name: field_tip_kontaktu
+entity_type: budova_real_estate
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: none
+      label: None
+    -
+      value: email
+      label: Email
+    -
+      value: internet_sayt
+      label: 'Інтернет сайт'
+    -
+      value: telefon
+      label: Телефон
+    -
+      value: faks
+      label: Факс
+    -
+      value: adresa
+      label: Адреса
+    -
+      value: yutub
+      label: Ютуб
+    -
+      value: vayber
+      label: Вайбер
+    -
+      value: skayp
+      label: Скайп
+    -
+      value: facebook
+      label: Facebook
+    -
+      value: icq
+      label: Icq
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

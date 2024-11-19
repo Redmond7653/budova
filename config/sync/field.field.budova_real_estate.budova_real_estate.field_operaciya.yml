@@ -1,0 +1,21 @@
+uuid: ea522d46-19f8-4beb-ad14-b4ebbb9eb1c8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_real_estate.field_operaciya
+  module:
+    - budova
+    - options
+id: budova_real_estate.budova_real_estate.field_operaciya
+field_name: field_operaciya
+entity_type: budova_real_estate
+bundle: budova_real_estate
+label: Операція
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

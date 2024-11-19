@@ -1,0 +1,21 @@
+uuid: 65a15dfc-554c-449d-8329-4992c9b44e0a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_real_estate.field_valyuta
+  module:
+    - budova
+    - options
+id: budova_real_estate.budova_real_estate.field_valyuta
+field_name: field_valyuta
+entity_type: budova_real_estate
+bundle: budova_real_estate
+label: Валюта
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

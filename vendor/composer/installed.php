@@ -3,7 +3,7 @@
         'name' => 'drupal/recommended-project',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => 'f7cc6ea7a4dd194821266e9d158c6b566cc409ca',
+        'reference' => '2e8c3ddc7186efa6150e73a010f49b75b1077cbb',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -397,6 +397,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'drupal/radix' => array(
+            'pretty_version' => '6.0.0-rc6',
+            'version' => '6.0.0.0-RC6',
+            'reference' => '6.0.0-rc6',
+            'type' => 'drupal-theme',
+            'install_path' => __DIR__ . '/../../web/themes/contrib/radix',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'drupal/rat' => array(
             'pretty_version' => '1.0.0',
             'version' => '1.0.0.0',
@@ -409,7 +418,7 @@
         'drupal/recommended-project' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => 'f7cc6ea7a4dd194821266e9d158c6b566cc409ca',
+            'reference' => '2e8c3ddc7186efa6150e73a010f49b75b1077cbb',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

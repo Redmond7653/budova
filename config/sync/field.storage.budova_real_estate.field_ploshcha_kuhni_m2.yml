@@ -1,0 +1,21 @@
+uuid: d1c70463-34e5-4407-b2d5-8634b424e02c
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+id: budova_real_estate.field_ploshcha_kuhni_m2
+field_name: field_ploshcha_kuhni_m2
+entity_type: budova_real_estate
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

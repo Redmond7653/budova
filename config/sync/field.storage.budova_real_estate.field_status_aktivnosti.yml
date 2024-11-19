@@ -1,0 +1,36 @@
+uuid: 16a1e190-104b-4020-8280-dd7fb7e5d202
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+    - options
+id: budova_real_estate.field_status_aktivnosti
+field_name: field_status_aktivnosti
+entity_type: budova_real_estate
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: none
+      label: None
+    -
+      value: aktivniy
+      label: Активний
+    -
+      value: vidkladeniy
+      label: Відкладений
+    -
+      value: znyatiy
+      label: Знятий
+    -
+      value: prodazha
+      label: Продажа
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

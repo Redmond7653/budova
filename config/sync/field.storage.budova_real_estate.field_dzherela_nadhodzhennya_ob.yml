@@ -1,0 +1,45 @@
+uuid: bf9328e4-d885-407d-aa43-cd05b4721f12
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+    - options
+id: budova_real_estate.field_dzherela_nadhodzhennya_ob
+field_name: field_dzherela_nadhodzhennya_ob
+entity_type: budova_real_estate
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: none
+      label: None
+    -
+      value: spp_kolegi
+      label: СПП/Колеги
+    -
+      value: ofis
+      label: Офіс
+    -
+      value: dom_ria
+      label: Дом.ріа
+    -
+      value: olh
+      label: Олх
+    -
+      value: rekomendaciyi
+      label: Рекомендації
+    -
+      value: tck
+      label: ТЦК
+    -
+      value: rozkleyka
+      label: Розклейка
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

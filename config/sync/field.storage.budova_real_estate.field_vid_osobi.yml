@@ -1,0 +1,30 @@
+uuid: e5aa746c-b129-456a-baf3-8ba8411b2267
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+    - options
+id: budova_real_estate.field_vid_osobi
+field_name: field_vid_osobi
+entity_type: budova_real_estate
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: none
+      label: None
+    -
+      value: fizichna_osoba
+      label: 'Фізична особа'
+    -
+      value: yuridichna_osoba
+      label: 'Юридична особа'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,21 @@
+uuid: a4f56f14-c0f6-4a2a-b45e-4472f9223759
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_real_estate.field_sumizhnist_kimnat
+  module:
+    - budova
+    - options
+id: budova_real_estate.budova_real_estate.field_sumizhnist_kimnat
+field_name: field_sumizhnist_kimnat
+entity_type: budova_real_estate
+bundle: budova_real_estate
+label: 'Суміжність кімнат'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

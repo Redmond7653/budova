@@ -1,0 +1,33 @@
+uuid: 62d9416d-6532-4dad-964b-72f0d0f12579
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+    - options
+id: budova_real_estate.field_valyuta
+field_name: field_valyuta
+entity_type: budova_real_estate
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: none
+      label: None
+    -
+      value: grivni
+      label: Гривні
+    -
+      value: dolari
+      label: Долари
+    -
+      value: ievro
+      label: Євро
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

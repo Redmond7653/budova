@@ -1,0 +1,30 @@
+uuid: 02b20ad5-3574-476d-ae0a-e4a1eb0fa04a
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+    - options
+id: budova_real_estate.field_operaciya
+field_name: field_operaciya
+entity_type: budova_real_estate
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: none
+      label: None
+    -
+      value: orenda
+      label: Оренда
+    -
+      value: prodazh
+      label: Продаж
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

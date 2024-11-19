@@ -1,0 +1,45 @@
+uuid: 2f4c2206-0f5a-4fe5-817e-746201408cf4
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+    - options
+id: budova_real_estate.field_status_ob_iektiv_na_rinku
+field_name: field_status_ob_iektiv_na_rinku
+entity_type: budova_real_estate
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: budova
+      label: БУДОВА
+    -
+      value: vlasnik
+      label: Власник
+    -
+      value: inshe_an
+      label: 'Інше АН'
+    -
+      value: pmk_19
+      label: ПМК-19
+    -
+      value: lucksantehmontazh
+      label: Луцьксантехмонтаж
+    -
+      value: investor
+      label: Інвестор
+    -
+      value: rat
+      label: Рать
+    -
+      value: zbk
+      label: ЗБК
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

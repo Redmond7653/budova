@@ -1,0 +1,51 @@
+uuid: 17e4cc80-6cc9-40a2-9a3f-6c9ffabb7beb
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+    - options
+id: budova_real_estate.field_material_stin
+field_name: field_material_stin
+entity_type: budova_real_estate
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: blokoviy
+      label: Блоковий
+    -
+      value: glinobitniy
+      label: Глинобитний
+    -
+      value: glinobitna_obkladeniy_cegloyu
+      label: 'Глинобитна, обкладений цеглою'
+    -
+      value: glinobitna_obkladeniy_plitkoyu
+      label: 'Глинобитна, обкладений плиткою'
+    -
+      value: shlakoblok
+      label: Шлакоблок
+    -
+      value: pinoblok
+      label: Піноблок
+    -
+      value: gazobeton
+      label: Газобетон
+    -
+      value: monolit
+      label: Моноліт
+    -
+      value: derev_yaniy
+      label: "Дерев'яний"
+    -
+      value: kombinovaniy
+      label: Комбінований
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
