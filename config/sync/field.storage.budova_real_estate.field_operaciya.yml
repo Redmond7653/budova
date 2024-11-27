@@ -1,4 +1,4 @@
-uuid: 02b20ad5-3574-476d-ae0a-e4a1eb0fa04a
+uuid: 51930502-350a-481f-8e8f-9d40daf78891
 langcode: en
 status: true
 dependencies:
@@ -12,14 +12,11 @@ type: list_string
 settings:
   allowed_values:
     -
-      value: none
-      label: None
+      value: arenda
+      label: Аренда
     -
-      value: orenda
-      label: Оренда
-    -
-      value: prodazh
-      label: Продаж
+      value: prodazha
+      label: Продажа
   allowed_values_function: ''
 module: options
 locked: false

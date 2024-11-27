@@ -1,4 +1,4 @@
-uuid: 4a8ae550-1515-4629-907e-a9d1af450660
+uuid: 7c789728-e42e-4545-8c92-cc5d9eb5d9e3
 langcode: en
 status: true
 dependencies:
@@ -12,11 +12,8 @@ type: list_string
 settings:
   allowed_values:
     -
-      value: none
-      label: None
-    -
-      value: kovelskiy_r_n
-      label: 'Ковельський р-н'
+      value: kovelskiy_rayon
+      label: 'Ковельський район'
     -
       value: kovel
       label: Ковель

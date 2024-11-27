@@ -1,0 +1,21 @@
+uuid: 55c25ad1-87da-4b86-a94d-82cd1ffdef5a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_applications.field_zv_yazano_z
+  module:
+    - budova
+    - options
+id: budova_applications.budova_applications.field_zv_yazano_z
+field_name: field_zv_yazano_z
+entity_type: budova_applications
+bundle: budova_applications
+label: "Зв'язано з"
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

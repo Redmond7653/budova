@@ -1,0 +1,39 @@
+uuid: f51f14f3-4711-4a33-929c-c577238d7e17
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+    - options
+id: budova_applications.field_pidrayon
+field_name: field_pidrayon
+entity_type: budova_applications
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: vasilka
+      label: Василька
+    -
+      value: lukov
+      label: Луков
+    -
+      value: gorodilec
+      label: Городилець
+    -
+      value: lyublinec
+      label: Люблинець
+    -
+      value: golobi
+      label: Голоби
+    -
+      value: turiysk
+      label: Турійськ
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

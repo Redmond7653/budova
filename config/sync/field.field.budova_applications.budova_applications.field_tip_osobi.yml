@@ -1,0 +1,21 @@
+uuid: 0d36fba3-4250-4f8a-9bbf-13565e5ef05d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_applications.field_tip_osobi
+  module:
+    - budova
+    - options
+id: budova_applications.budova_applications.field_tip_osobi
+field_name: field_tip_osobi
+entity_type: budova_applications
+bundle: budova_applications
+label: 'Тип особи'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,19 +1,23 @@
-uuid: 205a21a3-d099-4bc2-bc94-ec569b8a6a16
+uuid: 0e9d7998-704a-40d4-9da3-f15daae73465
 langcode: en
 status: true
 dependencies:
   module:
     - budova
-    - user
+    - options
 id: budova_real_estate.field_vidpovidalniy
 field_name: field_vidpovidalniy
 entity_type: budova_real_estate
-type: entity_reference
+type: list_string
 settings:
-  target_type: user
-module: core
+  allowed_values:
+    -
+      value: none
+      label: None
+  allowed_values_function: ''
+module: options
 locked: false
-cardinality: -1
+cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

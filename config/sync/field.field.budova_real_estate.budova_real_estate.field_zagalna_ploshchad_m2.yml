@@ -1,0 +1,24 @@
+uuid: 1b727330-b9c8-4129-a8cf-dedcef19ba05
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_real_estate.field_zagalna_ploshchad_m2
+  module:
+    - budova
+id: budova_real_estate.budova_real_estate.field_zagalna_ploshchad_m2
+field_name: field_zagalna_ploshchad_m2
+entity_type: budova_real_estate
+bundle: budova_real_estate
+label: 'Загальна площадь(м²)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

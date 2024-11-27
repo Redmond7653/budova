@@ -1,0 +1,33 @@
+uuid: 215b7875-72d1-4900-9398-09574c1f5f18
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+    - options
+id: budova_applications.field_tip_neruhomosti
+field_name: field_tip_neruhomosti
+entity_type: budova_applications
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: privatniy_sektor
+      label: 'Приватний сектор'
+    -
+      value: zemelna_dilyanka
+      label: 'Земельна ділянка'
+    -
+      value: kvartiri
+      label: Квартири
+    -
+      value: komerciyna_neruhomist
+      label: 'Комерційна нерухомість'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

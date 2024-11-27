@@ -1,4 +1,4 @@
-uuid: be62e560-a600-4998-a4ff-a613cbf20aa8
+uuid: 4ee579be-6d76-47b3-b315-4a1da51637ab
 langcode: en
 status: true
 dependencies:
@@ -6,6 +6,7 @@ dependencies:
     - field.storage.budova_real_estate.field_planuvannya_kvartiri
   module:
     - budova
+    - options
 id: budova_real_estate.budova_real_estate.field_planuvannya_kvartiri
 field_name: field_planuvannya_kvartiri
 entity_type: budova_real_estate
@@ -17,4 +18,4 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: string
+field_type: list_string

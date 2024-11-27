@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+id: budova_applications_save_action
+label: 'Save applicationss'
+type: budova_applications
+plugin: entity:save_action:budova_applications
+configuration: {  }

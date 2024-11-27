@@ -1,0 +1,39 @@
+uuid: 8a0f6aac-ce1b-4065-86cf-3df4b3aa92b5
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+    - options
+id: budova_applications.field_planuvannya
+field_name: field_planuvannya
+entity_type: budova_applications
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: novostroy
+      label: Новострой
+    -
+      value: cheshka
+      label: Чешка
+    -
+      value: pokrashchena_planuvannya
+      label: 'Покращена планування'
+    -
+      value: hrushchivka
+      label: Хрущівка
+    -
+      value: malosimeyka
+      label: Малосімейка
+    -
+      value: kimnata_v_gurtozhitku
+      label: 'Кімната в гуртожитку'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

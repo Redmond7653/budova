@@ -1,0 +1,13 @@
+uuid: b9d69fb8-1e01-43b7-87c4-84698e82ae1d
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+_core:
+  default_config_hash: o1mDks3ZBKZ7yv6-xAQi_L8nkcfa4MFP1PVGbQHsEWI
+id: budova_applications_save_action
+label: 'Save applicationss'
+type: budova_applications
+plugin: 'entity:save_action:budova_applications'
+configuration: {  }

@@ -1,0 +1,21 @@
+uuid: 38ec9af6-6db6-4581-bad5-03389c48ad6a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_applications.field_valyuta
+  module:
+    - budova
+    - options
+id: budova_applications.budova_applications.field_valyuta
+field_name: field_valyuta
+entity_type: budova_applications
+bundle: budova_applications
+label: Валюта
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

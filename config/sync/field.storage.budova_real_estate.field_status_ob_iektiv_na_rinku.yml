@@ -1,4 +1,4 @@
-uuid: 2f4c2206-0f5a-4fe5-817e-746201408cf4
+uuid: c33ee59b-39d8-44fa-b6e3-a7214b44b81a
 langcode: en
 status: true
 dependencies:
@@ -18,8 +18,8 @@ settings:
       value: vlasnik
       label: Власник
     -
-      value: inshe_an
-      label: 'Інше АН'
+      value: druge_an
+      label: 'Друге АН'
     -
       value: pmk_19
       label: ПМК-19

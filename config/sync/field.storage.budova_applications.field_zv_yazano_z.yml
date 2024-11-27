@@ -1,0 +1,24 @@
+uuid: 73e3e208-dfdf-4fb4-8132-72b302975240
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+    - options
+id: budova_applications.field_zv_yazano_z
+field_name: field_zv_yazano_z
+entity_type: budova_applications
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: none
+      label: None
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

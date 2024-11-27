@@ -1,4 +1,4 @@
-uuid: 030ca097-eb86-429a-999c-7aed8bb582a1
+uuid: af088d53-a133-4b7d-85a4-84483c4bf063
 langcode: en
 status: true
 dependencies:
@@ -11,7 +11,7 @@ id: budova_real_estate.budova_real_estate.field_dzherela_nadhodzhennya_ob
 field_name: field_dzherela_nadhodzhennya_ob
 entity_type: budova_real_estate
 bundle: budova_real_estate
-label: "Джерела надходження об'єктів"
+label: "Джерело надходження об'єктів"
 description: ''
 required: false
 translatable: false

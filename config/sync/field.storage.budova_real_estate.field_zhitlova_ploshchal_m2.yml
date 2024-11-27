@@ -1,4 +1,4 @@
-uuid: dfda0a87-b749-413e-aff0-908b45b8505c
+uuid: 450ed245-bfa4-4584-aeb8-0634824c4005
 langcode: en
 status: true
 dependencies:
@@ -7,11 +7,8 @@ dependencies:
 id: budova_real_estate.field_zhitlova_ploshchal_m2
 field_name: field_zhitlova_ploshchal_m2
 entity_type: budova_real_estate
-type: string
-settings:
-  max_length: 255
-  case_sensitive: false
-  is_ascii: false
+type: float
+settings: {  }
 module: core
 locked: false
 cardinality: 1

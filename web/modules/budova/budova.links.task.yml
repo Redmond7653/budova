@@ -7,3 +7,13 @@ entity.budova_real_estate.collection:
   route_name: entity.budova_real_estate.collection
   base_route: system.admin_content
   weight: 10
+
+entity.budova_applications.settings:
+  title: 'Settings'
+  route_name: entity.budova_applications.settings
+  base_route: entity.budova_applications.settings
+entity.budova_applications.collection:
+  title: 'Applicationss'
+  route_name: entity.budova_applications.collection
+  base_route: system.admin_content
+  weight: 10

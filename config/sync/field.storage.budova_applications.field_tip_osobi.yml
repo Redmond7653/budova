@@ -1,0 +1,27 @@
+uuid: 74a16dc6-1128-48e5-9ecf-626ce8968bc4
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+    - options
+id: budova_applications.field_tip_osobi
+field_name: field_tip_osobi
+entity_type: budova_applications
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: fizichna_osoba
+      label: 'Фізична особа'
+    -
+      value: yuridichna_osoba
+      label: 'Юридична особа'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,4 +1,4 @@
-uuid: e5aa746c-b129-456a-baf3-8ba8411b2267
+uuid: 6ed91d5a-2f31-452c-a38c-8ede0a740258
 langcode: en
 status: true
 dependencies:
@@ -11,9 +11,6 @@ entity_type: budova_real_estate
 type: list_string
 settings:
   allowed_values:
-    -
-      value: none
-      label: None
     -
       value: fizichna_osoba
       label: 'Фізична особа'

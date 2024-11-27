@@ -1,4 +1,4 @@
-uuid: 16a1e190-104b-4020-8280-dd7fb7e5d202
+uuid: 8db17cf1-3b47-43df-b8c9-8a4b983453a5
 langcode: en
 status: true
 dependencies:
@@ -12,9 +12,6 @@ type: list_string
 settings:
   allowed_values:
     -
-      value: none
-      label: None
-    -
       value: aktivniy
       label: Активний
     -
@@ -24,8 +21,8 @@ settings:
       value: znyatiy
       label: Знятий
     -
-      value: prodazha
-      label: Продажа
+      value: prodaniy
+      label: Проданий
   allowed_values_function: ''
 module: options
 locked: false

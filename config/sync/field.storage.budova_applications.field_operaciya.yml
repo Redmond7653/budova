@@ -1,0 +1,27 @@
+uuid: ddfb8018-35cc-4344-8377-7bff4ef8d75f
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+    - options
+id: budova_applications.field_operaciya
+field_name: field_operaciya
+entity_type: budova_applications
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: orenda
+      label: Оренда
+    -
+      value: pokupka
+      label: Покупка
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

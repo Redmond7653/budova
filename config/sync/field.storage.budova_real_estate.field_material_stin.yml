@@ -1,4 +1,4 @@
-uuid: 17e4cc80-6cc9-40a2-9a3f-6c9ffabb7beb
+uuid: 9a842bd2-c0a7-4d53-930e-008d064e3eee
 langcode: en
 status: true
 dependencies:
@@ -12,17 +12,23 @@ type: list_string
 settings:
   allowed_values:
     -
-      value: blokoviy
-      label: Блоковий
+      value: ceglyaniy
+      label: Цегляний
     -
-      value: glinobitniy
-      label: Глинобитний
+      value: panelniy
+      label: Панельний
     -
-      value: glinobitna_obkladeniy_cegloyu
-      label: 'Глинобитна, обкладений цеглою'
+      value: blochniy
+      label: Блочний
     -
-      value: glinobitna_obkladeniy_plitkoyu
-      label: 'Глинобитна, обкладений плиткою'
+      value: glinobeton
+      label: Глинобетон
+    -
+      value: glinobeton_obkladeniy_ceglinoyu
+      label: 'Глинобетон, обкладений цеглиною'
+    -
+      value: glinobeton_obkladeniy
+      label: 'Глинобетон, обкладений плиткою'
     -
       value: shlakoblok
       label: Шлакоблок
@@ -34,7 +40,7 @@ settings:
       label: Газобетон
     -
       value: monolit
-      label: Моноліт
+      label: Монолит
     -
       value: derev_yaniy
       label: "Дерев'яний"

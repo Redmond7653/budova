@@ -1,0 +1,21 @@
+uuid: fc9b061c-4fb0-42f5-a65c-c611424d9ec0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_applications.field_rieltor
+  module:
+    - budova
+    - options
+id: budova_applications.budova_applications.field_rieltor
+field_name: field_rieltor
+entity_type: budova_applications
+bundle: budova_applications
+label: Ріелтор
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

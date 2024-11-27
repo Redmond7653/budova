@@ -1,4 +1,4 @@
-uuid: 2e78e5f5-1db6-4389-998f-1e886ac8a1d0
+uuid: fd9693ee-28c1-4979-9295-a716488e14b6
 langcode: en
 status: true
 dependencies:
@@ -12,17 +12,14 @@ type: list_string
 settings:
   allowed_values:
     -
-      value: none
-      label: None
-    -
-      value: rozdilni
+      value: rozdi
       label: Роздільні
     -
       value: sumizhni
       label: Суміжні
     -
-      value: sumizhno_rozdilni
-      label: Суміжно-роздільні
+      value: rozdilno_sumizhni
+      label: Роздільно-суміжні
   allowed_values_function: ''
 module: options
 locked: false

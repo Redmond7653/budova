@@ -1,0 +1,20 @@
+uuid: 8d9a8015-5265-4f01-9d55-67e627addac9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_real_estate.field_opis
+  module:
+    - budova
+id: budova_real_estate.budova_real_estate.field_opis
+field_name: field_opis
+entity_type: budova_real_estate
+bundle: budova_real_estate
+label: Опис
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

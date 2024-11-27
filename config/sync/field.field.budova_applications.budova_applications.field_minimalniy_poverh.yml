@@ -1,0 +1,20 @@
+uuid: d3d2c209-a70f-4434-9f7e-b4c96df1e0e9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_applications.field_minimalniy_poverh
+  module:
+    - budova
+id: budova_applications.budova_applications.field_minimalniy_poverh
+field_name: field_minimalniy_poverh
+entity_type: budova_applications
+bundle: budova_applications
+label: 'Мінімальний поверх'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

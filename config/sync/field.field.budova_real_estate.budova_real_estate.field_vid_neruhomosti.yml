@@ -1,4 +1,4 @@
-uuid: 5ec01f42-dba6-4b74-8520-26975f3afd78
+uuid: 7bee10ae-9e62-4d81-95b3-1b4b543897a8
 langcode: en
 status: true
 dependencies:
@@ -13,7 +13,7 @@ entity_type: budova_real_estate
 bundle: budova_real_estate
 label: 'Вид нерухомості'
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''

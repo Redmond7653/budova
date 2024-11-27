@@ -1,0 +1,19 @@
+uuid: ade31f59-7ca0-445f-94fa-17724ee603e0
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+id: budova_applications.field_opis
+field_name: field_opis
+entity_type: budova_applications
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,4 +1,4 @@
-uuid: 863f4bec-a621-4bda-ba17-3ef2923b9c52
+uuid: e37dcfaf-99ff-4050-ac59-1d384e118522
 langcode: en
 status: true
 dependencies:
@@ -11,9 +11,6 @@ entity_type: budova_real_estate
 type: list_string
 settings:
   allowed_values:
-    -
-      value: none
-      label: None
     -
       value: gostra_motivaciya
       label: 'Гостра мотивація'

@@ -1,3 +1,7 @@
 administer budova_real_estate:
   title: 'Administer real_estates'
   restrict access: true
+
+administer budova_applications:
+  title: 'Administer applicationss'
+  restrict access: true

@@ -1,0 +1,284 @@
+uuid: 05a7558b-62e0-41c3-97d5-a1159bb7bc13
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.budova_applications.budova_applications.field_avtonomne_opalennya
+    - field.field.budova_applications.budova_applications.field_cina
+    - field.field.budova_applications.budova_applications.field_data_stvorennya
+    - field.field.budova_applications.budova_applications.field_kontakt
+    - field.field.budova_applications.budova_applications.field_maksimalna_ploshchad_m2
+    - field.field.budova_applications.budova_applications.field_maksimalne_chislo_kimnat
+    - field.field.budova_applications.budova_applications.field_maksimalniy_poverh
+    - field.field.budova_applications.budova_applications.field_metro
+    - field.field.budova_applications.budova_applications.field_minimalna_ploshchad_m2
+    - field.field.budova_applications.budova_applications.field_minimalne_chislo_kimnat
+    - field.field.budova_applications.budova_applications.field_minimalniy_poverh
+    - field.field.budova_applications.budova_applications.field_operaciya
+    - field.field.budova_applications.budova_applications.field_opis
+    - field.field.budova_applications.budova_applications.field_pidrayon
+    - field.field.budova_applications.budova_applications.field_planuvannya
+    - field.field.budova_applications.budova_applications.field_rayon_mista
+    - field.field.budova_applications.budova_applications.field_rieltor
+    - field.field.budova_applications.budova_applications.field_stan_ob_iekta
+    - field.field.budova_applications.budova_applications.field_status_po_motivaciyi
+    - field.field.budova_applications.budova_applications.field_status_zayavki
+    - field.field.budova_applications.budova_applications.field_tip_kontaktu
+    - field.field.budova_applications.budova_applications.field_tip_neruhomosti
+    - field.field.budova_applications.budova_applications.field_tip_osobi
+    - field.field.budova_applications.budova_applications.field_tipp_neruhomosti
+    - field.field.budova_applications.budova_applications.field_valyuta
+    - field.field.budova_applications.budova_applications.field_zv_yazano_z
+  module:
+    - budova
+    - datetime
+    - options
+    - user
+id: budova_applications.budova_applications.default
+targetEntityType: budova_applications
+bundle: budova_applications
+mode: default
+content:
+  created:
+    type: timestamp
+    label: above
+    settings:
+      date_format: medium
+      custom_date_format: ''
+      timezone: ''
+      tooltip:
+        date_format: long
+        custom_date_format: ''
+      time_diff:
+        enabled: false
+        future_format: '@interval hence'
+        past_format: '@interval ago'
+        granularity: 2
+        refresh: 60
+    third_party_settings: {  }
+    weight: 20
+    region: content
+  field_avtonomne_opalennya:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 31
+    region: content
+  field_cina:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 42
+    region: content
+  field_data_stvorennya:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 44
+    region: content
+  field_kontakt:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 46
+    region: content
+  field_maksimalna_ploshchad_m2:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 34
+    region: content
+  field_maksimalne_chislo_kimnat:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 38
+    region: content
+  field_maksimalniy_poverh:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 36
+    region: content
+  field_metro:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 32
+    region: content
+  field_minimalna_ploshchad_m2:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 33
+    region: content
+  field_minimalne_chislo_kimnat:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 37
+    region: content
+  field_minimalniy_poverh:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 35
+    region: content
+  field_operaciya:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 23
+    region: content
+  field_opis:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 40
+    region: content
+  field_pidrayon:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 30
+    region: content
+  field_planuvannya:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 39
+    region: content
+  field_rayon_mista:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 29
+    region: content
+  field_rieltor:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 43
+    region: content
+  field_stan_ob_iekta:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 26
+    region: content
+  field_status_po_motivaciyi:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 25
+    region: content
+  field_status_zayavki:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 24
+    region: content
+  field_tip_kontaktu:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 45
+    region: content
+  field_tip_neruhomosti:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 27
+    region: content
+  field_tip_osobi:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 21
+    region: content
+  field_tipp_neruhomosti:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 28
+    region: content
+  field_valyuta:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 41
+    region: content
+  field_zv_yazano_z:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 22
+    region: content
+  label:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: -5
+    region: content
+  status:
+    type: boolean
+    label: above
+    settings:
+      format: enabled-disabled
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  uid:
+    type: author
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 15
+    region: content
+hidden: {  }

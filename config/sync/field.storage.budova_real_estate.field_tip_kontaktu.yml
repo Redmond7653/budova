@@ -1,4 +1,4 @@
-uuid: 65e60559-52e8-4c43-96d5-2999ab6c7f7b
+uuid: 28d11312-600e-4f60-822f-c753f451d3c7
 langcode: en
 status: true
 dependencies:
@@ -11,9 +11,6 @@ entity_type: budova_real_estate
 type: list_string
 settings:
   allowed_values:
-    -
-      value: none
-      label: None
     -
       value: email
       label: Email
@@ -39,7 +36,7 @@ settings:
       value: skayp
       label: Скайп
     -
-      value: facebook
+      value: fa
       label: Facebook
     -
       value: icq

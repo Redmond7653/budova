@@ -1,0 +1,21 @@
+uuid: 03d47daf-3cc0-43f8-aa5a-107c33d8df00
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_applications.field_tip_neruhomosti
+  module:
+    - budova
+    - options
+id: budova_applications.budova_applications.field_tip_neruhomosti
+field_name: field_tip_neruhomosti
+entity_type: budova_applications
+bundle: budova_applications
+label: 'Вид нерухомості'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

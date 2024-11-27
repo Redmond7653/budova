@@ -1,4 +1,4 @@
-uuid: 263e91a3-9e45-4c87-8a39-326aed80e173
+uuid: cecdec67-5423-471c-a4d7-4f7909304336
 langcode: en
 status: true
 dependencies:
@@ -7,11 +7,10 @@ dependencies:
 id: budova_real_estate.field_poverh
 field_name: field_poverh
 entity_type: budova_real_estate
-type: string
+type: integer
 settings:
-  max_length: 255
-  case_sensitive: false
-  is_ascii: false
+  unsigned: false
+  size: normal
 module: core
 locked: false
 cardinality: 1

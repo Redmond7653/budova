@@ -1,4 +1,4 @@
-uuid: bf9328e4-d885-407d-aa43-cd05b4721f12
+uuid: 1e42995b-7d44-4865-809c-3e133f52b9fd
 langcode: en
 status: true
 dependencies:
@@ -12,9 +12,6 @@ type: list_string
 settings:
   allowed_values:
     -
-      value: none
-      label: None
-    -
       value: spp_kolegi
       label: СПП/Колеги
     -
@@ -22,7 +19,7 @@ settings:
       label: Офіс
     -
       value: dom_ria
-      label: Дом.ріа
+      label: Дом.Ріа
     -
       value: olh
       label: Олх
@@ -33,8 +30,8 @@ settings:
       value: tck
       label: ТЦК
     -
-      value: rozkleyka
-      label: Розклейка
+      value: tekstoviy_spisok
+      label: 'Текстовий список'
   allowed_values_function: ''
 module: options
 locked: false

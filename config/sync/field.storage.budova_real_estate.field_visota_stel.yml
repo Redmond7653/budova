@@ -1,4 +1,4 @@
-uuid: 587da745-9285-43a7-a1f7-09df18039319
+uuid: 0244a727-8e2b-463f-9265-b447e0cf5a89
 langcode: en
 status: true
 dependencies:
@@ -7,11 +7,8 @@ dependencies:
 id: budova_real_estate.field_visota_stel
 field_name: field_visota_stel
 entity_type: budova_real_estate
-type: string
-settings:
-  max_length: 255
-  case_sensitive: false
-  is_ascii: false
+type: float
+settings: {  }
 module: core
 locked: false
 cardinality: 1

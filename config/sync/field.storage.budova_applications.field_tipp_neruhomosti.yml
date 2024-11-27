@@ -1,0 +1,63 @@
+uuid: b332f409-c3f7-4647-9f11-9ad2b0bb1841
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+    - options
+id: budova_applications.field_tipp_neruhomosti
+field_name: field_tipp_neruhomosti
+entity_type: budova_applications
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: kvartira
+      label: Квартира
+    -
+      value: kimnata
+      label: Кімната
+    -
+      value: dim
+      label: Дім
+    -
+      value: dachniy_dim
+      label: 'Дачний дім'
+    -
+      value: chastina_domu
+      label: 'Частина дому'
+    -
+      value: bagatocilova
+      label: Багатоцільова
+    -
+      value: sto
+      label: СТО
+    -
+      value: gotelno_restoranniy
+      label: 'Готельно-ресторанний комплекс'
+    -
+      value: ofis
+      label: Офіс
+    -
+      value: torgovi_ploshchadki
+      label: 'Торгові площадки'
+    -
+      value: komerciyna_zemlya
+      label: 'Комерційна земля'
+    -
+      value: sg
+      label: СГ
+    -
+      value: zemlya_pid_zastroyku
+      label: 'Земля під застройку'
+    -
+      value: zemelna_dilyanka
+      label: 'Земельна ділянка'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,4 +1,4 @@
-uuid: a7ad5594-12c8-4cd0-a9c8-f3d83b02e169
+uuid: f075053a-1e2e-4580-b235-efed666f5cb4
 langcode: en
 status: true
 dependencies:
@@ -13,7 +13,7 @@ entity_type: budova_real_estate
 bundle: budova_real_estate
 label: 'Вид особи'
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''

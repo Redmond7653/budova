@@ -1,0 +1,22 @@
+uuid: dd8a6ccd-7724-4988-83c7-a8c2ebc8e3c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_applications.field_metro
+  module:
+    - budova
+id: budova_applications.budova_applications.field_metro
+field_name: field_metro
+entity_type: budova_applications
+bundle: budova_applications
+label: Метро
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: Так
+  off_label: Ні
+field_type: boolean

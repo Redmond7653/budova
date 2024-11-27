@@ -9,3 +9,15 @@ entity.budova_real_estate.collection:
   description: 'List of real_estates.'
   route_name: entity.budova_real_estate.collection
   parent: system.admin_content
+
+entity.budova_applications.settings:
+  title: 'Applications'
+  description: 'Configure an Applications entity type.'
+  route_name:  entity.budova_applications.settings
+  parent: system.admin_structure
+
+entity.budova_applications.collection:
+  title: 'Applicationss'
+  description: 'List of applicationss.'
+  route_name: entity.budova_applications.collection
+  parent: system.admin_content

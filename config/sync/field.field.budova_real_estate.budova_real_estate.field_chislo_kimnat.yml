@@ -1,0 +1,24 @@
+uuid: db3556ad-2e4d-430f-8a79-6f6a7c3b21d0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_real_estate.field_chislo_kimnat
+  module:
+    - budova
+id: budova_real_estate.budova_real_estate.field_chislo_kimnat
+field_name: field_chislo_kimnat
+entity_type: budova_real_estate
+bundle: budova_real_estate
+label: 'Число кімнат'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

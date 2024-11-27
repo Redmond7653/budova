@@ -1,0 +1,20 @@
+uuid: 2413f6a1-17d2-4021-a1c7-3fbea8bbdd77
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_applications.field_maksimalne_chislo_kimnat
+  module:
+    - budova
+id: budova_applications.budova_applications.field_maksimalne_chislo_kimnat
+field_name: field_maksimalne_chislo_kimnat
+entity_type: budova_applications
+bundle: budova_applications
+label: 'Максимальне число кімнат'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

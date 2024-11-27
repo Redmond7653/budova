@@ -16,4 +16,16 @@ budova.add_real-estate:
   title: 'Додати нерухомість'
   route_name: entity.budova_real_estate.add_form
   appears_on:
-    - view.real_estate.real_estate_page
+    - view.real_estate.page_real_estate
+
+budova.add_applications:
+  title: 'Додати заявку'
+  route_name: entity.budova_applications.add_form
+  appears_on:
+    - view.applications.applications_page
+
+budova_applications.add_form:
+  title: 'Add applications'
+  route_name: entity.budova_applications.add_form
+  appears_on:
+    - entity.budova_applications.collection

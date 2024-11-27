@@ -1,4 +1,4 @@
-uuid: eb9fb58a-8347-41b1-84fa-0c673ed8416a
+uuid: 153e20c8-5184-44b8-a54a-e92ac757349f
 langcode: en
 status: true
 dependencies:
@@ -12,11 +12,8 @@ type: list_string
 settings:
   allowed_values:
     -
-      value: none
-      label: None
-    -
-      value: novobud
-      label: Новобуд
+      value: novobudova
+      label: Новобудова
     -
       value: nevidomo
       label: Невідомо
@@ -36,8 +33,8 @@ settings:
       value: pidgotovleno_pid_remont
       label: 'Підготовлено під ремонт'
     -
-      value: potrebuie_kapitalnogo_remontu
-      label: 'Потребує капітального ремонту'
+      value: potriben_kapitalniy_remont
+      label: 'Потрібен капітальний ремонт'
   allowed_values_function: ''
 module: options
 locked: false

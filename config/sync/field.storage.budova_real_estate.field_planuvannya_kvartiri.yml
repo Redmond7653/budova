@@ -1,18 +1,36 @@
-uuid: 64d6465f-202d-430c-beb4-9b256f7fe098
+uuid: 121a8151-e9ed-449a-a7b0-9fc1dbfee70d
 langcode: en
 status: true
 dependencies:
   module:
     - budova
+    - options
 id: budova_real_estate.field_planuvannya_kvartiri
 field_name: field_planuvannya_kvartiri
 entity_type: budova_real_estate
-type: string
+type: list_string
 settings:
-  max_length: 255
-  case_sensitive: false
-  is_ascii: false
-module: core
+  allowed_values:
+    -
+      value: p
+      label: Новобудова
+    -
+      value: cheshka
+      label: Чешка
+    -
+      value: pokrashchena_planuvannya
+      label: 'Покращене планування'
+    -
+      value: hrushchivka
+      label: Хрущівка
+    -
+      value: malosimeyka
+      label: Малосімейка
+    -
+      value: kimnata_v_gurtozhitku
+      label: 'Кімната в гуртожитку'
+  allowed_values_function: ''
+module: options
 locked: false
 cardinality: 1
 translatable: true

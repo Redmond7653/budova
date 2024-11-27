@@ -1,4 +1,4 @@
-uuid: ab673618-d436-4838-bff1-4bddc5618578
+uuid: 1a6a6d65-7d76-4a7d-ae77-22843d9dff23
 langcode: en
 status: true
 dependencies:
@@ -11,9 +11,6 @@ entity_type: budova_real_estate
 type: list_string
 settings:
   allowed_values:
-    -
-      value: none
-      label: None
     -
       value: gazove
       label: Газове

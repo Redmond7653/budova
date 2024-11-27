@@ -1,0 +1,45 @@
+uuid: e0eaa04e-04c2-4ed3-9649-621195b383e3
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+    - options
+id: budova_applications.field_stan_ob_iekta
+field_name: field_stan_ob_iekta
+entity_type: budova_applications
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: novostroy
+      label: Новострой
+    -
+      value: nevidomo
+      label: Невідомо
+    -
+      value: ievroremont
+      label: Євроремонт
+    -
+      value: suchasniy_standart
+      label: 'Сучасний стандарт'
+    -
+      value: zhitloviy_stan
+      label: 'Житловий стан'
+    -
+      value: bez_remontu
+      label: 'Без ремонту'
+    -
+      value: pidgotovleno_pid_remont
+      label: 'Підготовлено під ремонт'
+    -
+      value: potriben_kapitalniy_remont
+      label: 'Потрібен капітальний ремонт'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

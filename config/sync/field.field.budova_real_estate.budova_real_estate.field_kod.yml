@@ -1,0 +1,20 @@
+uuid: fcffacd9-2c1d-42bd-9786-fb531774ecc0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_real_estate.field_kod
+  module:
+    - budova
+id: budova_real_estate.budova_real_estate.field_kod
+field_name: field_kod
+entity_type: budova_real_estate
+bundle: budova_real_estate
+label: Код
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

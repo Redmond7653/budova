@@ -1,0 +1,21 @@
+uuid: c20c667a-7d33-4433-b005-20bfff2950bb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_applications.field_stan_ob_iekta
+  module:
+    - budova
+    - options
+id: budova_applications.budova_applications.field_stan_ob_iekta
+field_name: field_stan_ob_iekta
+entity_type: budova_applications
+bundle: budova_applications
+label: "Стан об'єкта"
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,4 +1,4 @@
-uuid: 7038dbd2-1971-45bf-9947-907f4ea10e48
+uuid: fe7e75d5-f9ea-4879-b1c9-a7001330a66c
 langcode: en
 status: true
 dependencies:
@@ -7,11 +7,10 @@ dependencies:
 id: budova_real_estate.field_vartist
 field_name: field_vartist
 entity_type: budova_real_estate
-type: string
+type: decimal
 settings:
-  max_length: 255
-  case_sensitive: false
-  is_ascii: false
+  precision: 10
+  scale: 2
 module: core
 locked: false
 cardinality: 1

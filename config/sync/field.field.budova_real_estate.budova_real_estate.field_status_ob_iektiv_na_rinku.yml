@@ -1,4 +1,4 @@
-uuid: 02cab1b5-84f9-4912-b2fe-cb2313c27d28
+uuid: 6ed1e77b-d487-4c22-93bb-88dd9eaa47d8
 langcode: en
 status: true
 dependencies:
@@ -11,7 +11,7 @@ id: budova_real_estate.budova_real_estate.field_status_ob_iektiv_na_rinku
 field_name: field_status_ob_iektiv_na_rinku
 entity_type: budova_real_estate
 bundle: budova_real_estate
-label: "Статус об'єктів на ринку"
+label: "Статус об'єкта на ринку"
 description: ''
 required: false
 translatable: false

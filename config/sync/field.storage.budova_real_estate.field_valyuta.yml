@@ -1,4 +1,4 @@
-uuid: 62d9416d-6532-4dad-964b-72f0d0f12579
+uuid: 058e181e-ee19-4458-bca6-8edce047e1d8
 langcode: en
 status: true
 dependencies:
@@ -11,9 +11,6 @@ entity_type: budova_real_estate
 type: list_string
 settings:
   allowed_values:
-    -
-      value: none
-      label: None
     -
       value: grivni
       label: Гривні

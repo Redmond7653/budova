@@ -5,3 +5,11 @@ entity.budova_real_estate.settings:
     _title: 'real_estate'
   requirements:
     _permission: 'administer budova_real_estate'
+
+entity.budova_applications.settings:
+  path: 'admin/structure/budova-applications'
+  defaults:
+    _form: '\Drupal\budova\Form\ApplicationsSettingsForm'
+    _title: 'Applications'
+  requirements:
+    _permission: 'administer budova_applications'

@@ -1,0 +1,13 @@
+uuid: 6315bd5c-ac54-4828-afc0-45789e214dc7
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+_core:
+  default_config_hash: GoikPFJCQNEFA4XmJig152vPrrkPK0UUB6bYnTMHWPk
+id: budova_applications_delete_action
+label: 'Delete applicationss'
+type: budova_applications
+plugin: 'entity:delete_action:budova_applications'
+configuration: {  }

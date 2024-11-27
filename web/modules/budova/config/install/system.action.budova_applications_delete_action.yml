@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+id: budova_applications_delete_action
+label: 'Delete applicationss'
+type: budova_applications
+plugin: entity:delete_action:budova_applications
+configuration: {  }
