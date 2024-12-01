@@ -13,11 +13,11 @@ dependencies:
     - field.field.budova_real_estate.budova_real_estate.field_metro
     - field.field.budova_real_estate.budova_real_estate.field_operaciya
     - field.field.budova_real_estate.budova_real_estate.field_opis
-    - field.field.budova_real_estate.budova_real_estate.field_pidrayon
+    - field.field.budova_real_estate.budova_real_estate.field_pidrayon_mista_test
     - field.field.budova_real_estate.budova_real_estate.field_planuvannya_kvartiri
     - field.field.budova_real_estate.budova_real_estate.field_ploshcha_kuhni_m2
     - field.field.budova_real_estate.budova_real_estate.field_poverh
-    - field.field.budova_real_estate.budova_real_estate.field_rayon_mista
+    - field.field.budova_real_estate.budova_real_estate.field_rayon_mista_test
     - field.field.budova_real_estate.budova_real_estate.field_stan_ob_iekta
     - field.field.budova_real_estate.budova_real_estate.field_status_aktivnosti
     - field.field.budova_real_estate.budova_real_estate.field_status_ob_iektiv_na_rinku
@@ -150,12 +150,13 @@ content:
     third_party_settings: {  }
     weight: 45
     region: content
-  field_pidrayon:
-    type: list_default
+  field_pidrayon_mista_test:
+    type: entity_reference_label
     label: above
-    settings: {  }
+    settings:
+      link: true
     third_party_settings: {  }
-    weight: 32
+    weight: 53
     region: content
   field_planuvannya_kvartiri:
     type: list_default
@@ -184,12 +185,13 @@ content:
     third_party_settings: {  }
     weight: 36
     region: content
-  field_rayon_mista:
-    type: list_default
+  field_rayon_mista_test:
+    type: entity_reference_label
     label: above
-    settings: {  }
+    settings:
+      link: true
     third_party_settings: {  }
-    weight: 31
+    weight: 52
     region: content
   field_stan_ob_iekta:
     type: list_default
@@ -345,4 +347,5 @@ content:
     third_party_settings: {  }
     weight: 15
     region: content
-hidden: {  }
+hidden:
+  search_api_excerpt: true

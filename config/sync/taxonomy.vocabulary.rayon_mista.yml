@@ -1,0 +1,9 @@
+uuid: e1055a86-fb20-4662-88c8-5a65c9c0c4e5
+langcode: en
+status: true
+dependencies: {  }
+name: 'Район міста'
+vid: rayon_mista
+description: null
+weight: 0
+new_revision: false

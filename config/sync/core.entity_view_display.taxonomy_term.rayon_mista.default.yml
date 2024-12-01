@@ -1,0 +1,22 @@
+uuid: 3f300ab8-349a-44db-bd6f-83ac2db387ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.rayon_mista
+  module:
+    - text
+id: taxonomy_term.rayon_mista.default
+targetEntityType: taxonomy_term
+bundle: rayon_mista
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

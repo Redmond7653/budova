@@ -1,0 +1,31 @@
+uuid: 64fabfe1-7fe4-4891-a664-52ea1dbb1da4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.pidrayon.field_rayon
+    - taxonomy.vocabulary.pidrayon
+  module:
+    - text
+id: taxonomy_term.pidrayon.default
+targetEntityType: taxonomy_term
+bundle: pidrayon
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_rayon:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true

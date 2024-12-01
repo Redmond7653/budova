@@ -1,0 +1,9 @@
+uuid: 987e05bc-038b-461a-95d1-8c5f5f25c0b6
+langcode: en
+status: true
+dependencies: {  }
+name: Підрайон
+vid: pidrayon
+description: null
+weight: 0
+new_revision: false

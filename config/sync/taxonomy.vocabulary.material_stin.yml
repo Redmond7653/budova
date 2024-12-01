@@ -1,0 +1,9 @@
+uuid: 30cfc3ad-c93a-4ead-8bf2-a18fce09187f
+langcode: en
+status: true
+dependencies: {  }
+name: 'Матеріал стін'
+vid: material_stin
+description: null
+weight: 0
+new_revision: false

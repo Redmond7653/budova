@@ -1,0 +1,9 @@
+uuid: 5c542d67-8223-44b1-971a-07ae72231ce2
+langcode: en
+status: true
+dependencies: {  }
+name: "Джерело надходження об'єктів"
+vid: dzherelo_nadhodzhennya_ob_iektiv
+description: null
+weight: 0
+new_revision: false

@@ -1,0 +1,9 @@
+uuid: 3069b0fd-40bb-447b-98fd-29dc339f88dc
+langcode: en
+status: true
+dependencies: {  }
+name: 'Вид нерухомості'
+vid: vid_neruhomosti
+description: null
+weight: 0
+new_revision: false

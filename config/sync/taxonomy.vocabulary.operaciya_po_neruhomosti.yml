@@ -1,0 +1,9 @@
+uuid: ce7ac761-2c86-465c-bcab-11c93486e9d0
+langcode: en
+status: true
+dependencies: {  }
+name: 'Операція по нерухомості'
+vid: operaciya_po_neruhomosti
+description: null
+weight: 0
+new_revision: false

@@ -33,8 +33,8 @@ services:
 #      DB_NAME: $DB_NAME
 #      DB_DRIVER: $DB_DRIVER
 #      DRUSH_OPTIONS_URI: "http://${PROJECT_BASE_URL}:${PROJECT_PORT}"
-#      PHP_FPM_USER: wodby
-#      PHP_FPM_GROUP: wodby
+      PHP_FPM_USER: wodby
+      PHP_FPM_GROUP: wodby
 #      COLUMNS: 80 # Set 80 columns for docker exec -it.
 #      # Read instructions at https://wodby.com/docs/stacks/php/local/#xdebug
 #      PHP_XDEBUG_MODE: debug
@@ -144,17 +144,17 @@ services:
 #    container_name: "${PROJECT_NAME}_valkey"
 #    image: wodby/valkey:$VALKEY_TAG
 
-  adminer:
-    container_name: "${PROJECT_NAME}_adminer"
-    init: true
-    image: wodby/adminer:$ADMINER_TAG
-    environment:
-      # For PostgreSQL:
-      #      ADMINER_DEFAULT_DB_DRIVER: pgsql
-      ADMINER_DEFAULT_DB_HOST: $DB_HOST
-      ADMINER_DEFAULT_DB_NAME: $DB_NAME
-    labels:
-    - "traefik.http.routers.${PROJECT_NAME}_adminer.rule=Host(`adminer.${PROJECT_BASE_URL}`)"
+#  adminer:
+#    container_name: "${PROJECT_NAME}_adminer"
+#    init: true
+#    image: wodby/adminer:$ADMINER_TAG
+#    environment:
+#      # For PostgreSQL:
+#      #      ADMINER_DEFAULT_DB_DRIVER: pgsql
+#      ADMINER_DEFAULT_DB_HOST: $DB_HOST
+#      ADMINER_DEFAULT_DB_NAME: $DB_NAME
+#    labels:
+#    - "traefik.http.routers.${PROJECT_NAME}_adminer.rule=Host(`adminer.${PROJECT_BASE_URL}`)"
 
 #  pma:
 #    image: phpmyadmin/phpmyadmin

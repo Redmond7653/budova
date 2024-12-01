@@ -1,0 +1,55 @@
+<?php
+
+/**
+ * Implements hook_form_alter().
+ */
+function budova_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  $z = 0;
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function budova_form_budova_real_estate_add_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  $z = 0;
+
+  $triggering_element = $form_state->getTriggeringElement();
+
+  if ($triggering_element) {
+    if ($triggering_element["#field_name"] == 'field_rayon_mista_test') {
+      $selected_rayon_city_id = $triggering_element["#value"];
+
+      foreach ($form["field_pidrayon_mista_test"]["widget"]["#options"] as $key => $option) {
+       $taxonomy_entity =  \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($key);
+       if ($taxonomy_entity) {
+         $field_rayon = $taxonomy_entity->field_rayon->target_id;
+
+         if ($field_rayon == $selected_rayon_city_id) {
+           $form["field_pidrayon_mista_test"]["widget"]["#options"][$key] = 'ololo';
+         }
+       }
+
+      }
+
+
+    }
+    $form["field_pidrayon_mista_test"]["widget"]["#options"] = [];
+
+  }
+
+  $form['field_rayon_mista_test']['widget']['#ajax'] = [
+    'callback' => 'budova_reloadCity',
+    'event' => 'change',
+  ];
+  //  $form["field_pidrayon_mista_test"]["widget"]["#options"][39] =  "ololo";
+}
+
+  function budova_reloadCity(array $form, FormStateInterface $form_state) {
+    return $form["field_pidrayon_mista_test"];
+//
+////    $response = new AjaxResponse();
+////    $response->addCommand(new ReplaceCommand('#edit-field-pidrayon-mista-test', $form['field_rayon_mista_test']));
+////    return $response;
+  }
+
+

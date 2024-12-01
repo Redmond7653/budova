@@ -1,0 +1,7 @@
+services:
+  php:
+    environment:
+      PHP_XDEBUG_MODE: debug
+#      PHP_XDEBUG_MODE: profile
+      PHP_XDEBUG_USE_COMPRESSION: false
+      PHP_IDE_CONFIG: serverName=docker

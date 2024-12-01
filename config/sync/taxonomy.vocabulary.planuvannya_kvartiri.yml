@@ -1,0 +1,9 @@
+uuid: 577d009c-7a88-4208-b916-6cc5ccb40ddf
+langcode: en
+status: true
+dependencies: {  }
+name: 'Планування квартири'
+vid: planuvannya_kvartiri
+description: null
+weight: 0
+new_revision: false
