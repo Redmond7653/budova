@@ -1,0 +1,9 @@
+uuid: 32f9a720-c239-467d-8ef3-8ed780f5a39f
+langcode: en
+status: true
+dependencies: {  }
+name: Валюта
+vid: valyuta
+description: null
+weight: 0
+new_revision: false

@@ -1,0 +1,9 @@
+uuid: 56346c2c-e48e-4bbc-8101-c713fbe42580
+langcode: en
+status: true
+dependencies: {  }
+name: Опалювання
+vid: opalyuvannya
+description: null
+weight: 0
+new_revision: false

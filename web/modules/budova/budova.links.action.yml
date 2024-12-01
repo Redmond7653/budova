@@ -9,7 +9,7 @@ budova.add_user:
   title: 'Додати клієнта'
   route_name: user.admin_create
   appears_on:
-    - view.clients.page_1
+    - view.clients_with_search.page_clients_with_search
 
 
 budova.add_real-estate:

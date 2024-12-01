@@ -24,6 +24,7 @@
         "drupal/entity": "^1.5",
         "drupal/inline_entity_form": "^3.0@RC",
         "drupal/radix": "^6.0@RC",
+        "drupal/search_api": "^1.37",
         "drupal/tara": "^11.0",
         "drush/drush": "^13.3"
     },

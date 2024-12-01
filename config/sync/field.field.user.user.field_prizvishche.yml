@@ -10,7 +10,7 @@ id: user.user.field_prizvishche
 field_name: field_prizvishche
 entity_type: user
 bundle: user
-label: Призвіще
+label: Прізвище
 description: ''
 required: false
 translatable: false
