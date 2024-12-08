@@ -1,6 +1,6 @@
 uuid: e567f1f2-cc04-46c5-8058-cbb5007e0751
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - field.storage.user.field_kod

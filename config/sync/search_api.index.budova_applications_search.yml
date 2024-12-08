@@ -1,0 +1,31 @@
+uuid: f62d93fb-ed04-496a-8ea0-17640a149c71
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.server.default_server
+  module:
+    - budova
+id: budova_applications_search
+name: Budova_applications_search
+description: ''
+read_only: false
+field_settings: {  }
+datasource_settings:
+  'entity:budova_applications': {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  custom_value: {  }
+  entity_type: {  }
+  language_with_fallback: {  }
+  rendered_item: {  }
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  cron_limit: 50
+  delete_on_fail: true
+  index_directly: true
+  track_changes_in_references: true
+server: default_server

@@ -1,6 +1,6 @@
 uuid: c22a8545-e454-4307-8082-17dec5d99b93
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - field.storage.budova_real_estate.field_chislo_kimnat
@@ -36,7 +36,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'Real estate'
+      title: Нерухомість
       fields:
         id:
           id: id
@@ -1169,7 +1169,186 @@ display:
       empty: {  }
       sorts: {  }
       arguments: {  }
-      filters: {  }
+      filters:
+        field_status_aktivnosti_value:
+          id: field_status_aktivnosti_value
+          table: budova_real_estate__field_status_aktivnosti
+          field: field_status_aktivnosti_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: list_field
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_status_aktivnosti_value_op
+            label: 'Статус активності '
+            description: ''
+            use_operator: false
+            operator: field_status_aktivnosti_value_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_status_aktivnosti_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+              buyer: '0'
+              seller: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+        field_stan_ob_iekta_value:
+          id: field_stan_ob_iekta_value
+          table: budova_real_estate__field_stan_ob_iekta
+          field: field_stan_ob_iekta_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: list_field
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_stan_ob_iekta_value_op
+            label: "Стан об'єкту "
+            description: ''
+            use_operator: false
+            operator: field_stan_ob_iekta_value_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_stan_ob_iekta_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+              buyer: '0'
+              seller: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+        field_vid_neruhomosti_value:
+          id: field_vid_neruhomosti_value
+          table: budova_real_estate__field_vid_neruhomosti
+          field: field_vid_neruhomosti_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: list_field
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_vid_neruhomosti_value_op
+            label: 'Вид нерухомості '
+            description: ''
+            use_operator: false
+            operator: field_vid_neruhomosti_value_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_vid_neruhomosti_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+              buyer: '0'
+              seller: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+        field_kontakt_value:
+          id: field_kontakt_value
+          table: budova_real_estate__field_kontakt
+          field: field_kontakt_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: string
+          operator: word
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_kontakt_value_op
+            label: 'Контакти особи'
+            description: ''
+            use_operator: false
+            operator: field_kontakt_value_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_kontakt_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+              buyer: '0'
+              seller: '0'
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
       style:
         type: table
         options:
@@ -1212,6 +1391,7 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
       tags:
         - 'config:field.storage.budova_real_estate.field_chislo_kimnat'
@@ -1242,6 +1422,7 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
       tags:
         - 'config:field.storage.budova_real_estate.field_chislo_kimnat'

@@ -1,5 +1,7 @@
 <?php
 
+use Drupal\Core\Form\FormStateInterface;
+
 /**
  * Implements hook_form_alter().
  */
@@ -14,34 +16,39 @@ function budova_form_budova_real_estate_add_form_alter(&$form, \Drupal\Core\Form
   $z = 0;
 
   $triggering_element = $form_state->getTriggeringElement();
+  $parent_field_name = 'field_rayon_mista_test';
+  $child_field_name = 'field_pidrayon_mista_test';
 
   if ($triggering_element) {
-    if ($triggering_element["#field_name"] == 'field_rayon_mista_test') {
+    if ($triggering_element["#field_name"] == $parent_field_name) {
       $selected_rayon_city_id = $triggering_element["#value"];
 
-      foreach ($form["field_pidrayon_mista_test"]["widget"]["#options"] as $key => $option) {
+
+      foreach ($form[$child_field_name]["widget"]["#options"] as $key => $option) {
        $taxonomy_entity =  \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($key);
        if ($taxonomy_entity) {
          $field_rayon = $taxonomy_entity->field_rayon->target_id;
-
-         if ($field_rayon == $selected_rayon_city_id) {
-           $form["field_pidrayon_mista_test"]["widget"]["#options"][$key] = 'ololo';
+          if ($field_rayon !== $selected_rayon_city_id) {
+            unset($form[$child_field_name]["widget"]["#options"][$key]);
          }
        }
-
       }
-
-
     }
-    $form["field_pidrayon_mista_test"]["widget"]["#options"] = [];
+//    $form["field_pidrayon_mista_test"]["widget"]["#options"] = [];
 
   }
 
-  $form['field_rayon_mista_test']['widget']['#ajax'] = [
+
+  $form[$child_field_name]['#attributes']['id'] = $child_field_name . '__id';
+  $form[$parent_field_name]['widget']['#ajax'] = [
     'callback' => 'budova_reloadCity',
-    'event' => 'change',
+    'wrapper' => $form[$child_field_name]['#attributes']['id'],
   ];
-  //  $form["field_pidrayon_mista_test"]["widget"]["#options"][39] =  "ololo";
+
+
+  $form['field_pidrayon_mista_test']['#prefix'] = "<div id='____ololol_wrapper'>";
+  $form['field_pidrayon_mista_test']['#suffix'] = '</div>';
+
 }
 
   function budova_reloadCity(array $form, FormStateInterface $form_state) {

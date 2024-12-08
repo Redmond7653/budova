@@ -920,37 +920,132 @@ display:
       sorts: {  }
       arguments: {  }
       filters:
-        combine:
-          id: combine
-          table: views
-          field: combine
+        field_status_zayavki_value:
+          id: field_status_zayavki_value
+          table: budova_applications__field_status_zayavki
+          field: field_status_zayavki_value
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: combine
-          operator: '='
-          value: ''
+          plugin_id: list_field
+          operator: or
+          value: {  }
           group: 1
           exposed: true
           expose:
-            operator_id: combine_op
-            label: Пошук
+            operator_id: field_status_zayavki_value_op
+            label: 'Статус заявкі '
             description: ''
             use_operator: false
-            operator: combine_op
+            operator: field_status_zayavki_value_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: combine
+            identifier: field_status_zayavki_value
             required: false
-            remember: true
+            remember: false
             multiple: false
             remember_roles:
-              content_editor: content_editor
-              administrator: administrator
-              buyer: buyer
-              seller: seller
+              authenticated: authenticated
               anonymous: '0'
-              authenticated: '0'
+              content_editor: '0'
+              administrator: '0'
+              buyer: '0'
+              seller: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+        field_rayon_mista_value:
+          id: field_rayon_mista_value
+          table: budova_applications__field_rayon_mista
+          field: field_rayon_mista_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: list_field
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_rayon_mista_value_op
+            label: 'Район міста '
+            description: ''
+            use_operator: false
+            operator: field_rayon_mista_value_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_rayon_mista_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+              buyer: '0'
+              seller: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+        field_cina_value:
+          id: field_cina_value
+          table: budova_applications__field_cina
+          field: field_cina_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: numeric
+          operator: '='
+          value:
+            min: ''
+            max: ''
+            value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_cina_value_op
+            label: Ціна
+            description: ''
+            use_operator: false
+            operator: field_cina_value_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_cina_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+              buyer: '0'
+              seller: '0'
+            min_placeholder: ''
+            max_placeholder: ''
             placeholder: ''
           is_grouped: false
           group_info:
@@ -964,20 +1059,94 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          fields:
-            id: id
-            created: created
-            changed: changed
-            field_status_zayavki: field_status_zayavki
-            field_minimalne_chislo_kimnat: field_minimalne_chislo_kimnat
-            field_rayon_mista: field_rayon_mista
-            field_cina: field_cina
-            field_opis: field_opis
-            field_kontakt: field_kontakt
-            field_rieltor: field_rieltor
-            field_tip_osobi: field_tip_osobi
-            field_zv_yazano_z: field_zv_yazano_z
-            field_data_stvorennya: field_data_stvorennya
+        field_opis_value:
+          id: field_opis_value
+          table: budova_applications__field_opis
+          field: field_opis_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: string
+          operator: word
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_opis_value_op
+            label: 'Опис '
+            description: ''
+            use_operator: false
+            operator: field_opis_value_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_opis_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+              buyer: '0'
+              seller: '0'
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        field_kontakt_value:
+          id: field_kontakt_value
+          table: budova_applications__field_kontakt
+          field: field_kontakt_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: string
+          operator: word
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_kontakt_value_op
+            label: 'Контакти особи'
+            description: ''
+            use_operator: false
+            operator: field_kontakt_value_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_kontakt_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+              buyer: '0'
+              seller: '0'
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
       style:
         type: table
         options:

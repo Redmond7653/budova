@@ -2,6 +2,8 @@ uuid: 3e1ab2b4-3c2f-4ef7-9a95-5bc57aed3025
 langcode: en
 status: true
 dependencies:
+  module:
+    - system
   theme:
     - olivero
 _core:
@@ -17,4 +19,8 @@ settings:
   label: Клієнти
   label_display: visible
   provider: core
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /clients
