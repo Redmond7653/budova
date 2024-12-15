@@ -63,7 +63,7 @@ props:
         type: ['string', 'null']
       default: []
       description: 'Additional Bootstrap utility or custom CSS classes to be applied to the image.'
-    attributes:
+    image_attributes:
       type: Drupal\Core\Template\Attribute
       title: HTML Attributes
       description: 'HTML attributes for the image tag. They are represented as a Drupal Attribute object.'

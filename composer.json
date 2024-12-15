@@ -17,6 +17,7 @@
     "require": {
         "composer/installers": "^2.0",
         "drupal/admin_toolbar": "^3.5",
+        "drupal/bootstrap5": "^4.0",
         "drupal/core-composer-scaffold": "^10.1",
         "drupal/core-project-message": "^10.1",
         "drupal/core-recommended": "^10.1",
@@ -24,7 +25,7 @@
         "drupal/devel": "^5.3",
         "drupal/entity": "^1.5",
         "drupal/inline_entity_form": "^3.0@RC",
-        "drupal/radix": "^6.0@RC",
+        "drupal/radix": "6.0.x-dev@dev",
         "drupal/search_api": "^1.37",
         "drupal/tara": "^11.0",
         "drush/drush": "^13.3"

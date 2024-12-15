@@ -1,0 +1,22 @@
+uuid: 30905bff-5480-4f6e-8af0-49b4ab8402cf
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - budova_theme
+_core:
+  default_config_hash: g_7RtzTtFdd8T2I7QfGbhuPqTmyKDNZzZvxNf5ixefc
+id: budova_theme_content
+theme: budova_theme
+region: content
+weight: -5
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

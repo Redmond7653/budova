@@ -28,3 +28,4 @@ hidden:
   field_image: true
   field_seller: true
   field_tags: true
+  search_api_excerpt: true

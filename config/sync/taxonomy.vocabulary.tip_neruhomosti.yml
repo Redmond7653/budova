@@ -1,0 +1,9 @@
+uuid: 2a1cd1e2-9eb1-4f2e-b786-ed38658b6cd8
+langcode: en
+status: true
+dependencies: {  }
+name: 'Тип нерухомості'
+vid: tip_neruhomosti
+description: null
+weight: 0
+new_revision: false

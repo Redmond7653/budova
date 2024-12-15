@@ -5,7 +5,7 @@ description: Figure component with alignment options
 props:
   type: object
   properties:
-    attributes:
+    figure_attributes:
       type: Drupal\Core\Template\Attribute
     figure_utility_classes:
       type: array

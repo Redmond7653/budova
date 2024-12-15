@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ac008b146a8fe41f6a84bdf123500360",
+    "content-hash": "d4e5d9e1b9394f27414044cb13ef87d2",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1505,6 +1505,56 @@
             }
         },
         {
+            "name": "drupal/bootstrap5",
+            "version": "4.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/bootstrap5.git",
+                "reference": "4.0.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/bootstrap5-4.0.3.zip",
+                "reference": "4.0.3",
+                "shasum": "3181f76d9f080396931cd5a5643ad710f7bfdad7"
+            },
+            "require": {
+                "drupal/core": "^10.1 || ^11.0"
+            },
+            "type": "drupal-theme",
+            "extra": {
+                "drupal": {
+                    "version": "4.0.3",
+                    "datestamp": "1723049588",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Vladimir Roudakov (vladimiraus)",
+                    "homepage": "https://www.drupal.org/u/vladimiraus",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "vladimiraus",
+                    "homepage": "https://www.drupal.org/user/673120"
+                }
+            ],
+            "description": "Master theme using Bootstrap 5: powerful front-end framework for faster and easier web development.",
+            "homepage": "https://www.drupal.org/project/bootstrap5",
+            "support": {
+                "source": "https://git.drupalcode.org/project/bootstrap5",
+                "issues": "https://www.drupal.org/project/issues/bootstrap5"
+            }
+        },
+        {
             "name": "drupal/core",
             "version": "10.3.10",
             "source": {
@@ -2122,17 +2172,11 @@
         },
         {
             "name": "drupal/radix",
-            "version": "6.0.0-rc6",
+            "version": "dev-6.0.x",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/radix.git",
-                "reference": "6.0.0-rc6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/radix-6.0.0-rc6.zip",
-                "reference": "6.0.0-rc6",
-                "shasum": "bdf5fca85f939d5c25f44d491627bd5ac833e62a"
+                "reference": "15244b15ea7cf9101c575cbeafede3e2d6eb9ea9"
             },
             "require": {
                 "drupal/core": "^10.3 || ^11"
@@ -2142,12 +2186,15 @@
             },
             "type": "drupal-theme",
             "extra": {
+                "branch-alias": {
+                    "dev-6.0.x": "6.0.x-dev"
+                },
                 "drupal": {
-                    "version": "6.0.0-rc6",
-                    "datestamp": "1729163924",
+                    "version": "6.0.0-rc6+2-dev",
+                    "datestamp": "1732174562",
                     "security-coverage": {
                         "status": "not-covered",
-                        "message": "RC releases are not covered by Drupal security advisories."
+                        "message": "Dev releases are not covered by Drupal security advisories."
                     }
                 },
                 "drush": {
@@ -7207,7 +7254,7 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "drupal/inline_entity_form": 5,
-        "drupal/radix": 5
+        "drupal/radix": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

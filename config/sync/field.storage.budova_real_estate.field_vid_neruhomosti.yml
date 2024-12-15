@@ -1,30 +1,17 @@
-uuid: 1ae9b9cd-7472-423b-bec4-4ef8d265404c
+uuid: 6c7357b5-aad2-4ab9-891c-975a11dfc1be
 langcode: en
 status: true
 dependencies:
   module:
     - budova
-    - options
+    - taxonomy
 id: budova_real_estate.field_vid_neruhomosti
 field_name: field_vid_neruhomosti
 entity_type: budova_real_estate
-type: list_string
+type: entity_reference
 settings:
-  allowed_values:
-    -
-      value: privatniy_sektor
-      label: 'Приватний сектор'
-    -
-      value: zemelna_dilyanka
-      label: 'Земельна ділянка'
-    -
-      value: kvartiri
-      label: Квартири
-    -
-      value: komerciyna_neruhomist
-      label: 'Комерційна нерухомість'
-  allowed_values_function: ''
-module: options
+  target_type: taxonomy_term
+module: core
 locked: false
 cardinality: 1
 translatable: true

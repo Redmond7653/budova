@@ -76,7 +76,7 @@
   ]|merge(card_utility_classes ?: [])|merge(card_border)
 %}
 
-{% set card_attributes = create_attribute() %}
+{% set card_attributes = card_attributes ?: create_attribute() %}
 {% set card_body_attributes = create_attribute() %}
 {% set card_text_attributes = create_attribute() %}
 {% set card_title_attributes = create_attribute() %}

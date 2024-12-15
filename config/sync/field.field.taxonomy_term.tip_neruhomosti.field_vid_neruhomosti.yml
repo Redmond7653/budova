@@ -1,0 +1,29 @@
+uuid: 6030f59f-e3c5-4b18-80f1-d0d8c3ace54a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_vid_neruhomosti
+    - taxonomy.vocabulary.tip_neruhomosti
+    - taxonomy.vocabulary.vid_neruhomosti
+id: taxonomy_term.tip_neruhomosti.field_vid_neruhomosti
+field_name: field_vid_neruhomosti
+entity_type: taxonomy_term
+bundle: tip_neruhomosti
+label: 'Вид нерухомості'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      vid_neruhomosti: vid_neruhomosti
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

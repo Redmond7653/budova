@@ -1,0 +1,38 @@
+name: budova_theme
+description: ''
+screenshot: screenshot.png
+'alt text': 'budova_theme theme screenshot'
+core_version_requirement: ^10
+version: 1.0.0
+engine: twig
+type: theme
+'base theme': radix
+starterkit: true
+dependencies:
+  - 'drupal:serialization'
+'interface translation project': budova_theme
+'interface translation server pattern': themes/custom/budova_theme/translations/%language.po
+regions:
+  navbar_branding: 'Navbar branding'
+  navbar_left: 'Navbar left'
+  navbar_right: 'Navbar right'
+  header: Header
+  content: Content
+  page_bottom: 'Page bottom'
+  footer: Footer
+libraries:
+  - budova_theme/style
+ckeditor5-stylesheets:
+  - build/css/main.style.css
+libraries-extend:
+  core/drupal.ajax:
+    - budova_theme/drupal.ajax
+  core/drupal.checkbox:
+    - budova_theme/drupal.checkbox
+  core/drupal.message:
+    - budova_theme/drupal.message
+  core/drupal.progress:
+    - budova_theme/drupal.progress
+  clientside_validation_jquery/cv.jquery.validate:
+    - budova_theme/jquery.validate
+generator: 'radix_starterkit:1.0.0'

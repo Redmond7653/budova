@@ -1,0 +1,5 @@
+# Schema for the configuration files of the budova_theme theme.
+
+budova_theme.settings:
+  type: theme_settings
+  label: 'budova_theme settings'

@@ -1,0 +1,31 @@
+uuid: 41ddd9ef-6b55-4465-b045-e1bdf207f2de
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.tip_neruhomosti.field_vid_neruhomosti
+    - taxonomy.vocabulary.tip_neruhomosti
+  module:
+    - text
+id: taxonomy_term.tip_neruhomosti.default
+targetEntityType: taxonomy_term
+bundle: tip_neruhomosti
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_vid_neruhomosti:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true

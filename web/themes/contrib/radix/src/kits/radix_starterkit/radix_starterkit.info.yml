@@ -3,7 +3,7 @@ description: "radix_starterkit theme based on <a href='https://www.drupal.org/pr
 screenshot: screenshot.png
 'alt text': 'radix_starterkit theme screenshot'
 core_version_requirement: ^10.3 || ^11
-# version: '1.0.0'
+version: '1.0.0'
 engine: twig
 type: theme
 base theme: radix
@@ -44,8 +44,3 @@ libraries-extend:
     - radix_starterkit/drupal.progress
   clientside_validation_jquery/cv.jquery.validate:
     - radix_starterkit/jquery.validate
-
-# Information added by Drupal.org packaging script on 2024-10-17
-version: '6.0.0-rc6'
-project: 'radix'
-datestamp: 1729163927

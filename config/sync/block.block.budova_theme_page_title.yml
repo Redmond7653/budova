@@ -1,0 +1,20 @@
+uuid: e39bd0c2-228a-4f91-936d-ce99d531b8ac
+langcode: en
+status: true
+dependencies:
+  theme:
+    - budova_theme
+_core:
+  default_config_hash: 8WT3LqN3SKO2kQhC5CarLluDcx17zets489YHD7rIS8
+id: budova_theme_page_title
+theme: budova_theme
+region: header
+weight: -2
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

@@ -22,17 +22,18 @@
 #}
 {% apply spaceless %}
 
-{% set fallback_attributes = create_attribute() %}
-{% set fallback_attributes = fallback_attributes
-  .setAttribute('src', src ?: '')
-  .setAttribute('alt', alt ?: '')
-  .setAttribute('title', title ?: '')
-  .setAttribute('width', width ?: '')
-  .setAttribute('height', height ?: '')
-  .setAttribute('loading', loading ?: 'auto')  
-%}
+{% set image_attributes = image_attributes ?: create_attribute() %}
 
-{% set image_attributes = fallback_attributes.merge(attributes ?: []) %}
+{% if src %}
+  {% set image_attributes = image_attributes
+    .setAttribute('src', src ?: '')
+    .setAttribute('alt', alt ?: '')
+    .setAttribute('title', title ?: '')
+    .setAttribute('width', width ?: '')
+    .setAttribute('height', height ?: '')
+    .setAttribute('loading', loading ?: 'auto')
+  %}
+{% endif %}
 
 {%
   set align_classes = {

@@ -6,6 +6,10 @@ group: Cards
 props:
   type: object
   properties:
+    card_attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Card Attributes
+      description: Attributes for the card.
     card_body:
       type: string
       title: Card Body

@@ -12,7 +12,9 @@
 
 {% set figure_classes = ['figure', align ? 'text-' ~ align]|merge(figure_utility_classes ?: []) %}
 
-<figure {{ attributes.addClass(figure_classes) }}>
+{% set figure_attributes = figure_attributes ?: create_attribute() %}
+
+<figure {{ figure_attributes.addClass(figure_classes) }}>
   {% block image %}
     {{ image }}
   {% endblock %}

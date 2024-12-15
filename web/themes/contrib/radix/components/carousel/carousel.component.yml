@@ -5,7 +5,7 @@ description: 'Carousel component, see Bootstrap Documentation: https://getbootst
 props:
   type: object
   properties:
-    carousel_theme: 
+    carousel_theme:
       type: string
       title: Theme
       description: The theme of the carousel.
@@ -13,12 +13,12 @@ props:
         - dark
         - light
       default: light
-    show_carousel_control:  
+    show_carousel_control:
       type: boolean
       title: Show Carousel Control
       description: Show carousel control.
       default: true
-    show_carousel_indicator: 
+    show_carousel_indicator:
       type: boolean
       title: Show Carousel Indicator
       description: Show carousel indicator.
@@ -38,7 +38,7 @@ props:
     id:
       type: ['string']
       title: ID
-      description: Unique ID for the accordion component.
+      description: Unique ID for the carousel component.
       default: 0
     carousel_utility_classes:
       type: ['string', 'array']
@@ -62,7 +62,7 @@ props:
       type: Drupal\Core\Template\Attribute
       title: Carousel Attributes
       description: Attributes for the carousel.
-    media_attributes: 
+    media_attributes:
       type: Drupal\Core\Template\Attribute
       title: Media Attributes
       description: Attributes for the carousel media.
@@ -75,7 +75,7 @@ props:
       title: Items
       description: An array of items inside the carousel. Each item is an object that has caption_title, caption_title_tag, carousel_caption, caption_content_tag, image_src, image_alt.
       default: [{}]
-      item: 
+      item:
         type: object
         properties:
           caption_title:
@@ -112,7 +112,7 @@ props:
             type: object
             title: Media
             description: Media object for the carousel item.
-          interval: 
+          interval:
             type: integer
             title: Interval
             description: The amount of time to delay between automatically cycling an item. If false, carousel will not automatically cycle.

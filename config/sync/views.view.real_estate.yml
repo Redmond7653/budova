@@ -1,6 +1,6 @@
 uuid: c22a8545-e454-4307-8082-17dec5d99b93
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - field.storage.budova_real_estate.field_chislo_kimnat
@@ -12,7 +12,6 @@ dependencies:
     - field.storage.budova_real_estate.field_stan_ob_iekta
     - field.storage.budova_real_estate.field_status_aktivnosti
     - field.storage.budova_real_estate.field_status_ob_iektiv_na_rinku
-    - field.storage.budova_real_estate.field_vid_neruhomosti
     - field.storage.budova_real_estate.field_vid_osobi
     - field.storage.budova_real_estate.field_vidnositsya_do
     - field.storage.budova_real_estate.field_vidpovidalniy
@@ -421,68 +420,6 @@ display:
           settings:
             timezone_override: ''
             format_type: medium
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_vid_neruhomosti:
-          id: field_vid_neruhomosti
-          table: budova_real_estate__field_vid_neruhomosti
-          field: field_vid_neruhomosti
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: 'Вид нерухомості'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: list_default
-          settings: {  }
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -1403,7 +1340,6 @@ display:
         - 'config:field.storage.budova_real_estate.field_stan_ob_iekta'
         - 'config:field.storage.budova_real_estate.field_status_aktivnosti'
         - 'config:field.storage.budova_real_estate.field_status_ob_iektiv_na_rinku'
-        - 'config:field.storage.budova_real_estate.field_vid_neruhomosti'
         - 'config:field.storage.budova_real_estate.field_vid_osobi'
         - 'config:field.storage.budova_real_estate.field_vidnositsya_do'
         - 'config:field.storage.budova_real_estate.field_vidpovidalniy'
@@ -1434,7 +1370,6 @@ display:
         - 'config:field.storage.budova_real_estate.field_stan_ob_iekta'
         - 'config:field.storage.budova_real_estate.field_status_aktivnosti'
         - 'config:field.storage.budova_real_estate.field_status_ob_iektiv_na_rinku'
-        - 'config:field.storage.budova_real_estate.field_vid_neruhomosti'
         - 'config:field.storage.budova_real_estate.field_vid_osobi'
         - 'config:field.storage.budova_real_estate.field_vidnositsya_do'
         - 'config:field.storage.budova_real_estate.field_vidpovidalniy'

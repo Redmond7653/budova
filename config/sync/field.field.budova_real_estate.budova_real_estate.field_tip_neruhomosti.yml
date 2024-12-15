@@ -1,12 +1,12 @@
-uuid: 0ba67134-9b7d-470b-9564-69cf93b5bcae
+uuid: 1755cf65-ecc4-401c-bd0b-84e701a56ff5
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.budova_real_estate.field_tip_neruhomosti
+    - taxonomy.vocabulary.tip_neruhomosti
   module:
     - budova
-    - options
 id: budova_real_estate.budova_real_estate.field_tip_neruhomosti
 field_name: field_tip_neruhomosti
 entity_type: budova_real_estate
@@ -17,5 +17,14 @@ required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
-field_type: list_string
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      tip_neruhomosti: tip_neruhomosti
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

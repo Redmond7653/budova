@@ -38,7 +38,6 @@ dependencies:
     - budova
     - datetime
     - options
-    - text
     - user
 id: budova_real_estate.budova_real_estate.default
 targetEntityType: budova_real_estate
@@ -236,11 +235,12 @@ content:
     weight: 50
     region: content
   field_tip_neruhomosti:
-    type: list_default
+    type: entity_reference_label
     label: above
-    settings: {  }
+    settings:
+      link: true
     third_party_settings: {  }
-    weight: 30
+    weight: 55
     region: content
   field_valyuta:
     type: list_default
@@ -261,11 +261,12 @@ content:
     weight: 47
     region: content
   field_vid_neruhomosti:
-    type: list_default
+    type: entity_reference_label
     label: above
-    settings: {  }
+    settings:
+      link: true
     third_party_settings: {  }
-    weight: 29
+    weight: 54
     region: content
   field_vid_osobi:
     type: list_default

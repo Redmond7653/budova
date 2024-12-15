@@ -118,19 +118,19 @@ final class RealEstate extends ContentEntityBase implements RealEstateInterface 
       ])
       ->setDisplayConfigurable('view', TRUE);
 
-    $fields['description'] = BaseFieldDefinition::create('text_long')
-      ->setLabel(t('Description'))
-      ->setDisplayOptions('form', [
-        'type' => 'text_textarea',
-        'weight' => 10,
-      ])
-      ->setDisplayConfigurable('form', TRUE)
-      ->setDisplayOptions('view', [
-        'type' => 'text_default',
-        'label' => 'above',
-        'weight' => 10,
-      ])
-      ->setDisplayConfigurable('view', TRUE);
+//    $fields['description'] = BaseFieldDefinition::create('text_long')
+//      ->setLabel(t('Description'))
+//      ->setDisplayOptions('form', [
+//        'type' => 'text_textarea',
+//        'weight' => 10,
+//      ])
+//      ->setDisplayConfigurable('form', TRUE)
+//      ->setDisplayOptions('view', [
+//        'type' => 'text_default',
+//        'label' => 'above',
+//        'weight' => 10,
+//      ])
+//      ->setDisplayConfigurable('view', TRUE);
 
     $fields['uid'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Author'))

@@ -1,6 +1,7 @@
 <?php
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
 
 /**
  * Implements hook_form_alter().
@@ -16,47 +17,109 @@ function budova_form_budova_real_estate_add_form_alter(&$form, \Drupal\Core\Form
   $z = 0;
 
   $triggering_element = $form_state->getTriggeringElement();
-  $parent_field_name = 'field_rayon_mista_test';
-  $child_field_name = 'field_pidrayon_mista_test';
+
+  $parent_city_field_name = 'field_rayon_mista_test';
+  $child_city_field_name = 'field_pidrayon_mista_test';
+  $parent_type_real_estate_field_name = 'field_vid_neruhomosti';
+  $child_type_real_estate_field_name = 'field_tip_neruhomosti';
 
   if ($triggering_element) {
-    if ($triggering_element["#field_name"] == $parent_field_name) {
+
+    if ($triggering_element["#field_name"] == $parent_city_field_name) {
       $selected_rayon_city_id = $triggering_element["#value"];
-
-
-      foreach ($form[$child_field_name]["widget"]["#options"] as $key => $option) {
+      foreach ($form[$child_city_field_name]["widget"]["#options"] as $key => $option) {
        $taxonomy_entity =  \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($key);
        if ($taxonomy_entity) {
          $field_rayon = $taxonomy_entity->field_rayon->target_id;
           if ($field_rayon !== $selected_rayon_city_id) {
-            unset($form[$child_field_name]["widget"]["#options"][$key]);
+            unset($form[$child_city_field_name]["widget"]["#options"][$key]);
          }
        }
       }
+      $selected_city_rayon = TRUE;
+      $y = 0;
+
     }
-//    $form["field_pidrayon_mista_test"]["widget"]["#options"] = [];
+
+
+
+    if ($triggering_element["#field_name"] == $parent_type_real_estate_field_name) {
+      $selected_type_real_estate_id = $triggering_element["#value"];
+
+      foreach ($form[$child_type_real_estate_field_name]["widget"]["#options"] as $key => $option) {
+        $taxonomy_entity =  \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($key);
+        if ($taxonomy_entity) {
+          $type_real_estate_field_id = $taxonomy_entity->field_vid_neruhomosti->target_id;
+          if ($type_real_estate_field_id !== $selected_type_real_estate_id) {
+            unset($form[$child_type_real_estate_field_name]["widget"]["#options"][$key]);
+          }
+        }
+      }
+
+      $selected_type_real_estate = TRUE;
+    }
 
   }
 
+//if ($triggering_element["#field_name"] == $parent_city_field_name) {
 
-  $form[$child_field_name]['#attributes']['id'] = $child_field_name . '__id';
-  $form[$parent_field_name]['widget']['#ajax'] = [
-    'callback' => 'budova_reloadCity',
-    'wrapper' => $form[$child_field_name]['#attributes']['id'],
-  ];
+  $form[$child_city_field_name]['#attributes']['id'] = $child_city_field_name . '__id';
+  $form[$child_type_real_estate_field_name]['#attributes']['id'] = $child_type_real_estate_field_name . '__id';
 
+  if ($selected_city_rayon !== FALSE) {
+    $form[$parent_city_field_name]['widget']['#ajax'] = [
+      'callback' => 'budova_reloadCity',
+      'wrapper' => $form[$child_city_field_name]['#attributes']['id'],
+    ];
+  }
+
+  if ($selected_type_real_estate !== FALSE) {
+    $form[$parent_type_real_estate_field_name]['widget']['#ajax'] = [
+      'callback' => 'budova_reloadType',
+      'wrapper' => $form[$child_type_real_estate_field_name]['#attributes']['id'],
+    ];
+  }
+
+//}
 
   $form['field_pidrayon_mista_test']['#prefix'] = "<div id='____ololol_wrapper'>";
   $form['field_pidrayon_mista_test']['#suffix'] = '</div>';
+
+
+  $form['actions']['submit']['#submit'][] = 'budova_real_estate_submit_do_redirect';
 
 }
 
   function budova_reloadCity(array $form, FormStateInterface $form_state) {
     return $form["field_pidrayon_mista_test"];
-//
-////    $response = new AjaxResponse();
-////    $response->addCommand(new ReplaceCommand('#edit-field-pidrayon-mista-test', $form['field_rayon_mista_test']));
-////    return $response;
   }
 
+function budova_reloadType(array $form, FormStateInterface $form_state) {
+  return $form["field_tip_neruhomosti"];
+}
 
+
+function budova_real_estate_submit_do_redirect($form, &$form_state) {
+
+  $url = Url::fromRoute('view.real_estate.page_real_estate');
+  $form_state->setRedirectUrl($url);
+
+}
+
+function budova_form_budova_applications_add_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  $form['actions']['submit']['#submit'][] = 'budova_applications_submit_do_redirect';
+}
+
+function budova_applications_submit_do_redirect($form, &$form_state) {
+  $url = Url::fromRoute('view.applications.applications_page');
+  $form_state->setRedirectUrl($url);
+}
+
+function budova_form_user_register_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  $form['actions']['submit']['#submit'][] = 'budova_users_submit_do_redirect';
+}
+
+function budova_users_submit_do_redirect($form, &$form_state) {
+  $url = Url::fromRoute('view.clients_with_search.page_clients_with_search');
+  $form_state->setRedirectUrl($url);
+}

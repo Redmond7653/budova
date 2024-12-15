@@ -1,0 +1,22 @@
+uuid: 5dc4d167-08f7-4606-a285-c3e893a3d2d0
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - budova_theme
+_core:
+  default_config_hash: ST7JuaMI4_2nJmUmxnPLTqIDeS-LHTStiFr7KwhayHE
+id: budova_theme_breadcrumbs
+theme: budova_theme
+region: header
+weight: -5
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }
