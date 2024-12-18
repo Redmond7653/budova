@@ -7,7 +7,9 @@ dependencies:
     - field.field.budova_real_estate.budova_real_estate.field_chislo_kimnat
     - field.field.budova_real_estate.budova_real_estate.field_data_ostannogo_kontaktu
     - field.field.budova_real_estate.budova_real_estate.field_dzherela_nadhodzhennya_ob
+    - field.field.budova_real_estate.budova_real_estate.field_kategoriya_uchastku
     - field.field.budova_real_estate.budova_real_estate.field_kod
+    - field.field.budova_real_estate.budova_real_estate.field_konf
     - field.field.budova_real_estate.budova_real_estate.field_kontakt
     - field.field.budova_real_estate.budova_real_estate.field_material_stin
     - field.field.budova_real_estate.budova_real_estate.field_metro
@@ -16,6 +18,7 @@ dependencies:
     - field.field.budova_real_estate.budova_real_estate.field_pidrayon_mista
     - field.field.budova_real_estate.budova_real_estate.field_planuvannya_kvartiri
     - field.field.budova_real_estate.budova_real_estate.field_ploshcha_kuhni_m2
+    - field.field.budova_real_estate.budova_real_estate.field_ploshcha_uchastku_ga
     - field.field.budova_real_estate.budova_real_estate.field_poverh
     - field.field.budova_real_estate.budova_real_estate.field_rayon_mista
     - field.field.budova_real_estate.budova_real_estate.field_stan_ob_iekta
@@ -71,13 +74,19 @@ content:
     third_party_settings: {  }
   field_data_ostannogo_kontaktu:
     type: datetime_default
-    weight: 32
+    weight: 35
     region: content
     settings: {  }
     third_party_settings: {  }
   field_dzherela_nadhodzhennya_ob:
     type: options_select
     weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_kategoriya_uchastku:
+    type: options_select
+    weight: 29
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -89,9 +98,17 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_konf:
+    type: string_textfield
+    weight: 28
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_kontakt:
     type: string_textfield
-    weight: 34
+    weight: 37
     region: content
     settings:
       size: 60
@@ -118,7 +135,7 @@ content:
     third_party_settings: {  }
   field_opis:
     type: string_textarea
-    weight: 28
+    weight: 31
     region: content
     settings:
       rows: 5
@@ -143,6 +160,13 @@ content:
     settings:
       placeholder: ''
     third_party_settings: {  }
+  field_ploshcha_uchastku_ga:
+    type: number
+    weight: 27
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
   field_poverh:
     type: number
     weight: 19
@@ -158,7 +182,7 @@ content:
     third_party_settings: {  }
   field_stan_ob_iekta:
     type: options_select
-    weight: 27
+    weight: 30
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -188,7 +212,7 @@ content:
     third_party_settings: {  }
   field_tip_kontaktu:
     type: options_select
-    weight: 33
+    weight: 36
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -200,13 +224,13 @@ content:
     third_party_settings: {  }
   field_valyuta:
     type: options_select
-    weight: 29
+    weight: 32
     region: content
     settings: {  }
     third_party_settings: {  }
   field_vartist:
     type: number
-    weight: 30
+    weight: 33
     region: content
     settings:
       placeholder: ''
@@ -235,7 +259,7 @@ content:
     third_party_settings: {  }
   field_vidpovidalniy:
     type: options_select
-    weight: 31
+    weight: 34
     region: content
     settings: {  }
     third_party_settings: {  }

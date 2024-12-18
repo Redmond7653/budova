@@ -40,7 +40,9 @@ function budova_form_budova_real_estate_add_form_alter(&$form, \Drupal\Core\Form
        }
       }
       $selected_city_rayon = TRUE;
-      $y = 0;
+
+
+
 
     }
 
@@ -60,11 +62,17 @@ function budova_form_budova_real_estate_add_form_alter(&$form, \Drupal\Core\Form
       }
 
       $selected_type_real_estate = TRUE;
+
+
     }
 
   }
 
-//if ($triggering_element["#field_name"] == $parent_city_field_name) {
+
+
+
+
+  //if ($triggering_element["#field_name"] == $parent_city_field_name) {
 
   $form[$child_city_field_name]['#attributes']['id'] = $child_city_field_name . '__id';
   $form[$child_type_real_estate_field_name]['#attributes']['id'] = $child_type_real_estate_field_name . '__id';
@@ -83,7 +91,140 @@ function budova_form_budova_real_estate_add_form_alter(&$form, \Drupal\Core\Form
     ];
   }
 
-//}
+  $value_type_real_estate = $triggering_element["#value"];
+
+  // Hide field 'Число кімнат' when picking select 'Вид нерухомості -> Земельна ділянка || Комерційна нерухомість'
+
+    $form['field_chislo_kimnat']['#states'] = [
+      'invisible' => [
+        [
+        'select[name="field_vid_neruhomosti"]' => ['value' => '7'],
+          ],
+        'or',
+        [
+          'select[name="field_vid_neruhomosti"]' => ['value' => '9'],
+        ]
+      ]
+    ];
+
+  // Hide field 'Поверх' when picking select 'Вид нерухомості -> Земельна ділянка'
+
+    $form['field_poverh']['#states'] = [
+      'invisible' => [
+        'select[name="field_vid_neruhomosti"]' => ['value' => '7'],
+      ]
+    ];
+
+  // Hide field 'Планування квартир' when picking select 'Вид нерухомості -> Земельна ділянка || Приватний сектор || Комерційна нерухомість'
+
+  $form['field_planuvannya_kvartiri']['#states'] = [
+    'invisible' => [
+      [
+        'select[name="field_vid_neruhomosti"]' => ['value' => '7'],
+
+      ],
+      'or',
+      [
+        'select[name="field_vid_neruhomosti"]' => ['value' => '6']
+      ],
+      'or',
+      [
+        'select[name="field_vid_neruhomosti"]' => ['value' => '9']
+      ],
+    ],
+  ];
+
+  // Hide field 'Матеріал стін' when picking select 'Вид нерухомості -> Земельна ділянка '
+
+    $form['field_material_stin']['#states'] = [
+      'invisible' => [
+        'select[name="field_vid_neruhomosti"]' => ['value' => '7'],
+      ]
+    ];
+
+  // Hide field 'Суміжність кімнат' when picking select 'Вид нерухомості -> Земельна ділянка || Комерційна нерухомість'
+
+    $form['field_sumizhnist_kimnat']['#states'] = [
+      'invisible' => [
+        [
+          'select[name="field_vid_neruhomosti"]' => ['value' => '7'],
+        ],
+        'or',
+        [
+          'select[name="field_vid_neruhomosti"]' => ['value' => '9'],
+        ]
+      ]
+    ];
+
+  // Hide field 'Висота стель' when picking select 'Вид нерухомості -> Земельна ділянка'
+
+  $form['field_visota_stel']['#states'] = [
+    'invisible' => [
+      'select[name="field_vid_neruhomosti"]' => ['value' => '7'],
+    ]
+  ];
+
+  // Hide field 'Загальна площа' when picking select 'Вид нерухомості -> Земельна ділянка'
+
+    $form['field_zagalna_ploshchad_m2']['#states'] = [
+      'invisible' => [
+        'select[name="field_vid_neruhomosti"]' => ['value' => '7'],
+      ]
+    ];
+
+  // Hide field 'Житлова площа' when picking select 'Вид нерухомості -> Земельна ділянка || Комерційна нерухомість'
+
+    $form['field_zhitlova_ploshchal_m2']['#states'] = [
+      'invisible' => [
+        [
+          'select[name="field_vid_neruhomosti"]' => ['value' => '7'],
+        ],
+        'or',
+        [
+          'select[name="field_vid_neruhomosti"]' => ['value' => '9'],
+        ]
+      ]
+    ];
+
+  // Hide field 'Площа кухні' when picking select 'Вид нерухомості -> Земельна ділянка || Комерційна нерухомість'
+
+    $form['field_ploshcha_kuhni_m2']['#states'] = [
+      'invisible' => [
+        [
+          'select[name="field_vid_neruhomosti"]' => ['value' => '7'],
+        ],
+        'or',
+        [
+          'select[name="field_vid_neruhomosti"]' => ['value' => '9'],
+        ]
+      ]
+    ];
+
+  // Hide field 'Площа участку' when picking select 'Вид нерухомості ->  Комерційна нерухомість'
+
+  $form['field_ploshcha_uchastku_ga']['#states'] = [
+    'invisible' => [
+      'select[name="field_vid_neruhomosti"]' => ['value' => '9'],
+    ]
+  ];
+
+  // Hide field 'Конфігурація участку' when picking select 'Вид нерухомості -> Комерційна нерухомість'
+
+  $form['field_konf']['#states'] = [
+    'invisible' => [
+      'select[name="field_vid_neruhomosti"]' => ['value' => '9'],
+    ]
+  ];
+
+  // Hide field 'Категорія участку' when picking select 'Вид нерухомості -> Комерційна нерухомість'
+
+  $form['field_kategoriya_uchastku']['#states'] = [
+    'invisible' => [
+      'select[name="field_vid_neruhomosti"]' => ['value' => '9'],
+    ]
+  ];
+
+
 
   $form['field_pidrayon_mista_test']['#prefix'] = "<div id='____ololol_wrapper'>";
   $form['field_pidrayon_mista_test']['#suffix'] = '</div>';

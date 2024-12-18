@@ -1,0 +1,27 @@
+uuid: 4a8e8dab-d859-4098-a4ec-f4527964266c
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+    - options
+id: budova_real_estate.field_kategoriya_uchastku
+field_name: field_kategoriya_uchastku
+entity_type: budova_real_estate
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: okremiy_dvir
+      label: 'Окремий двір'
+    -
+      value: zagalniy_dvir
+      label: 'Загальний двір'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
