@@ -1,17 +1,17 @@
-uuid: 0e677aa0-5f2c-4eff-8ebe-1001f11f3a1f
+uuid: 413e1fb7-4512-490a-9564-eb87f24bee4b
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.budova_real_estate.field_rayon_mista_test
-    - taxonomy.vocabulary.rayon_mista
+    - field.storage.budova_real_estate.field_pidrayon_mista
+    - taxonomy.vocabulary.pidrayon
   module:
     - budova
-id: budova_real_estate.budova_real_estate.field_rayon_mista_test
-field_name: field_rayon_mista_test
+id: budova_real_estate.budova_real_estate.field_pidrayon_mista
+field_name: field_pidrayon_mista
 entity_type: budova_real_estate
 bundle: budova_real_estate
-label: 'Район міста тест'
+label: 'Підрайон міста'
 description: ''
 required: false
 translatable: false
@@ -21,7 +21,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      rayon_mista: rayon_mista
+      pidrayon: pidrayon
     sort:
       field: name
       direction: asc

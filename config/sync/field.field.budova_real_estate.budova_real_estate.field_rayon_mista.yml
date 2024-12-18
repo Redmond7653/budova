@@ -1,16 +1,16 @@
-uuid: 47636c50-5520-41b7-9bcd-0f48931c81d9
+uuid: e859bec3-13ec-4265-a7fd-92b08ebe6e0d
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.budova_applications.field_rayon_mista
+    - field.storage.budova_real_estate.field_rayon_mista
     - taxonomy.vocabulary.rayon_mista
   module:
     - budova
-id: budova_applications.budova_applications.field_rayon_mista
+id: budova_real_estate.budova_real_estate.field_rayon_mista
 field_name: field_rayon_mista
-entity_type: budova_applications
-bundle: budova_applications
+entity_type: budova_real_estate
+bundle: budova_real_estate
 label: 'Район міста'
 description: ''
 required: false

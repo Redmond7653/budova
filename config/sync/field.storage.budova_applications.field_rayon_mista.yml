@@ -1,24 +1,17 @@
-uuid: 45e6f822-0e86-46a7-b461-6e02b37b2281
+uuid: 00adc147-b0be-4da9-b9f3-5f466f327ca0
 langcode: en
 status: true
 dependencies:
   module:
     - budova
-    - options
+    - taxonomy
 id: budova_applications.field_rayon_mista
 field_name: field_rayon_mista
 entity_type: budova_applications
-type: list_string
+type: entity_reference
 settings:
-  allowed_values:
-    -
-      value: k
-      label: 'Ковельський район'
-    -
-      value: kovel
-      label: Ковель
-  allowed_values_function: ''
-module: options
+  target_type: taxonomy_term
+module: core
 locked: false
 cardinality: 1
 translatable: true

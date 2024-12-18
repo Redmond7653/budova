@@ -1,12 +1,12 @@
-uuid: 9a36be94-9706-47d7-891d-294ea6499509
+uuid: ea08ff86-85d1-4ae1-bc2a-d14b2e16213f
 langcode: en
 status: true
 dependencies:
   module:
     - budova
     - taxonomy
-id: budova_applications.field_tip_neruhomosti
-field_name: field_tip_neruhomosti
+id: budova_applications.field_vid_neruhomosti
+field_name: field_vid_neruhomosti
 entity_type: budova_applications
 type: entity_reference
 settings:

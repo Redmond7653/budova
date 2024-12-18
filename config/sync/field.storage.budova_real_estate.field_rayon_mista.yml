@@ -1,12 +1,12 @@
-uuid: adce9160-a06a-454c-8f8f-dca5c101ae44
+uuid: a1887cc0-d149-4a14-b674-fdc00691f025
 langcode: en
 status: true
 dependencies:
   module:
     - budova
     - taxonomy
-id: budova_real_estate.field_rayon_mista_test
-field_name: field_rayon_mista_test
+id: budova_real_estate.field_rayon_mista
+field_name: field_rayon_mista
 entity_type: budova_real_estate
 type: entity_reference
 settings:

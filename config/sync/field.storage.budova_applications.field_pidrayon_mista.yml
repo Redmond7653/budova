@@ -1,12 +1,12 @@
-uuid: 9a36be94-9706-47d7-891d-294ea6499509
+uuid: 31c9ec42-c1b4-48ad-abe1-d39fae07b5f3
 langcode: en
 status: true
 dependencies:
   module:
     - budova
     - taxonomy
-id: budova_applications.field_tip_neruhomosti
-field_name: field_tip_neruhomosti
+id: budova_applications.field_pidrayon_mista
+field_name: field_pidrayon_mista
 entity_type: budova_applications
 type: entity_reference
 settings:

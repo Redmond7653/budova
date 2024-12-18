@@ -1,6 +1,6 @@
 uuid: c22a8545-e454-4307-8082-17dec5d99b93
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - field.storage.budova_real_estate.field_chislo_kimnat

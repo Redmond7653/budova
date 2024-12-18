@@ -1,17 +1,17 @@
-uuid: ac33a20b-7746-407b-b1ee-31ea66254d2c
+uuid: bb2dbb9f-6461-4423-b0aa-ff6954598195
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.budova_applications.field_tip_neruhomosti
-    - taxonomy.vocabulary.tip_neruhomosti
+    - field.storage.budova_applications.field_vid_neruhomosti
+    - taxonomy.vocabulary.vid_neruhomosti
   module:
     - budova
-id: budova_applications.budova_applications.field_tip_neruhomosti
-field_name: field_tip_neruhomosti
+id: budova_applications.budova_applications.field_vid_neruhomosti
+field_name: field_vid_neruhomosti
 entity_type: budova_applications
 bundle: budova_applications
-label: 'Тип нерухомості'
+label: 'Вид нерухомості'
 description: ''
 required: false
 translatable: false
@@ -21,7 +21,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      tip_neruhomosti: tip_neruhomosti
+      vid_neruhomosti: vid_neruhomosti
     sort:
       field: name
       direction: asc

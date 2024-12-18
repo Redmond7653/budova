@@ -16,7 +16,7 @@ dependencies:
     - field.field.budova_applications.budova_applications.field_minimalniy_poverh
     - field.field.budova_applications.budova_applications.field_operaciya
     - field.field.budova_applications.budova_applications.field_opis
-    - field.field.budova_applications.budova_applications.field_pidrayon
+    - field.field.budova_applications.budova_applications.field_pidrayon_mista
     - field.field.budova_applications.budova_applications.field_planuvannya
     - field.field.budova_applications.budova_applications.field_rayon_mista
     - field.field.budova_applications.budova_applications.field_rieltor
@@ -26,8 +26,8 @@ dependencies:
     - field.field.budova_applications.budova_applications.field_tip_kontaktu
     - field.field.budova_applications.budova_applications.field_tip_neruhomosti
     - field.field.budova_applications.budova_applications.field_tip_osobi
-    - field.field.budova_applications.budova_applications.field_tipp_neruhomosti
     - field.field.budova_applications.budova_applications.field_valyuta
+    - field.field.budova_applications.budova_applications.field_vid_neruhomosti
     - field.field.budova_applications.budova_applications.field_zv_yazano_z
   module:
     - budova
@@ -165,12 +165,13 @@ content:
     third_party_settings: {  }
     weight: 40
     region: content
-  field_pidrayon:
-    type: list_default
+  field_pidrayon_mista:
+    type: entity_reference_label
     label: above
-    settings: {  }
+    settings:
+      link: true
     third_party_settings: {  }
-    weight: 30
+    weight: 48
     region: content
   field_planuvannya:
     type: list_default
@@ -180,11 +181,12 @@ content:
     weight: 39
     region: content
   field_rayon_mista:
-    type: list_default
+    type: entity_reference_label
     label: above
-    settings: {  }
+    settings:
+      link: true
     third_party_settings: {  }
-    weight: 29
+    weight: 47
     region: content
   field_rieltor:
     type: list_default
@@ -222,11 +224,12 @@ content:
     weight: 45
     region: content
   field_tip_neruhomosti:
-    type: list_default
+    type: entity_reference_label
     label: above
-    settings: {  }
+    settings:
+      link: true
     third_party_settings: {  }
-    weight: 27
+    weight: 50
     region: content
   field_tip_osobi:
     type: list_default
@@ -235,19 +238,20 @@ content:
     third_party_settings: {  }
     weight: 21
     region: content
-  field_tipp_neruhomosti:
-    type: list_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 28
-    region: content
   field_valyuta:
     type: list_default
     label: above
     settings: {  }
     third_party_settings: {  }
     weight: 41
+    region: content
+  field_vid_neruhomosti:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 49
     region: content
   field_zv_yazano_z:
     type: list_default

@@ -16,7 +16,7 @@ dependencies:
     - field.field.budova_applications.budova_applications.field_minimalniy_poverh
     - field.field.budova_applications.budova_applications.field_operaciya
     - field.field.budova_applications.budova_applications.field_opis
-    - field.field.budova_applications.budova_applications.field_pidrayon
+    - field.field.budova_applications.budova_applications.field_pidrayon_mista
     - field.field.budova_applications.budova_applications.field_planuvannya
     - field.field.budova_applications.budova_applications.field_rayon_mista
     - field.field.budova_applications.budova_applications.field_rieltor
@@ -26,8 +26,8 @@ dependencies:
     - field.field.budova_applications.budova_applications.field_tip_kontaktu
     - field.field.budova_applications.budova_applications.field_tip_neruhomosti
     - field.field.budova_applications.budova_applications.field_tip_osobi
-    - field.field.budova_applications.budova_applications.field_tipp_neruhomosti
     - field.field.budova_applications.budova_applications.field_valyuta
+    - field.field.budova_applications.budova_applications.field_vid_neruhomosti
     - field.field.budova_applications.budova_applications.field_zv_yazano_z
   module:
     - budova
@@ -139,9 +139,9 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-  field_pidrayon:
+  field_pidrayon_mista:
     type: options_select
-    weight: 30
+    weight: 48
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -153,7 +153,7 @@ content:
     third_party_settings: {  }
   field_rayon_mista:
     type: options_select
-    weight: 29
+    weight: 47
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -189,7 +189,7 @@ content:
     third_party_settings: {  }
   field_tip_neruhomosti:
     type: options_select
-    weight: 27
+    weight: 50
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -199,15 +199,15 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_tipp_neruhomosti:
-    type: options_select
-    weight: 28
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_valyuta:
     type: options_select
     weight: 41
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_vid_neruhomosti:
+    type: options_select
+    weight: 49
     region: content
     settings: {  }
     third_party_settings: {  }
