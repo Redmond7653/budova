@@ -6,6 +6,7 @@ dependencies:
     - field.field.budova_applications.budova_applications.field_avtonomne_opalennya
     - field.field.budova_applications.budova_applications.field_cina
     - field.field.budova_applications.budova_applications.field_data_stvorennya
+    - field.field.budova_applications.budova_applications.field_data_stvorennya_app
     - field.field.budova_applications.budova_applications.field_kontakt
     - field.field.budova_applications.budova_applications.field_maksimalna_ploshchad_m2
     - field.field.budova_applications.budova_applications.field_maksimalne_chislo_kimnat
@@ -19,7 +20,7 @@ dependencies:
     - field.field.budova_applications.budova_applications.field_pidrayon_mista
     - field.field.budova_applications.budova_applications.field_planuvannya
     - field.field.budova_applications.budova_applications.field_rayon_mista
-    - field.field.budova_applications.budova_applications.field_rieltor
+    - field.field.budova_applications.budova_applications.field_riieltor
     - field.field.budova_applications.budova_applications.field_stan_ob_iekta
     - field.field.budova_applications.budova_applications.field_status_po_motivaciyi
     - field.field.budova_applications.budova_applications.field_status_zayavki
@@ -84,6 +85,15 @@ content:
       format_type: medium
     third_party_settings: {  }
     weight: 44
+    region: content
+  field_data_stvorennya_app:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 51
     region: content
   field_kontakt:
     type: string
@@ -188,12 +198,13 @@ content:
     third_party_settings: {  }
     weight: 47
     region: content
-  field_rieltor:
-    type: list_default
+  field_riieltor:
+    type: entity_reference_label
     label: above
-    settings: {  }
+    settings:
+      link: true
     third_party_settings: {  }
-    weight: 43
+    weight: 52
     region: content
   field_stan_ob_iekta:
     type: list_default

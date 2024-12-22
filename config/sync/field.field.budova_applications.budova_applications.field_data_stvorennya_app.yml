@@ -1,0 +1,21 @@
+uuid: 8612c855-d27f-4e51-8bce-c17bca3b9a00
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_applications.field_data_stvorennya_app
+  module:
+    - budova
+    - datetime
+id: budova_applications.budova_applications.field_data_stvorennya_app
+field_name: field_data_stvorennya_app
+entity_type: budova_applications
+bundle: budova_applications
+label: 'Дата створення'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

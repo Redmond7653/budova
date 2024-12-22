@@ -1,17 +1,17 @@
-uuid: 03c0a97d-c538-40de-9fdd-9798cb1be872
+uuid: 04c88f68-d451-4720-8ee0-82cbc5041208
 langcode: en
 status: true
 dependencies:
   module:
     - budova
-    - user
-id: budova_real_estate.field_vidpovidalniy
-field_name: field_vidpovidalniy
+    - datetime
+id: budova_real_estate.field_data_stvorennya
+field_name: field_data_stvorennya
 entity_type: budova_real_estate
-type: entity_reference
+type: datetime
 settings:
-  target_type: user
-module: core
+  datetime_type: datetime
+module: datetime
 locked: false
 cardinality: 1
 translatable: true

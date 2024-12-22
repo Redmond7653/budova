@@ -6,6 +6,7 @@ dependencies:
     - field.field.budova_applications.budova_applications.field_avtonomne_opalennya
     - field.field.budova_applications.budova_applications.field_cina
     - field.field.budova_applications.budova_applications.field_data_stvorennya
+    - field.field.budova_applications.budova_applications.field_data_stvorennya_app
     - field.field.budova_applications.budova_applications.field_kontakt
     - field.field.budova_applications.budova_applications.field_maksimalna_ploshchad_m2
     - field.field.budova_applications.budova_applications.field_maksimalne_chislo_kimnat
@@ -19,7 +20,7 @@ dependencies:
     - field.field.budova_applications.budova_applications.field_pidrayon_mista
     - field.field.budova_applications.budova_applications.field_planuvannya
     - field.field.budova_applications.budova_applications.field_rayon_mista
-    - field.field.budova_applications.budova_applications.field_rieltor
+    - field.field.budova_applications.budova_applications.field_riieltor
     - field.field.budova_applications.budova_applications.field_stan_ob_iekta
     - field.field.budova_applications.budova_applications.field_status_po_motivaciyi
     - field.field.budova_applications.budova_applications.field_status_zayavki
@@ -39,32 +40,38 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 20
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
   field_avtonomne_opalennya:
     type: options_select
-    weight: 31
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }
   field_cina:
     type: number
-    weight: 42
+    weight: 25
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   field_data_stvorennya:
     type: datetime_default
-    weight: 44
+    weight: 28
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_data_stvorennya_app:
+    type: datetime_default
+    weight: 27
     region: content
     settings: {  }
     third_party_settings: {  }
   field_kontakt:
     type: string_textfield
-    weight: 46
+    weight: 30
     region: content
     settings:
       size: 60
@@ -72,7 +79,7 @@ content:
     third_party_settings: {  }
   field_maksimalna_ploshchad_m2:
     type: string_textfield
-    weight: 34
+    weight: 17
     region: content
     settings:
       size: 60
@@ -80,7 +87,7 @@ content:
     third_party_settings: {  }
   field_maksimalne_chislo_kimnat:
     type: string_textfield
-    weight: 38
+    weight: 21
     region: content
     settings:
       size: 60
@@ -88,7 +95,7 @@ content:
     third_party_settings: {  }
   field_maksimalniy_poverh:
     type: string_textfield
-    weight: 36
+    weight: 19
     region: content
     settings:
       size: 60
@@ -96,14 +103,14 @@ content:
     third_party_settings: {  }
   field_metro:
     type: boolean_checkbox
-    weight: 32
+    weight: 15
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   field_minimalna_ploshchad_m2:
     type: string_textfield
-    weight: 33
+    weight: 16
     region: content
     settings:
       size: 60
@@ -111,7 +118,7 @@ content:
     third_party_settings: {  }
   field_minimalne_chislo_kimnat:
     type: string_textfield
-    weight: 37
+    weight: 20
     region: content
     settings:
       size: 60
@@ -119,7 +126,7 @@ content:
     third_party_settings: {  }
   field_minimalniy_poverh:
     type: string_textfield
-    weight: 35
+    weight: 18
     region: content
     settings:
       size: 60
@@ -127,13 +134,13 @@ content:
     third_party_settings: {  }
   field_operaciya:
     type: options_select
-    weight: 23
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
   field_opis:
     type: string_textarea
-    weight: 40
+    weight: 23
     region: content
     settings:
       rows: 5
@@ -141,85 +148,85 @@ content:
     third_party_settings: {  }
   field_pidrayon_mista:
     type: options_select
-    weight: 48
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
   field_planuvannya:
     type: options_select
-    weight: 39
+    weight: 22
     region: content
     settings: {  }
     third_party_settings: {  }
   field_rayon_mista:
     type: options_select
-    weight: 47
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_rieltor:
-    type: options_select
-    weight: 43
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_stan_ob_iekta:
+  field_riieltor:
     type: options_select
     weight: 26
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_stan_ob_iekta:
+    type: options_select
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_status_po_motivaciyi:
     type: options_select
-    weight: 25
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
   field_status_zayavki:
     type: options_select
-    weight: 24
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
   field_tip_kontaktu:
     type: options_select
-    weight: 45
+    weight: 29
     region: content
     settings: {  }
     third_party_settings: {  }
   field_tip_neruhomosti:
     type: options_select
-    weight: 50
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
   field_tip_osobi:
     type: options_select
-    weight: 21
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
   field_valyuta:
     type: options_select
-    weight: 41
+    weight: 24
     region: content
     settings: {  }
     third_party_settings: {  }
   field_vid_neruhomosti:
     type: options_select
-    weight: 49
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
   field_zv_yazano_z:
     type: options_select
-    weight: 22
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
   label:
     type: string_textfield
-    weight: -5
+    weight: 0
     region: content
     settings:
       size: 60
@@ -227,14 +234,14 @@ content:
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 0
+    weight: 1
     region: content
     settings:
       display_label: false
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 15
+    weight: 2
     region: content
     settings:
       match_operator: CONTAINS

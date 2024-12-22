@@ -59,3 +59,4 @@ hidden:
   field_vidpovidalniy: true
   field_yuridichna_osoba: true
   member_for: true
+  search_api_excerpt: true

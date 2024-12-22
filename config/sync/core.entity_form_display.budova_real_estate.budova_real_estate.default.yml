@@ -6,6 +6,7 @@ dependencies:
     - field.field.budova_real_estate.budova_real_estate.field_avtonomne_opalennya
     - field.field.budova_real_estate.budova_real_estate.field_chislo_kimnat
     - field.field.budova_real_estate.budova_real_estate.field_data_ostannogo_kontaktu
+    - field.field.budova_real_estate.budova_real_estate.field_data_stvorennya
     - field.field.budova_real_estate.budova_real_estate.field_dzherela_nadhodzhennya_ob
     - field.field.budova_real_estate.budova_real_estate.field_kategoriya_uchastku
     - field.field.budova_real_estate.budova_real_estate.field_kod
@@ -74,6 +75,12 @@ content:
     third_party_settings: {  }
   field_data_ostannogo_kontaktu:
     type: datetime_default
+    weight: 36
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_data_stvorennya:
+    type: datetime_default
     weight: 35
     region: content
     settings: {  }
@@ -108,7 +115,7 @@ content:
     third_party_settings: {  }
   field_kontakt:
     type: string_textfield
-    weight: 37
+    weight: 38
     region: content
     settings:
       size: 60
@@ -212,7 +219,7 @@ content:
     third_party_settings: {  }
   field_tip_kontaktu:
     type: options_select
-    weight: 36
+    weight: 37
     region: content
     settings: {  }
     third_party_settings: {  }

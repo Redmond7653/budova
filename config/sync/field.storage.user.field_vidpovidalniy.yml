@@ -1,33 +1,16 @@
-uuid: 9fb7645a-ad81-42b6-b994-d87ef7b31297
+uuid: ce66e29c-2e40-49dc-b5be-99e5895c3723
 langcode: en
 status: true
 dependencies:
   module:
-    - options
     - user
 id: user.field_vidpovidalniy
 field_name: field_vidpovidalniy
 entity_type: user
-type: list_string
+type: entity_reference
 settings:
-  allowed_values:
-    -
-      value: none
-      label: None
-    -
-      value: kravchuk_olga
-      label: 'Кравчук Ольга'
-    -
-      value: nechiporuk_galina
-      label: 'Нечипорук Галина'
-    -
-      value: timofeieva_inna
-      label: 'Тимофеєва Інна'
-    -
-      value: timofeieva_polina
-      label: 'Тимофеєва Полина'
-  allowed_values_function: ''
-module: options
+  target_type: user
+module: core
 locked: false
 cardinality: 1
 translatable: true

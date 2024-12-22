@@ -16,7 +16,6 @@ dependencies:
     - field.storage.user.field_prizvishche
     - field.storage.user.field_tip_kontaktu
     - field.storage.user.field_type
-    - field.storage.user.field_vidpovidalniy
     - field.storage.user.field_yuridichna_osoba
     - search_api.server.default_server
   module:
@@ -130,14 +129,6 @@ field_settings:
     dependencies:
       config:
         - field.storage.user.field_type
-  field_vidpovidalniy:
-    label: Відповідальний
-    datasource_id: 'entity:user'
-    property_path: field_vidpovidalniy
-    type: string
-    dependencies:
-      config:
-        - field.storage.user.field_vidpovidalniy
   field_yuridichna_osoba:
     label: 'Юридична особа'
     datasource_id: 'entity:user'
@@ -190,7 +181,6 @@ processor_settings:
       - field_prizvishche
       - field_tip_kontaktu
       - field_type
-      - field_vidpovidalniy
       - field_yuridichna_osoba
     title: true
     alt: true

@@ -6,6 +6,7 @@ dependencies:
     - field.field.budova_real_estate.budova_real_estate.field_avtonomne_opalennya
     - field.field.budova_real_estate.budova_real_estate.field_chislo_kimnat
     - field.field.budova_real_estate.budova_real_estate.field_data_ostannogo_kontaktu
+    - field.field.budova_real_estate.budova_real_estate.field_data_stvorennya
     - field.field.budova_real_estate.budova_real_estate.field_dzherela_nadhodzhennya_ob
     - field.field.budova_real_estate.budova_real_estate.field_kategoriya_uchastku
     - field.field.budova_real_estate.budova_real_estate.field_kod
@@ -97,6 +98,15 @@ content:
       format_type: medium
     third_party_settings: {  }
     weight: 49
+    region: content
+  field_data_stvorennya:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 62
     region: content
   field_dzherela_nadhodzhennya_ob:
     type: list_default
@@ -313,11 +323,12 @@ content:
     weight: 23
     region: content
   field_vidpovidalniy:
-    type: list_default
+    type: entity_reference_label
     label: above
-    settings: {  }
+    settings:
+      link: true
     third_party_settings: {  }
-    weight: 48
+    weight: 61
     region: content
   field_visota_stel:
     type: number_decimal

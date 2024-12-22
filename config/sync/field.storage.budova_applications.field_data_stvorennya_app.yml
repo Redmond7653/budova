@@ -1,0 +1,20 @@
+uuid: ea1bd09b-08f0-4f5c-8cf3-cd4bc042cc21
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+    - datetime
+id: budova_applications.field_data_stvorennya_app
+field_name: field_data_stvorennya_app
+entity_type: budova_applications
+type: datetime
+settings:
+  datetime_type: datetime
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,16 +1,16 @@
-uuid: a86b19d1-6ae5-4153-a8d2-f782c641ca7a
+uuid: 6df5f700-2bfe-4e8d-8328-efb8c609b86b
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.budova_real_estate.field_vidpovidalniy
+    - field.storage.budova_applications.field_riieltor
   module:
     - budova
-id: budova_real_estate.budova_real_estate.field_vidpovidalniy
-field_name: field_vidpovidalniy
-entity_type: budova_real_estate
-bundle: budova_real_estate
-label: Відповідальний
+id: budova_applications.budova_applications.field_riieltor
+field_name: field_riieltor
+entity_type: budova_applications
+bundle: budova_applications
+label: Рієлтор
 description: ''
 required: false
 translatable: false
