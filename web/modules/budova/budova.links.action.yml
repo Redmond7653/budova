@@ -11,6 +11,17 @@ budova.add_user:
   appears_on:
     - view.clients_with_search.page_clients_with_search
 
+budova.go_back_user_creation:
+  title: 'Назад'
+  route_name: view.clients_with_search.page_clients_with_search
+  appears_on:
+    - user.admin_create
+
+budova.go_back_user_edit:
+  title: 'Назад'
+  route_name: view.clients_with_search.page_clients_with_search
+  appears_on:
+    - entity.user.edit_form
 
 budova.add_real-estate:
   title: 'Додати нерухомість'
@@ -18,11 +29,36 @@ budova.add_real-estate:
   appears_on:
     - view.real_estate.page_real_estate
 
+budova.go_back_real-estate_creation:
+  title: 'Назад'
+  route_name: view.real_estate.page_real_estate
+  appears_on:
+    - entity.budova_real_estate.add_form
+
+budova.go_back_real_estate_edit:
+  title: 'Назад'
+  route_name: view.real_estate.page_real_estate
+  appears_on:
+    - entity.budova_real_estate.canonical
+
+
 budova.add_applications:
   title: 'Додати заявку'
   route_name: entity.budova_applications.add_form
   appears_on:
     - view.applications.applications_page
+
+budova.go_back_applications_creation:
+  title: 'Назад'
+  route_name: view.applications.applications_page
+  appears_on:
+    - entity.budova_applications.add_form
+
+budova.go_back_applications_edit:
+  title: 'Назад'
+  route_name: view.applications.applications_page
+  appears_on:
+    - entity.budova_applications.canonical
 
 budova_applications.add_form:
   title: 'Add applications'
