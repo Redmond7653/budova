@@ -1,0 +1,21 @@
+uuid: 98cb5f0c-3b9f-4543-a187-dba4177ae2df
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_type_of_contact
+  module:
+    - options
+    - user
+id: user.user.field_type_of_contact
+field_name: field_type_of_contact
+entity_type: user
+bundle: user
+label: 'Тип контакту'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,20 @@
+uuid: dc9eaa97-98f4-402d-a7af-188a34539a45
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_code
+  module:
+    - user
+id: user.user.field_code
+field_name: field_code
+entity_type: user
+bundle: user
+label: Код
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

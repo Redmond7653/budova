@@ -3,21 +3,21 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.user.user.field_data_narodzhennya
-    - field.field.user.user.field_dovirena_osoba
-    - field.field.user.user.field_dzherelo_kontaktu
+    - field.field.user.user.field_code
+    - field.field.user.user.field_contact
+    - field.field.user.user.field_contact_source
+    - field.field.user.user.field_date_birth
+    - field.field.user.user.field_description
     - field.field.user.user.field_im_ya
-    - field.field.user.user.field_kim_dovoditsya
-    - field.field.user.user.field_kim_vidaniy
-    - field.field.user.user.field_kod
-    - field.field.user.user.field_kontakt
-    - field.field.user.user.field_opis
-    - field.field.user.user.field_pasport
-    - field.field.user.user.field_prizvishche
-    - field.field.user.user.field_tip_kontaktu
+    - field.field.user.user.field_issued_by_whom
+    - field.field.user.user.field_passport
+    - field.field.user.user.field_related_by
+    - field.field.user.user.field_responsible_user
+    - field.field.user.user.field_surname
+    - field.field.user.user.field_trusted_persona
     - field.field.user.user.field_type
-    - field.field.user.user.field_vidpovidalniy
-    - field.field.user.user.field_yuridichna_osoba
+    - field.field.user.user.field_type_of_contact
+    - field.field.user.user.field_user_name
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
@@ -41,91 +41,99 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_data_narodzhennya:
+  field_code:
+    type: string_textfield
+    weight: 27
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_contact:
+    type: string_textfield
+    weight: 28
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_contact_source:
+    type: options_select
+    weight: 23
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_date_birth:
     type: datetime_default
-    weight: 17
+    weight: 20
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_dovirena_osoba:
-    type: options_select
-    weight: 14
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_dzherelo_kontaktu:
-    type: options_select
-    weight: 7
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_im_ya:
-    type: string_textfield
-    weight: 9
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_kim_dovoditsya:
-    type: options_select
-    weight: 15
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_kim_vidaniy:
-    type: string_textfield
-    weight: 12
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_kod:
-    type: string_textfield
-    weight: 5
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_kontakt:
-    type: string_textfield
-    weight: 19
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_opis:
+  field_description:
     type: string_textarea
-    weight: 13
+    weight: 29
     region: content
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-  field_pasport:
+  field_im_ya:
     type: string_textfield
-    weight: 11
+    weight: 33
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_prizvishche:
+  field_issued_by_whom:
     type: string_textfield
-    weight: 10
+    weight: 25
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_tip_kontaktu:
+  field_passport:
+    type: string_textfield
+    weight: 30
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_related_by:
     type: options_select
-    weight: 18
+    weight: 26
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_responsible_user:
+    type: entity_reference_autocomplete
+    weight: 22
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_surname:
+    type: string_textfield
+    weight: 31
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_trusted_persona:
+    type: entity_reference_autocomplete
+    weight: 24
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_type:
     type: options_select
@@ -133,17 +141,19 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_vidpovidalniy:
+  field_type_of_contact:
     type: options_select
-    weight: 16
+    weight: 32
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_yuridichna_osoba:
-    type: options_select
-    weight: 8
+  field_user_name:
+    type: string_textfield
+    weight: 21
     region: content
-    settings: {  }
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   language:
     weight: 2

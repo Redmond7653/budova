@@ -27,9 +27,9 @@ dependencies:
     - field.field.budova_real_estate.budova_real_estate.field_status_ob_iektiv_na_rinku
     - field.field.budova_real_estate.budova_real_estate.field_status_po_motivaciyi
     - field.field.budova_real_estate.budova_real_estate.field_sumizhnist_kimnat
+    - field.field.budova_real_estate.budova_real_estate.field_test_image
     - field.field.budova_real_estate.budova_real_estate.field_tip_kontaktu
     - field.field.budova_real_estate.budova_real_estate.field_tip_neruhomosti
-    - field.field.budova_real_estate.budova_real_estate.field_valyuta
     - field.field.budova_real_estate.budova_real_estate.field_vartist
     - field.field.budova_real_estate.budova_real_estate.field_vid_neruhomosti
     - field.field.budova_real_estate.budova_real_estate.field_vid_osobi
@@ -38,9 +38,11 @@ dependencies:
     - field.field.budova_real_estate.budova_real_estate.field_visota_stel
     - field.field.budova_real_estate.budova_real_estate.field_zagalna_ploshchad_m2
     - field.field.budova_real_estate.budova_real_estate.field_zhitlova_ploshchal_m2
+    - image.style.thumbnail
   module:
     - budova
     - datetime
+    - image
 id: budova_real_estate.budova_real_estate.default
 targetEntityType: budova_real_estate
 bundle: budova_real_estate
@@ -217,6 +219,14 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_test_image:
+    type: image_image
+    weight: 39
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
   field_tip_kontaktu:
     type: options_select
     weight: 37
@@ -226,12 +236,6 @@ content:
   field_tip_neruhomosti:
     type: options_select
     weight: 13
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_valyuta:
-    type: options_select
-    weight: 32
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -255,14 +259,10 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_vidnositsya_do:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 6
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_vidpovidalniy:
     type: options_select

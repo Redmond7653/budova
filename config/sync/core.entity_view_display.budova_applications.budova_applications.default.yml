@@ -29,7 +29,7 @@ dependencies:
     - field.field.budova_applications.budova_applications.field_tip_osobi
     - field.field.budova_applications.budova_applications.field_valyuta
     - field.field.budova_applications.budova_applications.field_vid_neruhomosti
-    - field.field.budova_applications.budova_applications.field_zv_yazano_z
+    - field.field.budova_applications.budova_applications.field_vidnositsya_do
   module:
     - budova
     - datetime
@@ -264,12 +264,13 @@ content:
     third_party_settings: {  }
     weight: 49
     region: content
-  field_zv_yazano_z:
-    type: list_default
+  field_vidnositsya_do:
+    type: entity_reference_label
     label: above
-    settings: {  }
+    settings:
+      link: true
     third_party_settings: {  }
-    weight: 22
+    weight: 53
     region: content
   label:
     type: string

@@ -1,0 +1,35 @@
+uuid: bf6b8294-5378-4c6f-b640-278d54f7af3d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_trusted_persona
+  module:
+    - user
+id: user.user.field_trusted_persona
+field_name: field_trusted_persona
+entity_type: user
+bundle: user
+label: 'Довірена особа'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    filter:
+      type: role
+      role:
+        buyer: buyer
+        seller: seller
+        content_editor: '0'
+        administrator: '0'
+    include_anonymous: true
+field_type: entity_reference

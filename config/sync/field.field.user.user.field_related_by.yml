@@ -1,0 +1,21 @@
+uuid: a35c4e8a-b867-420e-a9fa-83a58c47f923
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_related_by
+  module:
+    - options
+    - user
+id: user.user.field_related_by
+field_name: field_related_by
+entity_type: user
+bundle: user
+label: 'Ким доводиться'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

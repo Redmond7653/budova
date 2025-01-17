@@ -81,7 +81,7 @@ final class Applications extends ContentEntityBase implements ApplicationsInterf
     $fields = parent::baseFieldDefinitions($entity_type);
 
     $fields['label'] = BaseFieldDefinition::create('string')
-      ->setLabel(t('Label'))
+      ->setLabel(t('Назва заявки'))
       ->setRequired(TRUE)
       ->setSetting('max_length', 255)
       ->setDisplayOptions('form', [
@@ -119,7 +119,7 @@ final class Applications extends ContentEntityBase implements ApplicationsInterf
       ->setDisplayConfigurable('view', TRUE);
 
     $fields['uid'] = BaseFieldDefinition::create('entity_reference')
-      ->setLabel(t('Author'))
+      ->setLabel(t('Хто створив'))
       ->setSetting('target_type', 'user')
       ->setDefaultValueCallback(self::class . '::getDefaultEntityOwner')
       ->setDisplayOptions('form', [
@@ -140,7 +140,7 @@ final class Applications extends ContentEntityBase implements ApplicationsInterf
       ->setDisplayConfigurable('view', TRUE);
 
     $fields['created'] = BaseFieldDefinition::create('created')
-      ->setLabel(t('Authored on'))
+      ->setLabel(t('Коли створено'))
       ->setDescription(t('The time that the applications was created.'))
       ->setDisplayOptions('view', [
         'label' => 'above',

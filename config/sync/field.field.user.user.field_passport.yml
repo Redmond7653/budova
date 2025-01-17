@@ -1,0 +1,20 @@
+uuid: 3eb886de-95a8-4c1c-b7e5-8280ff90364c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_passport
+  module:
+    - user
+id: user.user.field_passport
+field_name: field_passport
+entity_type: user
+bundle: user
+label: Паспорт
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -27,9 +27,9 @@ dependencies:
     - field.field.budova_real_estate.budova_real_estate.field_status_ob_iektiv_na_rinku
     - field.field.budova_real_estate.budova_real_estate.field_status_po_motivaciyi
     - field.field.budova_real_estate.budova_real_estate.field_sumizhnist_kimnat
+    - field.field.budova_real_estate.budova_real_estate.field_test_image
     - field.field.budova_real_estate.budova_real_estate.field_tip_kontaktu
     - field.field.budova_real_estate.budova_real_estate.field_tip_neruhomosti
-    - field.field.budova_real_estate.budova_real_estate.field_valyuta
     - field.field.budova_real_estate.budova_real_estate.field_vartist
     - field.field.budova_real_estate.budova_real_estate.field_vid_neruhomosti
     - field.field.budova_real_estate.budova_real_estate.field_vid_osobi
@@ -41,6 +41,7 @@ dependencies:
   module:
     - budova
     - datetime
+    - image
     - options
     - user
 id: budova_real_estate.budova_real_estate.default
@@ -266,6 +267,17 @@ content:
     third_party_settings: {  }
     weight: 39
     region: content
+  field_test_image:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 63
+    region: content
   field_tip_kontaktu:
     type: list_default
     label: above
@@ -280,13 +292,6 @@ content:
       link: true
     third_party_settings: {  }
     weight: 55
-    region: content
-  field_valyuta:
-    type: list_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 46
     region: content
   field_vartist:
     type: number_decimal

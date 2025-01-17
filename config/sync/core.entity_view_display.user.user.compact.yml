@@ -4,21 +4,21 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.user.compact
-    - field.field.user.user.field_data_narodzhennya
-    - field.field.user.user.field_dovirena_osoba
-    - field.field.user.user.field_dzherelo_kontaktu
+    - field.field.user.user.field_code
+    - field.field.user.user.field_contact
+    - field.field.user.user.field_contact_source
+    - field.field.user.user.field_date_birth
+    - field.field.user.user.field_description
     - field.field.user.user.field_im_ya
-    - field.field.user.user.field_kim_dovoditsya
-    - field.field.user.user.field_kim_vidaniy
-    - field.field.user.user.field_kod
-    - field.field.user.user.field_kontakt
-    - field.field.user.user.field_opis
-    - field.field.user.user.field_pasport
-    - field.field.user.user.field_prizvishche
-    - field.field.user.user.field_tip_kontaktu
+    - field.field.user.user.field_issued_by_whom
+    - field.field.user.user.field_passport
+    - field.field.user.user.field_related_by
+    - field.field.user.user.field_responsible_user
+    - field.field.user.user.field_surname
+    - field.field.user.user.field_trusted_persona
     - field.field.user.user.field_type
-    - field.field.user.user.field_vidpovidalniy
-    - field.field.user.user.field_yuridichna_osoba
+    - field.field.user.user.field_type_of_contact
+    - field.field.user.user.field_user_name
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
@@ -43,20 +43,20 @@ content:
     weight: 0
     region: content
 hidden:
-  field_data_narodzhennya: true
-  field_dovirena_osoba: true
-  field_dzherelo_kontaktu: true
+  field_code: true
+  field_contact: true
+  field_contact_source: true
+  field_date_birth: true
+  field_description: true
   field_im_ya: true
-  field_kim_dovoditsya: true
-  field_kim_vidaniy: true
-  field_kod: true
-  field_kontakt: true
-  field_opis: true
-  field_pasport: true
-  field_prizvishche: true
-  field_tip_kontaktu: true
+  field_issued_by_whom: true
+  field_passport: true
+  field_related_by: true
+  field_responsible_user: true
+  field_surname: true
+  field_trusted_persona: true
   field_type: true
-  field_vidpovidalniy: true
-  field_yuridichna_osoba: true
+  field_type_of_contact: true
+  field_user_name: true
   member_for: true
   search_api_excerpt: true

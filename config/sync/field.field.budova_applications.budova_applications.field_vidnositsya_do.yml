@@ -1,0 +1,35 @@
+uuid: 11831023-c87d-498e-823c-30b55aa2a483
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_applications.field_vidnositsya_do
+  module:
+    - budova
+id: budova_applications.budova_applications.field_vidnositsya_do
+field_name: field_vidnositsya_do
+entity_type: budova_applications
+bundle: budova_applications
+label: 'Відноситься до'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    filter:
+      type: role
+      role:
+        administrator: administrator
+        content_editor: '0'
+        buyer: '0'
+        seller: '0'
+    include_anonymous: true
+field_type: entity_reference

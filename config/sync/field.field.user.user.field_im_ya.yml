@@ -1,4 +1,4 @@
-uuid: c7e6f4d4-d4c8-4cb0-9523-40e9029f2bb6
+uuid: c6ec7122-9c0f-41b9-b14d-179e4e6d08dd
 langcode: en
 status: true
 dependencies:
@@ -12,7 +12,7 @@ entity_type: user
 bundle: user
 label: "Ім'я"
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''

@@ -1,0 +1,9 @@
+uuid: 735357ce-dbcd-4c79-9fcd-faa82798c973
+langcode: en
+status: true
+dependencies: {  }
+name: Валюта
+vid: currency
+description: null
+weight: 0
+new_revision: false

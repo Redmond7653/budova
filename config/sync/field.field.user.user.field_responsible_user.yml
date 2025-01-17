@@ -1,0 +1,35 @@
+uuid: 7c877a8e-d70a-494d-8c69-99699ca7a8b1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_responsible_user
+  module:
+    - user
+id: user.user.field_responsible_user
+field_name: field_responsible_user
+entity_type: user
+bundle: user
+label: Відповідальний
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    filter:
+      type: role
+      role:
+        administrator: administrator
+        content_editor: '0'
+        buyer: '0'
+        seller: '0'
+    include_anonymous: false
+field_type: entity_reference

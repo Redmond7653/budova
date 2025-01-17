@@ -3,20 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.user.field_data_narodzhennya
-    - field.storage.user.field_dovirena_osoba
-    - field.storage.user.field_dzherelo_kontaktu
-    - field.storage.user.field_im_ya
-    - field.storage.user.field_kim_dovoditsya
-    - field.storage.user.field_kim_vidaniy
-    - field.storage.user.field_kod
-    - field.storage.user.field_kontakt
-    - field.storage.user.field_opis
-    - field.storage.user.field_pasport
-    - field.storage.user.field_prizvishche
-    - field.storage.user.field_tip_kontaktu
     - field.storage.user.field_type
-    - field.storage.user.field_yuridichna_osoba
     - search_api.server.default_server
   module:
     - user
@@ -25,102 +12,6 @@ name: Budova_user_search
 description: ''
 read_only: false
 field_settings:
-  field_data_narodzhennya:
-    label: 'Дата народження'
-    datasource_id: 'entity:user'
-    property_path: field_data_narodzhennya
-    type: date
-    dependencies:
-      config:
-        - field.storage.user.field_data_narodzhennya
-  field_dovirena_osoba:
-    label: 'Довірена особа'
-    datasource_id: 'entity:user'
-    property_path: field_dovirena_osoba
-    type: string
-    dependencies:
-      config:
-        - field.storage.user.field_dovirena_osoba
-  field_dzherelo_kontaktu:
-    label: 'Джерело контакту'
-    datasource_id: 'entity:user'
-    property_path: field_dzherelo_kontaktu
-    type: string
-    dependencies:
-      config:
-        - field.storage.user.field_dzherelo_kontaktu
-  field_im_ya:
-    label: "Ім'я"
-    datasource_id: 'entity:user'
-    property_path: field_im_ya
-    type: text
-    dependencies:
-      config:
-        - field.storage.user.field_im_ya
-  field_kim_dovoditsya:
-    label: 'Ким доводиться'
-    datasource_id: 'entity:user'
-    property_path: field_kim_dovoditsya
-    type: string
-    dependencies:
-      config:
-        - field.storage.user.field_kim_dovoditsya
-  field_kim_vidaniy:
-    label: 'Ким виданий'
-    datasource_id: 'entity:user'
-    property_path: field_kim_vidaniy
-    type: text
-    dependencies:
-      config:
-        - field.storage.user.field_kim_vidaniy
-  field_kod:
-    label: Код
-    datasource_id: 'entity:user'
-    property_path: field_kod
-    type: string
-    dependencies:
-      config:
-        - field.storage.user.field_kod
-  field_kontakt:
-    label: Контакт
-    datasource_id: 'entity:user'
-    property_path: field_kontakt
-    type: text
-    dependencies:
-      config:
-        - field.storage.user.field_kontakt
-  field_opis:
-    label: Опис
-    datasource_id: 'entity:user'
-    property_path: field_opis
-    type: text
-    dependencies:
-      config:
-        - field.storage.user.field_opis
-  field_pasport:
-    label: Паспорт
-    datasource_id: 'entity:user'
-    property_path: field_pasport
-    type: text
-    dependencies:
-      config:
-        - field.storage.user.field_pasport
-  field_prizvishche:
-    label: Призвіще
-    datasource_id: 'entity:user'
-    property_path: field_prizvishche
-    type: text
-    dependencies:
-      config:
-        - field.storage.user.field_prizvishche
-  field_tip_kontaktu:
-    label: 'Тип контакту'
-    datasource_id: 'entity:user'
-    property_path: field_tip_kontaktu
-    type: string
-    dependencies:
-      config:
-        - field.storage.user.field_tip_kontaktu
   field_type:
     label: Type
     datasource_id: 'entity:user'
@@ -129,14 +20,6 @@ field_settings:
     dependencies:
       config:
         - field.storage.user.field_type
-  field_yuridichna_osoba:
-    label: 'Юридична особа'
-    datasource_id: 'entity:user'
-    property_path: field_yuridichna_osoba
-    type: string
-    dependencies:
-      config:
-        - field.storage.user.field_yuridichna_osoba
   status:
     label: 'User status'
     datasource_id: 'entity:user'
@@ -169,19 +52,7 @@ processor_settings:
       preprocess_query: -15
     all_fields: true
     fields:
-      - field_dovirena_osoba
-      - field_dzherelo_kontaktu
-      - field_im_ya
-      - field_kim_dovoditsya
-      - field_kim_vidaniy
-      - field_kod
-      - field_kontakt
-      - field_opis
-      - field_pasport
-      - field_prizvishche
-      - field_tip_kontaktu
       - field_type
-      - field_yuridichna_osoba
     title: true
     alt: true
     tags:

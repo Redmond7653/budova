@@ -1,0 +1,5 @@
+name: Budova Migration Module
+type: module
+description: 'Budova Migration Module.'
+package: Migration
+core_version_requirement: ^8 || ^9 || ^10

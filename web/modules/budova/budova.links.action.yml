@@ -9,17 +9,17 @@ budova.add_user:
   title: 'Додати клієнта'
   route_name: user.admin_create
   appears_on:
-    - view.clients_with_search.page_clients_with_search
+    - view.clients.page_clients
 
 budova.go_back_user_creation:
   title: 'Назад'
-  route_name: view.clients_with_search.page_clients_with_search
+  route_name: view.clients.page_clients
   appears_on:
     - user.admin_create
 
 budova.go_back_user_edit:
   title: 'Назад'
-  route_name: view.clients_with_search.page_clients_with_search
+  route_name: view.clients.page_clients
   appears_on:
     - entity.user.edit_form
 

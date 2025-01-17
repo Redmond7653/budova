@@ -1,0 +1,54 @@
+uuid: 9a01b561-2899-49ac-8464-7d92e61d834f
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - user
+id: user.field_type_of_contact
+field_name: field_type_of_contact
+entity_type: user
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: none
+      label: None
+    -
+      value: email
+      label: Email
+    -
+      value: internet_sayt
+      label: 'Інтернет сайт'
+    -
+      value: telefon
+      label: Телефон
+    -
+      value: faks
+      label: Факс
+    -
+      value: adresa
+      label: Адреса
+    -
+      value: yutub
+      label: Ютуб
+    -
+      value: vayber
+      label: Вайбер
+    -
+      value: skayp
+      label: Скайп
+    -
+      value: facebook
+      label: Facebook
+    -
+      value: icq
+      label: icq
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

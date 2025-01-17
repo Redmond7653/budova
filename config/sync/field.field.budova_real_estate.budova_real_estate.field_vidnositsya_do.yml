@@ -25,6 +25,11 @@ settings:
       direction: ASC
     auto_create: false
     filter:
-      type: _none
+      type: role
+      role:
+        administrator: administrator
+        content_editor: '0'
+        buyer: '0'
+        seller: '0'
     include_anonymous: true
 field_type: entity_reference

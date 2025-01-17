@@ -81,7 +81,7 @@ final class RealEstate extends ContentEntityBase implements RealEstateInterface 
     $fields = parent::baseFieldDefinitions($entity_type);
 
     $fields['label'] = BaseFieldDefinition::create('string')
-      ->setLabel(t('Label'))
+      ->setLabel(t('Назва нерухомості'))
       ->setRequired(TRUE)
       ->setSetting('max_length', 255)
       ->setDisplayOptions('form', [
@@ -133,7 +133,7 @@ final class RealEstate extends ContentEntityBase implements RealEstateInterface 
 //      ->setDisplayConfigurable('view', TRUE);
 
     $fields['uid'] = BaseFieldDefinition::create('entity_reference')
-      ->setLabel(t('Author'))
+      ->setLabel(t('Хто створив'))
       ->setSetting('target_type', 'user')
       ->setDefaultValueCallback(self::class . '::getDefaultEntityOwner')
       ->setDisplayOptions('form', [
@@ -154,7 +154,7 @@ final class RealEstate extends ContentEntityBase implements RealEstateInterface 
       ->setDisplayConfigurable('view', TRUE);
 
     $fields['created'] = BaseFieldDefinition::create('created')
-      ->setLabel(t('Authored on'))
+      ->setLabel(t('Коли створено'))
       ->setDescription(t('The time that the real_estate was created.'))
       ->setDisplayOptions('view', [
         'label' => 'above',

@@ -1,0 +1,33 @@
+uuid: abae0719-0b8f-4054-b7cc-e21c62c26f58
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - user
+id: user.field_related_by
+field_name: field_related_by
+entity_type: user
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: none
+      label: None
+    -
+      value: rodich
+      label: Родич
+    -
+      value: spadkoiemec
+      label: Спадкоємець
+    -
+      value: dovirena_osoba
+      label: 'Довірена особа'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

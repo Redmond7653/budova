@@ -1,0 +1,21 @@
+uuid: fe894fbb-6df6-47e7-a6e7-d74c22a21c08
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_contact_source
+  module:
+    - options
+    - user
+id: user.user.field_contact_source
+field_name: field_contact_source
+entity_type: user
+bundle: user
+label: ' Джерело контакту'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,20 @@
+uuid: eead278b-d32f-4ac8-b728-91c66f2725f2
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+    - user
+id: budova_applications.field_vidnositsya_do
+field_name: field_vidnositsya_do
+entity_type: budova_applications
+type: entity_reference
+settings:
+  target_type: user
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -9,6 +9,7 @@ module:
   block_content: 0
   breakpoint: 0
   budova: 0
+  budova_migrations: 0
   ckeditor5: 0
   comment: 0
   config: 0
@@ -31,12 +32,19 @@ module:
   link: 0
   menu_link_content: 0
   menu_ui: 0
+  migrate: 0
+  migrate_drupal: 0
+  migrate_drupal_ui: 0
+  migrate_plus: 0
+  migrate_source_csv: 0
+  migrate_tools: 0
   mysql: 0
   node: 0
   options: 0
   page_cache: 0
   path: 0
   path_alias: 0
+  phpass: 0
   search: 0
   search_api: 0
   search_api_db: 0

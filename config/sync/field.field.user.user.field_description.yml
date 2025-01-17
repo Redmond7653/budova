@@ -1,0 +1,20 @@
+uuid: 9bfe02a3-b6a1-4b34-a746-1b00a2550d42
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_description
+  module:
+    - user
+id: user.user.field_description
+field_name: field_description
+entity_type: user
+bundle: user
+label: Опис
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

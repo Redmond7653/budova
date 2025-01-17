@@ -20,7 +20,9 @@ function budova_form_user_register_form_alter(&$form, \Drupal\Core\Form\FormStat
   if($triggering_element) {
     if (in_array("buyer", $roles_array) || in_array("seller", $roles_array)) {
       $form['account']['name']['#access'] = FALSE;
+      $form['account']['name']['#default_value'] = 'default';
       $form['account']['name']['#required'] = FALSE;
+
 //      $form['account']['pass']['#required'] = FALSE;
 
       $form['account']['pass']['#access'] = FALSE;
@@ -797,7 +799,7 @@ function budova_applications_submit_do_redirect($form, &$form_state) {
 
 
 function budova_users_submit_do_redirect($form, &$form_state) {
-  $url = Url::fromRoute('view.clients_with_search.page_clients_with_search');
+  $url = Url::fromRoute('view.clients.page_clients');
   $form_state->setRedirectUrl($url);
 }
 
@@ -813,11 +815,13 @@ function budova_users_submit_do_redirect($form, &$form_state) {
  */
 function budova_user_presave(\Drupal\Core\Entity\EntityInterface $entity) {
   if ($entity->isNew()) {
-    $name = $entity->field_im_ya->getValue();
-    $surname = $entity->field_prizvishche->getValue();
-    $phone = $entity->field_kontakt->getValue();
+    $name = $entity->field_user_name->getValue();
+    $surname = $entity->field_surname->getValue();
+    $phone = $entity->field_contact->getValue();
     /** @var \Drupal\user\Entity\User $entity  */
-    $entity->name->value = $name[0]['value'].'_'.$surname[0]['value'].'_'.$phone[0]['value'];
+
+
+    $entity->name->value = $name[0]['value'].' '.$surname[0]['value'].' '.$phone[0]['value'];
     $entity->pass->value = '12345';
     $z = 0;
   }

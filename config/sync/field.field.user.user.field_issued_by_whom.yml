@@ -1,0 +1,20 @@
+uuid: 389bf6ca-9ea8-485e-b488-2db2b5e5693d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_issued_by_whom
+  module:
+    - user
+id: user.user.field_issued_by_whom
+field_name: field_issued_by_whom
+entity_type: user
+bundle: user
+label: 'Ким виданий'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
