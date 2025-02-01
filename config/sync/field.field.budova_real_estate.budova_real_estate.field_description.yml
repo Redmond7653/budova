@@ -1,0 +1,20 @@
+uuid: b4a878a3-182d-498b-8385-d35f709f0e57
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_real_estate.field_description
+  module:
+    - budova
+id: budova_real_estate.budova_real_estate.field_description
+field_name: field_description
+entity_type: budova_real_estate
+bundle: budova_real_estate
+label: Опис
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

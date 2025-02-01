@@ -1,0 +1,20 @@
+uuid: b40d647d-b279-4816-b609-4a0844b7e4fa
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+    - taxonomy
+id: budova_applications.field_currency
+field_name: field_currency
+entity_type: budova_applications
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

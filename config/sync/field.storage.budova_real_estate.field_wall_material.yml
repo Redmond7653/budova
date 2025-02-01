@@ -1,0 +1,20 @@
+uuid: 96f4bc1b-c09e-4f42-95dc-447f92f51577
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+    - taxonomy
+id: budova_real_estate.field_wall_material
+field_name: field_wall_material
+entity_type: budova_real_estate
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

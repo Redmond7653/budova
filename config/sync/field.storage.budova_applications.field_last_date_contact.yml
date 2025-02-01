@@ -1,0 +1,20 @@
+uuid: fe5e02b5-5f7d-4f13-901f-3978db41a446
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+    - datetime
+id: budova_applications.field_last_date_contact
+field_name: field_last_date_contact
+entity_type: budova_applications
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

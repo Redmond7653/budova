@@ -17,71 +17,92 @@ source:
     1:
       name: f1
     2:
-      name: f2
+      name: roles
+      label: 'roles'
     3:
       name: f3
     4:
-      name: f4
+      name: realtor
+      label: 'realtor'
     5:
-      name: f5
-    6:
       name: name
       label: 'name'
-    7:
+    6:
       name: surname
       label: 'surname'
-    8:
+    7:
       name: birthday
       label: 'birthday'
+    8:
+      name: description
+      label: 'description'
     9:
       name: f9
     10:
       name: f10
     11:
-      name: description
-      label: 'description'
+      name: f11
     12:
-      name: f12
-    13:
-      name: f13
-    14:
-      name: f14
-    15:
-      name: f15
-    16:
-      name: f16
-    17:
-      name: changed
-      label: 'changed'
-    18:
-      name: f18
-    19:
       name: created
       label: 'created'
-    20:
-      name: f20
-    21:
-      name: f21
+    13:
+      name: changed
+      label: 'changed'
+    14:
+      name: type
+      label: 'type'
+    15:
+      name: contact
+      label: 'contact'
+
 
 
 process:
-
-
   name: name
   field_code: id
+
+  field_type:
+    plugin: static_map
+    bypass: true
+    source: type
+    map:
+      1: fizichna_osoba
+
+  status:
+    plugin: static_map
+    bypass: true
+    source: type
+    map:
+      0: false
+      1: true
+
+  roles:
+    plugin: static_map
+    bypass: true
+    source: roles
+    map:
+      0F92C3A30212A71CB11C4F3EDB87A359: buyer
+      D26968504F1D3823EACD9F99E5AE00CB: seller
+
+
+
   field_user_name: name
   field_surname: surname
   field_description: description
+
+  field_responsible_user:
+    plugin: static_map
+    bypass: true
+    source: realtor
+    map:
+      6C74C2E98300F2EC7964CE368A18E16C: 64
+      BDA99269836409DE658208CFC4939786: 66
+      E15FEFF8FC470C8C6C2F355DF7C94D96: 65
+      86F367D6AFEDCB4668CC8CE6D91F589C: 67
+
+
   field_date_birth: birthday
-
-
-
-
-
-
-
-
-
+  field_contact: contact
 
 destination:
   plugin: entity:user

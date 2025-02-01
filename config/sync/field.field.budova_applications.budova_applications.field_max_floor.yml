@@ -1,0 +1,24 @@
+uuid: 5174455a-9dc6-41a1-b77d-4d0801d2cd18
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_applications.field_max_floor
+  module:
+    - budova
+id: budova_applications.budova_applications.field_max_floor
+field_name: field_max_floor
+entity_type: budova_applications
+bundle: budova_applications
+label: 'Максимальний поверх'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

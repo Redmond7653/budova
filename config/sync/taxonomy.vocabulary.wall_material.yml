@@ -1,0 +1,9 @@
+uuid: fbf6315a-1ed8-4eaf-9782-154293055880
+langcode: en
+status: true
+dependencies: {  }
+name: 'Матеріал стін new'
+vid: wall_material
+description: null
+weight: 0
+new_revision: false

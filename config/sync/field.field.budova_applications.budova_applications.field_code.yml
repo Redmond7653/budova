@@ -1,0 +1,20 @@
+uuid: 4f85fd40-ed9d-408f-a539-7230af73a57b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_applications.field_code
+  module:
+    - budova
+id: budova_applications.budova_applications.field_code
+field_name: field_code
+entity_type: budova_applications
+bundle: budova_applications
+label: Код
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

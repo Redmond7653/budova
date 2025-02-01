@@ -1,0 +1,9 @@
+uuid: ba7961a8-5cbb-4a9d-9d87-9a25b7b24f78
+langcode: en
+status: true
+dependencies: {  }
+name: 'Район міста new'
+vid: district_of_the_city
+description: null
+weight: 0
+new_revision: false

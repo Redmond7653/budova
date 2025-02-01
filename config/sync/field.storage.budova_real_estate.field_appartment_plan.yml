@@ -1,0 +1,20 @@
+uuid: 8be15cb8-5182-4bd4-9fc9-3a40fd88b8cd
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+    - taxonomy
+id: budova_real_estate.field_appartment_plan
+field_name: field_appartment_plan
+entity_type: budova_real_estate
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

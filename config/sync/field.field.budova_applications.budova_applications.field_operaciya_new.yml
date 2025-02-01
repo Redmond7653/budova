@@ -1,0 +1,30 @@
+uuid: db6e223a-3b11-4ab6-9c4d-c9702ff88af7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_applications.field_operaciya_new
+    - taxonomy.vocabulary.real_estate_transaction
+  module:
+    - budova
+id: budova_applications.budova_applications.field_operaciya_new
+field_name: field_operaciya_new
+entity_type: budova_applications
+bundle: budova_applications
+label: Операція
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      real_estate_transaction: real_estate_transaction
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

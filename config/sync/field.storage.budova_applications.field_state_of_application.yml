@@ -1,0 +1,51 @@
+uuid: 60a4c265-b488-40f0-8d22-efe39204c4f4
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+    - options
+id: budova_applications.field_state_of_application
+field_name: field_state_of_application
+entity_type: budova_applications
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: ne_pochata
+      label: 'Не почата'
+    -
+      value: persha_zustrich
+      label: 'Перша зустріч'
+    -
+      value: pokazi
+      label: Покази
+    -
+      value: dana_oferta
+      label: 'Дана оферта'
+    -
+      value: oferta_priynyata
+      label: 'Оферта прийнята'
+    -
+      value: peredaniy_zadatok
+      label: 'Переданий задаток'
+    -
+      value: ugoda_zavershena
+      label: 'Угода завершена'
+    -
+      value: pauza
+      label: Пауза
+    -
+      value: vidminena
+      label: Відмінена
+    -
+      value: kupleno_bez_nas
+      label: 'Куплено без нас'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,20 @@
+uuid: e221e27b-67aa-4852-83b0-d6b0e7364379
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+id: budova_applications.field_max_area
+field_name: field_max_area
+entity_type: budova_applications
+type: decimal
+settings:
+  precision: 10
+  scale: 2
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

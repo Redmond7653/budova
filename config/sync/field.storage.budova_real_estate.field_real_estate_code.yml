@@ -1,0 +1,21 @@
+uuid: cecc14b5-c4e7-4c86-a746-c0aef9dacb39
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+id: budova_real_estate.field_real_estate_code
+field_name: field_real_estate_code
+entity_type: budova_real_estate
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,30 @@
+uuid: 81941834-ddbf-446c-8806-65ce79b2efc7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_applications.field_subtype_of_real_estate
+    - taxonomy.vocabulary.subtype_of_real_estate
+  module:
+    - budova
+id: budova_applications.budova_applications.field_subtype_of_real_estate
+field_name: field_subtype_of_real_estate
+entity_type: budova_applications
+bundle: budova_applications
+label: 'Тип нерухомості'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      subtype_of_real_estate: subtype_of_real_estate
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

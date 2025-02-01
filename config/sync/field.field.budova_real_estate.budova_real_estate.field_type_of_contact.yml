@@ -1,0 +1,21 @@
+uuid: c4b6824f-7cd8-43fa-b660-58d415a11186
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_real_estate.field_type_of_contact
+  module:
+    - budova
+    - options
+id: budova_real_estate.budova_real_estate.field_type_of_contact
+field_name: field_type_of_contact
+entity_type: budova_real_estate
+bundle: budova_real_estate
+label: 'Тип контакту'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

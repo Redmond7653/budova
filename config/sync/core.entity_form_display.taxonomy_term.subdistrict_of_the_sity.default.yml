@@ -1,0 +1,51 @@
+uuid: f1d39e03-93b7-41f2-9ec0-777b7004c763
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.subdistrict_of_the_sity.field_district_of_the_city
+    - taxonomy.vocabulary.subdistrict_of_the_sity
+  module:
+    - path
+    - text
+id: taxonomy_term.subdistrict_of_the_sity.default
+targetEntityType: taxonomy_term
+bundle: subdistrict_of_the_sity
+mode: default
+content:
+  description:
+    type: text_textarea
+    weight: 0
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_district_of_the_city:
+    type: options_select
+    weight: 101
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 100
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden: {  }

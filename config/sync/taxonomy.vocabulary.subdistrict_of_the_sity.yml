@@ -1,0 +1,9 @@
+uuid: 2cc868f8-aa95-489a-be9e-a59e5bff5600
+langcode: en
+status: true
+dependencies: {  }
+name: 'Підрайон new'
+vid: subdistrict_of_the_sity
+description: null
+weight: 0
+new_revision: false

@@ -1,0 +1,36 @@
+uuid: 439aa9b1-5d9e-463e-ab21-c8ae1a595c63
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+    - options
+id: budova_applications.field_motivation_status
+field_name: field_motivation_status
+entity_type: budova_applications
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: gostra_motivaciya
+      label: 'Гостра мотивація'
+    -
+      value: motivovaniy
+      label: Мотивований
+    -
+      value: nedozriliy
+      label: Недозрілий
+    -
+      value: nevmotivovaniy
+      label: Невмотивований
+    -
+      value: ne_viznacheno
+      label: 'Не визначено'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

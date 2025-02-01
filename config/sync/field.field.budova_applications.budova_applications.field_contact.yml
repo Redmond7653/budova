@@ -1,0 +1,20 @@
+uuid: d30ff8f7-54cd-4fdb-9911-138ab648601d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_applications.field_contact
+  module:
+    - budova
+id: budova_applications.budova_applications.field_contact
+field_name: field_contact
+entity_type: budova_applications
+bundle: budova_applications
+label: Контакт
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

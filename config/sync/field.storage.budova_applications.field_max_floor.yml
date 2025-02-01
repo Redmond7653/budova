@@ -1,0 +1,20 @@
+uuid: d7c6fc6f-bd10-49af-bf9b-a7e5469c0a22
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+id: budova_applications.field_max_floor
+field_name: field_max_floor
+entity_type: budova_applications
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

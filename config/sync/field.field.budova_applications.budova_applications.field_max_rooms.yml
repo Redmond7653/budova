@@ -1,0 +1,24 @@
+uuid: 6eae9a31-1990-4d0d-9171-bdf304a260a7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_applications.field_max_rooms
+  module:
+    - budova
+id: budova_applications.budova_applications.field_max_rooms
+field_name: field_max_rooms
+entity_type: budova_applications
+bundle: budova_applications
+label: 'Максимальне число кімнат '
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

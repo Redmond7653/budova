@@ -1,0 +1,24 @@
+uuid: 3a17eb33-4caf-4f95-9096-5d512017a814
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_applications.field_price
+  module:
+    - budova
+id: budova_applications.budova_applications.field_price
+field_name: field_price
+entity_type: budova_applications
+bundle: budova_applications
+label: Ціна
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

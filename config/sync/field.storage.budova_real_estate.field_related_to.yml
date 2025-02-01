@@ -1,0 +1,20 @@
+uuid: aa240ed1-3694-436c-9a6b-8afe0d3efe9d
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+    - user
+id: budova_real_estate.field_related_to
+field_name: field_related_to
+entity_type: budova_real_estate
+type: entity_reference
+settings:
+  target_type: user
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

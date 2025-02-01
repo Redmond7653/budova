@@ -1,0 +1,20 @@
+uuid: 3817a075-f67e-46a1-afcf-528cc8506da8
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+id: budova_applications.field_min_floor
+field_name: field_min_floor
+entity_type: budova_applications
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -3,19 +3,26 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.budova_real_estate.field_chislo_kimnat
-    - field.storage.budova_real_estate.field_data_ostannogo_kontaktu
-    - field.storage.budova_real_estate.field_kontakt
-    - field.storage.budova_real_estate.field_planuvannya_kvartiri
-    - field.storage.budova_real_estate.field_ploshcha_kuhni_m2
-    - field.storage.budova_real_estate.field_poverh
-    - field.storage.budova_real_estate.field_stan_ob_iekta
-    - field.storage.budova_real_estate.field_status_aktivnosti
-    - field.storage.budova_real_estate.field_status_ob_iektiv_na_rinku
-    - field.storage.budova_real_estate.field_vid_osobi
-    - field.storage.budova_real_estate.field_vidnositsya_do
-    - field.storage.budova_real_estate.field_zagalna_ploshchad_m2
-    - field.storage.budova_real_estate.field_zhitlova_ploshchal_m2
+    - field.storage.budova_real_estate.field_activity_status
+    - field.storage.budova_real_estate.field_appartment_plan
+    - field.storage.budova_real_estate.field_area_region
+    - field.storage.budova_real_estate.field_contact
+    - field.storage.budova_real_estate.field_cost
+    - field.storage.budova_real_estate.field_district_of_the_city
+    - field.storage.budova_real_estate.field_floor
+    - field.storage.budova_real_estate.field_general_area
+    - field.storage.budova_real_estate.field_kitchen_area
+    - field.storage.budova_real_estate.field_last_date_contact
+    - field.storage.budova_real_estate.field_living_area
+    - field.storage.budova_real_estate.field_number_of_rooms
+    - field.storage.budova_real_estate.field_real_estate_code
+    - field.storage.budova_real_estate.field_related_to
+    - field.storage.budova_real_estate.field_responsible_user
+    - field.storage.budova_real_estate.field_site_category
+    - field.storage.budova_real_estate.field_state_of_the_object
+    - field.storage.budova_real_estate.field_subdistrict_of_city
+    - field.storage.budova_real_estate.field_type_of_person
+    - field.storage.budova_real_estate.field_type_of_real_estate
   module:
     - budova
     - datetime
@@ -36,23 +43,21 @@ display:
     display_options:
       title: Нерухомість
       fields:
-        id:
-          id: id
-          table: budova_real_estate
-          field: id
+        field_real_estate_code:
+          id: field_real_estate_code
+          table: budova_real_estate__field_real_estate_code
+          field: field_real_estate_code
           relationship: none
           group_type: group
           admin_label: ''
-          entity_type: budova_real_estate
-          entity_field: id
           plugin_id: field
-          label: ID
+          label: Код
           exclude: false
           alter:
             alter_text: false
             text: ''
-            make_link: true
-            path: '/real-estate/{{ id }}'
+            make_link: false
+            path: ''
             absolute: false
             external: false
             replace_spaces: false
@@ -88,10 +93,9 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: number_integer
+          type: string
           settings:
-            thousand_separator: ''
-            prefix_suffix: true
+            link_to_entity: false
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -102,10 +106,10 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_status_aktivnosti:
-          id: field_status_aktivnosti
-          table: budova_real_estate__field_status_aktivnosti
-          field: field_status_aktivnosti
+        field_activity_status:
+          id: field_activity_status
+          table: budova_real_estate__field_activity_status
+          field: field_activity_status
           relationship: none
           group_type: group
           admin_label: ''
@@ -164,72 +168,10 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_status_ob_iektiv_na_rinku:
-          id: field_status_ob_iektiv_na_rinku
-          table: budova_real_estate__field_status_ob_iektiv_na_rinku
-          field: field_status_ob_iektiv_na_rinku
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: "Статус об'єкта на ринку"
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: list_default
-          settings: {  }
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_stan_ob_iekta:
-          id: field_stan_ob_iekta
-          table: budova_real_estate__field_stan_ob_iekta
-          field: field_stan_ob_iekta
+        field_state_of_the_object:
+          id: field_state_of_the_object
+          table: budova_real_estate__field_state_of_the_object
+          field: field_state_of_the_object
           relationship: none
           group_type: group
           admin_label: ''
@@ -298,7 +240,7 @@ display:
           entity_type: budova_real_estate
           entity_field: created
           plugin_id: field
-          label: 'Дата створення'
+          label: 'Коли створено'
           exclude: false
           alter:
             alter_text: false
@@ -365,10 +307,10 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_data_ostannogo_kontaktu:
-          id: field_data_ostannogo_kontaktu
-          table: budova_real_estate__field_data_ostannogo_kontaktu
-          field: field_data_ostannogo_kontaktu
+        field_last_date_contact:
+          id: field_last_date_contact
+          table: budova_real_estate__field_last_date_contact
+          field: field_last_date_contact
           relationship: none
           group_type: group
           admin_label: ''
@@ -429,10 +371,262 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_chislo_kimnat:
-          id: field_chislo_kimnat
-          table: budova_real_estate__field_chislo_kimnat
-          field: field_chislo_kimnat
+        field_district_of_the_city:
+          id: field_district_of_the_city
+          table: budova_real_estate__field_district_of_the_city
+          field: field_district_of_the_city
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: 'Район міста'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: true
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_subdistrict_of_city:
+          id: field_subdistrict_of_city
+          table: budova_real_estate__field_subdistrict_of_city
+          field: field_subdistrict_of_city
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: Підрайон
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: true
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_type_of_real_estate:
+          id: field_type_of_real_estate
+          table: budova_real_estate__field_type_of_real_estate
+          field: field_type_of_real_estate
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: 'Вид нерухомості'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: true
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_contact:
+          id: field_contact
+          table: budova_real_estate__field_contact
+          field: field_contact
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: Контакт
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_number_of_rooms:
+          id: field_number_of_rooms
+          table: budova_real_estate__field_number_of_rooms
+          field: field_number_of_rooms
           relationship: none
           group_type: group
           admin_label: ''
@@ -493,10 +687,10 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_poverh:
-          id: field_poverh
-          table: budova_real_estate__field_poverh
-          field: field_poverh
+        field_floor:
+          id: field_floor
+          table: budova_real_estate__field_floor
+          field: field_floor
           relationship: none
           group_type: group
           admin_label: ''
@@ -557,10 +751,10 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_planuvannya_kvartiri:
-          id: field_planuvannya_kvartiri
-          table: budova_real_estate__field_planuvannya_kvartiri
-          field: field_planuvannya_kvartiri
+        field_appartment_plan:
+          id: field_appartment_plan
+          table: budova_real_estate__field_appartment_plan
+          field: field_appartment_plan
           relationship: none
           group_type: group
           admin_label: ''
@@ -606,10 +800,11 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: value
-          type: list_default
-          settings: {  }
-          group_column: value
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: true
+          group_column: target_id
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -619,15 +814,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_zagalna_ploshchad_m2:
-          id: field_zagalna_ploshchad_m2
-          table: budova_real_estate__field_zagalna_ploshchad_m2
-          field: field_zagalna_ploshchad_m2
+        field_general_area:
+          id: field_general_area
+          table: budova_real_estate__field_general_area
+          field: field_general_area
           relationship: none
           group_type: group
           admin_label: ''
           plugin_id: field
-          label: 'Загальна площадь(м²)'
+          label: 'Загальна площадь (м²)'
           exclude: false
           alter:
             alter_text: false
@@ -685,10 +880,10 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_zhitlova_ploshchal_m2:
-          id: field_zhitlova_ploshchal_m2
-          table: budova_real_estate__field_zhitlova_ploshchal_m2
-          field: field_zhitlova_ploshchal_m2
+        field_living_area:
+          id: field_living_area
+          table: budova_real_estate__field_living_area
+          field: field_living_area
           relationship: none
           group_type: group
           admin_label: ''
@@ -751,10 +946,10 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_ploshcha_kuhni_m2:
-          id: field_ploshcha_kuhni_m2
-          table: budova_real_estate__field_ploshcha_kuhni_m2
-          field: field_ploshcha_kuhni_m2
+        field_kitchen_area:
+          id: field_kitchen_area
+          table: budova_real_estate__field_kitchen_area
+          field: field_kitchen_area
           relationship: none
           group_type: group
           admin_label: ''
@@ -817,10 +1012,267 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_vid_osobi:
-          id: field_vid_osobi
-          table: budova_real_estate__field_vid_osobi
-          field: field_vid_osobi
+        field_cost:
+          id: field_cost
+          table: budova_real_estate__field_cost
+          field: field_cost
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: Вартість
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_decimal
+          settings:
+            thousand_separator: ''
+            decimal_separator: .
+            scale: 2
+            prefix_suffix: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_area_region:
+          id: field_area_region
+          table: budova_real_estate__field_area_region
+          field: field_area_region
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: 'Площа участку(га)'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_decimal
+          settings:
+            thousand_separator: ''
+            decimal_separator: .
+            scale: 2
+            prefix_suffix: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_site_category:
+          id: field_site_category
+          table: budova_real_estate__field_site_category
+          field: field_site_category
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: 'Категорія участку'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: list_default
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_responsible_user:
+          id: field_responsible_user
+          table: budova_real_estate__field_responsible_user
+          field: field_responsible_user
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: Відповідальний
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: true
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_type_of_person:
+          id: field_type_of_person
+          table: budova_real_estate__field_type_of_person
+          field: field_type_of_person
           relationship: none
           group_type: group
           admin_label: ''
@@ -879,10 +1331,10 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_vidnositsya_do:
-          id: field_vidnositsya_do
-          table: budova_real_estate__field_vidnositsya_do
-          field: field_vidnositsya_do
+        field_related_to:
+          id: field_related_to
+          table: budova_real_estate__field_related_to
+          field: field_related_to
           relationship: none
           group_type: group
           admin_label: ''
@@ -942,69 +1394,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_kontakt:
-          id: field_kontakt
-          table: budova_real_estate__field_kontakt
-          field: field_kontakt
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: 'Контакти особи'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
       pager:
         type: mini
         options:
@@ -1043,186 +1432,10 @@ display:
       empty: {  }
       sorts: {  }
       arguments: {  }
-      filters:
-        field_status_aktivnosti_value:
-          id: field_status_aktivnosti_value
-          table: budova_real_estate__field_status_aktivnosti
-          field: field_status_aktivnosti_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: list_field
-          operator: or
-          value: {  }
-          group: 1
-          exposed: true
-          expose:
-            operator_id: field_status_aktivnosti_value_op
-            label: 'Статус активності '
-            description: ''
-            use_operator: false
-            operator: field_status_aktivnosti_value_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: field_status_aktivnosti_value
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              content_editor: '0'
-              administrator: '0'
-              buyer: '0'
-              seller: '0'
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: false
-        field_stan_ob_iekta_value:
-          id: field_stan_ob_iekta_value
-          table: budova_real_estate__field_stan_ob_iekta
-          field: field_stan_ob_iekta_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: list_field
-          operator: or
-          value: {  }
-          group: 1
-          exposed: true
-          expose:
-            operator_id: field_stan_ob_iekta_value_op
-            label: "Стан об'єкту "
-            description: ''
-            use_operator: false
-            operator: field_stan_ob_iekta_value_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: field_stan_ob_iekta_value
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              content_editor: '0'
-              administrator: '0'
-              buyer: '0'
-              seller: '0'
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: false
-        field_vid_neruhomosti_value:
-          id: field_vid_neruhomosti_value
-          table: budova_real_estate__field_vid_neruhomosti
-          field: field_vid_neruhomosti_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: list_field
-          operator: or
-          value: {  }
-          group: 1
-          exposed: true
-          expose:
-            operator_id: field_vid_neruhomosti_value_op
-            label: 'Вид нерухомості '
-            description: ''
-            use_operator: false
-            operator: field_vid_neruhomosti_value_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: field_vid_neruhomosti_value
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              content_editor: '0'
-              administrator: '0'
-              buyer: '0'
-              seller: '0'
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: false
-        field_kontakt_value:
-          id: field_kontakt_value
-          table: budova_real_estate__field_kontakt
-          field: field_kontakt_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: string
-          operator: word
-          value: ''
-          group: 1
-          exposed: true
-          expose:
-            operator_id: field_kontakt_value_op
-            label: 'Контакти особи'
-            description: ''
-            use_operator: false
-            operator: field_kontakt_value_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: field_kontakt_value
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              content_editor: '0'
-              administrator: '0'
-              buyer: '0'
-              seller: '0'
-            placeholder: ''
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
+      filters: {  }
+      filter_groups:
+        operator: AND
+        groups: {  }
       style:
         type: table
         options:
@@ -1265,22 +1478,28 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - url
         - url.query_args
       tags:
-        - 'config:field.storage.budova_real_estate.field_chislo_kimnat'
-        - 'config:field.storage.budova_real_estate.field_data_ostannogo_kontaktu'
-        - 'config:field.storage.budova_real_estate.field_kontakt'
-        - 'config:field.storage.budova_real_estate.field_planuvannya_kvartiri'
-        - 'config:field.storage.budova_real_estate.field_ploshcha_kuhni_m2'
-        - 'config:field.storage.budova_real_estate.field_poverh'
-        - 'config:field.storage.budova_real_estate.field_stan_ob_iekta'
-        - 'config:field.storage.budova_real_estate.field_status_aktivnosti'
-        - 'config:field.storage.budova_real_estate.field_status_ob_iektiv_na_rinku'
-        - 'config:field.storage.budova_real_estate.field_vid_osobi'
-        - 'config:field.storage.budova_real_estate.field_vidnositsya_do'
-        - 'config:field.storage.budova_real_estate.field_zagalna_ploshchad_m2'
-        - 'config:field.storage.budova_real_estate.field_zhitlova_ploshchal_m2'
+        - 'config:field.storage.budova_real_estate.field_activity_status'
+        - 'config:field.storage.budova_real_estate.field_appartment_plan'
+        - 'config:field.storage.budova_real_estate.field_area_region'
+        - 'config:field.storage.budova_real_estate.field_contact'
+        - 'config:field.storage.budova_real_estate.field_cost'
+        - 'config:field.storage.budova_real_estate.field_district_of_the_city'
+        - 'config:field.storage.budova_real_estate.field_floor'
+        - 'config:field.storage.budova_real_estate.field_general_area'
+        - 'config:field.storage.budova_real_estate.field_kitchen_area'
+        - 'config:field.storage.budova_real_estate.field_last_date_contact'
+        - 'config:field.storage.budova_real_estate.field_living_area'
+        - 'config:field.storage.budova_real_estate.field_number_of_rooms'
+        - 'config:field.storage.budova_real_estate.field_real_estate_code'
+        - 'config:field.storage.budova_real_estate.field_related_to'
+        - 'config:field.storage.budova_real_estate.field_responsible_user'
+        - 'config:field.storage.budova_real_estate.field_site_category'
+        - 'config:field.storage.budova_real_estate.field_state_of_the_object'
+        - 'config:field.storage.budova_real_estate.field_subdistrict_of_city'
+        - 'config:field.storage.budova_real_estate.field_type_of_person'
+        - 'config:field.storage.budova_real_estate.field_type_of_real_estate'
   page_real_estate:
     id: page_real_estate
     display_title: Page
@@ -1294,19 +1513,25 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - url
         - url.query_args
       tags:
-        - 'config:field.storage.budova_real_estate.field_chislo_kimnat'
-        - 'config:field.storage.budova_real_estate.field_data_ostannogo_kontaktu'
-        - 'config:field.storage.budova_real_estate.field_kontakt'
-        - 'config:field.storage.budova_real_estate.field_planuvannya_kvartiri'
-        - 'config:field.storage.budova_real_estate.field_ploshcha_kuhni_m2'
-        - 'config:field.storage.budova_real_estate.field_poverh'
-        - 'config:field.storage.budova_real_estate.field_stan_ob_iekta'
-        - 'config:field.storage.budova_real_estate.field_status_aktivnosti'
-        - 'config:field.storage.budova_real_estate.field_status_ob_iektiv_na_rinku'
-        - 'config:field.storage.budova_real_estate.field_vid_osobi'
-        - 'config:field.storage.budova_real_estate.field_vidnositsya_do'
-        - 'config:field.storage.budova_real_estate.field_zagalna_ploshchad_m2'
-        - 'config:field.storage.budova_real_estate.field_zhitlova_ploshchal_m2'
+        - 'config:field.storage.budova_real_estate.field_activity_status'
+        - 'config:field.storage.budova_real_estate.field_appartment_plan'
+        - 'config:field.storage.budova_real_estate.field_area_region'
+        - 'config:field.storage.budova_real_estate.field_contact'
+        - 'config:field.storage.budova_real_estate.field_cost'
+        - 'config:field.storage.budova_real_estate.field_district_of_the_city'
+        - 'config:field.storage.budova_real_estate.field_floor'
+        - 'config:field.storage.budova_real_estate.field_general_area'
+        - 'config:field.storage.budova_real_estate.field_kitchen_area'
+        - 'config:field.storage.budova_real_estate.field_last_date_contact'
+        - 'config:field.storage.budova_real_estate.field_living_area'
+        - 'config:field.storage.budova_real_estate.field_number_of_rooms'
+        - 'config:field.storage.budova_real_estate.field_real_estate_code'
+        - 'config:field.storage.budova_real_estate.field_related_to'
+        - 'config:field.storage.budova_real_estate.field_responsible_user'
+        - 'config:field.storage.budova_real_estate.field_site_category'
+        - 'config:field.storage.budova_real_estate.field_state_of_the_object'
+        - 'config:field.storage.budova_real_estate.field_subdistrict_of_city'
+        - 'config:field.storage.budova_real_estate.field_type_of_person'
+        - 'config:field.storage.budova_real_estate.field_type_of_real_estate'

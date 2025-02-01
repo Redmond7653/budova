@@ -1,0 +1,20 @@
+uuid: 37ca0965-abf6-467b-85c7-7e2aced2a1fb
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+    - user
+id: budova_applications.field_realtor
+field_name: field_realtor
+entity_type: budova_applications
+type: entity_reference
+settings:
+  target_type: user
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

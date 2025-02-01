@@ -1,0 +1,20 @@
+uuid: 7f3f8d58-4fbf-444d-834b-083a73d8404c
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+    - taxonomy
+id: budova_applications.field_operaciya_new
+field_name: field_operaciya_new
+entity_type: budova_applications
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

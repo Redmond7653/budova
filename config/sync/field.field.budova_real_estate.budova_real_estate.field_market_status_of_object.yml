@@ -1,0 +1,21 @@
+uuid: a203bcaa-c051-4a46-bc68-414c9d4e67c3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_real_estate.field_market_status_of_object
+  module:
+    - budova
+    - options
+id: budova_real_estate.budova_real_estate.field_market_status_of_object
+field_name: field_market_status_of_object
+entity_type: budova_real_estate
+bundle: budova_real_estate
+label: "Статус об'єкта на ринку"
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

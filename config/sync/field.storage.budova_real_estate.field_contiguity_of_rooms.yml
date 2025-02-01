@@ -1,0 +1,30 @@
+uuid: dd45629c-c8aa-44f7-9889-b27c505da946
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+    - options
+id: budova_real_estate.field_contiguity_of_rooms
+field_name: field_contiguity_of_rooms
+entity_type: budova_real_estate
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: rozdilni
+      label: Роздільні
+    -
+      value: sumizhni
+      label: Суміжні
+    -
+      value: rozdilno_sumizhni
+      label: Роздільно-суміжні
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

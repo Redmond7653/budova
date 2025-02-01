@@ -1,0 +1,30 @@
+uuid: dda8c182-5333-4cef-9cbd-20ed4fa2dfb1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_real_estate.field_real_estate_operation
+    - taxonomy.vocabulary.real_estate_transaction
+  module:
+    - budova
+id: budova_real_estate.budova_real_estate.field_real_estate_operation
+field_name: field_real_estate_operation
+entity_type: budova_real_estate
+bundle: budova_real_estate
+label: 'Операція по нерухомості'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      real_estate_transaction: real_estate_transaction
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

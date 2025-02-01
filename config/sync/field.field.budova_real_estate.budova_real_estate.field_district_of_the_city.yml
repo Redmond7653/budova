@@ -1,0 +1,30 @@
+uuid: 820db91e-5c29-4710-b1e8-062d347b7567
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_real_estate.field_district_of_the_city
+    - taxonomy.vocabulary.district_of_the_city
+  module:
+    - budova
+id: budova_real_estate.budova_real_estate.field_district_of_the_city
+field_name: field_district_of_the_city
+entity_type: budova_real_estate
+bundle: budova_real_estate
+label: 'Район міста'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      district_of_the_city: district_of_the_city
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

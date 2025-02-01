@@ -1,0 +1,9 @@
+uuid: 3057a5bd-6c5a-4449-b3fa-bb1d80dc051d
+langcode: en
+status: true
+dependencies: {  }
+name: 'Вид нерухомості new'
+vid: type_of_real_estate
+description: null
+weight: 0
+new_revision: false

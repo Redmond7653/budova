@@ -3,41 +3,41 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.budova_real_estate.budova_real_estate.field_avtonomne_opalennya
-    - field.field.budova_real_estate.budova_real_estate.field_chislo_kimnat
-    - field.field.budova_real_estate.budova_real_estate.field_data_ostannogo_kontaktu
-    - field.field.budova_real_estate.budova_real_estate.field_data_stvorennya
-    - field.field.budova_real_estate.budova_real_estate.field_dzherela_nadhodzhennya_ob
-    - field.field.budova_real_estate.budova_real_estate.field_kategoriya_uchastku
-    - field.field.budova_real_estate.budova_real_estate.field_kod
-    - field.field.budova_real_estate.budova_real_estate.field_konf
-    - field.field.budova_real_estate.budova_real_estate.field_kontakt
-    - field.field.budova_real_estate.budova_real_estate.field_material_stin
+    - field.field.budova_real_estate.budova_real_estate.field_activity_status
+    - field.field.budova_real_estate.budova_real_estate.field_appartment_plan
+    - field.field.budova_real_estate.budova_real_estate.field_area_region
+    - field.field.budova_real_estate.budova_real_estate.field_autonomous_heating
+    - field.field.budova_real_estate.budova_real_estate.field_ceiling_height
+    - field.field.budova_real_estate.budova_real_estate.field_contact
+    - field.field.budova_real_estate.budova_real_estate.field_contiguity_of_rooms
+    - field.field.budova_real_estate.budova_real_estate.field_cost
+    - field.field.budova_real_estate.budova_real_estate.field_creation_date
+    - field.field.budova_real_estate.budova_real_estate.field_description
+    - field.field.budova_real_estate.budova_real_estate.field_district_of_the_city
+    - field.field.budova_real_estate.budova_real_estate.field_floor
+    - field.field.budova_real_estate.budova_real_estate.field_general_area
+    - field.field.budova_real_estate.budova_real_estate.field_kitchen_area
+    - field.field.budova_real_estate.budova_real_estate.field_last_date_contact
+    - field.field.budova_real_estate.budova_real_estate.field_living_area
+    - field.field.budova_real_estate.budova_real_estate.field_market_status_of_object
     - field.field.budova_real_estate.budova_real_estate.field_metro
-    - field.field.budova_real_estate.budova_real_estate.field_operaciya
-    - field.field.budova_real_estate.budova_real_estate.field_opis
-    - field.field.budova_real_estate.budova_real_estate.field_pidrayon_mista
-    - field.field.budova_real_estate.budova_real_estate.field_planuvannya_kvartiri
-    - field.field.budova_real_estate.budova_real_estate.field_ploshcha_kuhni_m2
-    - field.field.budova_real_estate.budova_real_estate.field_ploshcha_uchastku_ga
-    - field.field.budova_real_estate.budova_real_estate.field_poverh
-    - field.field.budova_real_estate.budova_real_estate.field_rayon_mista
-    - field.field.budova_real_estate.budova_real_estate.field_stan_ob_iekta
-    - field.field.budova_real_estate.budova_real_estate.field_status_aktivnosti
-    - field.field.budova_real_estate.budova_real_estate.field_status_ob_iektiv_na_rinku
-    - field.field.budova_real_estate.budova_real_estate.field_status_po_motivaciyi
-    - field.field.budova_real_estate.budova_real_estate.field_sumizhnist_kimnat
+    - field.field.budova_real_estate.budova_real_estate.field_motivation_status
+    - field.field.budova_real_estate.budova_real_estate.field_number_of_rooms
+    - field.field.budova_real_estate.budova_real_estate.field_real_estate_code
+    - field.field.budova_real_estate.budova_real_estate.field_real_estate_operation
+    - field.field.budova_real_estate.budova_real_estate.field_related_to
+    - field.field.budova_real_estate.budova_real_estate.field_responsible_user
+    - field.field.budova_real_estate.budova_real_estate.field_site_category
+    - field.field.budova_real_estate.budova_real_estate.field_site_configuration
+    - field.field.budova_real_estate.budova_real_estate.field_source_of_object
+    - field.field.budova_real_estate.budova_real_estate.field_state_of_the_object
+    - field.field.budova_real_estate.budova_real_estate.field_subdistrict_of_city
+    - field.field.budova_real_estate.budova_real_estate.field_subtype_of_real_estate
     - field.field.budova_real_estate.budova_real_estate.field_test_image
-    - field.field.budova_real_estate.budova_real_estate.field_tip_kontaktu
-    - field.field.budova_real_estate.budova_real_estate.field_tip_neruhomosti
-    - field.field.budova_real_estate.budova_real_estate.field_vartist
-    - field.field.budova_real_estate.budova_real_estate.field_vid_neruhomosti
-    - field.field.budova_real_estate.budova_real_estate.field_vid_osobi
-    - field.field.budova_real_estate.budova_real_estate.field_vidnositsya_do
-    - field.field.budova_real_estate.budova_real_estate.field_vidpovidalniy
-    - field.field.budova_real_estate.budova_real_estate.field_visota_stel
-    - field.field.budova_real_estate.budova_real_estate.field_zagalna_ploshchad_m2
-    - field.field.budova_real_estate.budova_real_estate.field_zhitlova_ploshchal_m2
+    - field.field.budova_real_estate.budova_real_estate.field_type_of_contact
+    - field.field.budova_real_estate.budova_real_estate.field_type_of_person
+    - field.field.budova_real_estate.budova_real_estate.field_type_of_real_estate
+    - field.field.budova_real_estate.budova_real_estate.field_wall_material
     - image.style.thumbnail
   module:
     - budova
@@ -62,158 +62,202 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-  field_avtonomne_opalennya:
+  field_activity_status:
     type: options_select
-    weight: 16
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_chislo_kimnat:
-    type: number
-    weight: 18
-    region: content
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
-  field_data_ostannogo_kontaktu:
-    type: datetime_default
-    weight: 36
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_data_stvorennya:
-    type: datetime_default
-    weight: 35
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_dzherela_nadhodzhennya_ob:
-    type: options_select
-    weight: 9
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_kategoriya_uchastku:
-    type: options_select
-    weight: 29
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_kod:
-    type: string_textfield
-    weight: 4
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_konf:
-    type: string_textfield
-    weight: 28
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_kontakt:
-    type: string_textfield
-    weight: 38
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_material_stin:
-    type: options_select
-    weight: 21
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_metro:
-    type: boolean_checkbox
     weight: 17
     region: content
-    settings:
-      display_label: true
+    settings: {  }
     third_party_settings: {  }
-  field_operaciya:
+  field_appartment_plan:
     type: options_select
-    weight: 7
+    weight: 32
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_opis:
+  field_area_region:
+    type: number
+    weight: 39
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_autonomous_heating:
+    type: options_select
+    weight: 28
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_ceiling_height:
+    type: number
+    weight: 35
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_contact:
+    type: string_textfield
+    weight: 49
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_contiguity_of_rooms:
+    type: options_select
+    weight: 34
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_cost:
+    type: number
+    weight: 44
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_creation_date:
+    type: datetime_default
+    weight: 46
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_description:
     type: string_textarea
-    weight: 31
+    weight: 43
     region: content
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-  field_pidrayon_mista:
+  field_district_of_the_city:
     type: options_select
-    weight: 15
+    weight: 25
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_planuvannya_kvartiri:
-    type: options_select
-    weight: 20
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_ploshcha_kuhni_m2:
+  field_floor:
     type: number
-    weight: 26
+    weight: 31
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
-  field_ploshcha_uchastku_ga:
+  field_general_area:
     type: number
-    weight: 27
+    weight: 36
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
-  field_poverh:
+  field_kitchen_area:
     type: number
+    weight: 38
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_last_date_contact:
+    type: datetime_default
+    weight: 47
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_living_area:
+    type: number
+    weight: 37
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_market_status_of_object:
+    type: options_select
     weight: 19
     region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_metro:
+    type: boolean_checkbox
+    weight: 29
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_motivation_status:
+    type: options_select
+    weight: 13
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_number_of_rooms:
+    type: number
+    weight: 30
+    region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
-  field_rayon_mista:
-    type: options_select
-    weight: 14
+  field_real_estate_code:
+    type: string_textfield
+    weight: 5
     region: content
-    settings: {  }
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-  field_stan_ob_iekta:
-    type: options_select
-    weight: 30
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_status_aktivnosti:
-    type: options_select
-    weight: 10
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_status_ob_iektiv_na_rinku:
+  field_real_estate_operation:
     type: options_select
     weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_status_po_motivaciyi:
+  field_related_to:
     type: options_select
-    weight: 8
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_sumizhnist_kimnat:
+  field_responsible_user:
+    type: entity_reference_autocomplete
+    weight: 45
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_site_category:
+    type: options_select
+    weight: 41
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_site_configuration:
+    type: string_textfield
+    weight: 40
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_source_of_object:
+    type: options_select
+    weight: 15
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_state_of_the_object:
+    type: options_select
+    weight: 42
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_subdistrict_of_city:
+    type: options_select
+    weight: 26
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_subtype_of_real_estate:
     type: options_select
     weight: 22
     region: content
@@ -221,75 +265,35 @@ content:
     third_party_settings: {  }
   field_test_image:
     type: image_image
-    weight: 39
+    weight: 50
     region: content
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
-  field_tip_kontaktu:
+  field_type_of_contact:
     type: options_select
-    weight: 37
+    weight: 48
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_tip_neruhomosti:
+  field_type_of_person:
     type: options_select
-    weight: 13
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_vartist:
-    type: number
+  field_type_of_real_estate:
+    type: options_select
+    weight: 21
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_wall_material:
+    type: options_select
     weight: 33
     region: content
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
-  field_vid_neruhomosti:
-    type: options_select
-    weight: 12
-    region: content
     settings: {  }
-    third_party_settings: {  }
-  field_vid_osobi:
-    type: options_select
-    weight: 5
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_vidnositsya_do:
-    type: options_select
-    weight: 6
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_vidpovidalniy:
-    type: options_select
-    weight: 34
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_visota_stel:
-    type: number
-    weight: 23
-    region: content
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
-  field_zagalna_ploshchad_m2:
-    type: number
-    weight: 24
-    region: content
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
-  field_zhitlova_ploshchal_m2:
-    type: number
-    weight: 25
-    region: content
-    settings:
-      placeholder: ''
     third_party_settings: {  }
   label:
     type: string_textfield

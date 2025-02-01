@@ -1,0 +1,20 @@
+uuid: 8967d838-aafa-4431-97f6-bbbd3151c55a
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+id: budova_real_estate.field_area_region
+field_name: field_area_region
+entity_type: budova_real_estate
+type: decimal
+settings:
+  precision: 10
+  scale: 2
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

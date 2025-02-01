@@ -1,0 +1,20 @@
+uuid: ec068589-223e-4462-a46b-e3d379f79ab9
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+id: budova_applications.field_min_rooms
+field_name: field_min_rooms
+entity_type: budova_applications
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

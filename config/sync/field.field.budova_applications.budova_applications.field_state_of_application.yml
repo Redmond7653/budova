@@ -1,0 +1,21 @@
+uuid: 866d3d65-678b-47c9-9a3d-1c6636d04a1d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_applications.field_state_of_application
+  module:
+    - budova
+    - options
+id: budova_applications.budova_applications.field_state_of_application
+field_name: field_state_of_application
+entity_type: budova_applications
+bundle: budova_applications
+label: 'Статус заявкі'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

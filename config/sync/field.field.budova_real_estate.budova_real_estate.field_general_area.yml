@@ -1,0 +1,24 @@
+uuid: 74f94c77-fe3f-4be0-98cd-693773a3c305
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_real_estate.field_general_area
+  module:
+    - budova
+id: budova_real_estate.budova_real_estate.field_general_area
+field_name: field_general_area
+entity_type: budova_real_estate
+bundle: budova_real_estate
+label: 'Загальна площадь (м²)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

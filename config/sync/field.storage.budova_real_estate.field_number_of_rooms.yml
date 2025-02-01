@@ -1,0 +1,20 @@
+uuid: d8492ef1-ce57-4422-b247-8f863ae412cb
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+id: budova_real_estate.field_number_of_rooms
+field_name: field_number_of_rooms
+entity_type: budova_real_estate
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,20 @@
+uuid: 5b06a10e-fa22-44fb-8f80-ffac234c3c33
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_applications.field_description
+  module:
+    - budova
+id: budova_applications.budova_applications.field_description
+field_name: field_description
+entity_type: budova_applications
+bundle: budova_applications
+label: Опис
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

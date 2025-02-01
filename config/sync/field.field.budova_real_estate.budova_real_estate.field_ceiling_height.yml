@@ -1,0 +1,24 @@
+uuid: f64c293c-9d24-4778-8364-263c9c78e1c8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_real_estate.field_ceiling_height
+  module:
+    - budova
+id: budova_real_estate.budova_real_estate.field_ceiling_height
+field_name: field_ceiling_height
+entity_type: budova_real_estate
+bundle: budova_real_estate
+label: 'Висота стель (м)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

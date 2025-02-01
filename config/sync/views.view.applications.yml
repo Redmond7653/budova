@@ -3,13 +3,16 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.budova_applications.field_cina
-    - field.storage.budova_applications.field_data_stvorennya
-    - field.storage.budova_applications.field_kontakt
-    - field.storage.budova_applications.field_minimalne_chislo_kimnat
-    - field.storage.budova_applications.field_opis
-    - field.storage.budova_applications.field_status_zayavki
-    - field.storage.budova_applications.field_tip_osobi
+    - field.storage.budova_applications.field_contact
+    - field.storage.budova_applications.field_description
+    - field.storage.budova_applications.field_district_of_the_city
+    - field.storage.budova_applications.field_last_date_contact
+    - field.storage.budova_applications.field_min_rooms
+    - field.storage.budova_applications.field_price
+    - field.storage.budova_applications.field_realtor
+    - field.storage.budova_applications.field_related_to
+    - field.storage.budova_applications.field_state_of_application
+    - field.storage.budova_applications.field_type_of_person
   module:
     - budova
     - datetime
@@ -250,10 +253,10 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_status_zayavki:
-          id: field_status_zayavki
-          table: budova_applications__field_status_zayavki
-          field: field_status_zayavki
+        field_state_of_application:
+          id: field_state_of_application
+          table: budova_applications__field_state_of_application
+          field: field_state_of_application
           relationship: none
           group_type: group
           admin_label: ''
@@ -312,15 +315,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_minimalne_chislo_kimnat:
-          id: field_minimalne_chislo_kimnat
-          table: budova_applications__field_minimalne_chislo_kimnat
-          field: field_minimalne_chislo_kimnat
+        field_min_rooms:
+          id: field_min_rooms
+          table: budova_applications__field_min_rooms
+          field: field_min_rooms
           relationship: none
           group_type: group
           admin_label: ''
           plugin_id: field
-          label: 'Мінімальне число кімнат '
+          label: 'Мінімальне число кімнат'
           exclude: false
           alter:
             alter_text: false
@@ -362,9 +365,10 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: string
+          type: number_integer
           settings:
-            link_to_entity: false
+            thousand_separator: ''
+            prefix_suffix: true
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -375,10 +379,73 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_cina:
-          id: field_cina
-          table: budova_applications__field_cina
-          field: field_cina
+        field_district_of_the_city:
+          id: field_district_of_the_city
+          table: budova_applications__field_district_of_the_city
+          field: field_district_of_the_city
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: 'Район міста'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: true
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_price:
+          id: field_price
+          table: budova_applications__field_price
+          field: field_price
           relationship: none
           group_type: group
           admin_label: ''
@@ -441,10 +508,10 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_opis:
-          id: field_opis
-          table: budova_applications__field_opis
-          field: field_opis
+        field_description:
+          id: field_description
+          table: budova_applications__field_description
+          field: field_description
           relationship: none
           group_type: group
           admin_label: ''
@@ -503,10 +570,10 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_kontakt:
-          id: field_kontakt
-          table: budova_applications__field_kontakt
-          field: field_kontakt
+        field_contact:
+          id: field_contact
+          table: budova_applications__field_contact
+          field: field_contact
           relationship: none
           group_type: group
           admin_label: ''
@@ -566,10 +633,136 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_tip_osobi:
-          id: field_tip_osobi
-          table: budova_applications__field_tip_osobi
-          field: field_tip_osobi
+        field_realtor:
+          id: field_realtor
+          table: budova_applications__field_realtor
+          field: field_realtor
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: Рієлтор
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: true
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_related_to:
+          id: field_related_to
+          table: budova_applications__field_related_to
+          field: field_related_to
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: 'Відноситься до'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: true
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_type_of_person:
+          id: field_type_of_person
+          table: budova_applications__field_type_of_person
+          field: field_type_of_person
           relationship: none
           group_type: group
           admin_label: ''
@@ -628,10 +821,73 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_data_stvorennya:
-          id: field_data_stvorennya
-          table: budova_applications__field_data_stvorennya
-          field: field_data_stvorennya
+        field_related_to_1:
+          id: field_related_to_1
+          table: budova_applications__field_related_to
+          field: field_related_to
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: 'Відноситься до'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: true
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_last_date_contact:
+          id: field_last_date_contact
+          table: budova_applications__field_last_date_contact
+          field: field_last_date_contact
           relationship: none
           group_type: group
           admin_label: ''
@@ -730,234 +986,10 @@ display:
       empty: {  }
       sorts: {  }
       arguments: {  }
-      filters:
-        field_status_zayavki_value:
-          id: field_status_zayavki_value
-          table: budova_applications__field_status_zayavki
-          field: field_status_zayavki_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: list_field
-          operator: or
-          value: {  }
-          group: 1
-          exposed: true
-          expose:
-            operator_id: field_status_zayavki_value_op
-            label: 'Статус заявкі '
-            description: ''
-            use_operator: false
-            operator: field_status_zayavki_value_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: field_status_zayavki_value
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              content_editor: '0'
-              administrator: '0'
-              buyer: '0'
-              seller: '0'
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: false
-        field_rayon_mista_value:
-          id: field_rayon_mista_value
-          table: budova_applications__field_rayon_mista
-          field: field_rayon_mista_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: list_field
-          operator: or
-          value: {  }
-          group: 1
-          exposed: true
-          expose:
-            operator_id: field_rayon_mista_value_op
-            label: 'Район міста '
-            description: ''
-            use_operator: false
-            operator: field_rayon_mista_value_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: field_rayon_mista_value
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              content_editor: '0'
-              administrator: '0'
-              buyer: '0'
-              seller: '0'
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: false
-        field_cina_value:
-          id: field_cina_value
-          table: budova_applications__field_cina
-          field: field_cina_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: numeric
-          operator: '='
-          value:
-            min: ''
-            max: ''
-            value: ''
-          group: 1
-          exposed: true
-          expose:
-            operator_id: field_cina_value_op
-            label: Ціна
-            description: ''
-            use_operator: false
-            operator: field_cina_value_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: field_cina_value
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              content_editor: '0'
-              administrator: '0'
-              buyer: '0'
-              seller: '0'
-            min_placeholder: ''
-            max_placeholder: ''
-            placeholder: ''
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-        field_opis_value:
-          id: field_opis_value
-          table: budova_applications__field_opis
-          field: field_opis_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: string
-          operator: word
-          value: ''
-          group: 1
-          exposed: true
-          expose:
-            operator_id: field_opis_value_op
-            label: 'Опис '
-            description: ''
-            use_operator: false
-            operator: field_opis_value_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: field_opis_value
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              content_editor: '0'
-              administrator: '0'
-              buyer: '0'
-              seller: '0'
-            placeholder: ''
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-        field_kontakt_value:
-          id: field_kontakt_value
-          table: budova_applications__field_kontakt
-          field: field_kontakt_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: string
-          operator: word
-          value: ''
-          group: 1
-          exposed: true
-          expose:
-            operator_id: field_kontakt_value_op
-            label: 'Контакти особи'
-            description: ''
-            use_operator: false
-            operator: field_kontakt_value_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: field_kontakt_value
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              content_editor: '0'
-              administrator: '0'
-              buyer: '0'
-              seller: '0'
-            placeholder: ''
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
+      filters: {  }
+      filter_groups:
+        operator: AND
+        groups: {  }
       style:
         type: table
         options:
@@ -1000,16 +1032,18 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - url
         - url.query_args
       tags:
-        - 'config:field.storage.budova_applications.field_cina'
-        - 'config:field.storage.budova_applications.field_data_stvorennya'
-        - 'config:field.storage.budova_applications.field_kontakt'
-        - 'config:field.storage.budova_applications.field_minimalne_chislo_kimnat'
-        - 'config:field.storage.budova_applications.field_opis'
-        - 'config:field.storage.budova_applications.field_status_zayavki'
-        - 'config:field.storage.budova_applications.field_tip_osobi'
+        - 'config:field.storage.budova_applications.field_contact'
+        - 'config:field.storage.budova_applications.field_description'
+        - 'config:field.storage.budova_applications.field_district_of_the_city'
+        - 'config:field.storage.budova_applications.field_last_date_contact'
+        - 'config:field.storage.budova_applications.field_min_rooms'
+        - 'config:field.storage.budova_applications.field_price'
+        - 'config:field.storage.budova_applications.field_realtor'
+        - 'config:field.storage.budova_applications.field_related_to'
+        - 'config:field.storage.budova_applications.field_state_of_application'
+        - 'config:field.storage.budova_applications.field_type_of_person'
   applications_page:
     id: applications_page
     display_title: Page
@@ -1023,13 +1057,15 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - url
         - url.query_args
       tags:
-        - 'config:field.storage.budova_applications.field_cina'
-        - 'config:field.storage.budova_applications.field_data_stvorennya'
-        - 'config:field.storage.budova_applications.field_kontakt'
-        - 'config:field.storage.budova_applications.field_minimalne_chislo_kimnat'
-        - 'config:field.storage.budova_applications.field_opis'
-        - 'config:field.storage.budova_applications.field_status_zayavki'
-        - 'config:field.storage.budova_applications.field_tip_osobi'
+        - 'config:field.storage.budova_applications.field_contact'
+        - 'config:field.storage.budova_applications.field_description'
+        - 'config:field.storage.budova_applications.field_district_of_the_city'
+        - 'config:field.storage.budova_applications.field_last_date_contact'
+        - 'config:field.storage.budova_applications.field_min_rooms'
+        - 'config:field.storage.budova_applications.field_price'
+        - 'config:field.storage.budova_applications.field_realtor'
+        - 'config:field.storage.budova_applications.field_related_to'
+        - 'config:field.storage.budova_applications.field_state_of_application'
+        - 'config:field.storage.budova_applications.field_type_of_person'

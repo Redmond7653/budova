@@ -1,0 +1,21 @@
+uuid: e816a997-1ed7-4ea1-a238-89e294b7f04c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_applications.field_type_of_person
+  module:
+    - budova
+    - options
+id: budova_applications.budova_applications.field_type_of_person
+field_name: field_type_of_person
+entity_type: budova_applications
+bundle: budova_applications
+label: 'Тип особи'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

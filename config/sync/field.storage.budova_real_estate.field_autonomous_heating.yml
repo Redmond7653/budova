@@ -1,0 +1,30 @@
+uuid: a0007fa6-1061-4905-a3c6-b97f78681e42
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+    - options
+id: budova_real_estate.field_autonomous_heating
+field_name: field_autonomous_heating
+entity_type: budova_real_estate
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: none
+      label: None
+    -
+      value: gazove
+      label: Газове
+    -
+      value: elektrichne
+      label: Електричне
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

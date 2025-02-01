@@ -1,0 +1,9 @@
+uuid: c6f94a4c-6040-4341-b4f5-103cc9f34b77
+langcode: en
+status: true
+dependencies: {  }
+name: "Джерело надходження об'єктів new"
+vid: source_of_receipt_of_objects
+description: null
+weight: 0
+new_revision: false

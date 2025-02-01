@@ -1,0 +1,30 @@
+uuid: eef454c4-2243-42a0-9417-a7958e6894f9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_applications.field_district_of_the_city
+    - taxonomy.vocabulary.district_of_the_city
+  module:
+    - budova
+id: budova_applications.budova_applications.field_district_of_the_city
+field_name: field_district_of_the_city
+entity_type: budova_applications
+bundle: budova_applications
+label: 'Район міста'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      district_of_the_city: district_of_the_city
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

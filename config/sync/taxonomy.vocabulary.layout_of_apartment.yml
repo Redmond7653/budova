@@ -1,0 +1,9 @@
+uuid: b32658f0-be1f-427e-9d33-4f0da23eb6d1
+langcode: en
+status: true
+dependencies: {  }
+name: 'Планування квартири new'
+vid: layout_of_apartment
+description: null
+weight: 0
+new_revision: false

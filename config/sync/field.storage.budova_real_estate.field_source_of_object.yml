@@ -1,0 +1,42 @@
+uuid: abef803a-fadb-43ff-aea0-80356bd1d0f2
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+    - options
+id: budova_real_estate.field_source_of_object
+field_name: field_source_of_object
+entity_type: budova_real_estate
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: none
+      label: None
+    -
+      value: spp_kolegi
+      label: СПП/Колеги
+    -
+      value: ofis
+      label: Офіс
+    -
+      value: dom_ria
+      label: Дом.ріа
+    -
+      value: olh
+      label: ТЦК
+    -
+      value: rekomendaciyi
+      label: Рекомендації
+    -
+      value: tekstoviy_spisok
+      label: 'Текстовий список'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

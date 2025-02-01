@@ -1,0 +1,24 @@
+uuid: faa65e37-bf47-4f3c-8a30-e0b213f7788f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_real_estate.field_cost
+  module:
+    - budova
+id: budova_real_estate.budova_real_estate.field_cost
+field_name: field_cost
+entity_type: budova_real_estate
+bundle: budova_real_estate
+label: Вартість
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

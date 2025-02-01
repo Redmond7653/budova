@@ -1,0 +1,175 @@
+id: real_estates_migration
+label: real estates migration from fermacrm
+migration_group: default
+
+source:
+  plugin: 'csv'
+  path: './test_budova_real_estates'
+  delimiter: ','
+  enclosure: '"'
+  header_offset: 0
+  ids:
+    - id
+  fields:
+    0:
+      name: id
+      label: 'id'
+    1:
+      name: f1
+    2:
+      name: type_of_person
+      label: 'type_of_person'
+    3:
+      name: related_to
+      label: 'related_to'
+    4:
+      name: realtor
+      label: 'realtor'
+    5:
+      name: operation
+      label: 'operation'
+    6:
+      name: motivation
+      label: 'motivation'
+    7:
+      name: source_of_object
+      label: 'source_of_object'
+    8:
+      name: created
+      label: 'created'
+    9:
+      name: activity
+      label: 'activity'
+    10:
+      name: market_object_status
+      label: 'market_object_status'
+    11:
+      name: f11
+    12:
+      name: created
+      label: 'created'
+    13:
+      name: changed
+      label: 'changed'
+    14:
+      name: realty_type
+      label: 'realty_type'
+    15:
+      name: general_area
+      label: 'general_area'
+    16:
+      name: price
+      label: 'price'
+    17:
+      name: f18
+    18:
+      name: f19
+    19:
+      name: rooms
+      label: 'rooms'
+    20:
+      name: floor
+      label: 'floor'
+    21:
+      name: ceiling_height
+      label: 'ceiling_height'
+    22:
+      name: district_of_city
+      label: 'district_of_city'
+    23:
+      name: room_adjacency
+      label: 'room_adjacency'
+    24:
+      name: wall_material
+      label: 'wall_material'
+    25:
+      name: currency
+      label: 'currency'
+    26:
+      name: subtype_of_realty
+      label: 'subtype_of_realy'
+    27:
+      name: kitchen_area
+      label: kitchen_area
+    28:
+      name: land_category
+      label: 'land_category'
+    29:
+      name: land_config
+      label: 'land_config'
+    30:
+      name: field_appartment_plan
+      label: 'field_appartment_plan'
+    31:
+      name: field_area_region
+      label: 'field_area_region'
+    32:
+      name: max_floor
+      label: max_floor
+    33:
+      name: f33
+    34:
+      name: f34
+    35:
+      name: description
+      label: description
+    36:
+      name: f35
+    37:
+      name: f36
+    38:
+      name: changed
+      label: 'changed'
+    39:
+      name: f39
+    40:
+      name: f40
+    41:
+      name: subdistrict_of_city
+      label: 'subdistrict_of_city'
+    42:
+      name: field_autonomous_heating
+      label: 'field_autonomous_heating'
+
+
+
+process:
+  name: id
+  field_type_of_person:
+    plugin: static_map
+    bypass: true
+    source: type_of_person
+    map:
+      A8F0B524CFF4D097B6C5539F404EE5DB	: fizichna_osoba
+
+
+
+#  related_to:
+
+  field_real_estate_operation:
+    plugin: static_map
+    bypass: true
+    source: operation
+    map:
+      C0697800F264BD87A6FC66318F7F6EF4: 30
+      6EBC4CAB2844A00953073A57FBE66019: 29
+
+
+  field_motivation_status:
+    plugin: static_map
+    bypass: true
+    source: motivation
+    map:
+      BAD91720466411CFEB402A566F7AFA14: nevmotivovaniy
+      5A713A20899BB18FD4D283811F867492: motivovaniy
+      48D6668FEA07B09AD84770DAA3854A30: nedozriliy
+      269340BD9D9C3DA4BBBE5874653AF7B0: gostra_motivaciya
+      09E3CC9049E6C2AB32388B429600E6E3: ne_viznacheno
+
+
+
+
+
+
+destination:
+  plugin: entity:budova_real_estate

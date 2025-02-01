@@ -1,0 +1,24 @@
+uuid: f2c19609-b4f7-409d-8caf-8c93e8d6d722
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_applications.field_min_floor
+  module:
+    - budova
+id: budova_applications.budova_applications.field_min_floor
+field_name: field_min_floor
+entity_type: budova_applications
+bundle: budova_applications
+label: 'Мінімальний поверх'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

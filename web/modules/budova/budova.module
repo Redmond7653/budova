@@ -46,6 +46,9 @@ function budova_form_user_register_form_alter(&$form, \Drupal\Core\Form\FormStat
   $form['actions']['submit']['#submit'][] = 'budova_users_submit_do_redirect';
 }
 
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
 function budova_form_user_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
 
   $triggering_element = $form_state->getTriggeringElement();
@@ -85,14 +88,13 @@ function budova_form_user_form_alter(&$form, \Drupal\Core\Form\FormStateInterfac
  * Implements hook_form_FORM_ID_alter().
  */
 function budova_form_budova_real_estate_add_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
-  $z = 0;
 
   $triggering_element = $form_state->getTriggeringElement();
 
-  $parent_city_field_name = 'field_rayon_mista';
-  $child_city_field_name = 'field_pidrayon_mista';
-  $parent_type_real_estate_field_name = 'field_vid_neruhomosti';
-  $child_type_real_estate_field_name = 'field_tip_neruhomosti';
+  $parent_city_field_name = 'field_district_of_the_city';
+  $child_city_field_name = 'field_subdistrict_of_city';
+  $parent_type_real_estate_field_name = 'field_type_of_real_estate';
+  $child_type_real_estate_field_name = 'field_subtype_of_real_estate';
 
 //  $selected_city_rayon = FALSE;
 //  $selected_type_real_estate = FALSE;
@@ -104,7 +106,7 @@ function budova_form_budova_real_estate_add_form_alter(&$form, \Drupal\Core\Form
       foreach ($form[$child_city_field_name]["widget"]["#options"] as $key => $option) {
        $taxonomy_entity =  \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($key);
        if ($taxonomy_entity) {
-         $field_rayon = $taxonomy_entity->field_rayon->target_id;
+         $field_rayon = $taxonomy_entity->field_district_of_the_city->target_id;
           if ($field_rayon !== $selected_rayon_city_id) {
             unset($form[$child_city_field_name]["widget"]["#options"][$key]);
          }
@@ -121,7 +123,7 @@ function budova_form_budova_real_estate_add_form_alter(&$form, \Drupal\Core\Form
       foreach ($form[$child_type_real_estate_field_name]["widget"]["#options"] as $key => $option) {
         $taxonomy_entity =  \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($key);
         if ($taxonomy_entity) {
-          $type_real_estate_field_id = $taxonomy_entity->field_vid_neruhomosti->target_id;
+          $type_real_estate_field_id = $taxonomy_entity->field_type_of_real_estate->target_id;
           if ($type_real_estate_field_id !== $selected_type_real_estate_id) {
             unset($form[$child_type_real_estate_field_name]["widget"]["#options"][$key]);
           }
@@ -154,132 +156,132 @@ function budova_form_budova_real_estate_add_form_alter(&$form, \Drupal\Core\Form
 
   // Hide field 'Число кімнат' when picking select 'Вид нерухомості -> Земельна ділянка || Комерційна нерухомість'
 
-    $form['field_chislo_kimnat']['#states'] = [
+    $form['field_number_of_rooms']['#states'] = [
       'invisible' => [
         [
-        'select[name="field_vid_neruhomosti"]' => ['value' => '7'],
+        'select[name="field_type_of_real_estate"]' => ['value' => '70'],
           ],
         'or',
         [
-          'select[name="field_vid_neruhomosti"]' => ['value' => '9'],
+          'select[name="field_type_of_real_estate"]' => ['value' => '72'],
         ],
       ],
     ];
 
   // Hide field 'Поверх' when picking select 'Вид нерухомості -> Земельна ділянка'
 
-    $form['field_poverh']['#states'] = [
+    $form['field_floor']['#states'] = [
       'invisible' => [
-        'select[name="field_vid_neruhomosti"]' => ['value' => '7'],
+        'select[name="field_type_of_real_estate"]' => ['value' => '70'],
       ],
     ];
 
   // Hide field 'Планування квартир' when picking select 'Вид нерухомості -> Земельна ділянка || Приватний сектор || Комерційна нерухомість'
 
-  $form['field_planuvannya_kvartiri']['#states'] = [
+  $form['field_appartment_plan']['#states'] = [
     'invisible' => [
       [
-        'select[name="field_vid_neruhomosti"]' => ['value' => '7'],
+        'select[name="field_type_of_real_estate"]' => ['value' => '70'],
 
       ],
       'or',
       [
-        'select[name="field_vid_neruhomosti"]' => ['value' => '6'],
+        'select[name="field_type_of_real_estate"]' => ['value' => '73'],
       ],
       'or',
       [
-        'select[name="field_vid_neruhomosti"]' => ['value' => '9'],
+        'select[name="field_type_of_real_estate"]' => ['value' => '72'],
       ],
     ],
   ];
 
   // Hide field 'Матеріал стін' when picking select 'Вид нерухомості -> Земельна ділянка '
 
-    $form['field_material_stin']['#states'] = [
+    $form['field_wall_material']['#states'] = [
       'invisible' => [
-        'select[name="field_vid_neruhomosti"]' => ['value' => '7'],
+        'select[name="field_type_of_real_estate"]' => ['value' => '70'],
       ],
     ];
 
   // Hide field 'Суміжність кімнат' when picking select 'Вид нерухомості -> Земельна ділянка || Комерційна нерухомість'
 
-    $form['field_sumizhnist_kimnat']['#states'] = [
+    $form['field_contiguity_of_rooms']['#states'] = [
       'invisible' => [
         [
-          'select[name="field_vid_neruhomosti"]' => ['value' => '7'],
+          'select[name="field_type_of_real_estate"]' => ['value' => '70'],
         ],
         'or',
         [
-          'select[name="field_vid_neruhomosti"]' => ['value' => '9'],
+          'select[name="field_type_of_real_estate"]' => ['value' => '72'],
         ],
       ],
     ];
 
   // Hide field 'Висота стель' when picking select 'Вид нерухомості -> Земельна ділянка'
 
-  $form['field_visota_stel']['#states'] = [
+  $form['field_ceiling_height']['#states'] = [
     'invisible' => [
-      'select[name="field_vid_neruhomosti"]' => ['value' => '7'],
+      'select[name="field_type_of_real_estate"]' => ['value' => '70'],
     ],
   ];
 
   // Hide field 'Загальна площа' when picking select 'Вид нерухомості -> Земельна ділянка'
 
-    $form['field_zagalna_ploshchad_m2']['#states'] = [
+    $form['field_general_area']['#states'] = [
       'invisible' => [
-        'select[name="field_vid_neruhomosti"]' => ['value' => '7'],
+        'select[name="field_type_of_real_estate"]' => ['value' => '70'],
       ],
     ];
 
   // Hide field 'Житлова площа' when picking select 'Вид нерухомості -> Земельна ділянка || Комерційна нерухомість'
 
-    $form['field_zhitlova_ploshchal_m2']['#states'] = [
+    $form['field_living_area']['#states'] = [
       'invisible' => [
         [
-          'select[name="field_vid_neruhomosti"]' => ['value' => '7'],
+          'select[name="field_type_of_real_estate"]' => ['value' => '70'],
         ],
         'or',
         [
-          'select[name="field_vid_neruhomosti"]' => ['value' => '9'],
+          'select[name="field_type_of_real_estate"]' => ['value' => '72'],
         ],
       ],
     ];
 
   // Hide field 'Площа кухні' when picking select 'Вид нерухомості -> Земельна ділянка || Комерційна нерухомість'
 
-    $form['field_ploshcha_kuhni_m2']['#states'] = [
+    $form['field_kitchen_area']['#states'] = [
       'invisible' => [
         [
-          'select[name="field_vid_neruhomosti"]' => ['value' => '7'],
+          'select[name="field_type_of_real_estate"]' => ['value' => '70'],
         ],
         'or',
         [
-          'select[name="field_vid_neruhomosti"]' => ['value' => '9'],
+          'select[name="field_type_of_real_estate"]' => ['value' => '72'],
         ],
       ],
     ];
 
   // Hide field 'Площа участку' when picking select 'Вид нерухомості ->  Комерційна нерухомість'
 
-  $form['field_ploshcha_uchastku_ga']['#states'] = [
+  $form['field_area_region']['#states'] = [
     'invisible' => [
-      'select[name="field_vid_neruhomosti"]' => ['value' => '9'],
+      'select[name="field_type_of_real_estate"]' => ['value' => '72'],
     ],
   ];
 
   // Hide field 'Конфігурація участку' when picking select 'Вид нерухомості -> Комерційна нерухомість'
 
-  $form['field_konf']['#states'] = [
+  $form['field_site_configuration']['#states'] = [
     'invisible' => [
-      'select[name="field_vid_neruhomosti"]' => ['value' => '9'],
+      'select[name="field_type_of_real_estate"]' => ['value' => '72'],
     ],
   ];
 
   // Hide field 'Категорія участку' when picking select 'Вид нерухомості -> Комерційна нерухомість'
 
-  $form['field_kategoriya_uchastku']['#states'] = [
+  $form['field_site_category']['#states'] = [
     'invisible' => [
-      'select[name="field_vid_neruhomosti"]' => ['value' => '9'],
+      'select[name="field_type_of_real_estate"]' => ['value' => '72'],
     ],
   ];
 
@@ -298,10 +300,10 @@ function budova_form_budova_real_estate_edit_form_alter(&$form, \Drupal\Core\For
 
   $triggering_element = $form_state->getTriggeringElement();
 
-  $parent_city_field_name = 'field_rayon_mista';
-  $child_city_field_name = 'field_pidrayon_mista';
-  $parent_type_real_estate_field_name = 'field_vid_neruhomosti';
-  $child_type_real_estate_field_name = 'field_tip_neruhomosti';
+  $parent_city_field_name = 'field_district_of_the_city';
+  $child_city_field_name = 'field_subdistrict_of_city';
+  $parent_type_real_estate_field_name = 'field_type_of_real_estate';
+  $child_type_real_estate_field_name = 'field_subtype_of_real_estate';
 
   //  $selected_city_rayon = FALSE;
   //  $selected_type_real_estate = FALSE;
@@ -313,7 +315,7 @@ function budova_form_budova_real_estate_edit_form_alter(&$form, \Drupal\Core\For
       foreach ($form[$child_city_field_name]["widget"]["#options"] as $key => $option) {
         $taxonomy_entity =  \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($key);
         if ($taxonomy_entity) {
-          $field_rayon = $taxonomy_entity->field_rayon->target_id;
+          $field_rayon = $taxonomy_entity->field_district_of_the_city->target_id;
           if ($field_rayon !== $selected_rayon_city_id) {
             unset($form[$child_city_field_name]["widget"]["#options"][$key]);
           }
@@ -330,7 +332,7 @@ function budova_form_budova_real_estate_edit_form_alter(&$form, \Drupal\Core\For
       foreach ($form[$child_type_real_estate_field_name]["widget"]["#options"] as $key => $option) {
         $taxonomy_entity =  \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($key);
         if ($taxonomy_entity) {
-          $type_real_estate_field_id = $taxonomy_entity->field_vid_neruhomosti->target_id;
+          $type_real_estate_field_id = $taxonomy_entity->field_type_of_real_estate->target_id;
           if ($type_real_estate_field_id !== $selected_type_real_estate_id) {
             unset($form[$child_type_real_estate_field_name]["widget"]["#options"][$key]);
           }
@@ -363,132 +365,132 @@ function budova_form_budova_real_estate_edit_form_alter(&$form, \Drupal\Core\For
 
   // Hide field 'Число кімнат' when picking select 'Вид нерухомості -> Земельна ділянка || Комерційна нерухомість'
 
-  $form['field_chislo_kimnat']['#states'] = [
+  $form['field_number_of_rooms']['#states'] = [
     'invisible' => [
       [
-        'select[name="field_vid_neruhomosti"]' => ['value' => '7'],
+        'select[name="field_type_of_real_estate"]' => ['value' => '70'],
       ],
       'or',
       [
-        'select[name="field_vid_neruhomosti"]' => ['value' => '9'],
+        'select[name="field_type_of_real_estate"]' => ['value' => '72'],
       ],
     ],
   ];
 
   // Hide field 'Поверх' when picking select 'Вид нерухомості -> Земельна ділянка'
 
-  $form['field_poverh']['#states'] = [
+  $form['field_floor']['#states'] = [
     'invisible' => [
-      'select[name="field_vid_neruhomosti"]' => ['value' => '7'],
+      'select[name="field_type_of_real_estate"]' => ['value' => '70'],
     ],
   ];
 
   // Hide field 'Планування квартир' when picking select 'Вид нерухомості -> Земельна ділянка || Приватний сектор || Комерційна нерухомість'
 
-  $form['field_planuvannya_kvartiri']['#states'] = [
+  $form['field_appartment_plan']['#states'] = [
     'invisible' => [
       [
-        'select[name="field_vid_neruhomosti"]' => ['value' => '7'],
+        'select[name="field_type_of_real_estate"]' => ['value' => '70'],
 
       ],
       'or',
       [
-        'select[name="field_vid_neruhomosti"]' => ['value' => '6'],
+        'select[name="field_type_of_real_estate"]' => ['value' => '73'],
       ],
       'or',
       [
-        'select[name="field_vid_neruhomosti"]' => ['value' => '9'],
+        'select[name="field_type_of_real_estate"]' => ['value' => '72'],
       ],
     ],
   ];
 
   // Hide field 'Матеріал стін' when picking select 'Вид нерухомості -> Земельна ділянка '
 
-  $form['field_material_stin']['#states'] = [
+  $form['field_wall_material']['#states'] = [
     'invisible' => [
-      'select[name="field_vid_neruhomosti"]' => ['value' => '7'],
+      'select[name="field_type_of_real_estate"]' => ['value' => '70'],
     ],
   ];
 
   // Hide field 'Суміжність кімнат' when picking select 'Вид нерухомості -> Земельна ділянка || Комерційна нерухомість'
 
-  $form['field_sumizhnist_kimnat']['#states'] = [
+  $form['field_contiguity_of_rooms']['#states'] = [
     'invisible' => [
       [
-        'select[name="field_vid_neruhomosti"]' => ['value' => '7'],
+        'select[name="field_type_of_real_estate"]' => ['value' => '70'],
       ],
       'or',
       [
-        'select[name="field_vid_neruhomosti"]' => ['value' => '9'],
+        'select[name="field_type_of_real_estate"]' => ['value' => '72'],
       ],
     ],
   ];
 
   // Hide field 'Висота стель' when picking select 'Вид нерухомості -> Земельна ділянка'
 
-  $form['field_visota_stel']['#states'] = [
+  $form['field_ceiling_height']['#states'] = [
     'invisible' => [
-      'select[name="field_vid_neruhomosti"]' => ['value' => '7'],
+      'select[name="field_type_of_real_estate"]' => ['value' => '70'],
     ],
   ];
 
   // Hide field 'Загальна площа' when picking select 'Вид нерухомості -> Земельна ділянка'
 
-  $form['field_zagalna_ploshchad_m2']['#states'] = [
+  $form['field_general_area']['#states'] = [
     'invisible' => [
-      'select[name="field_vid_neruhomosti"]' => ['value' => '7'],
+      'select[name="field_type_of_real_estate"]' => ['value' => '70'],
     ],
   ];
 
   // Hide field 'Житлова площа' when picking select 'Вид нерухомості -> Земельна ділянка || Комерційна нерухомість'
 
-  $form['field_zhitlova_ploshchal_m2']['#states'] = [
+  $form['field_living_area']['#states'] = [
     'invisible' => [
       [
-        'select[name="field_vid_neruhomosti"]' => ['value' => '7'],
+        'select[name="field_type_of_real_estate"]' => ['value' => '70'],
       ],
       'or',
       [
-        'select[name="field_vid_neruhomosti"]' => ['value' => '9'],
+        'select[name="field_type_of_real_estate"]' => ['value' => '72'],
       ],
     ],
   ];
 
   // Hide field 'Площа кухні' when picking select 'Вид нерухомості -> Земельна ділянка || Комерційна нерухомість'
 
-  $form['field_ploshcha_kuhni_m2']['#states'] = [
+  $form['field_kitchen_area']['#states'] = [
     'invisible' => [
       [
-        'select[name="field_vid_neruhomosti"]' => ['value' => '7'],
+        'select[name="field_type_of_real_estate"]' => ['value' => '70'],
       ],
       'or',
       [
-        'select[name="field_vid_neruhomosti"]' => ['value' => '9'],
+        'select[name="field_type_of_real_estate"]' => ['value' => '72'],
       ],
     ],
   ];
 
   // Hide field 'Площа участку' when picking select 'Вид нерухомості ->  Комерційна нерухомість'
 
-  $form['field_ploshcha_uchastku_ga']['#states'] = [
+  $form['field_area_region']['#states'] = [
     'invisible' => [
-      'select[name="field_vid_neruhomosti"]' => ['value' => '9'],
+      'select[name="field_type_of_real_estate"]' => ['value' => '72'],
     ],
   ];
 
   // Hide field 'Конфігурація участку' when picking select 'Вид нерухомості -> Комерційна нерухомість'
 
-  $form['field_konf']['#states'] = [
+  $form['field_site_configuration']['#states'] = [
     'invisible' => [
-      'select[name="field_vid_neruhomosti"]' => ['value' => '9'],
+      'select[name="field_type_of_real_estate"]' => ['value' => '72'],
     ],
   ];
 
   // Hide field 'Категорія участку' when picking select 'Вид нерухомості -> Комерційна нерухомість'
 
-  $form['field_kategoriya_uchastku']['#states'] = [
+  $form['field_site_category']['#states'] = [
     'invisible' => [
-      'select[name="field_vid_neruhomosti"]' => ['value' => '9'],
+      'select[name="field_type_of_real_estate"]' => ['value' => '72'],
     ],
   ];
 
@@ -514,10 +516,10 @@ function budova_form_budova_applications_add_form_alter(&$form, \Drupal\Core\For
 
   $triggering_element = $form_state->getTriggeringElement();
 
-  $parent_applications_city_field_name = 'field_rayon_mista';
-  $child_applications_city_field_name = 'field_pidrayon_mista';
-  $parent_applications_type_real_estate_field_name = 'field_vid_neruhomosti';
-  $child_applications_type_real_estate_field_name = 'field_tip_neruhomosti';
+  $parent_applications_city_field_name = 'field_district_of_the_city';
+  $child_applications_city_field_name = 'field_subdistrict_of_city';
+  $parent_applications_type_real_estate_field_name = 'field_type_of_real_estate';
+  $child_applications_type_real_estate_field_name = 'field_subtype_of_real_estate';
 
   //  $selected_city_rayon = FALSE;
   //  $selected_type_real_estate = FALSE;
@@ -529,7 +531,7 @@ function budova_form_budova_applications_add_form_alter(&$form, \Drupal\Core\For
       foreach ($form[$child_applications_city_field_name]["widget"]["#options"] as $key => $option) {
         $taxonomy_entity =  \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($key);
         if ($taxonomy_entity) {
-          $field_rayon = $taxonomy_entity->field_rayon->target_id;
+          $field_rayon = $taxonomy_entity->field_district_of_the_city->target_id;
           if ($field_rayon !== $selected_rayon_city_id) {
             unset($form[$child_applications_city_field_name]["widget"]["#options"][$key]);
           }
@@ -546,7 +548,7 @@ function budova_form_budova_applications_add_form_alter(&$form, \Drupal\Core\For
       foreach ($form[$child_applications_type_real_estate_field_name]["widget"]["#options"] as $key => $option) {
         $taxonomy_entity =  \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($key);
         if ($taxonomy_entity) {
-          $type_real_estate_field_id = $taxonomy_entity->field_vid_neruhomosti->target_id;
+          $type_real_estate_field_id = $taxonomy_entity->field_type_of_real_estate->target_id;
           if ($type_real_estate_field_id !== $selected_type_real_estate_id) {
             unset($form[$child_applications_type_real_estate_field_name]["widget"]["#options"][$key]);
           }
@@ -580,50 +582,50 @@ function budova_form_budova_applications_add_form_alter(&$form, \Drupal\Core\For
 
   // Hide field 'Поверх' when picking select 'Вид нерухомості -> Земельна ділянка'
 
-  $form['field_minimalna_ploshchad_m2']['#states'] = [
+  $form['field_min_area']['#states'] = [
     'invisible' => [
-      'select[name="field_vid_neruhomosti"]' => ['value' => '7'],
+      'select[name="field_type_of_real_estate"]' => ['value' => '70'],
     ],
   ];
 
-  $form['field_maksimalna_ploshchad_m2']['#states'] = [
+  $form['field_max_area']['#states'] = [
     'invisible' => [
-      'select[name="field_vid_neruhomosti"]' => ['value' => '7'],
+      'select[name="field_type_of_real_estate"]' => ['value' => '70'],
     ],
   ];
 
-  $form['field_minimalniy_poverh']['#states'] = [
+  $form['field_min_floor']['#states'] = [
     'invisible' => [
-      'select[name="field_vid_neruhomosti"]' => ['value' => '7'],
+      'select[name="field_type_of_real_estate"]' => ['value' => '70'],
     ],
   ];
 
-  $form['field_maksimalniy_poverh']['#states'] = [
+  $form['field_max_floor']['#states'] = [
     'invisible' => [
-      'select[name="field_vid_neruhomosti"]' => ['value' => '7'],
+      'select[name="field_type_of_real_estate"]' => ['value' => '70'],
     ],
   ];
 
-  $form['field_minimalne_chislo_kimnat']['#states'] = [
+  $form['field_min_rooms']['#states'] = [
     'invisible' => [
-      'select[name="field_vid_neruhomosti"]' => ['value' => '7'],
+      'select[name="field_type_of_real_estate"]' => ['value' => '70'],
     ],
   ];
 
-  $form['field_maksimalne_chislo_kimnat']['#states'] = [
+  $form['	field_max_rooms']['#states'] = [
     'invisible' => [
-      'select[name="field_vid_neruhomosti"]' => ['value' => '7'],
+      'select[name="field_type_of_real_estate"]' => ['value' => '70'],
     ],
   ];
 
-  $form['field_planuvannya']['#states'] = [
+  $form['field_appartment_plan']['#states'] = [
     'invisible' => [
         [
-          'select[name="field_vid_neruhomosti"]' => ['value' => '7'],
+          'select[name="field_type_of_real_estate"]' => ['value' => '70'],
         ],
       'or',
         [
-          'select[name="field_vid_neruhomosti"]' => ['value' => '9'],
+          'select[name="field_type_of_real_estate"]' => ['value' => '72'],
         ],
       ],
   ];
@@ -631,8 +633,8 @@ function budova_form_budova_applications_add_form_alter(&$form, \Drupal\Core\For
 
 
 
-  $form['field_pidrayon_mista']['#prefix'] = "<div id='____ololol_wrapper'>";
-  $form['field_pidrayon_mista']['#suffix'] = '</div>';
+  $form['field_subdistrict_of_city']['#prefix'] = "<div id='____ololol_wrapper'>";
+  $form['field_subdistrict_of_city']['#suffix'] = '</div>';
 
 
   $form['actions']['submit']['#submit'][] = 'budova_applications_submit_do_redirect';
@@ -644,10 +646,10 @@ function budova_form_budova_applications_edit_form_alter(&$form, \Drupal\Core\Fo
 
   $triggering_element = $form_state->getTriggeringElement();
 
-  $parent_applications_city_field_name = 'field_rayon_mista';
-  $child_applications_city_field_name = 'field_pidrayon_mista';
-  $parent_applications_type_real_estate_field_name = 'field_vid_neruhomosti';
-  $child_applications_type_real_estate_field_name = 'field_tip_neruhomosti';
+  $parent_applications_city_field_name = 'field_district_of_the_city';
+  $child_applications_city_field_name = 'field_subdistrict_of_city';
+  $parent_applications_type_real_estate_field_name = 'field_type_of_real_estate';
+  $child_applications_type_real_estate_field_name = 'field_subtype_of_real_estate';
 
   //  $selected_city_rayon = FALSE;
   //  $selected_type_real_estate = FALSE;
@@ -659,7 +661,7 @@ function budova_form_budova_applications_edit_form_alter(&$form, \Drupal\Core\Fo
       foreach ($form[$child_applications_city_field_name]["widget"]["#options"] as $key => $option) {
         $taxonomy_entity =  \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($key);
         if ($taxonomy_entity) {
-          $field_rayon = $taxonomy_entity->field_rayon->target_id;
+          $field_rayon = $taxonomy_entity->field_district_of_the_city->target_id;
           if ($field_rayon !== $selected_rayon_city_id) {
             unset($form[$child_applications_city_field_name]["widget"]["#options"][$key]);
           }
@@ -676,7 +678,7 @@ function budova_form_budova_applications_edit_form_alter(&$form, \Drupal\Core\Fo
       foreach ($form[$child_applications_type_real_estate_field_name]["widget"]["#options"] as $key => $option) {
         $taxonomy_entity =  \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($key);
         if ($taxonomy_entity) {
-          $type_real_estate_field_id = $taxonomy_entity->field_vid_neruhomosti->target_id;
+          $type_real_estate_field_id = $taxonomy_entity->field_type_of_real_estate->target_id;
           if ($type_real_estate_field_id !== $selected_type_real_estate_id) {
             unset($form[$child_applications_type_real_estate_field_name]["widget"]["#options"][$key]);
           }
@@ -710,50 +712,50 @@ function budova_form_budova_applications_edit_form_alter(&$form, \Drupal\Core\Fo
 
   // Hide field 'Поверх' when picking select 'Вид нерухомості -> Земельна ділянка'
 
-  $form['field_minimalna_ploshchad_m2']['#states'] = [
+  $form['field_min_area']['#states'] = [
     'invisible' => [
-      'select[name="field_vid_neruhomosti"]' => ['value' => '7'],
+      'select[name="field_type_of_real_estate"]' => ['value' => '70'],
     ],
   ];
 
-  $form['field_maksimalna_ploshchad_m2']['#states'] = [
+  $form['field_max_area']['#states'] = [
     'invisible' => [
-      'select[name="field_vid_neruhomosti"]' => ['value' => '7'],
+      'select[name="field_type_of_real_estate"]' => ['value' => '70'],
     ],
   ];
 
-  $form['field_minimalniy_poverh']['#states'] = [
+  $form['field_min_floor']['#states'] = [
     'invisible' => [
-      'select[name="field_vid_neruhomosti"]' => ['value' => '7'],
+      'select[name="field_type_of_real_estate"]' => ['value' => '70'],
     ],
   ];
 
-  $form['field_maksimalniy_poverh']['#states'] = [
+  $form['field_max_floor']['#states'] = [
     'invisible' => [
-      'select[name="field_vid_neruhomosti"]' => ['value' => '7'],
+      'select[name="field_type_of_real_estate"]' => ['value' => '70'],
     ],
   ];
 
-  $form['field_minimalne_chislo_kimnat']['#states'] = [
+  $form['field_min_rooms']['#states'] = [
     'invisible' => [
-      'select[name="field_vid_neruhomosti"]' => ['value' => '7'],
+      'select[name="field_type_of_real_estate"]' => ['value' => '70'],
     ],
   ];
 
-  $form['field_maksimalne_chislo_kimnat']['#states'] = [
+  $form['	field_max_rooms']['#states'] = [
     'invisible' => [
-      'select[name="field_vid_neruhomosti"]' => ['value' => '7'],
+      'select[name="field_type_of_real_estate"]' => ['value' => '70'],
     ],
   ];
 
-  $form['field_planuvannya']['#states'] = [
+  $form['field_appartment_plan']['#states'] = [
     'invisible' => [
       [
-        'select[name="field_vid_neruhomosti"]' => ['value' => '7'],
+        'select[name="field_type_of_real_estate"]' => ['value' => '70'],
       ],
       'or',
       [
-        'select[name="field_vid_neruhomosti"]' => ['value' => '9'],
+        'select[name="field_type_of_real_estate"]' => ['value' => '72'],
       ],
     ],
   ];
@@ -761,8 +763,8 @@ function budova_form_budova_applications_edit_form_alter(&$form, \Drupal\Core\Fo
 
 
 
-  $form['field_pidrayon_mista']['#prefix'] = "<div id='____ololol_wrapper'>";
-  $form['field_pidrayon_mista']['#suffix'] = '</div>';
+  $form['field_subdistrict_of_city']['#prefix'] = "<div id='____ololol_wrapper'>";
+  $form['field_subdistrict_of_city']['#suffix'] = '</div>';
 
 
   $form['actions']['submit']['#submit'][] = 'budova_applications_submit_do_redirect';
@@ -770,11 +772,11 @@ function budova_form_budova_applications_edit_form_alter(&$form, \Drupal\Core\Fo
 
 
   function budova_reloadCity(array $form, FormStateInterface $form_state) {
-    return $form["field_pidrayon_mista"];
+    return $form["field_subdistrict_of_city"];
   }
 
 function budova_reloadType(array $form, FormStateInterface $form_state) {
-  return $form["field_tip_neruhomosti"];
+  return $form["field_subtype_of_real_estate"];
 }
 
 function budova_reloadUser(array $form, FormStateInterface $form_state) {
@@ -818,11 +820,20 @@ function budova_user_presave(\Drupal\Core\Entity\EntityInterface $entity) {
     $name = $entity->field_user_name->getValue();
     $surname = $entity->field_surname->getValue();
     $phone = $entity->field_contact->getValue();
-    /** @var \Drupal\user\Entity\User $entity  */
+    /** @var \Drupal\user\Entity\User $entity */
+    $roles_array = $entity->roles->getValue();
 
+    foreach ($roles_array as $key => $role) {
+      $roles[$key] = $role['target_id'];
+    }
 
-    $entity->name->value = $name[0]['value'].' '.$surname[0]['value'].' '.$phone[0]['value'];
-    $entity->pass->value = '12345';
-    $z = 0;
+    if (!empty($roles_array)) {
+      if (in_array("buyer", $roles) || in_array("seller", $roles)) {
+        /** @var \Drupal\user\Entity\User $entity */
+        $entity->name->value = $name[0]['value'] . ' ' . $surname[0]['value'];
+        $entity->pass->value = '12345';
+        $z = 0;
+      }
+    }
   }
 }

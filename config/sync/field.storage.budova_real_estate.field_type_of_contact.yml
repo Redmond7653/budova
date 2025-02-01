@@ -1,0 +1,51 @@
+uuid: 09ea8426-85b4-4c7e-89b0-4b78bbf1e035
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+    - options
+id: budova_real_estate.field_type_of_contact
+field_name: field_type_of_contact
+entity_type: budova_real_estate
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: email
+      label: Email
+    -
+      value: internet_sayt
+      label: 'Інтернет сайт'
+    -
+      value: telefon
+      label: Телефон
+    -
+      value: faks
+      label: Факс
+    -
+      value: adresa
+      label: Адреса
+    -
+      value: yutub
+      label: Ютуб
+    -
+      value: vayber
+      label: Вайбер
+    -
+      value: skayp
+      label: Скайп
+    -
+      value: facebook
+      label: Facebook
+    -
+      value: icq
+      label: icq
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

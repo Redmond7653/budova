@@ -1,0 +1,35 @@
+uuid: 3447c4b4-caca-47ef-8880-e6d07ddea8c8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_applications.field_realtor
+  module:
+    - budova
+id: budova_applications.budova_applications.field_realtor
+field_name: field_realtor
+entity_type: budova_applications
+bundle: budova_applications
+label: Рієлтор
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    filter:
+      type: role
+      role:
+        administrator: administrator
+        content_editor: '0'
+        buyer: '0'
+        seller: '0'
+    include_anonymous: true
+field_type: entity_reference

@@ -1,0 +1,9 @@
+uuid: 8f6181af-832c-4c3b-996f-d0df5dfb69dd
+langcode: en
+status: true
+dependencies: {  }
+name: 'Операція по нерухомості new'
+vid: real_estate_transaction
+description: null
+weight: 0
+new_revision: false

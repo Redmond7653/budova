@@ -1,0 +1,21 @@
+uuid: 7962f8eb-b394-4d4a-b70b-0aa7e06a2c73
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_real_estate.field_last_date_contact
+  module:
+    - budova
+    - datetime
+id: budova_real_estate.budova_real_estate.field_last_date_contact
+field_name: field_last_date_contact
+entity_type: budova_real_estate
+bundle: budova_real_estate
+label: 'Дата останнього контакту'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

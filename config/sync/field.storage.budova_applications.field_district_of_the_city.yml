@@ -1,0 +1,20 @@
+uuid: 047a1a35-7398-4dbf-827f-75d9195a3253
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+    - taxonomy
+id: budova_applications.field_district_of_the_city
+field_name: field_district_of_the_city
+entity_type: budova_applications
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

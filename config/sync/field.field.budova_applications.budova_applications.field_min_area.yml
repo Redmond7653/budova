@@ -1,0 +1,24 @@
+uuid: ee8cfb8d-dcb0-477a-bebb-64f397de548c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_applications.field_min_area
+  module:
+    - budova
+id: budova_applications.budova_applications.field_min_area
+field_name: field_min_area
+entity_type: budova_applications
+bundle: budova_applications
+label: 'Мінімальна площадь м²'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

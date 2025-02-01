@@ -1,0 +1,35 @@
+uuid: aa74df09-a8ea-4ce0-9543-14f613ecf699
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_real_estate.field_related_to
+  module:
+    - budova
+id: budova_real_estate.budova_real_estate.field_related_to
+field_name: field_related_to
+entity_type: budova_real_estate
+bundle: budova_real_estate
+label: 'Відноситься до'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    filter:
+      type: role
+      role:
+        buyer: buyer
+        seller: seller
+        content_editor: '0'
+        administrator: '0'
+    include_anonymous: true
+field_type: entity_reference

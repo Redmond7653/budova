@@ -1,0 +1,31 @@
+uuid: edfe6687-fd4d-4a76-81f3-52e69016cd3b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.subdistrict_of_the_sity.field_district_of_the_city
+    - taxonomy.vocabulary.subdistrict_of_the_sity
+  module:
+    - text
+id: taxonomy_term.subdistrict_of_the_sity.default
+targetEntityType: taxonomy_term
+bundle: subdistrict_of_the_sity
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_district_of_the_city:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true

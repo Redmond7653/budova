@@ -1,0 +1,20 @@
+uuid: c6bf4afa-b626-4362-9001-eaa1190b605a
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+    - user
+id: budova_applications.field_related_to
+field_name: field_related_to
+entity_type: budova_applications
+type: entity_reference
+settings:
+  target_type: user
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

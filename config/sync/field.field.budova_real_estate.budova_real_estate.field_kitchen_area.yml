@@ -1,0 +1,24 @@
+uuid: 4951e295-1251-4789-9a8b-c6d4a53b894a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_real_estate.field_kitchen_area
+  module:
+    - budova
+id: budova_real_estate.budova_real_estate.field_kitchen_area
+field_name: field_kitchen_area
+entity_type: budova_real_estate
+bundle: budova_real_estate
+label: 'Площа кухні (м²)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

@@ -1,0 +1,20 @@
+uuid: 1525f51a-4ed1-47b0-8c7a-b4601d910649
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+    - taxonomy
+id: budova_real_estate.field_type_of_real_estate
+field_name: field_type_of_real_estate
+entity_type: budova_real_estate
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,24 @@
+uuid: a9ec9ac1-c7c7-45ac-a544-4845e38e8a95
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_applications.field_max_area
+  module:
+    - budova
+id: budova_applications.budova_applications.field_max_area
+field_name: field_max_area
+entity_type: budova_applications
+bundle: budova_applications
+label: 'Максимальна площадь м² '
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

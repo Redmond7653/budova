@@ -1,0 +1,24 @@
+uuid: 99ad5b79-c03a-4332-8f3a-e45575bcab9e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_applications.field_min_rooms
+  module:
+    - budova
+id: budova_applications.budova_applications.field_min_rooms
+field_name: field_min_rooms
+entity_type: budova_applications
+bundle: budova_applications
+label: 'Мінімальне число кімнат'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

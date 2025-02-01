@@ -1,0 +1,30 @@
+uuid: 95942329-dbec-4554-ad46-53b3d30d26e9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_real_estate.field_wall_material
+    - taxonomy.vocabulary.wall_material
+  module:
+    - budova
+id: budova_real_estate.budova_real_estate.field_wall_material
+field_name: field_wall_material
+entity_type: budova_real_estate
+bundle: budova_real_estate
+label: 'Матеріал стін'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      wall_material: wall_material
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

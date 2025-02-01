@@ -1,0 +1,21 @@
+uuid: 828297cb-57db-48a4-8b41-71006cb2cbf8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_real_estate.field_state_of_the_object
+  module:
+    - budova
+    - options
+id: budova_real_estate.budova_real_estate.field_state_of_the_object
+field_name: field_state_of_the_object
+entity_type: budova_real_estate
+bundle: budova_real_estate
+label: "Стан об'єкту"
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

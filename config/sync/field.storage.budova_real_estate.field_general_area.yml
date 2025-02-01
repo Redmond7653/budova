@@ -1,0 +1,18 @@
+uuid: 67d5db72-3bd7-496c-b1c9-5627ed88caf2
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+id: budova_real_estate.field_general_area
+field_name: field_general_area
+entity_type: budova_real_estate
+type: float
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

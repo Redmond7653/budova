@@ -1,0 +1,9 @@
+uuid: 81c36041-e180-4d99-a6a7-4e6f470ad1c8
+langcode: en
+status: true
+dependencies: {  }
+name: 'Тип нерухомості new'
+vid: subtype_of_real_estate
+description: null
+weight: 0
+new_revision: false

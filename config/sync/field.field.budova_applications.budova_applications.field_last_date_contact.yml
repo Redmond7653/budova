@@ -1,0 +1,21 @@
+uuid: 59a59c0d-81e2-4807-a265-09016e178249
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_applications.field_last_date_contact
+  module:
+    - budova
+    - datetime
+id: budova_applications.budova_applications.field_last_date_contact
+field_name: field_last_date_contact
+entity_type: budova_applications
+bundle: budova_applications
+label: 'Дата останнього контакту'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

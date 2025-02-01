@@ -1,0 +1,24 @@
+uuid: ea66ad1f-4d17-496a-b62b-c48b73c306b3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_real_estate.field_floor
+  module:
+    - budova
+id: budova_real_estate.budova_real_estate.field_floor
+field_name: field_floor
+entity_type: budova_real_estate
+bundle: budova_real_estate
+label: Поверх
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

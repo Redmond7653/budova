@@ -1,0 +1,21 @@
+uuid: db232c38-7fe3-48da-895b-8ee9093adf55
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_real_estate.field_autonomous_heating
+  module:
+    - budova
+    - options
+id: budova_real_estate.budova_real_estate.field_autonomous_heating
+field_name: field_autonomous_heating
+entity_type: budova_real_estate
+bundle: budova_real_estate
+label: 'Автономне опалення'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

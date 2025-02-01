@@ -1,0 +1,21 @@
+uuid: f066c049-f7d4-4097-bd73-a2ccf02b1b93
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_applications.field_motivation_status
+  module:
+    - budova
+    - options
+id: budova_applications.budova_applications.field_motivation_status
+field_name: field_motivation_status
+entity_type: budova_applications
+bundle: budova_applications
+label: 'Статус по мотивації'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

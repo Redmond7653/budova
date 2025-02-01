@@ -1,0 +1,9 @@
+uuid: 21c58d9d-56cf-4964-8609-a1aad010c7d0
+langcode: en
+status: true
+dependencies: {  }
+name: 'Опалювання new'
+vid: heating
+description: null
+weight: 0
+new_revision: false

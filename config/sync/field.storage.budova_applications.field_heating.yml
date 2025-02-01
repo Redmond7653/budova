@@ -1,0 +1,20 @@
+uuid: dd34194f-bc17-4765-ba97-327ff98fe844
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+    - taxonomy
+id: budova_applications.field_heating
+field_name: field_heating
+entity_type: budova_applications
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

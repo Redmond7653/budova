@@ -1,0 +1,21 @@
+uuid: d58704cd-aa2b-4aca-9bf7-ac7370ffc7ea
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_applications.field_type_of_contact
+  module:
+    - budova
+    - options
+id: budova_applications.budova_applications.field_type_of_contact
+field_name: field_type_of_contact
+entity_type: budova_applications
+bundle: budova_applications
+label: 'Тип контакту'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

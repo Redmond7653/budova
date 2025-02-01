@@ -1,0 +1,21 @@
+uuid: 3b0f82c2-7624-4455-a186-a4dbb5bc6887
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_real_estate.field_contiguity_of_rooms
+  module:
+    - budova
+    - options
+id: budova_real_estate.budova_real_estate.field_contiguity_of_rooms
+field_name: field_contiguity_of_rooms
+entity_type: budova_real_estate
+bundle: budova_real_estate
+label: 'Суміжність кімнат'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,24 @@
+uuid: a12564f5-4f88-4e90-bec3-9f85da8fa4cd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_real_estate.field_area_region
+  module:
+    - budova
+id: budova_real_estate.budova_real_estate.field_area_region
+field_name: field_area_region
+entity_type: budova_real_estate
+bundle: budova_real_estate
+label: 'Площа участку(га)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

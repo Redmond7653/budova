@@ -1,0 +1,24 @@
+uuid: cf7430d1-3cae-4d3b-a39c-0ed654019c08
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_real_estate.field_living_area
+  module:
+    - budova
+id: budova_real_estate.budova_real_estate.field_living_area
+field_name: field_living_area
+entity_type: budova_real_estate
+bundle: budova_real_estate
+label: 'Житлова площаль (м²)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

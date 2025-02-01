@@ -1,0 +1,20 @@
+uuid: 488e0d12-4f2f-4aaf-9d89-35f2d21812ea
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+id: budova_applications.field_min_area
+field_name: field_min_area
+entity_type: budova_applications
+type: decimal
+settings:
+  precision: 10
+  scale: 2
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

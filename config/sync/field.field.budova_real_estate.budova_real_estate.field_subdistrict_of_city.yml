@@ -1,0 +1,30 @@
+uuid: 22196f58-adba-4ff4-b93e-4dcb4a990226
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_real_estate.field_subdistrict_of_city
+    - taxonomy.vocabulary.subdistrict_of_the_sity
+  module:
+    - budova
+id: budova_real_estate.budova_real_estate.field_subdistrict_of_city
+field_name: field_subdistrict_of_city
+entity_type: budova_real_estate
+bundle: budova_real_estate
+label: Підрайон
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      subdistrict_of_the_sity: subdistrict_of_the_sity
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

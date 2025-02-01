@@ -1,0 +1,30 @@
+uuid: d00fe204-c09b-4dd6-bd38-a74c34d7cfd0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_applications.field_appartment_plan
+    - taxonomy.vocabulary.layout_of_apartment
+  module:
+    - budova
+id: budova_applications.budova_applications.field_appartment_plan
+field_name: field_appartment_plan
+entity_type: budova_applications
+bundle: budova_applications
+label: 'Планування квартири'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      layout_of_apartment: layout_of_apartment
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

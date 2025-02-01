@@ -1,0 +1,45 @@
+uuid: b7b153ce-51f3-4c5a-b773-c037ea4b7f13
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+    - options
+id: budova_real_estate.field_state_of_the_object
+field_name: field_state_of_the_object
+entity_type: budova_real_estate
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: nevidomo
+      label: Невідомо
+    -
+      value: novobudova
+      label: Новобудова
+    -
+      value: ievroremont
+      label: Євроремонт
+    -
+      value: suchasniy_standart
+      label: 'Сучасний стандарт'
+    -
+      value: zhitloviy_stan
+      label: 'Житловий стан'
+    -
+      value: bez_remontu
+      label: 'Без ремонту'
+    -
+      value: pidgotovleno_pid_remont
+      label: 'Підготовлено під ремонт'
+    -
+      value: potriben_kapitalniy_remont
+      label: 'Потрібен капітальний ремонт'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

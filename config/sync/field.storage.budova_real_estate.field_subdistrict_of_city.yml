@@ -1,0 +1,20 @@
+uuid: 8e3743e2-c7e4-4a0d-8c54-6cdefc9cae27
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+    - taxonomy
+id: budova_real_estate.field_subdistrict_of_city
+field_name: field_subdistrict_of_city
+entity_type: budova_real_estate
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
