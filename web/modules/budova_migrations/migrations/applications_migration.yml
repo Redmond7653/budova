@@ -1,0 +1,109 @@
+id: applications_migration
+label: applications migration from fermacrm
+migration_group: default
+
+source:
+  plugin: 'csv'
+  path: './test_budova_applications'
+  delimiter: ','
+  enclosure: '"'
+  header_offset: 0
+  ids:
+    - id
+  fields:
+    0:
+      name: code
+      label: 'code'
+    1:
+      name: id_requests
+      label: 'id_requests'
+    2:
+      name: operation
+      label: 'operation'
+    3:
+      name: price
+      label: 'price'
+    4:
+      name: currency
+      label: 'currency'
+    5:
+      name: min_rooms
+      label: 'min_rooms'
+    6:
+      name: min_floor
+      label: 'min_floor'
+    7:
+      name: source_of_object
+      label: 'source_of_object'
+    8:
+      name: created
+      label: 'created'
+    9:
+      name: activity
+      label: 'activity'
+    10:
+      name: market_object_status
+      label: 'market_object_status'
+    11:
+      name: f11
+    12:
+      name: created
+      label: 'created'
+    13:
+      name: changed
+      label: 'changed'
+    14:
+      name: realty_type
+      label: 'realty_type'
+    15:
+      name: general_area
+      label: 'general_area'
+    16:
+      name: price
+      label: 'price'
+    17:
+      name: f18
+    18:
+      name: f19
+    19:
+      name: rooms
+      label: 'rooms'
+    20:
+      name: floor
+      label: 'floor'
+    21:
+      name: ceiling_height
+      label: 'ceiling_height'
+    22:
+      name: district_of_city
+      label: 'district_of_city'
+    23:
+      name: room_adjacency
+      label: 'room_adjacency'
+    24:
+      name: wall_material
+      label: 'wall_material'
+    25:
+      name: currency
+      label: 'currency'
+    26:
+      name: subtype_of_realty
+      label: 'subtype_of_realy'
+    27:
+      name: kitchen_area
+      label: kitchen_area
+    28:
+      name: land_category
+      label: 'land_category'
+    29:
+      name: land_config
+      label: 'land_config'
+    30:
+      name: field_appartment_plan
+      label: 'field_appartment_plan'
+    31:
+      name: field_area_region
+      label: 'field_area_region'
+    32:
+      name: max_floor
+      label: max_floor

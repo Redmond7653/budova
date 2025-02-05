@@ -24,7 +24,7 @@ settings:
       value: dom_ria
       label: Дом.ріа
     -
-      value: olh
+      value: tck
       label: ТЦК
     -
       value: rekomendaciyi
@@ -32,6 +32,9 @@ settings:
     -
       value: tekstoviy_spisok
       label: 'Текстовий список'
+    -
+      value: olh
+      label: Олх
   allowed_values_function: ''
 module: options
 locked: false

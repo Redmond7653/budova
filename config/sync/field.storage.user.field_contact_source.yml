@@ -41,6 +41,9 @@ settings:
     -
       value: bigbord
       label: Бігборд
+    -
+      value: tck
+      label: ТЦК
   allowed_values_function: ''
 module: options
 locked: false

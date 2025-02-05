@@ -4,7 +4,7 @@ migration_group: default
 
 source:
   plugin: 'csv'
-  path: './test_budova_real_estates'
+  path: './test_budova_real_estates.csv'
   delimiter: ','
   enclosure: '"'
   header_offset: 0
@@ -17,8 +17,7 @@ source:
     1:
       name: f1
     2:
-      name: type_of_person
-      label: 'type_of_person'
+      name: f2
     3:
       name: related_to
       label: 'related_to'
@@ -38,121 +37,129 @@ source:
       name: created
       label: 'created'
     9:
-      name: activity
-      label: 'activity'
+      name: f9
     10:
       name: market_object_status
       label: 'market_object_status'
     11:
-      name: f11
+      name: last_date_contact
+      label: 'last_date_contact'
     12:
-      name: created
-      label: 'created'
-    13:
-      name: changed
-      label: 'changed'
-    14:
       name: realty_type
       label: 'realty_type'
-    15:
+    13:
       name: general_area
       label: 'general_area'
-    16:
+    14:
       name: price
       label: 'price'
+    15:
+      name: object_status
+      label: 'object_status'
+    16:
+      name: field_living_area
+      label: 'field_living_area'
     17:
-      name: f18
-    18:
-      name: f19
-    19:
       name: rooms
       label: 'rooms'
-    20:
+    18:
       name: floor
       label: 'floor'
-    21:
+    19:
       name: ceiling_height
       label: 'ceiling_height'
-    22:
+    20:
       name: district_of_city
       label: 'district_of_city'
-    23:
+    21:
       name: room_adjacency
       label: 'room_adjacency'
-    24:
+    22:
       name: wall_material
       label: 'wall_material'
-    25:
+    23:
       name: currency
       label: 'currency'
-    26:
+    24:
       name: subtype_of_realty
       label: 'subtype_of_realy'
-    27:
+    25:
       name: kitchen_area
       label: kitchen_area
-    28:
+    26:
       name: land_category
       label: 'land_category'
-    29:
+    27:
       name: land_config
       label: 'land_config'
-    30:
+    28:
       name: field_appartment_plan
       label: 'field_appartment_plan'
-    31:
+    29:
       name: field_area_region
       label: 'field_area_region'
-    32:
+    30:
       name: max_floor
       label: max_floor
-    33:
-      name: f33
-    34:
-      name: f34
-    35:
+    31:
       name: description
-      label: description
-    36:
-      name: f35
-    37:
-      name: f36
-    38:
-      name: changed
-      label: 'changed'
-    39:
-      name: f39
-    40:
-      name: f40
-    41:
+      label: 'description'
+    32:
+      name: change_date
+      label: 'change_date'
+    33:
       name: subdistrict_of_city
       label: 'subdistrict_of_city'
-    42:
+    34:
       name: field_autonomous_heating
       label: 'field_autonomous_heating'
+    35:
+      name: type_of_person
+      label: 'type_of_person'
+    36:
+      name: contacts
+      label: 'contacts'
+    37:
+      name: type_of_contact
+      label: 'type_of_contact'
 
 
 
 process:
-  name: id
+
+  label: id
+
+  field_real_estate_code: id
+
   field_type_of_person:
     plugin: static_map
     bypass: true
     source: type_of_person
     map:
-      A8F0B524CFF4D097B6C5539F404EE5DB	: fizichna_osoba
+      1: fizichna_osoba
 
 
 
 #  related_to:
+
+  field_responsible_user:
+    plugin: static_map
+    bypass: true
+    source: realtor
+    map:
+      6C74C2E98300F2EC7964CE368A18E16C: 64
+      BDA99269836409DE658208CFC4939786: 66
+      E15FEFF8FC470C8C6C2F355DF7C94D96: 65
+      86F367D6AFEDCB4668CC8CE6D91F589C: 67
+
 
   field_real_estate_operation:
     plugin: static_map
     bypass: true
     source: operation
     map:
-      C0697800F264BD87A6FC66318F7F6EF4: 30
-      6EBC4CAB2844A00953073A57FBE66019: 29
+      C0697800F264BD87A6FC66318F7F6EF4: 125
+      6EBC4CAB2844A00953073A57FBE66019: 124
 
 
   field_motivation_status:
@@ -167,8 +174,46 @@ process:
       09E3CC9049E6C2AB32388B429600E6E3: ne_viznacheno
 
 
+  field_source_of_object:
+    plugin: static_map
+    bypass: true
+    source: source_of_object
+    map:
+      F92E228D0427B8A4DBF7CF7D16E6CA8D: rekomendaciyi
+      6507ABBF022D4BA9FDA871B878EA56A6: tekstoviy_spisok
+      E58539C3FE8978E82A7DE6D903F8D92B: tck
+      FA482ADB2F00BE0F5F140EA44321534A: none
+      CD357E2F70C5EF12D8C08AD9AAB0475F: olh
+      86347EB1753B816BCA2C72D673459116: ofis
+      69C3F26D064168A8B6D01BCF07C6F621: dom_ria
+      DD16D7A5D343D7D0220A188AD4A8A666: spp_kolegi
 
 
+
+  field_market_status_of_object:
+   plugin: static_map
+   bypass: true
+   source: market_object_status
+   map:
+     604E593257EBD6905734CA1DA40AB4DE: budova
+     8C4D38C974C7C6246718197FEF44B7B3: vlasnik
+     5B8F3452530D7F8E78F2A56B1EB2FFF7: druge_an
+     452520F37E39689920A692A9EC381018: pmk_19
+     17E4EE3A44F202A5F3BA6C8A819E5913: lucksantehmontazh
+     A0D61F33CEBE8AF954669E6C360204AF: investor
+     73BBC50E3C06811208FB69057C880D2A: rat
+
+  field_last_date_contact: last_date_contact
+
+  field_type_of_real_estate:
+    plugin: static_map
+    bypass: true
+    source: realty_type
+    map:
+      B9E6CE5558A4AA6D977EBA890407E691: 70
+      0EB03DFCCB6A86D9AE93DBB5219BC551: 71
+      B459F7D23464F645E3792044810C41DD: 72
+      98A85583DCA56EB7D8FD76FB665E8751: 73
 
 
 destination:

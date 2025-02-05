@@ -4,23 +4,25 @@ migration_group: default
 
 source:
   plugin: 'csv'
-  path: './test_budova_users.csv'
+  path: './ferma_invididuals_combined_with_contats.csv'
   delimiter: ','
   enclosure: '"'
   header_offset: 0
   ids:
-    - id
+    - code
   fields:
     0:
+      name: code
+      label: 'code'
+    1:
       name: id
       label: 'id'
-    1:
-      name: f1
     2:
       name: roles
       label: 'roles'
     3:
-      name: f3
+      name: contact_source
+      label: 'contact_source'
     4:
       name: realtor
       label: 'realtor'
@@ -54,12 +56,22 @@ source:
     15:
       name: contact
       label: 'contact'
+    16:
+      name: type_of_contact
+      label: 'type_of_contact'
 
 
 
 process:
-  name: name
-  field_code: id
+
+  name:
+    plugin: concat
+    source:
+      - code
+      - name
+    delimiter: " "
+
+  field_code: code
 
   field_type:
     plugin: static_map
@@ -83,11 +95,40 @@ process:
     map:
       0F92C3A30212A71CB11C4F3EDB87A359: buyer
       D26968504F1D3823EACD9F99E5AE00CB: seller
+      90FFF8585D06A8227691DD8A48E19B4A:
+        - buyer
+        - seller
 
+  field_contact_source:
+    plugin: static_map
+    bypass: true
+    source: contact_source
+    map:
+      FC7C75CB81265FFA3B82457241BC97E3: rekomendaciyi
+      FA482ADB2F00BE0F5F140EA44321534A: sayt
+      F0FA1D8B6E3D9FB0A362C5B8FD33E7EA: bigbord
+      EDE6F4B9E76A37D3648FABA292167549: tck
+      DC28167443FB97CE58D66D773F28F516: none
+      D871D52D9C48169B645D04F01665A55E: baner
+      C9452917AE605E91035DAB41EE8EDB0E: olh
+      ABD7DB938D1BFDCA2DB11C003DE9E111: raskleyka
+      6CAB7C8E88844456A847D02D499368C4: ofis
+      4C856CFDBAE89568A9B1ABCCA1F6EDDC: soc_merezhi
+      62AC6CA6F1518A9DD4A8AF66BA7F5724: spp_kolegi
 
+  field_user_name:
+    plugin: concat
+    source:
+        - code
+        - name
+    delimiter: " "
 
-  field_user_name: name
-  field_surname: surname
+  field_surname:
+    plugin: concat
+    source:
+      - name
+      - surname
+    delimiter: " "
   field_description: description
 
   field_responsible_user:
@@ -103,6 +144,16 @@ process:
 
   field_date_birth: birthday
   field_contact: contact
+
+  field_type_of_contact:
+    plugin: static_map
+    bypass: true
+    source: type_of_contact
+    map:
+      C75E1537A324ED04EAFB2F75018DA0B1: telefon
+      759BBA2A7D01F440C114B071F8C488BB: email
+      63E1D0EA96F74D4AEE57063F376B37DF: vayber
+      56413D8E67B28E8AD32172EB74FB8FA8: telefon
 
 destination:
   plugin: entity:user
