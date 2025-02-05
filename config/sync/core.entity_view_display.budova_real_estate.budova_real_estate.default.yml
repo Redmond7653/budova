@@ -12,6 +12,7 @@ dependencies:
     - field.field.budova_real_estate.budova_real_estate.field_contiguity_of_rooms
     - field.field.budova_real_estate.budova_real_estate.field_cost
     - field.field.budova_real_estate.budova_real_estate.field_creation_date
+    - field.field.budova_real_estate.budova_real_estate.field_currency
     - field.field.budova_real_estate.budova_real_estate.field_description
     - field.field.budova_real_estate.budova_real_estate.field_district_of_the_city
     - field.field.budova_real_estate.budova_real_estate.field_floor
@@ -22,6 +23,7 @@ dependencies:
     - field.field.budova_real_estate.budova_real_estate.field_market_status_of_object
     - field.field.budova_real_estate.budova_real_estate.field_metro
     - field.field.budova_real_estate.budova_real_estate.field_motivation_status
+    - field.field.budova_real_estate.budova_real_estate.field_num_floor
     - field.field.budova_real_estate.budova_real_estate.field_number_of_rooms
     - field.field.budova_real_estate.budova_real_estate.field_real_estate_code
     - field.field.budova_real_estate.budova_real_estate.field_real_estate_operation
@@ -154,6 +156,14 @@ content:
     third_party_settings: {  }
     weight: 74
     region: content
+  field_currency:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 98
+    region: content
   field_description:
     type: basic_string
     label: above
@@ -243,6 +253,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 92
+    region: content
+  field_num_floor:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 97
     region: content
   field_number_of_rooms:
     type: number_integer

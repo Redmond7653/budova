@@ -4,7 +4,7 @@ migration_group: default
 
 source:
   plugin: 'csv'
-  path: './test_budova_real_estates.csv'
+  path: './real_estates_without_dublicates.csv'
   delimiter: ','
   enclosure: '"'
   header_offset: 0
@@ -37,7 +37,8 @@ source:
       name: created
       label: 'created'
     9:
-      name: f9
+      name: activity_status
+      label: 'activity_status'
     10:
       name: market_object_status
       label: 'market_object_status'
@@ -45,8 +46,8 @@ source:
       name: last_date_contact
       label: 'last_date_contact'
     12:
-      name: realty_type
-      label: 'realty_type'
+      name: subrealty_type
+      label: 'subrealty_type'
     13:
       name: general_area
       label: 'general_area'
@@ -81,11 +82,11 @@ source:
       name: currency
       label: 'currency'
     24:
-      name: subtype_of_realty
-      label: 'subtype_of_realy'
+      name: realty_type
+      label: 'type_of_realy'
     25:
       name: kitchen_area
-      label: kitchen_area
+      label: 'kitchen_area'
     26:
       name: land_category
       label: 'land_category'
@@ -100,7 +101,7 @@ source:
       label: 'field_area_region'
     30:
       name: max_floor
-      label: max_floor
+      label: 'max_floor'
     31:
       name: description
       label: 'description'
@@ -189,6 +190,15 @@ process:
       DD16D7A5D343D7D0220A188AD4A8A666: spp_kolegi
 
 
+  field_activity_status:
+    plugin: static_map
+    bypass: true
+    source: activity_status
+    map:
+      65E20A4EF1D7A75CCFB229E33C07FC5B: aktivniy
+      7A49188E70EC2A6EACBFA42D73076665: vidkladeniy
+      84ADB5A5304D5F2BA3070B93C749C1F6: znyatiy
+      52BB64BDDA182DE39D2577C33E02CDC6: prodaniy
 
   field_market_status_of_object:
    plugin: static_map
@@ -210,11 +220,178 @@ process:
     bypass: true
     source: realty_type
     map:
-      B9E6CE5558A4AA6D977EBA890407E691: 70
-      0EB03DFCCB6A86D9AE93DBB5219BC551: 71
-      B459F7D23464F645E3792044810C41DD: 72
-      98A85583DCA56EB7D8FD76FB665E8751: 73
+      DAC235A5E4245E03BDFEB1FF3A9EA6F9: 70
+      00830B915168D539E64CFC3AF04251BB: 71
+      3B11DFB0A39056ED92D064A0DA388D12: 72
+      1FA205DE8037CA1D53E7004600301B81: 73
 
+
+  field_general_area: general_area
+
+  field_cost: price
+
+  field_state_of_the_object:
+    plugin: static_map
+    bypass: true
+    source: object_status
+    map:
+      E7B2EBD4224DBC5C935E1615703A026C: novobudova
+      F8EFE987201E424804721C650B02063C: ievroremont
+      B7F5C34D015DD9BD1A1BE54BF21DADB2: suchasniy_standart
+      073BF3CD598F2956BB37B9A12D631D20: zhitloviy_stan
+      FDDAAC762BA7116DA3834DE20C1FDB86: bez_remontu
+      67CF10959F0AEEE05CC703BE1AF2C1B6: pidgotovleno_pid_remont
+      777072E8177B0E7D517190F21C1B9466: potriben_kapitalniy_remont
+
+
+  field_living_area: field_living_area
+
+  field_number_of_rooms: rooms
+
+  field_floor: floor
+
+  field_ceiling_height: ceiling_height
+
+  field_district_of_the_city:
+    plugin: static_map
+    bypass: true
+    source: district_of_city
+    map:
+      5CA789AB4036788287D0CBA66003B571: 87
+      080895390E96E062EA63A4F8D4B79E7C: 88
+
+
+  field_contiguity_of_rooms:
+    plugin: static_map
+    bypass: true
+    source: room_adjacency
+    map:
+      324414411A19A5030DFC1FE91AD9F65A: rozdilni
+      E6E6F3E8067322C02532C1E6C976A06E: sumizhni
+      24DBBC2FBDB99968915C61E1127E6761: rozdilno_sumizhni
+
+  field_wall_material:
+    plugin: static_map
+    bypass: true
+    source: wall_material
+    map:
+      767520C46766D2A2CA1BA3B20D818450: 120
+      9EE7FE42DD5AA6F4D6D9BE804F4BF8E9: 119
+      41400CE666C19055125D167AE2E42B5C: 110
+      AE2085EF67C356EC028C33C98536249D: 112
+      909565B98E1D341F58B4E79B0371021D: 114
+      F1B7B515AB604C48EABE421445CB3C42: 121
+      106CAC351C3504899D3FB370B8C2B541: 118
+      90206E13BC23C00A813CA2C9A89C905B: 115
+      BFA2FEB4A6B474356358A32CD1917641: 116
+
+
+  field_currency:
+    plugin: static_map
+    bypass: true
+    source: currency
+    map:
+      3CB1CFE877A049D05E915B7AF26F5E1B: 68
+      66423F3E7FC9CC4A64B5CEC3C90A7CE9: 69
+      839A039D0BA0D4C487AEAC7F461EA5F6: 67
+
+
+  field_subtype_of_real_estate:
+    plugin: static_map
+    bypass: true
+    source: subrealty_type
+    map:
+      A60505BF985E062B898BFBF321D655F2: 76
+      BD6AD8125F2AA4E14C5F89D458511E0F: 77
+      98A85583DCA56EB7D8FD76FB665E8751: 86
+      A37BB67383F5A7EB8B6A39CB134DC3F6: 81
+      A65F0CB584E7E36DB26D03D5F2633401: 83
+      B9E6CE5558A4AA6D977EBA890407E691: 79
+      072C75AD521B28E537F7859A2862DD4B: 78
+      0EB03DFCCB6A86D9AE93DBB5219BC551: 132
+      85E6695A3615265E51CE17685601CF99: 80
+      4E479096517622945D68AE4FF4B325DF: 74
+      49936F6673F2B57F9D3CC7FDA12D9198: 84
+      758C5E1B126ED8A7C28EE3040DA5D6D5: 75
+      B459F7D23464F645E3792044810C41DD: 82
+      55BC931CAA9A7CC3EC5A6B5A9D346119: 85
+
+  field_kitchen_area: kitchen_area
+
+  field_site_category:
+    plugin: static_map
+    bypass: true
+    source: land_category
+    map:
+      A1A93D1689330B218DE0D8EA5EF16284: okremiy_dvir
+      3AB0F04ADA99DA1B26FE4A4161FE1810: zagalniy_dvir
+
+
+  field_site_configuration: land_config
+
+  field_appartment_plan:
+    plugin: static_map
+    bypass: true
+    source: field_appartment_plan
+    map:
+      BF63C5FC56C821634640CDF0F0514C11: 128
+      CAF3799D2A1847FCB78FC903432A9AA7: 131
+      53C57306ECD5321C96D550FD8B0EC8E9: 129
+      B9A6268EA5C2142B6A51A5BA26A3252D: 130
+      F68BC999137E2D6FE83A3C47870E2047: 127
+      D520741BD877635F3CD1C5BAF6F2C339: 126
+
+  field_area_region: field_area_region
+
+  field_num_floor: max_floor
+
+  field_description: description
+
+  field_subdistrict_of_city:
+    plugin: static_map
+    bypass: true
+    source: subdistrict_of_city
+    map:
+      9E5C7F51120ADBE316ED20BCB433219A: 89
+      F2D49E127A32081358BCB53529913586: 95
+      755BE48958584E447F9C2C9F6FD4ECED: 91
+      51A9BDA7E5875DAD419CA6DF3AE96629: 99
+      C7EE51E9D3C2FDD3B77144318FCBA0A1: 92
+      146C2894F7BEB7B5F7C8A02FD1803529: 102
+      F75FC20C1622D89993D45BC8D7167F6B: 98
+      3691EC359F2D7AEEF647E2FFF7356344: 101
+      BB91423AB9A7CEB19F711E19C670D772: 90
+      0190372EE6486936A250C55193E6A1EF: 96
+      03BC58E4274369932198C0C26BD98223: 94
+      60E2764DABB483D3239BEA9655BEF265: 97
+      B29E4C6A8D8E2BA3C881F8C2C60D4EA3: 93
+      08BF6DAD46F9580CDF55B64773F3E873: 100
+
+  field_autonomous_heating:
+    plugin: static_map
+    bypass: true
+    source: field_autonomous_heating
+    map:
+      71D333DE7BF010356834AC4913624C6F: gazove
+      7E6F380F3BE8E7394FF6353AFEA1388B: elektrichne
+
+  field_contact: contacts
+
+  field_type_of_contact:
+    plugin: static_map
+    bypass: true
+    source: type_of_contact
+    map:
+      759BBA2A7D01F440C114B071F8C488BB: email
+      CCD8FD06ECC8A9B29ACD020E5C881E0C: internet_sayt
+      C75E1537A324ED04EAFB2F75018DA0B1: telefon
+      56413D8E67B28E8AD32172EB74FB8FA8: faks
+      5C4435CF540CCA5EF28D3687A25BAB43: adresa
+      FEEE035F0F0845C01796221E0352EE33: yutub
+      63E1D0EA96F74D4AEE57063F376B37DF: vayber
+      E7CA7EA35434F418833A8EF1946A774F: skayp
+      D805CB956DC79FB6F73419BE0CC3553C: facebook
+      C4E29D7A620BBDA378C5880ED6888D29: icq
 
 destination:
   plugin: entity:budova_real_estate

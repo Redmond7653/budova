@@ -176,6 +176,12 @@ function budova_form_budova_real_estate_add_form_alter(&$form, \Drupal\Core\Form
       ],
     ];
 
+  $form['field_num_floor']['#states'] = [
+    'invisible' => [
+      'select[name="field_type_of_real_estate"]' => ['value' => '70'],
+    ],
+  ];
+
   // Hide field 'Планування квартир' when picking select 'Вид нерухомості -> Земельна ділянка || Приватний сектор || Комерційна нерухомість'
 
   $form['field_appartment_plan']['#states'] = [
@@ -380,6 +386,12 @@ function budova_form_budova_real_estate_edit_form_alter(&$form, \Drupal\Core\For
   // Hide field 'Поверх' when picking select 'Вид нерухомості -> Земельна ділянка'
 
   $form['field_floor']['#states'] = [
+    'invisible' => [
+      'select[name="field_type_of_real_estate"]' => ['value' => '70'],
+    ],
+  ];
+
+  $form['field_num_floor']['#states'] = [
     'invisible' => [
       'select[name="field_type_of_real_estate"]' => ['value' => '70'],
     ],

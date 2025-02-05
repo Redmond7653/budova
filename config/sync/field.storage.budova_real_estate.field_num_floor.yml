@@ -1,0 +1,20 @@
+uuid: a8df35bb-d981-4248-ab4f-47e84945bd5c
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+id: budova_real_estate.field_num_floor
+field_name: field_num_floor
+entity_type: budova_real_estate
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
