@@ -141,7 +141,10 @@ process:
 
 
 
-#  related_to:
+  field_related_to:
+    plugin: migration_lookup
+    migration: users_migration
+    source: related_to
 
   field_responsible_user:
     plugin: static_map

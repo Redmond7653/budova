@@ -4,12 +4,12 @@ migration_group: default
 
 source:
   plugin: 'csv'
-  path: './ferma_invididuals_combined_with_contats.csv'
+  path: './induviduals_with_combined_concacts_with_coma.csv'
   delimiter: ','
   enclosure: '"'
   header_offset: 0
   ids:
-    - code
+    - id
   fields:
     0:
       name: code
@@ -69,6 +69,7 @@ process:
     source:
       - code
       - name
+      - surname
     delimiter: " "
 
   field_code: code
@@ -143,7 +144,11 @@ process:
 
 
   field_date_birth: birthday
-  field_contact: contact
+
+  field_contact:
+    plugin: explode
+    delimiter: ","
+    source: contact
 
   field_type_of_contact:
     plugin: static_map
