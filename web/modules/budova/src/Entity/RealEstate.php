@@ -81,8 +81,8 @@ final class RealEstate extends ContentEntityBase implements RealEstateInterface 
     $fields = parent::baseFieldDefinitions($entity_type);
 
     $fields['label'] = BaseFieldDefinition::create('string')
-      ->setLabel(t('Назва нерухомості'))
-      ->setRequired(TRUE)
+      ->setLabel(t('Код'))
+      ->setRequired(FALSE)
       ->setSetting('max_length', 255)
       ->setDisplayOptions('form', [
         'type' => 'string_textfield',

@@ -15,7 +15,6 @@ dependencies:
     - field.storage.budova_real_estate.field_last_date_contact
     - field.storage.budova_real_estate.field_living_area
     - field.storage.budova_real_estate.field_number_of_rooms
-    - field.storage.budova_real_estate.field_real_estate_code
     - field.storage.budova_real_estate.field_related_to
     - field.storage.budova_real_estate.field_responsible_user
     - field.storage.budova_real_estate.field_site_category
@@ -43,13 +42,15 @@ display:
     display_options:
       title: Нерухомість
       fields:
-        field_real_estate_code:
-          id: field_real_estate_code
-          table: budova_real_estate__field_real_estate_code
-          field: field_real_estate_code
+        label:
+          id: label
+          table: budova_real_estate
+          field: label
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: budova_real_estate
+          entity_field: label
           plugin_id: field
           label: Код
           exclude: false
@@ -57,7 +58,7 @@ display:
             alter_text: false
             text: ''
             make_link: false
-            path: '/real-estate/ {{ id }}'
+            path: ''
             absolute: false
             external: false
             replace_spaces: false
@@ -1495,7 +1496,6 @@ display:
         - 'config:field.storage.budova_real_estate.field_last_date_contact'
         - 'config:field.storage.budova_real_estate.field_living_area'
         - 'config:field.storage.budova_real_estate.field_number_of_rooms'
-        - 'config:field.storage.budova_real_estate.field_real_estate_code'
         - 'config:field.storage.budova_real_estate.field_related_to'
         - 'config:field.storage.budova_real_estate.field_responsible_user'
         - 'config:field.storage.budova_real_estate.field_site_category'
@@ -1530,7 +1530,6 @@ display:
         - 'config:field.storage.budova_real_estate.field_last_date_contact'
         - 'config:field.storage.budova_real_estate.field_living_area'
         - 'config:field.storage.budova_real_estate.field_number_of_rooms'
-        - 'config:field.storage.budova_real_estate.field_real_estate_code'
         - 'config:field.storage.budova_real_estate.field_related_to'
         - 'config:field.storage.budova_real_estate.field_responsible_user'
         - 'config:field.storage.budova_real_estate.field_site_category'

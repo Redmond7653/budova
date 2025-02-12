@@ -130,7 +130,7 @@ process:
 
   label: id
 
-  field_real_estate_code: id
+#  field_real_estate_code: id
 
   field_type_of_person:
     plugin: static_map
@@ -216,7 +216,11 @@ process:
      A0D61F33CEBE8AF954669E6C360204AF: investor
      73BBC50E3C06811208FB69057C880D2A: rat
 
-  field_last_date_contact: last_date_contact
+  created:
+    plugin: callback
+    callable: strtotime
+    source: change_date
+
 
   field_type_of_real_estate:
     plugin: static_map
@@ -288,6 +292,8 @@ process:
       90206E13BC23C00A813CA2C9A89C905B: 115
       BFA2FEB4A6B474356358A32CD1917641: 116
 
+
+  field_creation_date: created
 
   field_currency:
     plugin: static_map

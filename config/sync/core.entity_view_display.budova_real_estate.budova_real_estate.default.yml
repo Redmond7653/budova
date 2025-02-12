@@ -154,7 +154,7 @@ content:
       timezone_override: ''
       format_type: medium
     third_party_settings: {  }
-    weight: 74
+    weight: 99
     region: content
   field_currency:
     type: entity_reference_label

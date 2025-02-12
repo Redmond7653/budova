@@ -988,3 +988,29 @@ function budova_user_presave(\Drupal\Core\Entity\EntityInterface $entity) {
     }
   }
 }
+
+
+/**
+ * Implements hook_ENTITY_TYPE_presave().
+ */
+//function budova_budova_real_estate_presave(\Drupal\Core\Entity\EntityInterface $entity) {
+//
+//  $server = "mariadb";
+//  $username = "drupal";
+//  $password = "drupal";
+//  $database = "drupal";
+//
+//  $conn = new mysqli($server, $username, $password, $database);
+//
+//  $result = $conn->query("SELECT * FROM `budova_real_estate` ORDER BY `id` ASC LIMIT 1");
+//
+//  $label_array = $result->fetch_assoc();
+//
+//  $label = $label_array['label'];
+//
+//  $changed_label = (int)$label + 1;
+//
+//  $entity->label = $changed_label;
+//
+//  $conn->close();
+//}
