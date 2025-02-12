@@ -1,0 +1,33 @@
+uuid: 0111adf3-c4f7-4602-b15c-96423cc9d2f8
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+    - options
+id: budova_events.field_general_status
+field_name: field_general_status
+entity_type: budova_events
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: planned
+      label: Запланований
+    -
+      value: happened
+      label: Відбувся
+    -
+      value: not_happened
+      label: 'Не відбувся'
+    -
+      value: none
+      label: None
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,42 @@
+uuid: 9f77e974-0a4e-4678-bbcf-76d9c68f8ec3
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+    - options
+id: budova_events.field_type_of_event
+field_name: field_type_of_event
+entity_type: budova_events
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: meeting
+      label: Зустріч
+    -
+      value: calls
+      label: Звінки
+    -
+      value: showing
+      label: Покази
+    -
+      value: showing_with_photos
+      label: Фотопокази
+    -
+      value: reports
+      label: Звіти
+    -
+      value: deals
+      label: Оферти
+    -
+      value: avances
+      label: Задатки
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

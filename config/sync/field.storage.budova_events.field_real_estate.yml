@@ -1,0 +1,19 @@
+uuid: 6f1d7540-5fa4-4d13-91c8-7cafd75ad1bf
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+id: budova_events.field_real_estate
+field_name: field_real_estate
+entity_type: budova_events
+type: entity_reference
+settings:
+  target_type: budova_real_estate
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

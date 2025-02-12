@@ -1,0 +1,21 @@
+uuid: 9d9cee74-2ec2-492f-b800-2fb0d951f817
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_events.field_ending
+  module:
+    - budova
+    - datetime
+id: budova_events.budova_events.field_ending
+field_name: field_ending
+entity_type: budova_events
+bundle: budova_events
+label: Кінець
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

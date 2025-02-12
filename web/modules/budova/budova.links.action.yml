@@ -65,3 +65,9 @@ budova_applications.add_form:
   route_name: entity.budova_applications.add_form
   appears_on:
     - entity.budova_applications.collection
+
+budova_events.add_form:
+  title: 'Add events'
+  route_name: entity.budova_events.add_form
+  appears_on:
+    - entity.budova_events.collection

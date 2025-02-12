@@ -1,0 +1,131 @@
+uuid: eedc4978-daaa-41de-826a-6090c6f71821
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.budova_events.budova_events.field_applications
+    - field.field.budova_events.budova_events.field_beggining
+    - field.field.budova_events.budova_events.field_description
+    - field.field.budova_events.budova_events.field_ending
+    - field.field.budova_events.budova_events.field_general_status
+    - field.field.budova_events.budova_events.field_real_estate
+    - field.field.budova_events.budova_events.field_realtor
+    - field.field.budova_events.budova_events.field_result
+    - field.field.budova_events.budova_events.field_source_of_event
+    - field.field.budova_events.budova_events.field_status_of_call
+    - field.field.budova_events.budova_events.field_status_of_offer
+    - field.field.budova_events.budova_events.field_type_of_event
+  module:
+    - budova
+    - datetime
+id: budova_events.budova_events.default
+targetEntityType: budova_events
+bundle: budova_events
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 20
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_applications:
+    type: options_select
+    weight: 23
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_beggining:
+    type: datetime_default
+    weight: 31
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_description:
+    type: string_textarea
+    weight: 25
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_ending:
+    type: datetime_default
+    weight: 32
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_general_status:
+    type: options_select
+    weight: 27
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_real_estate:
+    type: options_select
+    weight: 24
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_realtor:
+    type: options_select
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_result:
+    type: options_select
+    weight: 29
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_source_of_event:
+    type: options_select
+    weight: 22
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_status_of_call:
+    type: options_select
+    weight: 26
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_status_of_offer:
+    type: options_select
+    weight: 28
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_type_of_event:
+    type: options_select
+    weight: 21
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  label:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 0
+    region: content
+    settings:
+      display_label: false
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 15
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

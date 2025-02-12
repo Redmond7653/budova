@@ -1,0 +1,27 @@
+uuid: e03ea42e-e2fa-4e25-8dec-96ec98eff1a3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_events.field_real_estate
+  module:
+    - budova
+id: budova_events.budova_events.field_real_estate
+field_name: field_real_estate
+entity_type: budova_events
+bundle: budova_events
+label: Нерухомість
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:budova_real_estate'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+field_type: entity_reference

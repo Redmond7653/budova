@@ -5,3 +5,15 @@ administer budova_real_estate:
 administer budova_applications:
   title: 'Administer applicationss'
   restrict access: true
+
+administer budova_events:
+  title: 'Administer eventss'
+  restrict access: true
+view budova_events:
+  title: 'View events'
+edit budova_events:
+  title: 'Edit events'
+delete budova_events:
+  title: 'Delete events'
+create budova_events:
+  title: 'Create events'

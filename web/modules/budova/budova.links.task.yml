@@ -18,3 +18,13 @@ entity.budova_applications.collection:
   base_route: system.admin_content
   weight: 10
 
+
+entity.budova_events.settings:
+  title: 'Settings'
+  route_name: entity.budova_events.settings
+  base_route: entity.budova_events.settings
+entity.budova_events.collection:
+  title: 'Eventss'
+  route_name: entity.budova_events.collection
+  base_route: system.admin_content
+  weight: 10

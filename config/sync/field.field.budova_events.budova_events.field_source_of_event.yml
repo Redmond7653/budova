@@ -1,0 +1,21 @@
+uuid: 0e72f8d4-240e-4cd6-822f-43da79a97ca7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_events.field_source_of_event
+  module:
+    - budova
+    - options
+id: budova_events.budova_events.field_source_of_event
+field_name: field_source_of_event
+entity_type: budova_events
+bundle: budova_events
+label: Джерело
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

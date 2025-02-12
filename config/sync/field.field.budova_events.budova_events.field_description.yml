@@ -1,0 +1,20 @@
+uuid: f52397ab-808d-404b-99a7-0752244f20a4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_events.field_description
+  module:
+    - budova
+id: budova_events.budova_events.field_description
+field_name: field_description
+entity_type: budova_events
+bundle: budova_events
+label: Опис
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

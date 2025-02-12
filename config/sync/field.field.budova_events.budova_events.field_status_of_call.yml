@@ -1,0 +1,21 @@
+uuid: 28bc22d0-e9e9-4f86-bf4b-9c0361c72e1f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_events.field_status_of_call
+  module:
+    - budova
+    - options
+id: budova_events.budova_events.field_status_of_call
+field_name: field_status_of_call
+entity_type: budova_events
+bundle: budova_events
+label: 'Статус дзвінка '
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

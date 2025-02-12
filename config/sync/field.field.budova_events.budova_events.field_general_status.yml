@@ -1,0 +1,21 @@
+uuid: 506f77e6-6f08-4b68-bbca-db0eb319bd8e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_events.field_general_status
+  module:
+    - budova
+    - options
+id: budova_events.budova_events.field_general_status
+field_name: field_general_status
+entity_type: budova_events
+bundle: budova_events
+label: 'Загальний статус'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+id: budova_events_delete_action
+label: 'Delete eventss'
+type: budova_events
+plugin: entity:delete_action:budova_events
+configuration: {  }

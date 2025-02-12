@@ -1,0 +1,21 @@
+uuid: dd55b296-d82c-4b3e-962e-a43bdfbe0b89
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_events.field_result
+  module:
+    - budova
+    - options
+id: budova_events.budova_events.field_result
+field_name: field_result
+entity_type: budova_events
+bundle: budova_events
+label: Результат
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

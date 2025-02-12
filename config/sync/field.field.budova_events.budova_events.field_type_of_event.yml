@@ -1,0 +1,21 @@
+uuid: 9aca96ff-1143-421c-9613-0c67bdd5b9cc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_events.field_type_of_event
+  module:
+    - budova
+    - options
+id: budova_events.budova_events.field_type_of_event
+field_name: field_type_of_event
+entity_type: budova_events
+bundle: budova_events
+label: Тип
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

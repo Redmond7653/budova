@@ -21,3 +21,15 @@ entity.budova_applications.collection:
   description: 'List of applicationss.'
   route_name: entity.budova_applications.collection
   parent: system.admin_content
+
+entity.budova_events.settings:
+  title: 'Events'
+  description: 'Configure an Events entity type.'
+  route_name:  entity.budova_events.settings
+  parent: system.admin_structure
+
+entity.budova_events.collection:
+  title: 'Eventss'
+  description: 'List of eventss.'
+  route_name: entity.budova_events.collection
+  parent: system.admin_content

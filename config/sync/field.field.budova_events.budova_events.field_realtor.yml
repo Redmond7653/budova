@@ -1,0 +1,35 @@
+uuid: 0983df66-2d1a-4bd2-9480-54806156e23f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_events.field_realtor
+  module:
+    - budova
+id: budova_events.budova_events.field_realtor
+field_name: field_realtor
+entity_type: budova_events
+bundle: budova_events
+label: Рієлтор
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    filter:
+      type: role
+      role:
+        administrator: administrator
+        content_editor: '0'
+        buyer: '0'
+        seller: '0'
+    include_anonymous: true
+field_type: entity_reference

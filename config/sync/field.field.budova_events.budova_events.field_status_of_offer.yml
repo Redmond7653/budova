@@ -1,0 +1,21 @@
+uuid: d6e9ad65-f165-4b68-ac22-e95b3e252c53
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_events.field_status_of_offer
+  module:
+    - budova
+    - options
+id: budova_events.budova_events.field_status_of_offer
+field_name: field_status_of_offer
+entity_type: budova_events
+bundle: budova_events
+label: 'Статус оферти'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

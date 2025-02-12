@@ -13,3 +13,11 @@ entity.budova_applications.settings:
     _title: 'Applications'
   requirements:
     _permission: 'administer budova_applications'
+
+entity.budova_events.settings:
+  path: 'admin/structure/budova-events'
+  defaults:
+    _form: '\Drupal\budova\Form\EventsSettingsForm'
+    _title: 'Events'
+  requirements:
+    _permission: 'administer budova_events'

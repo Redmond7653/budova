@@ -1,0 +1,30 @@
+uuid: c6845280-2c50-4b82-bb7f-5cf16e2272b2
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+    - options
+id: budova_events.field_status_of_call
+field_name: field_status_of_call
+entity_type: budova_events
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: accepted_call
+      label: Вхідний
+    -
+      value: given_call
+      label: Вихідний
+    -
+      value: none
+      label: None
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,21 @@
+uuid: 840ec913-b26b-484d-bcc6-d9959d99951b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_events.field_beggining
+  module:
+    - budova
+    - datetime
+id: budova_events.budova_events.field_beggining
+field_name: field_beggining
+entity_type: budova_events
+bundle: budova_events
+label: Початок
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime
