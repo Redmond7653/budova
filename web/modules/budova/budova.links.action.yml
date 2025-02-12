@@ -71,3 +71,21 @@ budova_events.add_form:
   route_name: entity.budova_events.add_form
   appears_on:
     - entity.budova_events.collection
+
+budova.add.events:
+  title: 'Додати захід'
+  route_name: entity.budova_events.add_form
+  appears_on:
+    - view.events.budova_events_page
+
+budova.go_back_events_creation:
+  title: 'Назад'
+  route_name: view.events.budova_events_page
+  appears_on:
+    - entity.budova_events.add_form
+
+budova.go_back_events_edit:
+  title: 'Назад'
+  route_name: view.events.budova_events_page
+  appears_on:
+    - entity.budova_events.canonical

@@ -28,6 +28,7 @@ dependencies:
     - field.field.budova_applications.budova_applications.field_state_of_the_object
     - field.field.budova_applications.budova_applications.field_subdistrict_of_city
     - field.field.budova_applications.budova_applications.field_subtype_of_real_estate
+    - field.field.budova_applications.budova_applications.field_tets
     - field.field.budova_applications.budova_applications.field_type_of_contact
     - field.field.budova_applications.budova_applications.field_type_of_person
     - field.field.budova_applications.budova_applications.field_type_of_real_estate
@@ -206,6 +207,12 @@ content:
   field_subtype_of_real_estate:
     type: options_select
     weight: 20
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_tets:
+    type: datetime_timestamp
+    weight: 58
     region: content
     settings: {  }
     third_party_settings: {  }

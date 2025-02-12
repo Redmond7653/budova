@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.storage.budova_applications.field_code
     - field.storage.budova_applications.field_contact
     - field.storage.budova_applications.field_description
     - field.storage.budova_applications.field_district_of_the_city
@@ -431,7 +432,7 @@ display:
           click_sort_column: target_id
           type: entity_reference_label
           settings:
-            link: true
+            link: false
           group_column: target_id
           group_columns: {  }
           group_rows: true
@@ -685,70 +686,7 @@ display:
           click_sort_column: target_id
           type: entity_reference_label
           settings:
-            link: true
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_related_to:
-          id: field_related_to
-          table: budova_applications__field_related_to
-          field: field_related_to
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: 'Відноситься до'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: true
+            link: false
           group_column: target_id
           group_columns: {  }
           group_rows: true
@@ -948,8 +886,71 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        field_code:
+          id: field_code
+          table: budova_applications__field_code
+          field: field_code
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: Код
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
       pager:
-        type: mini
+        type: full
         options:
           offset: 0
           pagination_heading_level: h4
@@ -959,6 +960,8 @@ display:
           tags:
             next: ››
             previous: ‹‹
+            first: '« First'
+            last: 'Last »'
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
@@ -967,6 +970,7 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
+          quantity: 9
       exposed_form:
         type: basic
         options:
@@ -1034,6 +1038,7 @@ display:
         - 'languages:language_interface'
         - url.query_args
       tags:
+        - 'config:field.storage.budova_applications.field_code'
         - 'config:field.storage.budova_applications.field_contact'
         - 'config:field.storage.budova_applications.field_description'
         - 'config:field.storage.budova_applications.field_district_of_the_city'
@@ -1059,6 +1064,7 @@ display:
         - 'languages:language_interface'
         - url.query_args
       tags:
+        - 'config:field.storage.budova_applications.field_code'
         - 'config:field.storage.budova_applications.field_contact'
         - 'config:field.storage.budova_applications.field_description'
         - 'config:field.storage.budova_applications.field_district_of_the_city'

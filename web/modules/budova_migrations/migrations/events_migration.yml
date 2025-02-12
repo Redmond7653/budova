@@ -1,0 +1,69 @@
+id: events_migration
+label: events migration from fermacrm
+migration_group: default
+
+source:
+  plugin: 'csv'
+  path: './real_estates_without_dublicates.csv'
+  delimiter: ','
+  enclosure: '"'
+  header_offset: 0
+  ids:
+    - id
+  fields:
+    0:
+      name: id
+      label: 'id'
+    1:
+      name: theme
+      label: 'theme'
+    2:
+      name: begin_date
+      label: 'begin_date'
+    3:
+      name: end_date
+      label: 'end_date'
+    4:
+      name: f4
+    5:
+      name: id_realties
+      label: 'id_realties'
+    6:
+      name: event_type
+      label: 'event_type'
+    7:
+      name: call_status
+      label: 'call_status'
+    8:
+      name: general_status
+      label: 'general_status'
+    9:
+      name: activity_status
+      label: 'activity_status'
+    10:
+      name: f10
+    11:
+      name: f11
+    12:
+      name: id_applications
+      label: 'id_applications'
+    13:
+      name: realtor
+      label: 'realtor'
+    14:
+      name: description
+      label: 'description'
+    15:
+      name: result_type
+      label: 'result_type'
+    16:
+      name: field_source_of_event
+      label: 'field_source_of_event'
+    17:
+      name: f17
+    18:
+      name: f18
+    19:
+      name: f19
+    20:
+      name: f20

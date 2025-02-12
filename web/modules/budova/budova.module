@@ -782,6 +782,138 @@ function budova_form_budova_applications_edit_form_alter(&$form, \Drupal\Core\Fo
   $form['actions']['submit']['#submit'][] = 'budova_applications_submit_do_redirect';
 }
 
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function budova_form_budova_events_add_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+//  $events_type_field_name = 'field_type_of_event';
+//
+//  $form[$events_type_field_name]['widget']['#ajax'] = [
+//    'callback' => 'budova_reloadCity',
+//    'wrapper' => $form[$events_type_field_name]['#attributes']['id'],
+//  ];
+
+  $form['field_status_of_call']['#states'] = [
+    'invisible' => [
+      [
+        'select[name="field_type_of_event"]' => ['value' => 'meeting'],
+      ],
+      'or',
+      [
+        'select[name="field_type_of_event"]' => ['value' => 'showing'],
+      ],
+      'or',
+      [
+        'select[name="field_type_of_event"]' => ['value' => 'showing_with_photos'],
+      ],
+      'or',
+      [
+        'select[name="field_type_of_event"]' => ['value' => 'reports'],
+      ],
+      'or',
+      [
+        'select[name="field_type_of_event"]' => ['value' => 'deals'],
+      ],
+      'or',
+      [
+        'select[name="field_type_of_event"]' => ['value' => 'avances'],
+      ],
+    ],
+  ];
+
+
+  $form['field_status_of_offer']['#states'] = [
+    'invisible' => [
+      [
+        'select[name="field_type_of_event"]' => ['value' => 'meeting'],
+      ],
+      'or',
+      [
+        'select[name="field_type_of_event"]' => ['value' => 'showing'],
+      ],
+      'or',
+      [
+        'select[name="field_type_of_event"]' => ['value' => 'showing_with_photos'],
+      ],
+      'or',
+      [
+        'select[name="field_type_of_event"]' => ['value' => 'reports'],
+      ],
+      'or',
+      [
+        'select[name="field_type_of_event"]' => ['value' => 'avances'],
+      ],
+    ],
+  ];
+
+
+  $form['actions']['submit']['#submit'][] = 'budova_events_submit_do_redirect';
+
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function budova_form_budova_events_edit_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+
+  $form['field_status_of_call']['#states'] = [
+    'invisible' => [
+      [
+        'select[name="field_type_of_event"]' => ['value' => 'meeting'],
+      ],
+      'or',
+      [
+        'select[name="field_type_of_event"]' => ['value' => 'showing'],
+      ],
+      'or',
+      [
+        'select[name="field_type_of_event"]' => ['value' => 'showing_with_photos'],
+      ],
+      'or',
+      [
+        'select[name="field_type_of_event"]' => ['value' => 'reports'],
+      ],
+      'or',
+      [
+        'select[name="field_type_of_event"]' => ['value' => 'deals'],
+      ],
+      'or',
+      [
+        'select[name="field_type_of_event"]' => ['value' => 'avances'],
+      ],
+    ],
+  ];
+
+
+  $form['field_status_of_offer']['#states'] = [
+    'invisible' => [
+      [
+        'select[name="field_type_of_event"]' => ['value' => 'meeting'],
+      ],
+      'or',
+      [
+        'select[name="field_type_of_event"]' => ['value' => 'showing'],
+      ],
+      'or',
+      [
+        'select[name="field_type_of_event"]' => ['value' => 'showing_with_photos'],
+      ],
+      'or',
+      [
+        'select[name="field_type_of_event"]' => ['value' => 'reports'],
+      ],
+      'or',
+      [
+        'select[name="field_type_of_event"]' => ['value' => 'avances'],
+      ],
+    ],
+  ];
+
+
+  $form['actions']['submit']['#submit'][] = 'budova_events_submit_do_redirect';
+
+}
+
 
   function budova_reloadCity(array $form, FormStateInterface $form_state) {
     return $form["field_subdistrict_of_city"];
@@ -797,10 +929,8 @@ function budova_reloadUser(array $form, FormStateInterface $form_state) {
 
 
 function budova_real_estate_submit_do_redirect($form, &$form_state) {
-
   $url = Url::fromRoute('view.real_estate.page_real_estate');
   $form_state->setRedirectUrl($url);
-
 }
 
 function budova_applications_submit_do_redirect($form, &$form_state) {
@@ -808,7 +938,10 @@ function budova_applications_submit_do_redirect($form, &$form_state) {
   $form_state->setRedirectUrl($url);
 }
 
-
+function budova_events_submit_do_redirect($form, &$form_state) {
+  $url = Url::fromRoute('view.events.budova_events_page');
+  $form_state->setRedirectUrl($url);
+}
 
 
 
