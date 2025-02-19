@@ -9,7 +9,7 @@ source:
   enclosure: '"'
   header_offset: 0
   ids:
-    - code
+    - id_requests
   fields:
     0:
       name: code
@@ -108,9 +108,7 @@ source:
       label: 'heating_system'
 
 process:
-  label: code
-
-  field_code: code
+  id: code
 
   field_operaciya_new:
     plugin: static_map

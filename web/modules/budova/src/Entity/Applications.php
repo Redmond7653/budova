@@ -42,7 +42,6 @@ use Drupal\user\EntityOwnerTrait;
  *   admin_permission = "administer budova_applications",
  *   entity_keys = {
  *     "id" = "id",
- *     "label" = "label",
  *     "uuid" = "uuid",
  *     "owner" = "uid",
  *   },
@@ -80,21 +79,6 @@ final class Applications extends ContentEntityBase implements ApplicationsInterf
 
     $fields = parent::baseFieldDefinitions($entity_type);
 
-    $fields['label'] = BaseFieldDefinition::create('string')
-      ->setLabel(t('Назва заявки'))
-      ->setRequired(TRUE)
-      ->setSetting('max_length', 255)
-      ->setDisplayOptions('form', [
-        'type' => 'string_textfield',
-        'weight' => -5,
-      ])
-      ->setDisplayConfigurable('form', TRUE)
-      ->setDisplayOptions('view', [
-        'label' => 'hidden',
-        'type' => 'string',
-        'weight' => -5,
-      ])
-      ->setDisplayConfigurable('view', TRUE);
 
     $fields['status'] = BaseFieldDefinition::create('boolean')
       ->setLabel(t('Status'))

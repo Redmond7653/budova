@@ -1547,7 +1547,7 @@ display:
       defaults:
         fields: false
       display_extenders: {  }
-      path: budova_events
+      path: admin/budova_events
     cache_metadata:
       max-age: -1
       contexts:

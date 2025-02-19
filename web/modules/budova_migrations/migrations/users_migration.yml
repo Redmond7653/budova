@@ -64,6 +64,8 @@ source:
 
 process:
 
+  id: code
+
   name:
     plugin: concat
     source:
@@ -99,6 +101,8 @@ process:
       90FFF8585D06A8227691DD8A48E19B4A:
         - buyer
         - seller
+      admin: administrator
+
 
   field_contact_source:
     plugin: static_map
@@ -133,14 +137,9 @@ process:
   field_description: description
 
   field_responsible_user:
-    plugin: static_map
-    bypass: true
+    plugin: migration_lookup
+    migration: admin_migration
     source: realtor
-    map:
-      6C74C2E98300F2EC7964CE368A18E16C: 64
-      BDA99269836409DE658208CFC4939786: 66
-      E15FEFF8FC470C8C6C2F355DF7C94D96: 65
-      86F367D6AFEDCB4668CC8CE6D91F589C: 67
 
 
   field_date_birth: birthday

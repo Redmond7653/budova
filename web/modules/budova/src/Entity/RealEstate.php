@@ -42,7 +42,6 @@ use Drupal\user\EntityOwnerTrait;
  *   admin_permission = "administer budova_real_estate",
  *   entity_keys = {
  *     "id" = "id",
- *     "label" = "label",
  *     "uuid" = "uuid",
  *     "owner" = "uid",
  *   },
@@ -80,21 +79,6 @@ final class RealEstate extends ContentEntityBase implements RealEstateInterface 
 
     $fields = parent::baseFieldDefinitions($entity_type);
 
-    $fields['label'] = BaseFieldDefinition::create('string')
-      ->setLabel(t('Код'))
-      ->setRequired(FALSE)
-      ->setSetting('max_length', 255)
-      ->setDisplayOptions('form', [
-        'type' => 'string_textfield',
-        'weight' => -5,
-      ])
-      ->setDisplayConfigurable('form', TRUE)
-      ->setDisplayOptions('view', [
-        'label' => 'hidden',
-        'type' => 'string',
-        'weight' => -5,
-      ])
-      ->setDisplayConfigurable('view', TRUE);
 
     $fields['status'] = BaseFieldDefinition::create('boolean')
       ->setLabel(t('Status'))
@@ -173,6 +157,10 @@ final class RealEstate extends ContentEntityBase implements RealEstateInterface 
       ->setDescription(t('The time that the real_estate was last edited.'));
 
     return $fields;
+  }
+
+  public function label() {
+    return $this->id() . " ololo***";
   }
 
 }

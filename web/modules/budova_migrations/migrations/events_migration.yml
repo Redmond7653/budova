@@ -4,7 +4,7 @@ migration_group: default
 
 source:
   plugin: 'csv'
-  path: './real_estates_without_dublicates.csv'
+  path: './events.csv'
   delimiter: ','
   enclosure: '"'
   header_offset: 0
@@ -38,24 +38,24 @@ source:
       name: general_status
       label: 'general_status'
     9:
-      name: activity_status
-      label: 'activity_status'
+      name: f9
     10:
       name: f10
     11:
-      name: f11
-    12:
       name: id_applications
       label: 'id_applications'
-    13:
+    12:
       name: realtor
       label: 'realtor'
-    14:
+    13:
       name: description
       label: 'description'
-    15:
+    14:
       name: result_type
       label: 'result_type'
+    15:
+      name: offer_status
+      label: 'offer_status'
     16:
       name: field_source_of_event
       label: 'field_source_of_event'
@@ -67,3 +67,101 @@ source:
       name: f19
     20:
       name: f20
+
+
+process:
+
+  label: theme
+
+
+  field_beggining: begin_date
+
+  field_ending: end_date
+
+  field_real_estate:
+    plugin: migration_lookup
+    migration: real_estates_migration
+    source: id_realties
+
+  field_type_of_event:
+    plugin: static_map
+    bypass: true
+    source: event_type
+    map:
+      693FBB876A7624B00C5E2FAE5E7C72DE: meeting
+      844C66258BBDE075493A83B2A1D1A3B1: calls
+      22B72F22B91C90ABDD402E5CED8293A0: showing
+      444636DACB0E5E7FCC627EACD6B2E448: showing_with_photos
+      AA6D7F3D969E6BAE23EADC97083526A0: reports
+      03FE8E1EBE661B4FFA81ED3E4E803BF6: deals
+      A56BD7D9AA1D8F63AEF7F8659B5F8DEF: avances
+
+  field_status_of_call:
+    plugin: static_map
+    bypass: true
+    source: call_status
+    map:
+      23F1A29BD0C58D32BC49E40E544DFA1A: accepted_call
+      9341FB106A3FE983E2582394FF73A458: given_call
+
+  field_general_status:
+    plugin: static_map
+    bypass: true
+    source: general_status
+    map:
+      14F9BF1ACA76736E4CF63F10FCBD6A78: planned
+      E457D657AA0468FEA52C184333C973BC: happened
+      76C507777D782A27DC47968EEB53A2C6: not_happened
+
+
+  field_applications:
+    plugin: migration_lookup
+    migration: applications_migration
+    source: id_applications
+
+
+  field_realtor:
+    plugin: migration_lookup
+    migration: admin_migration
+    source: realtor
+
+  field_description: description
+
+  field_result:
+    plugin: static_map
+    bypass: true
+    source: result_type
+    map:
+      E35F3034266D8C212274716496C2C956: deny
+      88B2FBD3E43DF8BBF9D951A1541BDD6D: offer
+      3CD8AC5C64E893032934B98679F35142: do_not_know
+
+  field_status_of_offer:
+    plugin: static_map
+    bypass: true
+    source: offer_status
+    map:
+      B85173EABBA28245C3134C442AE23E0E: thinking
+      4FEA9782DE484B6681C10B223A057DCC: accepted
+      71E86525DA8FDADDF2780FFA32C394E5: denied
+
+
+  field_source_of_event:
+    plugin: static_map
+    bypass: true
+    source: field_source_of_event
+    map:
+      FC7C75CB81265FFA3B82457241BC97E3: rekomendaciyi
+      EDE6F4B9E76A37D3648FABA292167549: tck
+      FA482ADB2F00BE0F5F140EA44321534A: sayt
+      C9452917AE605E91035DAB41EE8EDB0E: olh
+      6CAB7C8E88844456A847D02D499368C4: ofis
+      62AC6CA6F1518A9DD4A8AF66BA7F5724: spp_kolegi
+      4C856CFDBAE89568A9B1ABCCA1F6EDDC: soc_merezhi
+      ABD7DB938D1BFDCA2DB11C003DE9E111: rozkleyka
+      F0FA1D8B6E3D9FB0A362C5B8FD33E7EA: bigbord
+      D871D52D9C48169B645D04F01665A55E: baner
+
+
+destination:
+  plugin: entity:budova_events

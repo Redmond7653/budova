@@ -1,0 +1,39 @@
+id,term_id,taxonomy_name,term_name,term_description,term_weight,parent_machine_name,parent_name
+1,20,currency,Гривни,,,null,null
+2,21,currency,Долари,,,null,null
+3,22,currency,Євро,,,null,null
+4,23,type_of_real_estate,Приватний сектор,,,null,null
+5,24,type_of_real_estate,Земельна ділянка,,,null,null
+6,25,type_of_real_estate,Квартири,,,null,null
+7,26,type_of_real_estate,Комерційна нерухомість,,,null,null
+8,27,source_of_receipt_of_objects,СПП/Колеги,,,null,null
+9,28,source_of_receipt_of_objects,Офіс,,,null,null
+10,29,source_of_receipt_of_objects,Дом.ріа,,,null,null
+11,30,source_of_receipt_of_objects,Олх,,,null,null
+12,31,source_of_receipt_of_objects,Рекомендація,,,null,null
+13,32,source_of_receipt_of_objects,ТЦК,,,null,null
+14,33,source_of_receipt_of_objects,Текстові списки,,,null,null
+15,34,wall_material,Цегляний,,,null,null
+16,35,wall_material,Панельний,,,null,null
+17,36,wall_material,Блочний,,,null,null
+18,37,wall_material,Глинобитний,,,null,null
+19,38,wall_material,Глинобитний,,,null,null
+20,39,wall_material,Глинобитний,,,null,null
+21,40,wall_material,Шлакоблок,,,null,null
+22,41,wall_material,Піноблок,,,null,null
+23,42,wall_material,Газобетон,,,null,null
+24,43,wall_material,Монолит,,,null,null
+25,44,wall_material,Дерев'яний,,,null,null
+26,45,wall_material,Комбінований,,,null,null
+27,46,heating,Газове,,,null,null
+28,47,heating,Електричне,,,null,null
+29,48,real_estate_transaction,Продажа,,,null,null
+30,49,real_estate_transaction,Аренда,,,null,null
+31,50,layout_of_apartment,Новобудова,,,null,null
+32,51,layout_of_apartment,Чешка,,,null,null
+33,52,layout_of_apartment,Покращенне планування,,,null,null
+34,53,layout_of_apartment,Хрущівка,,,null,null
+35,54,layout_of_apartment,Малосімейка,,,null,null
+36,55,layout_of_apartment,Кімната в гуртожитку,,,null,null
+37,56,district_of_the_city,Ковель,,,,
+38,57,district_of_the_city,Ковельський р-н,,,,

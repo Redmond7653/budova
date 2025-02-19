@@ -12,10 +12,10 @@ source:
     - id
   fields:
     0:
-      name: id
+      name: code
       label: 'id'
     1:
-      name: f1
+      name: id
     2:
       name: f2
     3:
@@ -128,7 +128,7 @@ source:
 
 process:
 
-  label: id
+  id: code
 
 #  field_real_estate_code: id
 

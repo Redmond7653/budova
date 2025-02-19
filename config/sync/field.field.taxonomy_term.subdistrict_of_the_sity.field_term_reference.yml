@@ -1,0 +1,29 @@
+uuid: 4531ac8e-19ea-4905-8cc6-6c3c767c48b6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_term_reference
+    - taxonomy.vocabulary.subdistrict_of_the_sity
+    - taxonomy.vocabulary.type_of_real_estate
+id: taxonomy_term.subdistrict_of_the_sity.field_term_reference
+field_name: field_term_reference
+entity_type: taxonomy_term
+bundle: subdistrict_of_the_sity
+label: 'Term reference'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      type_of_real_estate: type_of_real_estate
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

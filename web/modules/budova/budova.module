@@ -3,6 +3,7 @@
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
+use Drupal\Core\Menu\MenuTreeParameters;
 
 /**
  * Implements hook_form_alter().
@@ -988,6 +989,17 @@ function budova_user_presave(\Drupal\Core\Entity\EntityInterface $entity) {
     }
   }
 }
+
+//function budova_preprocess_page(&$variables) {
+//  if (\Drupal::routeMatch()->getRouteName() == 'view.clients.page_clients') {
+//    $variables['admin_menu_links'] = \Drupal::menuTree()->render('main');
+//  }
+//}
+
+
+
+
+
 
 
 /**

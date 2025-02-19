@@ -1,0 +1,45 @@
+id: taxonomy_migration
+label: taxonomy migration from fermacrm
+migration_group: default
+
+source:
+  plugin: 'csv'
+  path: './final_taxonomy.csv'
+  delimiter: ','
+  enclosure: '"'
+  header_offset: 0
+  ids:
+    - term_id
+  fields:
+    0:
+      name: id
+      label: 'id'
+    1:
+      name: term_id
+      label: 'term_id'
+    2:
+      name: taxonomy_name
+      label: 'taxonomy_name'
+    3:
+      name: term_name
+      label: 'term_name'
+    4:
+      name: term_description
+      label: 'term_description'
+    5:
+      name: term_weight
+      label: 'term_weight'
+    6:
+      name: parent_machine_name
+      label: 'parent_machine_name'
+    7:
+      name: parent_name
+      label: 'parent_name'
+
+process:
+  vid: taxonomy_name
+  name: term_name
+
+
+destination:
+  plugin: entity:taxonomy_term

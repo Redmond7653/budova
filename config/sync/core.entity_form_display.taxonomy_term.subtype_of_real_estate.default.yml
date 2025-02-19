@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.subtype_of_real_estate.field_type_of_real_estate
+    - field.field.taxonomy_term.subtype_of_real_estate.field_term_reference
     - taxonomy.vocabulary.subtype_of_real_estate
   module:
     - path
@@ -21,7 +21,7 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-  field_type_of_real_estate:
+  field_term_reference:
     type: options_select
     weight: 101
     region: content

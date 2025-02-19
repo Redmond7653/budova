@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.subdistrict_of_the_sity.field_district_of_the_city
+    - field.field.taxonomy_term.subdistrict_of_the_sity.field_term_reference
     - taxonomy.vocabulary.subdistrict_of_the_sity
   module:
     - text
@@ -19,7 +19,7 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  field_district_of_the_city:
+  field_term_reference:
     type: entity_reference_label
     label: above
     settings:

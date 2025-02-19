@@ -988,7 +988,22 @@ display:
         type: tag
         options: {  }
       empty: {  }
-      sorts: {  }
+      sorts:
+        id:
+          id: id
+          table: budova_applications
+          field: id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: budova_applications
+          entity_field: id
+          plugin_id: standard
+          order: DESC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
       arguments: {  }
       filters: {  }
       filter_groups:
@@ -1056,7 +1071,7 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: applications
+      path: admin/applications
     cache_metadata:
       max-age: -1
       contexts:

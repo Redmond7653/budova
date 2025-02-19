@@ -1,0 +1,29 @@
+id,term_id,taxonomy_name,term_name,term_description,term_weight,parent_machine_name,parent_name
+39,58,subdistrict_of_the_sity,Бреська,,,district_of_the_city,56
+40,59,subdistrict_of_the_sity,Ковель-2,,,district_of_the_city,56
+41,60,subdistrict_of_the_sity,Ватутіна,,,district_of_the_city,56
+42,61,subdistrict_of_the_sity,Сільмаш,,,district_of_the_city,56
+43,62,subdistrict_of_the_sity,Володимирська,,,district_of_the_city,56
+44,63,subdistrict_of_the_sity,Черемушкі,,,district_of_the_city,56
+45,64,subdistrict_of_the_sity,Привокзальна,,,district_of_the_city,56
+46,65,subdistrict_of_the_sity,Центр,,,district_of_the_city,56
+47,66,subdistrict_of_the_sity,Василька,,,district_of_the_city,57
+48,67,subdistrict_of_the_sity,Луков,,,district_of_the_city,57
+49,68,subdistrict_of_the_sity,Городилець,,,district_of_the_city,57
+50,69,subdistrict_of_the_sity,Люблинець,,,district_of_the_city,57
+51,70,subdistrict_of_the_sity,Голоби,,,district_of_the_city,57
+52,71,subdistrict_of_the_sity,Турійськ,,,district_of_the_city,57
+53,72,subtype_of_real_estate,Дім,,,type_of_real_estate,23
+54,73,subtype_of_real_estate,Частина дому,,,type_of_real_estate,23
+55,74,subtype_of_real_estate,Дача,,,type_of_real_estate,23
+56,75,subtype_of_real_estate,Комерційна земля,,,type_of_real_estate,24
+57,76,subtype_of_real_estate,СГ,,,type_of_real_estate,24
+58,77,subtype_of_real_estate,Земля під застройку,,,type_of_real_estate,24
+59,78,subtype_of_real_estate,Земельний участок,,,type_of_real_estate,24
+60,79,subtype_of_real_estate,Квартира,,,type_of_real_estate,25
+61,80,subtype_of_real_estate,Кімната,,,type_of_real_estate,25
+62,81,subtype_of_real_estate,Багатоцільова,,,type_of_real_estate,26
+63,82,subtype_of_real_estate,СТО,,,type_of_real_estate,26
+64,83,subtype_of_real_estate,Готельно-ресторанний комплекс,,,type_of_real_estate,26
+65,84,subtype_of_real_estate,Офіс,,,type_of_real_estate,26
+66,85,subtype_of_real_estate,Торгова площадка,,,type_of_real_estate,26
