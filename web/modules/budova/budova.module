@@ -4,6 +4,7 @@ use Drupal\Component\Utility\Html;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
 use Drupal\Core\Menu\MenuTreeParameters;
+use Drupal\taxonomy\Entity\Term;
 
 /**
  * Implements hook_form_alter().
@@ -97,7 +98,22 @@ function budova_form_budova_real_estate_add_form_alter(&$form, \Drupal\Core\Form
   $parent_type_real_estate_field_name = 'field_type_of_real_estate';
   $child_type_real_estate_field_name = 'field_subtype_of_real_estate';
 
-//  $selected_city_rayon = FALSE;
+  $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'type_of_real_estate']);
+
+  $term_names_and_ids = [];
+  foreach ($terms as $term) {
+    $id = $term->id();
+    $name = $term->getName();
+    $term_names_and_ids[$name] = $id;
+
+  }
+
+  $land_property = $term_names_and_ids['Земельна ділянка'];
+  $private_sector = $term_names_and_ids['Приватний сектор'];
+  $appartments = $term_names_and_ids['Квартири'];
+  $commercial_real_estate = $term_names_and_ids['Комерційна нерухомість'];
+
+  //  $selected_city_rayon = FALSE;
 //  $selected_type_real_estate = FALSE;
 
   if ($triggering_element) {
@@ -107,7 +123,7 @@ function budova_form_budova_real_estate_add_form_alter(&$form, \Drupal\Core\Form
       foreach ($form[$child_city_field_name]["widget"]["#options"] as $key => $option) {
        $taxonomy_entity =  \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($key);
        if ($taxonomy_entity) {
-         $field_rayon = $taxonomy_entity->field_district_of_the_city->target_id;
+         $field_rayon = $taxonomy_entity->field_term_reference->target_id;
           if ($field_rayon !== $selected_rayon_city_id) {
             unset($form[$child_city_field_name]["widget"]["#options"][$key]);
          }
@@ -118,13 +134,14 @@ function budova_form_budova_real_estate_add_form_alter(&$form, \Drupal\Core\Form
     }
 
 
+
     if ($triggering_element["#field_name"] == $parent_type_real_estate_field_name) {
       $selected_type_real_estate_id = $triggering_element["#value"];
 
       foreach ($form[$child_type_real_estate_field_name]["widget"]["#options"] as $key => $option) {
         $taxonomy_entity =  \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($key);
         if ($taxonomy_entity) {
-          $type_real_estate_field_id = $taxonomy_entity->field_type_of_real_estate->target_id;
+          $type_real_estate_field_id = $taxonomy_entity->field_term_reference->target_id;
           if ($type_real_estate_field_id !== $selected_type_real_estate_id) {
             unset($form[$child_type_real_estate_field_name]["widget"]["#options"][$key]);
           }
@@ -138,6 +155,9 @@ function budova_form_budova_real_estate_add_form_alter(&$form, \Drupal\Core\Form
 
   $form[$child_city_field_name]['#attributes']['id'] = $child_city_field_name . '__id';
   $form[$child_type_real_estate_field_name]['#attributes']['id'] = $child_type_real_estate_field_name . '__id';
+
+
+
 
 //  if ($selected_city_rayon !== FALSE) {
     $form[$parent_city_field_name]['widget']['#ajax'] = [
@@ -160,11 +180,11 @@ function budova_form_budova_real_estate_add_form_alter(&$form, \Drupal\Core\Form
     $form['field_number_of_rooms']['#states'] = [
       'invisible' => [
         [
-        'select[name="field_type_of_real_estate"]' => ['value' => '70'],
+        'select[name="field_type_of_real_estate"]' => ['value' => "$land_property"],
           ],
         'or',
         [
-          'select[name="field_type_of_real_estate"]' => ['value' => '72'],
+          'select[name="field_type_of_real_estate"]' => ['value' => "$commercial_real_estate"],
         ],
       ],
     ];
@@ -173,13 +193,13 @@ function budova_form_budova_real_estate_add_form_alter(&$form, \Drupal\Core\Form
 
     $form['field_floor']['#states'] = [
       'invisible' => [
-        'select[name="field_type_of_real_estate"]' => ['value' => '70'],
+        'select[name="field_type_of_real_estate"]' => ['value' => "$land_property"],
       ],
     ];
 
   $form['field_num_floor']['#states'] = [
     'invisible' => [
-      'select[name="field_type_of_real_estate"]' => ['value' => '70'],
+      'select[name="field_type_of_real_estate"]' => ['value' => "$land_property"],
     ],
   ];
 
@@ -188,16 +208,16 @@ function budova_form_budova_real_estate_add_form_alter(&$form, \Drupal\Core\Form
   $form['field_appartment_plan']['#states'] = [
     'invisible' => [
       [
-        'select[name="field_type_of_real_estate"]' => ['value' => '70'],
+        'select[name="field_type_of_real_estate"]' => ['value' => "$land_property"],
 
       ],
       'or',
       [
-        'select[name="field_type_of_real_estate"]' => ['value' => '73'],
+        'select[name="field_type_of_real_estate"]' => ['value' => "$private_sector"],
       ],
       'or',
       [
-        'select[name="field_type_of_real_estate"]' => ['value' => '72'],
+        'select[name="field_type_of_real_estate"]' => ['value' => "$commercial_real_estate"],
       ],
     ],
   ];
@@ -206,7 +226,7 @@ function budova_form_budova_real_estate_add_form_alter(&$form, \Drupal\Core\Form
 
     $form['field_wall_material']['#states'] = [
       'invisible' => [
-        'select[name="field_type_of_real_estate"]' => ['value' => '70'],
+        'select[name="field_type_of_real_estate"]' => ['value' => "$land_property"],
       ],
     ];
 
@@ -215,11 +235,11 @@ function budova_form_budova_real_estate_add_form_alter(&$form, \Drupal\Core\Form
     $form['field_contiguity_of_rooms']['#states'] = [
       'invisible' => [
         [
-          'select[name="field_type_of_real_estate"]' => ['value' => '70'],
+          'select[name="field_type_of_real_estate"]' => ['value' => "$land_property"],
         ],
         'or',
         [
-          'select[name="field_type_of_real_estate"]' => ['value' => '72'],
+          'select[name="field_type_of_real_estate"]' => ['value' => "$commercial_real_estate"],
         ],
       ],
     ];
@@ -228,7 +248,7 @@ function budova_form_budova_real_estate_add_form_alter(&$form, \Drupal\Core\Form
 
   $form['field_ceiling_height']['#states'] = [
     'invisible' => [
-      'select[name="field_type_of_real_estate"]' => ['value' => '70'],
+      'select[name="field_type_of_real_estate"]' => ['value' => "$land_property"],
     ],
   ];
 
@@ -236,7 +256,7 @@ function budova_form_budova_real_estate_add_form_alter(&$form, \Drupal\Core\Form
 
     $form['field_general_area']['#states'] = [
       'invisible' => [
-        'select[name="field_type_of_real_estate"]' => ['value' => '70'],
+        'select[name="field_type_of_real_estate"]' => ['value' => "$land_property"],
       ],
     ];
 
@@ -245,11 +265,11 @@ function budova_form_budova_real_estate_add_form_alter(&$form, \Drupal\Core\Form
     $form['field_living_area']['#states'] = [
       'invisible' => [
         [
-          'select[name="field_type_of_real_estate"]' => ['value' => '70'],
+          'select[name="field_type_of_real_estate"]' => ['value' => "$land_property"],
         ],
         'or',
         [
-          'select[name="field_type_of_real_estate"]' => ['value' => '72'],
+          'select[name="field_type_of_real_estate"]' => ['value' => "$commercial_real_estate"],
         ],
       ],
     ];
@@ -259,11 +279,11 @@ function budova_form_budova_real_estate_add_form_alter(&$form, \Drupal\Core\Form
     $form['field_kitchen_area']['#states'] = [
       'invisible' => [
         [
-          'select[name="field_type_of_real_estate"]' => ['value' => '70'],
+          'select[name="field_type_of_real_estate"]' => ['value' => "$land_property"],
         ],
         'or',
         [
-          'select[name="field_type_of_real_estate"]' => ['value' => '72'],
+          'select[name="field_type_of_real_estate"]' => ['value' => "$commercial_real_estate"],
         ],
       ],
     ];
@@ -272,7 +292,7 @@ function budova_form_budova_real_estate_add_form_alter(&$form, \Drupal\Core\Form
 
   $form['field_area_region']['#states'] = [
     'invisible' => [
-      'select[name="field_type_of_real_estate"]' => ['value' => '72'],
+      'select[name="field_type_of_real_estate"]' => ['value' => "$commercial_real_estate"],
     ],
   ];
 
@@ -280,7 +300,7 @@ function budova_form_budova_real_estate_add_form_alter(&$form, \Drupal\Core\Form
 
   $form['field_site_configuration']['#states'] = [
     'invisible' => [
-      'select[name="field_type_of_real_estate"]' => ['value' => '72'],
+      'select[name="field_type_of_real_estate"]' => ['value' => "$commercial_real_estate"],
     ],
   ];
 
@@ -288,7 +308,7 @@ function budova_form_budova_real_estate_add_form_alter(&$form, \Drupal\Core\Form
 
   $form['field_site_category']['#states'] = [
     'invisible' => [
-      'select[name="field_type_of_real_estate"]' => ['value' => '72'],
+      'select[name="field_type_of_real_estate"]' => ['value' => "$commercial_real_estate"],
     ],
   ];
 
@@ -312,6 +332,22 @@ function budova_form_budova_real_estate_edit_form_alter(&$form, \Drupal\Core\For
   $parent_type_real_estate_field_name = 'field_type_of_real_estate';
   $child_type_real_estate_field_name = 'field_subtype_of_real_estate';
 
+
+  $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'type_of_real_estate']);
+
+  $term_names_and_ids = [];
+  foreach ($terms as $term) {
+    $id = $term->id();
+    $name = $term->getName();
+    $term_names_and_ids[$name] = $id;
+
+  }
+
+  $land_property = $term_names_and_ids['Земельна ділянка'];
+  $private_sector = $term_names_and_ids['Приватний сектор'];
+  $appartments = $term_names_and_ids['Квартири'];
+  $commercial_real_estate = $term_names_and_ids['Комерційна нерухомість'];
+
   //  $selected_city_rayon = FALSE;
   //  $selected_type_real_estate = FALSE;
 
@@ -322,7 +358,7 @@ function budova_form_budova_real_estate_edit_form_alter(&$form, \Drupal\Core\For
       foreach ($form[$child_city_field_name]["widget"]["#options"] as $key => $option) {
         $taxonomy_entity =  \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($key);
         if ($taxonomy_entity) {
-          $field_rayon = $taxonomy_entity->field_district_of_the_city->target_id;
+          $field_rayon = $taxonomy_entity->field_term_reference->target_id;
           if ($field_rayon !== $selected_rayon_city_id) {
             unset($form[$child_city_field_name]["widget"]["#options"][$key]);
           }
@@ -339,7 +375,7 @@ function budova_form_budova_real_estate_edit_form_alter(&$form, \Drupal\Core\For
       foreach ($form[$child_type_real_estate_field_name]["widget"]["#options"] as $key => $option) {
         $taxonomy_entity =  \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($key);
         if ($taxonomy_entity) {
-          $type_real_estate_field_id = $taxonomy_entity->field_type_of_real_estate->target_id;
+          $type_real_estate_field_id = $taxonomy_entity->field_term_reference->target_id;
           if ($type_real_estate_field_id !== $selected_type_real_estate_id) {
             unset($form[$child_type_real_estate_field_name]["widget"]["#options"][$key]);
           }
@@ -370,16 +406,18 @@ function budova_form_budova_real_estate_edit_form_alter(&$form, \Drupal\Core\For
 
   $value_type_real_estate = $triggering_element["#value"];
 
+
+
   // Hide field 'Число кімнат' when picking select 'Вид нерухомості -> Земельна ділянка || Комерційна нерухомість'
 
   $form['field_number_of_rooms']['#states'] = [
     'invisible' => [
       [
-        'select[name="field_type_of_real_estate"]' => ['value' => '70'],
+        'select[name="field_type_of_real_estate"]' => ['value' => "$land_property"],
       ],
       'or',
       [
-        'select[name="field_type_of_real_estate"]' => ['value' => '72'],
+        'select[name="field_type_of_real_estate"]' => ['value' => "$commercial_real_estate"],
       ],
     ],
   ];
@@ -388,13 +426,13 @@ function budova_form_budova_real_estate_edit_form_alter(&$form, \Drupal\Core\For
 
   $form['field_floor']['#states'] = [
     'invisible' => [
-      'select[name="field_type_of_real_estate"]' => ['value' => '70'],
+      'select[name="field_type_of_real_estate"]' => ['value' => "$land_property"],
     ],
   ];
 
   $form['field_num_floor']['#states'] = [
     'invisible' => [
-      'select[name="field_type_of_real_estate"]' => ['value' => '70'],
+      'select[name="field_type_of_real_estate"]' => ['value' => "$land_property"],
     ],
   ];
 
@@ -403,16 +441,16 @@ function budova_form_budova_real_estate_edit_form_alter(&$form, \Drupal\Core\For
   $form['field_appartment_plan']['#states'] = [
     'invisible' => [
       [
-        'select[name="field_type_of_real_estate"]' => ['value' => '70'],
+        'select[name="field_type_of_real_estate"]' => ['value' => "$land_property"],
 
       ],
       'or',
       [
-        'select[name="field_type_of_real_estate"]' => ['value' => '73'],
+        'select[name="field_type_of_real_estate"]' => ['value' => "$private_sector"],
       ],
       'or',
       [
-        'select[name="field_type_of_real_estate"]' => ['value' => '72'],
+        'select[name="field_type_of_real_estate"]' => ['value' => "$commercial_real_estate"],
       ],
     ],
   ];
@@ -421,7 +459,7 @@ function budova_form_budova_real_estate_edit_form_alter(&$form, \Drupal\Core\For
 
   $form['field_wall_material']['#states'] = [
     'invisible' => [
-      'select[name="field_type_of_real_estate"]' => ['value' => '70'],
+      'select[name="field_type_of_real_estate"]' => ['value' => "$land_property"],
     ],
   ];
 
@@ -430,11 +468,11 @@ function budova_form_budova_real_estate_edit_form_alter(&$form, \Drupal\Core\For
   $form['field_contiguity_of_rooms']['#states'] = [
     'invisible' => [
       [
-        'select[name="field_type_of_real_estate"]' => ['value' => '70'],
+        'select[name="field_type_of_real_estate"]' => ['value' => "$land_property"],
       ],
       'or',
       [
-        'select[name="field_type_of_real_estate"]' => ['value' => '72'],
+        'select[name="field_type_of_real_estate"]' => ['value' => "$commercial_real_estate"],
       ],
     ],
   ];
@@ -443,7 +481,7 @@ function budova_form_budova_real_estate_edit_form_alter(&$form, \Drupal\Core\For
 
   $form['field_ceiling_height']['#states'] = [
     'invisible' => [
-      'select[name="field_type_of_real_estate"]' => ['value' => '70'],
+      'select[name="field_type_of_real_estate"]' => ['value' => "$land_property"],
     ],
   ];
 
@@ -451,7 +489,7 @@ function budova_form_budova_real_estate_edit_form_alter(&$form, \Drupal\Core\For
 
   $form['field_general_area']['#states'] = [
     'invisible' => [
-      'select[name="field_type_of_real_estate"]' => ['value' => '70'],
+      'select[name="field_type_of_real_estate"]' => ['value' => "$land_property"],
     ],
   ];
 
@@ -460,11 +498,11 @@ function budova_form_budova_real_estate_edit_form_alter(&$form, \Drupal\Core\For
   $form['field_living_area']['#states'] = [
     'invisible' => [
       [
-        'select[name="field_type_of_real_estate"]' => ['value' => '70'],
+        'select[name="field_type_of_real_estate"]' => ['value' => "$land_property"],
       ],
       'or',
       [
-        'select[name="field_type_of_real_estate"]' => ['value' => '72'],
+        'select[name="field_type_of_real_estate"]' => ['value' => "$commercial_real_estate"],
       ],
     ],
   ];
@@ -474,11 +512,11 @@ function budova_form_budova_real_estate_edit_form_alter(&$form, \Drupal\Core\For
   $form['field_kitchen_area']['#states'] = [
     'invisible' => [
       [
-        'select[name="field_type_of_real_estate"]' => ['value' => '70'],
+        'select[name="field_type_of_real_estate"]' => ['value' => "$land_property"],
       ],
       'or',
       [
-        'select[name="field_type_of_real_estate"]' => ['value' => '72'],
+        'select[name="field_type_of_real_estate"]' => ['value' => "$commercial_real_estate"],
       ],
     ],
   ];
@@ -487,7 +525,7 @@ function budova_form_budova_real_estate_edit_form_alter(&$form, \Drupal\Core\For
 
   $form['field_area_region']['#states'] = [
     'invisible' => [
-      'select[name="field_type_of_real_estate"]' => ['value' => '72'],
+      'select[name="field_type_of_real_estate"]' => ['value' => "$commercial_real_estate"],
     ],
   ];
 
@@ -495,7 +533,7 @@ function budova_form_budova_real_estate_edit_form_alter(&$form, \Drupal\Core\For
 
   $form['field_site_configuration']['#states'] = [
     'invisible' => [
-      'select[name="field_type_of_real_estate"]' => ['value' => '72'],
+      'select[name="field_type_of_real_estate"]' => ['value' => "$commercial_real_estate"],
     ],
   ];
 
@@ -503,7 +541,7 @@ function budova_form_budova_real_estate_edit_form_alter(&$form, \Drupal\Core\For
 
   $form['field_site_category']['#states'] = [
     'invisible' => [
-      'select[name="field_type_of_real_estate"]' => ['value' => '72'],
+      'select[name="field_type_of_real_estate"]' => ['value' => "$commercial_real_estate"],
     ],
   ];
 
@@ -534,6 +572,22 @@ function budova_form_budova_applications_add_form_alter(&$form, \Drupal\Core\For
   $parent_applications_type_real_estate_field_name = 'field_type_of_real_estate';
   $child_applications_type_real_estate_field_name = 'field_subtype_of_real_estate';
 
+
+  $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'type_of_real_estate']);
+
+  $term_names_and_ids = [];
+  foreach ($terms as $term) {
+    $id = $term->id();
+    $name = $term->getName();
+    $term_names_and_ids[$name] = $id;
+
+  }
+
+  $land_property = $term_names_and_ids['Земельна ділянка'];
+  $private_sector = $term_names_and_ids['Приватний сектор'];
+  $appartments = $term_names_and_ids['Квартири'];
+  $commercial_real_estate = $term_names_and_ids['Комерційна нерухомість'];
+
   //  $selected_city_rayon = FALSE;
   //  $selected_type_real_estate = FALSE;
 
@@ -544,7 +598,7 @@ function budova_form_budova_applications_add_form_alter(&$form, \Drupal\Core\For
       foreach ($form[$child_applications_city_field_name]["widget"]["#options"] as $key => $option) {
         $taxonomy_entity =  \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($key);
         if ($taxonomy_entity) {
-          $field_rayon = $taxonomy_entity->field_district_of_the_city->target_id;
+          $field_rayon = $taxonomy_entity->field_term_reference->target_id;
           if ($field_rayon !== $selected_rayon_city_id) {
             unset($form[$child_applications_city_field_name]["widget"]["#options"][$key]);
           }
@@ -561,7 +615,7 @@ function budova_form_budova_applications_add_form_alter(&$form, \Drupal\Core\For
       foreach ($form[$child_applications_type_real_estate_field_name]["widget"]["#options"] as $key => $option) {
         $taxonomy_entity =  \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($key);
         if ($taxonomy_entity) {
-          $type_real_estate_field_id = $taxonomy_entity->field_type_of_real_estate->target_id;
+          $type_real_estate_field_id = $taxonomy_entity->field_term_reference->target_id;
           if ($type_real_estate_field_id !== $selected_type_real_estate_id) {
             unset($form[$child_applications_type_real_estate_field_name]["widget"]["#options"][$key]);
           }
@@ -597,48 +651,48 @@ function budova_form_budova_applications_add_form_alter(&$form, \Drupal\Core\For
 
   $form['field_min_area']['#states'] = [
     'invisible' => [
-      'select[name="field_type_of_real_estate"]' => ['value' => '70'],
+      'select[name="field_type_of_real_estate"]' => ['value' => "$land_property"],
     ],
   ];
 
   $form['field_max_area']['#states'] = [
     'invisible' => [
-      'select[name="field_type_of_real_estate"]' => ['value' => '70'],
+      'select[name="field_type_of_real_estate"]' => ['value' => "$land_property"],
     ],
   ];
 
   $form['field_min_floor']['#states'] = [
     'invisible' => [
-      'select[name="field_type_of_real_estate"]' => ['value' => '70'],
+      'select[name="field_type_of_real_estate"]' => ['value' => "$land_property"],
     ],
   ];
 
   $form['field_max_floor']['#states'] = [
     'invisible' => [
-      'select[name="field_type_of_real_estate"]' => ['value' => '70'],
+      'select[name="field_type_of_real_estate"]' => ['value' => "$land_property"],
     ],
   ];
 
   $form['field_min_rooms']['#states'] = [
     'invisible' => [
-      'select[name="field_type_of_real_estate"]' => ['value' => '70'],
+      'select[name="field_type_of_real_estate"]' => ['value' => "$land_property"],
     ],
   ];
 
   $form['	field_max_rooms']['#states'] = [
     'invisible' => [
-      'select[name="field_type_of_real_estate"]' => ['value' => '70'],
+      'select[name="field_type_of_real_estate"]' => ['value' => "$land_property"],
     ],
   ];
 
   $form['field_appartment_plan']['#states'] = [
     'invisible' => [
         [
-          'select[name="field_type_of_real_estate"]' => ['value' => '70'],
+          'select[name="field_type_of_real_estate"]' => ['value' => "$land_property"],
         ],
       'or',
         [
-          'select[name="field_type_of_real_estate"]' => ['value' => '72'],
+          'select[name="field_type_of_real_estate"]' => ['value' => "$private_sector"],
         ],
       ],
   ];
@@ -664,6 +718,22 @@ function budova_form_budova_applications_edit_form_alter(&$form, \Drupal\Core\Fo
   $parent_applications_type_real_estate_field_name = 'field_type_of_real_estate';
   $child_applications_type_real_estate_field_name = 'field_subtype_of_real_estate';
 
+
+  $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'type_of_real_estate']);
+
+  $term_names_and_ids = [];
+  foreach ($terms as $term) {
+    $id = $term->id();
+    $name = $term->getName();
+    $term_names_and_ids[$name] = $id;
+
+  }
+
+  $land_property = $term_names_and_ids['Земельна ділянка'];
+  $private_sector = $term_names_and_ids['Приватний сектор'];
+  $appartments = $term_names_and_ids['Квартири'];
+  $commercial_real_estate = $term_names_and_ids['Комерційна нерухомість'];
+
   //  $selected_city_rayon = FALSE;
   //  $selected_type_real_estate = FALSE;
 
@@ -674,7 +744,7 @@ function budova_form_budova_applications_edit_form_alter(&$form, \Drupal\Core\Fo
       foreach ($form[$child_applications_city_field_name]["widget"]["#options"] as $key => $option) {
         $taxonomy_entity =  \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($key);
         if ($taxonomy_entity) {
-          $field_rayon = $taxonomy_entity->field_district_of_the_city->target_id;
+          $field_rayon = $taxonomy_entity->field_term_reference->target_id;
           if ($field_rayon !== $selected_rayon_city_id) {
             unset($form[$child_applications_city_field_name]["widget"]["#options"][$key]);
           }
@@ -691,7 +761,7 @@ function budova_form_budova_applications_edit_form_alter(&$form, \Drupal\Core\Fo
       foreach ($form[$child_applications_type_real_estate_field_name]["widget"]["#options"] as $key => $option) {
         $taxonomy_entity =  \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($key);
         if ($taxonomy_entity) {
-          $type_real_estate_field_id = $taxonomy_entity->field_type_of_real_estate->target_id;
+          $type_real_estate_field_id = $taxonomy_entity->field_term_reference->target_id;
           if ($type_real_estate_field_id !== $selected_type_real_estate_id) {
             unset($form[$child_applications_type_real_estate_field_name]["widget"]["#options"][$key]);
           }
@@ -725,53 +795,56 @@ function budova_form_budova_applications_edit_form_alter(&$form, \Drupal\Core\Fo
 
   // Hide field 'Поверх' when picking select 'Вид нерухомості -> Земельна ділянка'
 
+  // Hide field 'Поверх' when picking select 'Вид нерухомості -> Земельна ділянка'
+
   $form['field_min_area']['#states'] = [
     'invisible' => [
-      'select[name="field_type_of_real_estate"]' => ['value' => '70'],
+      'select[name="field_type_of_real_estate"]' => ['value' => "$land_property"],
     ],
   ];
 
   $form['field_max_area']['#states'] = [
     'invisible' => [
-      'select[name="field_type_of_real_estate"]' => ['value' => '70'],
+      'select[name="field_type_of_real_estate"]' => ['value' => "$land_property"],
     ],
   ];
 
   $form['field_min_floor']['#states'] = [
     'invisible' => [
-      'select[name="field_type_of_real_estate"]' => ['value' => '70'],
+      'select[name="field_type_of_real_estate"]' => ['value' => "$land_property"],
     ],
   ];
 
   $form['field_max_floor']['#states'] = [
     'invisible' => [
-      'select[name="field_type_of_real_estate"]' => ['value' => '70'],
+      'select[name="field_type_of_real_estate"]' => ['value' => "$land_property"],
     ],
   ];
 
   $form['field_min_rooms']['#states'] = [
     'invisible' => [
-      'select[name="field_type_of_real_estate"]' => ['value' => '70'],
+      'select[name="field_type_of_real_estate"]' => ['value' => "$land_property"],
     ],
   ];
 
   $form['	field_max_rooms']['#states'] = [
     'invisible' => [
-      'select[name="field_type_of_real_estate"]' => ['value' => '70'],
+      'select[name="field_type_of_real_estate"]' => ['value' => "$land_property"],
     ],
   ];
 
   $form['field_appartment_plan']['#states'] = [
     'invisible' => [
       [
-        'select[name="field_type_of_real_estate"]' => ['value' => '70'],
+        'select[name="field_type_of_real_estate"]' => ['value' => "$land_property"],
       ],
       'or',
       [
-        'select[name="field_type_of_real_estate"]' => ['value' => '72'],
+        'select[name="field_type_of_real_estate"]' => ['value' => "$private_sector"],
       ],
     ],
   ];
+
 
 
 
