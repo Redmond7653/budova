@@ -145,4 +145,8 @@ final class Applications extends ContentEntityBase implements ApplicationsInterf
     return $fields;
   }
 
+  public function label() {
+    return $this->id();
+  }
+
 }

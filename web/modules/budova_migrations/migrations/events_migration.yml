@@ -74,9 +74,17 @@ process:
   label: theme
 
 
-  field_beggining: begin_date
+  field_beggining:
+    plugin: format_date
+    from_format: 'Y-m-d H:i:s'
+    to_format: 'Y-m-d\TH:i:s'
+    source: begin_date
 
-  field_ending: end_date
+  field_ending:
+    plugin: format_date
+    from_format: 'Y-m-d H:i:s'
+    to_format: 'Y-m-d\TH:i:s'
+    source: end_date
 
   field_real_estate:
     plugin: migration_lookup

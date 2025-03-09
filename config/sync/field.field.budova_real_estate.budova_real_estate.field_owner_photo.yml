@@ -1,17 +1,17 @@
-uuid: f00641da-d531-4392-bdde-535053f2b605
+uuid: 57240a5e-cc5a-494c-8461-8bbf7984cb87
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.budova_real_estate.field_test_image
+    - field.storage.budova_real_estate.field_owner_photo
   module:
     - budova
     - image
-id: budova_real_estate.budova_real_estate.field_test_image
-field_name: field_test_image
+id: budova_real_estate.budova_real_estate.field_owner_photo
+field_name: field_owner_photo
 entity_type: budova_real_estate
 bundle: budova_real_estate
-label: 'Тест Image'
+label: 'Фото власника'
 description: ''
 required: false
 translatable: false

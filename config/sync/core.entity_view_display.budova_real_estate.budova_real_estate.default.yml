@@ -11,7 +11,6 @@ dependencies:
     - field.field.budova_real_estate.budova_real_estate.field_contact
     - field.field.budova_real_estate.budova_real_estate.field_contiguity_of_rooms
     - field.field.budova_real_estate.budova_real_estate.field_cost
-    - field.field.budova_real_estate.budova_real_estate.field_creation_date
     - field.field.budova_real_estate.budova_real_estate.field_currency
     - field.field.budova_real_estate.budova_real_estate.field_description
     - field.field.budova_real_estate.budova_real_estate.field_district_of_the_city
@@ -25,6 +24,7 @@ dependencies:
     - field.field.budova_real_estate.budova_real_estate.field_motivation_status
     - field.field.budova_real_estate.budova_real_estate.field_num_floor
     - field.field.budova_real_estate.budova_real_estate.field_number_of_rooms
+    - field.field.budova_real_estate.budova_real_estate.field_owner_photo
     - field.field.budova_real_estate.budova_real_estate.field_real_estate_code
     - field.field.budova_real_estate.budova_real_estate.field_real_estate_operation
     - field.field.budova_real_estate.budova_real_estate.field_related_to
@@ -35,7 +35,6 @@ dependencies:
     - field.field.budova_real_estate.budova_real_estate.field_state_of_the_object
     - field.field.budova_real_estate.budova_real_estate.field_subdistrict_of_city
     - field.field.budova_real_estate.budova_real_estate.field_subtype_of_real_estate
-    - field.field.budova_real_estate.budova_real_estate.field_test_image
     - field.field.budova_real_estate.budova_real_estate.field_type_of_contact
     - field.field.budova_real_estate.budova_real_estate.field_type_of_person
     - field.field.budova_real_estate.budova_real_estate.field_type_of_real_estate
@@ -147,15 +146,6 @@ content:
     third_party_settings: {  }
     weight: 70
     region: content
-  field_creation_date:
-    type: datetime_default
-    label: above
-    settings:
-      timezone_override: ''
-      format_type: medium
-    third_party_settings: {  }
-    weight: 99
-    region: content
   field_currency:
     type: entity_reference_label
     label: above
@@ -217,7 +207,7 @@ content:
       timezone_override: ''
       format_type: medium
     third_party_settings: {  }
-    weight: 73
+    weight: 99
     region: content
   field_living_area:
     type: number_decimal
@@ -271,6 +261,17 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     weight: 96
+    region: content
+  field_owner_photo:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 100
     region: content
   field_real_estate_code:
     type: string
@@ -348,17 +349,6 @@ content:
       link: true
     third_party_settings: {  }
     weight: 95
-    region: content
-  field_test_image:
-    type: image
-    label: above
-    settings:
-      image_link: ''
-      image_style: ''
-      image_loading:
-        attribute: lazy
-    third_party_settings: {  }
-    weight: 63
     region: content
   field_type_of_contact:
     type: list_default

@@ -160,7 +160,7 @@ final class RealEstate extends ContentEntityBase implements RealEstateInterface 
   }
 
   public function label() {
-    return $this->id() . " ololo***";
+    return $this->id();
   }
 
 }

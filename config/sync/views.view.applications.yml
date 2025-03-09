@@ -14,10 +14,15 @@ dependencies:
     - field.storage.budova_applications.field_related_to
     - field.storage.budova_applications.field_state_of_application
     - field.storage.budova_applications.field_type_of_person
+    - taxonomy.vocabulary.district_of_the_city
+    - taxonomy.vocabulary.subdistrict_of_the_sity
+    - taxonomy.vocabulary.subtype_of_real_estate
+    - taxonomy.vocabulary.type_of_real_estate
   module:
     - budova
     - datetime
     - options
+    - taxonomy
 id: applications
 label: Applications
 module: views
@@ -1005,7 +1010,301 @@ display:
             field_identifier: ''
           exposed: false
       arguments: {  }
-      filters: {  }
+      filters:
+        field_type_of_real_estate_target_id:
+          id: field_type_of_real_estate_target_id
+          table: budova_applications__field_type_of_real_estate
+          field: field_type_of_real_estate_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_type_of_real_estate_target_id_op
+            label: 'Вид нерухомості '
+            description: ''
+            use_operator: false
+            operator: field_type_of_real_estate_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_type_of_real_estate_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+              buyer: '0'
+              seller: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: type_of_real_estate
+          type: textfield
+          hierarchy: false
+          limit: true
+          error_message: true
+        field_min_rooms_value:
+          id: field_min_rooms_value
+          table: budova_applications__field_min_rooms
+          field: field_min_rooms_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: numeric
+          operator: '='
+          value:
+            min: ''
+            max: ''
+            value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_min_rooms_value_op
+            label: 'Мінімальне число кімнат '
+            description: ''
+            use_operator: false
+            operator: field_min_rooms_value_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_min_rooms_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+              buyer: '0'
+              seller: '0'
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        field_subdistrict_of_city_target_id:
+          id: field_subdistrict_of_city_target_id
+          table: budova_applications__field_subdistrict_of_city
+          field: field_subdistrict_of_city_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_subdistrict_of_city_target_id_op
+            label: 'Підрайон міста '
+            description: ''
+            use_operator: false
+            operator: field_subdistrict_of_city_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_subdistrict_of_city_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+              buyer: '0'
+              seller: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: subdistrict_of_the_sity
+          type: textfield
+          hierarchy: false
+          limit: true
+          error_message: true
+        field_district_of_the_city_target_id:
+          id: field_district_of_the_city_target_id
+          table: budova_applications__field_district_of_the_city
+          field: field_district_of_the_city_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_district_of_the_city_target_id_op
+            label: 'Район міста (field_district_of_the_city)'
+            description: ''
+            use_operator: false
+            operator: field_district_of_the_city_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_district_of_the_city_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+              buyer: '0'
+              seller: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: district_of_the_city
+          type: textfield
+          hierarchy: false
+          limit: true
+          error_message: true
+        field_state_of_application_value:
+          id: field_state_of_application_value
+          table: budova_applications__field_state_of_application
+          field: field_state_of_application_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: list_field
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_state_of_application_value_op
+            label: 'Статус заявкі '
+            description: ''
+            use_operator: false
+            operator: field_state_of_application_value_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_state_of_application_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+              buyer: '0'
+              seller: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+        field_subtype_of_real_estate_target_id:
+          id: field_subtype_of_real_estate_target_id
+          table: budova_applications__field_subtype_of_real_estate
+          field: field_subtype_of_real_estate_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_subtype_of_real_estate_target_id_op
+            label: 'Тип нерухомості'
+            description: ''
+            use_operator: false
+            operator: field_subtype_of_real_estate_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_subtype_of_real_estate_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+              buyer: '0'
+              seller: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: subtype_of_real_estate
+          type: textfield
+          hierarchy: false
+          limit: true
+          error_message: true
       filter_groups:
         operator: AND
         groups: {  }
@@ -1051,6 +1350,7 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
       tags:
         - 'config:field.storage.budova_applications.field_code'
@@ -1077,6 +1377,7 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
       tags:
         - 'config:field.storage.budova_applications.field_code'

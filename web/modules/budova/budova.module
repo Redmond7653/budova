@@ -46,7 +46,78 @@ function budova_form_user_register_form_alter(&$form, \Drupal\Core\Form\FormStat
 
 
   $form['actions']['submit']['#submit'][] = 'budova_users_submit_do_redirect';
+
+
+
+
+  // ** Wrapper Технічні характеристики
+
+  if ($form_id == "user_register_form") {
+    $form['technical_characteristics'] = [
+      '#type' => 'fieldset',
+      '#title' => "Технічні характеристики",
+    ];
+
+    $fields = [
+      'field_code',
+      'field_type',
+      'roles',
+      'mail',
+      'name',
+      'password',
+      'status',
+      'user_picture',
+      'field_contact_source',
+      'field_user_name',
+      'field_surname',
+      'field_passport',
+      'field_issued_by_whom',
+      'field_description'
+    ];
+    foreach ($fields as $field) {
+      $form['technical_characteristics'][$field] = $form[$field];
+      unset($form[$field]);
+    }
+
+    // ** Wrapper Довірена особа
+
+    $form['trusted_person'] = [
+      '#type' => 'fieldset',
+      '#title' => "Довірена особа",
+    ];
+
+    $fields = [
+      'field_trusted_persona',
+      'field_related_by'
+    ];
+    foreach ($fields as $field) {
+      $form['trusted_person'][$field] = $form[$field];
+      unset($form[$field]);
+    }
+
+    // ** Wrapper Додаткові характеристики
+
+    $form['additional_characteristics'] = [
+      '#type' => 'fieldset',
+      '#title' => "Додаткові характеристики",
+    ];
+
+    $fields = [
+      'field_responsible_user',
+      'field_date_birth',
+      'created',
+      'field_type_of_contact',
+      'field_contact'
+    ];
+    foreach ($fields as $field) {
+      $form['additional_characteristics'][$field] = $form[$field];
+      unset($form[$field]);
+    }
+  }
 }
+
+
+
 
 /**
  * Implements hook_form_FORM_ID_alter().
@@ -80,7 +151,78 @@ function budova_form_user_form_alter(&$form, \Drupal\Core\Form\FormStateInterfac
   ];
 
 
+  // ** Wrapper Технічні характеристики
+
+  if ($form_id == "user_form") {
+    $form['technical_characteristics_user_edit'] = [
+      '#type' => 'fieldset',
+      '#title' => "Технічні характеристики",
+    ];
+
+    $fields = [
+      'field_code',
+      'field_type',
+      'roles',
+      'mail',
+      'name',
+      'password',
+      'status',
+      'user_picture',
+      'field_contact_source',
+      'field_user_name',
+      'field_surname',
+      'field_passport',
+      'field_issued_by_whom',
+      'field_description'
+    ];
+    foreach ($fields as $field) {
+      $form['technical_characteristics_user_edit'][$field] = $form[$field];
+      unset($form[$field]);
+    }
+
+    // ** Wrapper Довірена особа
+
+    $form['trusted_person'] = [
+      '#type' => 'fieldset',
+      '#title' => "Довірена особа",
+    ];
+
+    $fields = [
+      'field_trusted_persona',
+      'field_related_by'
+    ];
+    foreach ($fields as $field) {
+      $form['trusted_person'][$field] = $form[$field];
+      unset($form[$field]);
+    }
+
+    // ** Wrapper Додаткові характеристики
+
+    $form['additional_characteristics'] = [
+      '#type' => 'fieldset',
+      '#title' => "Додаткові характеристики",
+    ];
+
+    $fields = [
+      'field_responsible_user',
+      'field_date_birth',
+      'created',
+      'field_type_of_contact',
+      'field_contact'
+    ];
+    foreach ($fields as $field) {
+      $form['additional_characteristics'][$field] = $form[$field];
+      unset($form[$field]);
+    }
+
+  }
+
+
+
   $form['actions']['submit']['#submit'][] = 'budova_users_submit_do_redirect';
+
+
+
 }
 
 
@@ -314,8 +456,106 @@ function budova_form_budova_real_estate_add_form_alter(&$form, \Drupal\Core\Form
 
 
 
-  $form['field_pidrayon_mista_test']['#prefix'] = "<div id='____ololol_wrapper'>";
-  $form['field_pidrayon_mista_test']['#suffix'] = '</div>';
+//  $form['field_subdistrict_of_city']['#prefix'] = "<div id='____ololol_wrapper'>";
+//  $form['field_subdistrict_of_city']['#suffix'] = '</div>';
+
+
+//  $form['field_subdistrict_of_city']
+
+  // ** Wrapper Статусні Характеристики
+
+  $form['status_characteristics'] = [
+    '#type' => 'fieldset',
+    '#title' => "Статусні характеристики",
+  ];
+
+  $fields = [
+    'field_real_estate_code',
+    'field_type_of_person',
+    'field_related_to',
+    'field_real_estate_operation',
+    'field_motivation_status',
+    'field_source_of_object',
+    'field_activity_status',
+    'field_market_status_of_object'
+  ];
+  foreach ($fields as $field) {
+      $form['status_characteristics'][$field] = $form[$field];
+      unset($form[$field]);
+  }
+
+  // ** Wrapper Технічні характеристики
+
+  $form['technical_characteristics'] = [
+    '#type' => 'fieldset',
+    '#title' => "Технічні характеристики",
+  ];
+
+  $fields = [
+    'field_type_of_real_estate',
+    'field_subtype_of_real_estate',
+    'field_district_of_the_city',
+    'field_subdistrict_of_city',
+    'field_autonomous_heating',
+    'field_metro',
+    'field_number_of_rooms',
+    'field_floor',
+    'field_num_floor',
+    'field_appartment_plan',
+    'field_wall_material',
+    'field_contiguity_of_rooms',
+    'field_ceiling_height',
+    'field_general_area',
+    'field_living_area',
+    'field_kitchen_area',
+    'field_area_region',
+    'field_site_configuration',
+    'field_site_category',
+    'field_state_of_the_object',
+    'field_description'
+  ];
+  foreach ($fields as $field) {
+    $form['technical_characteristics'][$field] = $form[$field];
+    unset($form[$field]);
+  }
+
+  // ** Wrapper Грошові характеристики
+
+  $form['currency_characteristics'] = [
+    '#type' => 'fieldset',
+    '#title' => "Грошові характеристики",
+  ];
+
+  $fields = [
+    'field_currency',
+    'field_cost'
+  ];
+  foreach ($fields as $field) {
+    $form['currency_characteristics'][$field] = $form[$field];
+    unset($form[$field]);
+  }
+
+  // ** Wrapper Додаткові характеристики
+
+  $form['additional_characteristics'] = [
+    '#type' => 'fieldset',
+    '#title' => "Додаткові характеристики",
+  ];
+
+  $fields = [
+    'field_responsible_user',
+    'field_related_to',
+    'uid',
+    'created',
+    'field_last_date_contact',
+    'field_type_of_contact',
+    'field_contact',
+    'field_owner_photo'
+  ];
+  foreach ($fields as $field) {
+    $form['additional_characteristics'][$field] = $form[$field];
+    unset($form[$field]);
+  }
 
 
   $form['actions']['submit']['#submit'][] = 'budova_real_estate_submit_do_redirect';
@@ -545,6 +785,103 @@ function budova_form_budova_real_estate_edit_form_alter(&$form, \Drupal\Core\For
     ],
   ];
 
+  // ** Wrapper Статусні Характеристики
+
+  $form['status_characteristics'] = [
+    '#type' => 'fieldset',
+    '#title' => "Статусні характеристики",
+  ];
+
+  $fields = [
+    'field_real_estate_code',
+    'field_type_of_person',
+    'field_related_to',
+    'field_real_estate_operation',
+    'field_motivation_status',
+    'field_source_of_object',
+    'field_activity_status',
+    'field_market_status_of_object'
+  ];
+  foreach ($fields as $field) {
+    $form['status_characteristics'][$field] = $form[$field];
+    unset($form[$field]);
+  }
+
+  // ** Wrapper Технічні характеристики
+
+  $form['technical_characteristics'] = [
+    '#type' => 'fieldset',
+    '#title' => "Технічні характеристики",
+  ];
+
+  $fields = [
+    'field_type_of_real_estate',
+    'field_subtype_of_real_estate',
+    'field_district_of_the_city',
+    'field_subdistrict_of_city',
+    'field_autonomous_heating',
+    'field_metro',
+    'field_number_of_rooms',
+    'field_floor',
+    'field_num_floor',
+    'field_appartment_plan',
+    'field_wall_material',
+    'field_contiguity_of_rooms',
+    'field_ceiling_height',
+    'field_general_area',
+    'field_living_area',
+    'field_kitchen_area',
+    'field_area_region',
+    'field_site_configuration',
+    'field_site_category',
+    'field_state_of_the_object',
+    'field_description'
+  ];
+  foreach ($fields as $field) {
+    $form['technical_characteristics'][$field] = $form[$field];
+    unset($form[$field]);
+  }
+
+  // ** Wrapper Грошові характеристики
+
+  $form['currency_characteristics'] = [
+    '#type' => 'fieldset',
+    '#title' => "Грошові характеристики",
+  ];
+
+  $fields = [
+    'field_currency',
+    'field_cost'
+  ];
+  foreach ($fields as $field) {
+    $form['currency_characteristics'][$field] = $form[$field];
+    unset($form[$field]);
+  }
+
+  // ** Wrapper Додаткові характеристики
+
+  $form['additional_characteristics'] = [
+    '#type' => 'fieldset',
+    '#title' => "Додаткові характеристики",
+  ];
+
+  $fields = [
+    'field_responsible_user',
+    'field_related_to',
+    'uid',
+    'created',
+    'field_last_date_contact',
+    'field_type_of_contact',
+    'field_contact',
+    'field_owner_photo'
+  ];
+  foreach ($fields as $field) {
+    $form['additional_characteristics'][$field] = $form[$field];
+    unset($form[$field]);
+  }
+
+
+
 
 
   $form['field_pidrayon_mista_test']['#prefix'] = "<div id='____ololol_wrapper'>";
@@ -698,10 +1035,97 @@ function budova_form_budova_applications_add_form_alter(&$form, \Drupal\Core\For
   ];
 
 
+  // ** Wrapper Статусні Характеристики
+
+  $form['status_characteristics'] = [
+    '#type' => 'fieldset',
+    '#title' => "Статусні характеристики",
+  ];
+
+  $fields = [
+    'field_code',
+    'field_type_of_person',
+    'field_related_to',
+    'field_operaciya_new',
+    'field_state_of_application',
+    'field_motivation_status',
+    'field_state_of_the_object'
+  ];
+  foreach ($fields as $field) {
+    $form['status_characteristics'][$field] = $form[$field];
+    unset($form[$field]);
+  }
+
+  // ** Wrapper Технічні характеристики
+
+  $form['technical_characteristics'] = [
+    '#type' => 'fieldset',
+    '#title' => "Технічні характеристики",
+  ];
+
+  $fields = [
+    'field_type_of_real_estate',
+    'field_subtype_of_real_estate',
+    'field_district_of_the_city',
+    'field_subdistrict_of_city',
+    'field_heating',
+    'field_metro',
+    'field_min_area',
+    'field_max_area',
+    'field_min_floor',
+    'field_max_floor',
+    'field_min_rooms',
+    'field_max_rooms',
+    'field_appartment_plan',
+    'field_description'
+  ];
+  foreach ($fields as $field) {
+    $form['technical_characteristics'][$field] = $form[$field];
+    unset($form[$field]);
+  }
+
+  // ** Wrapper Грошові характеристики
+
+  $form['currency_characteristics'] = [
+    '#type' => 'fieldset',
+    '#title' => "Грошові характеристики",
+  ];
+
+  $fields = [
+    'field_currency',
+    'field_price'
+  ];
+  foreach ($fields as $field) {
+    $form['currency_characteristics'][$field] = $form[$field];
+    unset($form[$field]);
+  }
+
+  // ** Wrapper Додаткові характеристики
+
+  $form['additional_characteristics'] = [
+    '#type' => 'fieldset',
+    '#title' => "Додаткові характеристики",
+  ];
+
+  $fields = [
+    'field_realtor',
+    'created',
+    'uid',
+    'field_last_date_contact',
+    'field_type_of_contact',
+    'field_contact'
+  ];
+  foreach ($fields as $field) {
+    $form['additional_characteristics'][$field] = $form[$field];
+    unset($form[$field]);
+  }
 
 
-  $form['field_subdistrict_of_city']['#prefix'] = "<div id='____ololol_wrapper'>";
-  $form['field_subdistrict_of_city']['#suffix'] = '</div>';
+
+
+
+//  $form['field_subdistrict_of_city']['#prefix'] = "<div id='____ololol_wrapper'>";
+//  $form['field_subdistrict_of_city']['#suffix'] = '</div>';
 
 
   $form['actions']['submit']['#submit'][] = 'budova_applications_submit_do_redirect';
@@ -846,11 +1270,96 @@ function budova_form_budova_applications_edit_form_alter(&$form, \Drupal\Core\Fo
   ];
 
 
+  // ** Wrapper Статусні Характеристики
+
+  $form['status_characteristics'] = [
+    '#type' => 'fieldset',
+    '#title' => "Статусні характеристики",
+  ];
+
+  $fields = [
+    'field_code',
+    'field_type_of_person',
+    'field_related_to',
+    'field_operaciya_new',
+    'field_state_of_application',
+    'field_motivation_status',
+    'field_state_of_the_object'
+  ];
+  foreach ($fields as $field) {
+    $form['status_characteristics'][$field] = $form[$field];
+    unset($form[$field]);
+  }
+
+  // ** Wrapper Технічні характеристики
+
+  $form['technical_characteristics'] = [
+    '#type' => 'fieldset',
+    '#title' => "Технічні характеристики",
+  ];
+
+  $fields = [
+    'field_type_of_real_estate',
+    'field_subtype_of_real_estate',
+    'field_district_of_the_city',
+    'field_subdistrict_of_city',
+    'field_heating',
+    'field_metro',
+    'field_min_area',
+    'field_max_area',
+    'field_min_floor',
+    'field_max_floor',
+    'field_min_rooms',
+    'field_max_rooms',
+    'field_appartment_plan',
+    'field_description'
+  ];
+  foreach ($fields as $field) {
+    $form['technical_characteristics'][$field] = $form[$field];
+    unset($form[$field]);
+  }
+
+  // ** Wrapper Грошові характеристики
+
+  $form['currency_characteristics'] = [
+    '#type' => 'fieldset',
+    '#title' => "Грошові характеристики",
+  ];
+
+  $fields = [
+    'field_currency',
+    'field_price'
+  ];
+  foreach ($fields as $field) {
+    $form['currency_characteristics'][$field] = $form[$field];
+    unset($form[$field]);
+  }
+
+  // ** Wrapper Додаткові характеристики
+
+  $form['additional_characteristics'] = [
+    '#type' => 'fieldset',
+    '#title' => "Додаткові характеристики",
+  ];
+
+  $fields = [
+    'field_realtor',
+    'created',
+    'uid',
+    'field_last_date_contact',
+    'field_type_of_contact',
+    'field_contact'
+  ];
+  foreach ($fields as $field) {
+    $form['additional_characteristics'][$field] = $form[$field];
+    unset($form[$field]);
+  }
 
 
 
-  $form['field_subdistrict_of_city']['#prefix'] = "<div id='____ololol_wrapper'>";
-  $form['field_subdistrict_of_city']['#suffix'] = '</div>';
+
+//  $form['field_subdistrict_of_city']['#prefix'] = "<div id='____ololol_wrapper'>";
+//  $form['field_subdistrict_of_city']['#suffix'] = '</div>';
 
 
   $form['actions']['submit']['#submit'][] = 'budova_applications_submit_do_redirect';
@@ -920,6 +1429,62 @@ function budova_form_budova_events_add_form_alter(&$form, \Drupal\Core\Form\Form
     ],
   ];
 
+  // ** Wrapper Технічні характеристики
+
+  $form['technical_characteristics'] = [
+    '#type' => 'fieldset',
+    '#title' => "Технічні характеристики",
+  ];
+
+  $fields = [
+    'label',
+    'field_type_of_event',
+    'field_source_of_event',
+    'field_applications',
+    'field_real_estate',
+    'field_description'
+  ];
+  foreach ($fields as $field) {
+    $form['technical_characteristics'][$field] = $form[$field];
+    unset($form[$field]);
+  }
+
+  // ** Wrapper Статусні характеристики
+
+  $form['status_characteristics'] = [
+    '#type' => 'fieldset',
+    '#title' => "Статусні характеристики",
+  ];
+
+  $fields = [
+    'field_status_of_call',
+    'field_general_status',
+    'field_status_of_offer',
+    'field_result'
+  ];
+  foreach ($fields as $field) {
+    $form['status_characteristics'][$field] = $form[$field];
+    unset($form[$field]);
+  }
+
+  // ** Wrapper Додаткові характеристики
+
+  $form['additional_characteristics'] = [
+    '#type' => 'fieldset',
+    '#title' => "Додаткові характеристики",
+  ];
+
+  $fields = [
+    'field_realtor',
+    'field_beggining',
+    'field_ending'
+  ];
+  foreach ($fields as $field) {
+    $form['additional_characteristics'][$field] = $form[$field];
+    unset($form[$field]);
+  }
+
+
 
   $form['actions']['submit']['#submit'][] = 'budova_events_submit_do_redirect';
 
@@ -983,6 +1548,62 @@ function budova_form_budova_events_edit_form_alter(&$form, \Drupal\Core\Form\For
     ],
   ];
 
+  // ** Wrapper Технічні характеристики
+
+  $form['technical_characteristics'] = [
+    '#type' => 'fieldset',
+    '#title' => "Технічні характеристики",
+  ];
+
+  $fields = [
+    'label',
+    'field_type_of_event',
+    'field_source_of_event',
+    'field_applications',
+    'field_real_estate',
+    'field_description'
+  ];
+  foreach ($fields as $field) {
+    $form['technical_characteristics'][$field] = $form[$field];
+    unset($form[$field]);
+  }
+
+  // ** Wrapper Статусні характеристики
+
+  $form['status_characteristics'] = [
+    '#type' => 'fieldset',
+    '#title' => "Статусні характеристики",
+  ];
+
+  $fields = [
+    'field_status_of_call',
+    'field_general_status',
+    'field_status_of_offer',
+    'field_result'
+  ];
+  foreach ($fields as $field) {
+    $form['status_characteristics'][$field] = $form[$field];
+    unset($form[$field]);
+  }
+
+  // ** Wrapper Додаткові характеристики
+
+  $form['additional_characteristics'] = [
+    '#type' => 'fieldset',
+    '#title' => "Додаткові характеристики",
+  ];
+
+  $fields = [
+    'field_realtor',
+    'field_beggining',
+    'field_ending'
+  ];
+  foreach ($fields as $field) {
+    $form['additional_characteristics'][$field] = $form[$field];
+    unset($form[$field]);
+  }
+
+
 
   $form['actions']['submit']['#submit'][] = 'budova_events_submit_do_redirect';
 
@@ -990,11 +1611,11 @@ function budova_form_budova_events_edit_form_alter(&$form, \Drupal\Core\Form\For
 
 
   function budova_reloadCity(array $form, FormStateInterface $form_state) {
-    return $form["field_subdistrict_of_city"];
+    return $form['technical_characteristics']["field_subdistrict_of_city"];
   }
 
 function budova_reloadType(array $form, FormStateInterface $form_state) {
-  return $form["field_subtype_of_real_estate"];
+  return $form['technical_characteristics']["field_subtype_of_real_estate"];
 }
 
 function budova_reloadUser(array $form, FormStateInterface $form_state) {

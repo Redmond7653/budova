@@ -12,34 +12,34 @@ type: list_string
 settings:
   allowed_values:
     -
-      value: ne_pochata
+      value: dont_begin
       label: 'Не почата'
     -
-      value: persha_zustrich
+      value: first_meeting
       label: 'Перша зустріч'
     -
-      value: pokazi
+      value: showing
       label: Покази
     -
-      value: dana_oferta
+      value: given_offer
       label: 'Дана оферта'
     -
-      value: oferta_priynyata
+      value: offer_accepted
       label: 'Оферта прийнята'
     -
-      value: peredaniy_zadatok
+      value: given_part_of_money_in_advance
       label: 'Переданий задаток'
     -
-      value: ugoda_zavershena
+      value: deal_finished
       label: 'Угода завершена'
     -
-      value: pauza
+      value: pause
       label: Пауза
     -
-      value: vidminena
+      value: deal_canceled
       label: Відмінена
     -
-      value: kupleno_bez_nas
+      value: buyed_without_us
       label: 'Куплено без нас'
   allowed_values_function: ''
 module: options

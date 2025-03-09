@@ -1,4 +1,4 @@
-uuid: 3100005d-7326-4893-a280-df4f912d33f5
+uuid: a42bc022-a319-42a0-9d6a-ed103f7edf58
 langcode: en
 status: true
 dependencies:
@@ -6,8 +6,8 @@ dependencies:
     - budova
     - file
     - image
-id: budova_real_estate.field_test_image
-field_name: field_test_image
+id: budova_real_estate.field_owner_photo
+field_name: field_owner_photo
 entity_type: budova_real_estate
 type: image
 settings:
@@ -23,7 +23,7 @@ settings:
     height: null
 module: image
 locked: false
-cardinality: -1
+cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

@@ -12636,4 +12636,11 @@ textarea.form-control-lg {
   content: none;
 }
 
+
+
+form#budova-real-estate-edit-form {
+  display: flex;
+  /* justify-content: center; */
+}
+
 /*# sourceMappingURL=main.style.css.map*/

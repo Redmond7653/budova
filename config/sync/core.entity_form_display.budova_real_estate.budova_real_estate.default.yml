@@ -11,7 +11,6 @@ dependencies:
     - field.field.budova_real_estate.budova_real_estate.field_contact
     - field.field.budova_real_estate.budova_real_estate.field_contiguity_of_rooms
     - field.field.budova_real_estate.budova_real_estate.field_cost
-    - field.field.budova_real_estate.budova_real_estate.field_creation_date
     - field.field.budova_real_estate.budova_real_estate.field_currency
     - field.field.budova_real_estate.budova_real_estate.field_description
     - field.field.budova_real_estate.budova_real_estate.field_district_of_the_city
@@ -25,6 +24,7 @@ dependencies:
     - field.field.budova_real_estate.budova_real_estate.field_motivation_status
     - field.field.budova_real_estate.budova_real_estate.field_num_floor
     - field.field.budova_real_estate.budova_real_estate.field_number_of_rooms
+    - field.field.budova_real_estate.budova_real_estate.field_owner_photo
     - field.field.budova_real_estate.budova_real_estate.field_real_estate_code
     - field.field.budova_real_estate.budova_real_estate.field_real_estate_operation
     - field.field.budova_real_estate.budova_real_estate.field_related_to
@@ -35,7 +35,6 @@ dependencies:
     - field.field.budova_real_estate.budova_real_estate.field_state_of_the_object
     - field.field.budova_real_estate.budova_real_estate.field_subdistrict_of_city
     - field.field.budova_real_estate.budova_real_estate.field_subtype_of_real_estate
-    - field.field.budova_real_estate.budova_real_estate.field_test_image
     - field.field.budova_real_estate.budova_real_estate.field_type_of_contact
     - field.field.budova_real_estate.budova_real_estate.field_type_of_person
     - field.field.budova_real_estate.budova_real_estate.field_type_of_real_estate
@@ -52,7 +51,7 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 3
+    weight: 32
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -66,39 +65,39 @@ content:
     third_party_settings: {  }
   field_activity_status:
     type: options_select
-    weight: 9
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
   field_appartment_plan:
     type: options_select
-    weight: 20
+    weight: 16
     region: content
     settings: {  }
     third_party_settings: {  }
   field_area_region:
-    type: number
-    weight: 27
-    region: content
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
-  field_autonomous_heating:
-    type: options_select
-    weight: 15
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_ceiling_height:
     type: number
     weight: 23
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
+  field_autonomous_heating:
+    type: options_select
+    weight: 11
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_ceiling_height:
+    type: number
+    weight: 19
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
   field_contact:
     type: string_textfield
-    weight: 38
+    weight: 35
     region: content
     settings:
       size: 60
@@ -106,32 +105,26 @@ content:
     third_party_settings: {  }
   field_contiguity_of_rooms:
     type: options_select
-    weight: 22
+    weight: 18
     region: content
     settings: {  }
     third_party_settings: {  }
   field_cost:
     type: number
-    weight: 33
+    weight: 29
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
-  field_creation_date:
-    type: datetime_default
-    weight: 35
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_currency:
     type: options_select
-    weight: 32
+    weight: 28
     region: content
     settings: {  }
     third_party_settings: {  }
   field_description:
     type: string_textarea
-    weight: 31
+    weight: 27
     region: content
     settings:
       rows: 5
@@ -139,108 +132,112 @@ content:
     third_party_settings: {  }
   field_district_of_the_city:
     type: options_select
-    weight: 13
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
   field_floor:
     type: number
-    weight: 18
+    weight: 14
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   field_general_area:
     type: number
-    weight: 24
+    weight: 20
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   field_kitchen_area:
     type: number
-    weight: 26
+    weight: 22
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   field_last_date_contact:
     type: datetime_default
-    weight: 36
+    weight: 33
     region: content
     settings: {  }
     third_party_settings: {  }
   field_living_area:
     type: number
-    weight: 25
+    weight: 21
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   field_market_status_of_object:
     type: options_select
-    weight: 10
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
   field_metro:
     type: boolean_checkbox
-    weight: 16
+    weight: 12
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   field_motivation_status:
     type: options_select
-    weight: 7
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
   field_num_floor:
     type: number
-    weight: 19
+    weight: 15
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   field_number_of_rooms:
     type: number
-    weight: 17
+    weight: 13
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
+  field_owner_photo:
+    type: image_image
+    weight: 36
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
   field_real_estate_operation:
     type: options_select
-    weight: 6
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }
   field_related_to:
     type: options_select
-    weight: 5
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }
   field_responsible_user:
-    type: entity_reference_autocomplete
-    weight: 34
+    type: options_select
+    weight: 30
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_site_category:
     type: options_select
-    weight: 29
+    weight: 25
     region: content
     settings: {  }
     third_party_settings: {  }
   field_site_configuration:
     type: string_textfield
-    weight: 28
+    weight: 24
     region: content
     settings:
       size: 60
@@ -248,57 +245,49 @@ content:
     third_party_settings: {  }
   field_source_of_object:
     type: options_select
-    weight: 8
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
   field_state_of_the_object:
     type: options_select
-    weight: 30
+    weight: 26
     region: content
     settings: {  }
     third_party_settings: {  }
   field_subdistrict_of_city:
     type: options_select
-    weight: 14
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
   field_subtype_of_real_estate:
     type: options_select
-    weight: 12
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_test_image:
-    type: image_image
-    weight: 39
-    region: content
-    settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
-    third_party_settings: {  }
   field_type_of_contact:
     type: options_select
-    weight: 37
+    weight: 34
     region: content
     settings: {  }
     third_party_settings: {  }
   field_type_of_person:
     type: options_select
-    weight: 4
+    weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }
   field_type_of_real_estate:
     type: options_select
-    weight: 11
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
   field_wall_material:
     type: options_select
-    weight: 21
+    weight: 17
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -312,20 +301,16 @@ content:
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 1
+    weight: 37
     region: content
     settings:
       display_label: false
     third_party_settings: {  }
   uid:
-    type: entity_reference_autocomplete
-    weight: 2
+    type: options_select
+    weight: 31
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
 hidden:
   field_real_estate_code: true
