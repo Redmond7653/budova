@@ -3,18 +3,23 @@ langcode: en
 status: true
 dependencies:
   config:
-    - node.type.article
-    - node.type.page
+    - filter.format.full_html
+    - filter.format.restricted_html
     - taxonomy.vocabulary.tags
   module:
+    - block
+    - budova
     - comment
     - contextual
+    - field_ui
     - file
+    - filter
     - node
     - path
     - system
     - taxonomy
     - toolbar
+    - views_ui
 _core:
   default_config_hash: e_wG1u7SrGaJbY2-Szgbgl-c8T3kdirU3uTNq2c_QJQ
 id: content_editor
@@ -22,26 +27,47 @@ label: Колега
 weight: 2
 is_admin: false
 permissions:
-  - 'access administration pages'
-  - 'access content overview'
   - 'access contextual links'
-  - 'access files overview'
+  - 'access site in maintenance mode'
   - 'access toolbar'
+  - 'access user profiles'
+  - 'administer account settings'
+  - 'administer blocks'
+  - 'administer budova_applications'
+  - 'administer budova_applications display'
+  - 'administer budova_applications fields'
+  - 'administer budova_applications form display'
+  - 'administer budova_events'
+  - 'administer budova_events fields'
+  - 'administer budova_events form display'
+  - 'administer budova_real_estate'
+  - 'administer budova_real_estate display'
+  - 'administer budova_real_estate fields'
+  - 'administer budova_real_estate form display'
+  - 'administer display modes'
+  - 'administer filters'
+  - 'administer permissions'
+  - 'administer themes'
   - 'administer url aliases'
-  - 'create article content'
-  - 'create page content'
+  - 'administer user display'
+  - 'administer user fields'
+  - 'administer user form display'
+  - 'administer users'
+  - 'administer views'
+  - 'cancel account'
+  - 'change own username'
+  - 'create budova_events'
   - 'create terms in tags'
   - 'create url aliases'
-  - 'delete article revisions'
-  - 'delete own article content'
+  - 'delete budova_events'
   - 'delete own files'
-  - 'delete own page content'
-  - 'delete page revisions'
-  - 'edit own article content'
+  - 'edit budova_events'
   - 'edit own comments'
-  - 'edit own page content'
   - 'edit terms in tags'
-  - 'revert all revisions'
-  - 'view all revisions'
+  - 'select account cancellation method'
+  - 'use text format full_html'
+  - 'use text format restricted_html'
+  - 'view budova_events'
   - 'view own unpublished content'
   - 'view the administration theme'
+  - 'view user email addresses'

@@ -1,4 +1,4 @@
-uuid: adef68df-48e3-45d9-acb9-631a6e53569d
+uuid: 69c6aedd-bca5-420a-8f34-3f09650d860a
 langcode: en
 status: false
 dependencies:
@@ -7,9 +7,9 @@ dependencies:
   module:
     - system
   theme:
-    - budova_theme
-id: budova_theme_mainnavigation
-theme: budova_theme
+    - budova_admin_theme
+id: budova_admin_theme_mainnavigation
+theme: budova_admin_theme
 region: header
 weight: 0
 provider: null
@@ -22,4 +22,8 @@ settings:
   level: 1
   depth: 0
   expand_all_items: false
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

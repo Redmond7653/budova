@@ -5,7 +5,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
 use Drupal\Core\Menu\MenuTreeParameters;
 use Drupal\taxonomy\Entity\Term;
-
+use Drupal\Core\Session\AccountInterface;
 /**
  * Implements hook_form_alter().
  */
@@ -47,6 +47,22 @@ function budova_form_user_register_form_alter(&$form, \Drupal\Core\Form\FormStat
 
   $form['actions']['submit']['#submit'][] = 'budova_users_submit_do_redirect';
 
+//  $form['account'] = [
+//    '#type' => 'fieldset',
+//  ];
+//
+//  $fields = [
+//    'mail',
+//    'name',
+//    'pass',
+//    'roles',
+//    'status',
+//    'notify',
+//  ];
+//
+//  foreach ($fields as $field) {
+//    $form['test'][$field] = $form[$field];
+//  }
 
 
 
@@ -1683,6 +1699,33 @@ function budova_user_presave(\Drupal\Core\Entity\EntityInterface $entity) {
     }
   }
 }
+
+
+//function budova_toolbar_alter(&$toolbar) {
+//  $current_user = \Drupal::currentUser();
+//
+//  if (in_array('content_editor', $current_user->getRoles())) {
+//    if (isset($toolbar['user'])) {
+//      unset($toolbar['people']);
+//    }
+//  }
+//}
+
+
+//function budova_menu_links_discovered_alter(&$links) {
+//  $current_user = \Drupal::currentUser();
+//
+//  if (in_array('content_editor', $current_user->getRoles())) {
+//    foreach ($links as $key => $link) {
+//      if (strpos($key, 'entity.user.collection') !== FALSE) {
+//        unset($links[$key]);
+//      }
+//    }
+//  }
+//}
+
+
+
 
 //function budova_preprocess_page(&$variables) {
 //  if (\Drupal::routeMatch()->getRouteName() == 'view.clients.page_clients') {

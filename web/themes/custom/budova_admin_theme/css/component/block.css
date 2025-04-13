@@ -1,0 +1,168 @@
+
+form#user-register-form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+form#user-register-form > * {
+  /* background: #faf; */
+  /* height: 100px; */
+  /* overflow: hidden; */
+  width: 25%;
+  padding: 1%;
+  box-sizing: border-box;
+}
+
+
+
+
+
+form#user-form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+form#user-form > * {
+  /* background: #faf; */
+  /* height: 100px; */
+  /* overflow: hidden; */
+  width: 25%;
+  padding: 1%;
+  box-sizing: border-box;
+}
+
+
+form#budova-real-estate-add-form .field--name-status {
+  width: 100%;
+}
+
+
+
+
+
+form#budova-real-estate-add-form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+form#budova-real-estate-add-form > * {
+  /* background: #faf; */
+  /* height: 100px; */
+  /* overflow: hidden; */
+  width: 25%;
+  box-sizing: border-box;
+}
+
+form#budova-real-estate-add-form .field--name-status {
+  width: 100%;
+}
+
+
+
+
+
+
+form#budova-real-estate-edit-form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+form#budova-real-estate-edit-form > * {
+  /* background: #faf; */
+  /* height: 100px; */
+  /* overflow: hidden; */
+  width: 25%;
+  box-sizing: border-box;
+}
+
+form#budova-real-estate-edit-form .field--name-status {
+  width: 100%;
+}
+
+
+
+
+form#budova-applications-add-form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+form#budova-applications-add-form > * {
+  /* background: #faf; */
+  /* height: 100px; */
+  /* overflow: hidden; */
+  width: 25%;
+  box-sizing: border-box;
+}
+
+form#budova-applications-add-form .field--name-status {
+  width: 100%;
+}
+
+
+
+
+form#budova-applications-edit-form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+form#budova-applications-edit-form > * {
+  /* background: #faf; */
+  /* height: 100px; */
+  /* overflow: hidden; */
+  width: 25%;
+  box-sizing: border-box;
+}
+
+form#budova-applications-edit-form .field--name-status {
+  width: 100%;
+}
+
+
+
+
+form#budova-events-add-form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+form#budova-events-add-form > * {
+  /* background: #faf; */
+  /* height: 100px; */
+  /* overflow: hidden; */
+  width: 33%;
+  box-sizing: border-box;
+}
+
+form#budova-events-add-form .field--name-status {
+  width: 100%;
+}
+
+
+
+
+
+form#budova-events-edit-form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+form#budova-events-edit-form > * {
+  /* background: #faf; */
+  /* height: 100px; */
+  /* overflow: hidden; */
+  width: 33%;
+  box-sizing: border-box;
+}
+
+form#budova-events-edit-form .field--name-status {
+  width: 100%;
+}
+
+
+div#block-budova-admin-theme-breadcrumbs {display: none;}
+
+nav#block-budova-admin-theme-footer {
+  display: none;
+}

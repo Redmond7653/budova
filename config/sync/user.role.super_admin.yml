@@ -1,0 +1,306 @@
+uuid: d54c633a-f85b-4d9c-be8e-c8afa87c283e
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.basic
+    - filter.format.full_html
+    - filter.format.restricted_html
+    - node.type.article
+    - node.type.page
+    - taxonomy.vocabulary.currency
+    - taxonomy.vocabulary.district_of_the_city
+    - taxonomy.vocabulary.dzherelo_nadhodzhennya_ob_iektiv
+    - taxonomy.vocabulary.heating
+    - taxonomy.vocabulary.layout_of_apartment
+    - taxonomy.vocabulary.material_stin
+    - taxonomy.vocabulary.opalyuvannya
+    - taxonomy.vocabulary.operaciya_po_neruhomosti
+    - taxonomy.vocabulary.pidrayon
+    - taxonomy.vocabulary.planuvannya_kvartiri
+    - taxonomy.vocabulary.rayon_mista
+    - taxonomy.vocabulary.real_estate_transaction
+    - taxonomy.vocabulary.source_of_receipt_of_objects
+    - taxonomy.vocabulary.subdistrict_of_the_sity
+    - taxonomy.vocabulary.subtype_of_real_estate
+    - taxonomy.vocabulary.tags
+    - taxonomy.vocabulary.tip_neruhomosti
+    - taxonomy.vocabulary.type_of_real_estate
+    - taxonomy.vocabulary.vid_neruhomosti
+    - taxonomy.vocabulary.wall_material
+  module:
+    - block
+    - block_content
+    - budova
+    - comment
+    - config
+    - contact
+    - contextual
+    - devel
+    - field_ui
+    - file
+    - filter
+    - help
+    - image
+    - migrate
+    - migrate_tools
+    - node
+    - path
+    - search
+    - search_api
+    - shortcut
+    - system
+    - taxonomy
+    - toolbar
+    - update
+    - views_ui
+id: super_admin
+label: 'Super Admin'
+weight: 6
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access block library'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access devel information'
+  - 'access files overview'
+  - 'access help pages'
+  - 'access site in maintenance mode'
+  - 'access site reports'
+  - 'access taxonomy overview'
+  - 'access toolbar'
+  - 'access user contact forms'
+  - 'access user profiles'
+  - 'administer account settings'
+  - 'administer actions'
+  - 'administer block content'
+  - 'administer block types'
+  - 'administer block_content display'
+  - 'administer block_content fields'
+  - 'administer block_content form display'
+  - 'administer blocks'
+  - 'administer budova_applications'
+  - 'administer budova_applications display'
+  - 'administer budova_applications fields'
+  - 'administer budova_applications form display'
+  - 'administer budova_events'
+  - 'administer budova_events display'
+  - 'administer budova_events fields'
+  - 'administer budova_events form display'
+  - 'administer budova_real_estate'
+  - 'administer budova_real_estate display'
+  - 'administer budova_real_estate fields'
+  - 'administer budova_real_estate form display'
+  - 'administer comment display'
+  - 'administer comment fields'
+  - 'administer comment form display'
+  - 'administer comment types'
+  - 'administer comments'
+  - 'administer contact forms'
+  - 'administer contact_message display'
+  - 'administer contact_message fields'
+  - 'administer contact_message form display'
+  - 'administer content types'
+  - 'administer display modes'
+  - 'administer filters'
+  - 'administer image styles'
+  - 'administer menu'
+  - 'administer migrations'
+  - 'administer modules'
+  - 'administer node display'
+  - 'administer node fields'
+  - 'administer node form display'
+  - 'administer nodes'
+  - 'administer permissions'
+  - 'administer search'
+  - 'administer search_api'
+  - 'administer shortcuts'
+  - 'administer site configuration'
+  - 'administer software updates'
+  - 'administer taxonomy'
+  - 'administer taxonomy_term display'
+  - 'administer taxonomy_term fields'
+  - 'administer taxonomy_term form display'
+  - 'administer themes'
+  - 'administer url aliases'
+  - 'administer user display'
+  - 'administer user fields'
+  - 'administer user form display'
+  - 'administer users'
+  - 'administer views'
+  - 'bypass node access'
+  - 'cancel account'
+  - 'change own username'
+  - 'create article content'
+  - 'create basic block content'
+  - 'create budova_events'
+  - 'create page content'
+  - 'create terms in currency'
+  - 'create terms in district_of_the_city'
+  - 'create terms in dzherelo_nadhodzhennya_ob_iektiv'
+  - 'create terms in heating'
+  - 'create terms in layout_of_apartment'
+  - 'create terms in material_stin'
+  - 'create terms in opalyuvannya'
+  - 'create terms in operaciya_po_neruhomosti'
+  - 'create terms in pidrayon'
+  - 'create terms in planuvannya_kvartiri'
+  - 'create terms in rayon_mista'
+  - 'create terms in real_estate_transaction'
+  - 'create terms in source_of_receipt_of_objects'
+  - 'create terms in subdistrict_of_the_sity'
+  - 'create terms in subtype_of_real_estate'
+  - 'create terms in tags'
+  - 'create terms in tip_neruhomosti'
+  - 'create terms in type_of_real_estate'
+  - 'create terms in vid_neruhomosti'
+  - 'create terms in wall_material'
+  - 'create url aliases'
+  - 'customize shortcut links'
+  - 'delete all revisions'
+  - 'delete all taxonomy revisions'
+  - 'delete any article content'
+  - 'delete any basic block content'
+  - 'delete any basic block content revisions'
+  - 'delete any file'
+  - 'delete any page content'
+  - 'delete article revisions'
+  - 'delete budova_events'
+  - 'delete own article content'
+  - 'delete own page content'
+  - 'delete page revisions'
+  - 'delete term revisions in currency'
+  - 'delete term revisions in district_of_the_city'
+  - 'delete term revisions in dzherelo_nadhodzhennya_ob_iektiv'
+  - 'delete term revisions in heating'
+  - 'delete term revisions in layout_of_apartment'
+  - 'delete term revisions in material_stin'
+  - 'delete term revisions in opalyuvannya'
+  - 'delete term revisions in operaciya_po_neruhomosti'
+  - 'delete term revisions in pidrayon'
+  - 'delete term revisions in planuvannya_kvartiri'
+  - 'delete term revisions in rayon_mista'
+  - 'delete term revisions in real_estate_transaction'
+  - 'delete term revisions in source_of_receipt_of_objects'
+  - 'delete term revisions in subdistrict_of_the_sity'
+  - 'delete term revisions in subtype_of_real_estate'
+  - 'delete term revisions in tags'
+  - 'delete term revisions in tip_neruhomosti'
+  - 'delete term revisions in type_of_real_estate'
+  - 'delete term revisions in vid_neruhomosti'
+  - 'delete term revisions in wall_material'
+  - 'delete terms in currency'
+  - 'delete terms in district_of_the_city'
+  - 'delete terms in dzherelo_nadhodzhennya_ob_iektiv'
+  - 'delete terms in heating'
+  - 'delete terms in layout_of_apartment'
+  - 'delete terms in material_stin'
+  - 'delete terms in opalyuvannya'
+  - 'delete terms in operaciya_po_neruhomosti'
+  - 'delete terms in pidrayon'
+  - 'delete terms in planuvannya_kvartiri'
+  - 'delete terms in rayon_mista'
+  - 'delete terms in real_estate_transaction'
+  - 'delete terms in source_of_receipt_of_objects'
+  - 'delete terms in subdistrict_of_the_sity'
+  - 'delete terms in subtype_of_real_estate'
+  - 'delete terms in tags'
+  - 'delete terms in tip_neruhomosti'
+  - 'delete terms in type_of_real_estate'
+  - 'delete terms in vid_neruhomosti'
+  - 'delete terms in wall_material'
+  - 'edit any article content'
+  - 'edit any basic block content'
+  - 'edit any page content'
+  - 'edit budova_events'
+  - 'edit own article content'
+  - 'edit own comments'
+  - 'edit own page content'
+  - 'edit terms in currency'
+  - 'edit terms in district_of_the_city'
+  - 'edit terms in dzherelo_nadhodzhennya_ob_iektiv'
+  - 'edit terms in heating'
+  - 'edit terms in layout_of_apartment'
+  - 'edit terms in material_stin'
+  - 'edit terms in opalyuvannya'
+  - 'edit terms in operaciya_po_neruhomosti'
+  - 'edit terms in pidrayon'
+  - 'edit terms in planuvannya_kvartiri'
+  - 'edit terms in rayon_mista'
+  - 'edit terms in real_estate_transaction'
+  - 'edit terms in source_of_receipt_of_objects'
+  - 'edit terms in subdistrict_of_the_sity'
+  - 'edit terms in subtype_of_real_estate'
+  - 'edit terms in tags'
+  - 'edit terms in tip_neruhomosti'
+  - 'edit terms in type_of_real_estate'
+  - 'edit terms in vid_neruhomosti'
+  - 'edit terms in wall_material'
+  - 'export configuration'
+  - 'import configuration'
+  - 'link to any page'
+  - 'revert all revisions'
+  - 'revert all taxonomy revisions'
+  - 'revert any basic block content revisions'
+  - 'revert article revisions'
+  - 'revert page revisions'
+  - 'revert term revisions in currency'
+  - 'revert term revisions in district_of_the_city'
+  - 'revert term revisions in dzherelo_nadhodzhennya_ob_iektiv'
+  - 'revert term revisions in heating'
+  - 'revert term revisions in layout_of_apartment'
+  - 'revert term revisions in material_stin'
+  - 'revert term revisions in opalyuvannya'
+  - 'revert term revisions in operaciya_po_neruhomosti'
+  - 'revert term revisions in pidrayon'
+  - 'revert term revisions in planuvannya_kvartiri'
+  - 'revert term revisions in rayon_mista'
+  - 'revert term revisions in real_estate_transaction'
+  - 'revert term revisions in source_of_receipt_of_objects'
+  - 'revert term revisions in subdistrict_of_the_sity'
+  - 'revert term revisions in subtype_of_real_estate'
+  - 'revert term revisions in tags'
+  - 'revert term revisions in tip_neruhomosti'
+  - 'revert term revisions in type_of_real_estate'
+  - 'revert term revisions in vid_neruhomosti'
+  - 'revert term revisions in wall_material'
+  - 'select account cancellation method'
+  - 'switch shortcut sets'
+  - 'switch users'
+  - 'synchronize configuration'
+  - 'use advanced search'
+  - 'use text format full_html'
+  - 'use text format restricted_html'
+  - 'view all revisions'
+  - 'view all taxonomy revisions'
+  - 'view any basic block content history'
+  - 'view article revisions'
+  - 'view budova_events'
+  - 'view migration messages'
+  - 'view own unpublished content'
+  - 'view page revisions'
+  - 'view term revisions in currency'
+  - 'view term revisions in district_of_the_city'
+  - 'view term revisions in dzherelo_nadhodzhennya_ob_iektiv'
+  - 'view term revisions in heating'
+  - 'view term revisions in layout_of_apartment'
+  - 'view term revisions in material_stin'
+  - 'view term revisions in opalyuvannya'
+  - 'view term revisions in operaciya_po_neruhomosti'
+  - 'view term revisions in pidrayon'
+  - 'view term revisions in planuvannya_kvartiri'
+  - 'view term revisions in rayon_mista'
+  - 'view term revisions in real_estate_transaction'
+  - 'view term revisions in source_of_receipt_of_objects'
+  - 'view term revisions in subdistrict_of_the_sity'
+  - 'view term revisions in subtype_of_real_estate'
+  - 'view term revisions in tags'
+  - 'view term revisions in tip_neruhomosti'
+  - 'view term revisions in type_of_real_estate'
+  - 'view term revisions in vid_neruhomosti'
+  - 'view term revisions in wall_material'
+  - 'view the administration theme'
+  - 'view update notifications'
+  - 'view user email addresses'
+  - 'view vocabulary labels'

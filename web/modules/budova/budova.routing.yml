@@ -21,3 +21,12 @@ entity.budova_events.settings:
     _title: 'Events'
   requirements:
     _permission: 'administer budova_events'
+
+user.logout:
+  path: '/user/logout'
+  defaults:
+    _controller: '\Drupal\user\Controller\UserController::logout'
+  requirements:
+    _access: 'TRUE'
+  options:
+    _redirect: '/user/login'

@@ -1,0 +1,22 @@
+uuid: 79d59b42-59fa-4384-b7ce-6fcc0ac64ab5
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - budova_admin_theme
+_core:
+  default_config_hash: JxSFII8R7uhSJng09cWlM8Ew-vJItUHv5wAVovCA0dk
+id: budova_admin_theme_messages
+theme: budova_admin_theme
+region: header
+weight: -3
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  label_display: '0'
+  provider: system
+visibility: {  }

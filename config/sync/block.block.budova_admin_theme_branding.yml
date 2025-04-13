@@ -1,16 +1,16 @@
-uuid: 4a0b6d44-ed25-4705-80d7-b7c54b667ad2
+uuid: 42f03033-bd34-4cd2-90af-1080e0311694
 langcode: en
-status: false
+status: true
 dependencies:
   module:
     - system
   theme:
-    - budova_theme
+    - budova_admin_theme
 _core:
   default_config_hash: Q8_wt24x7-7hBe1AyrZnRRgKrumXa_jTbxbPhg0Nd2k
-id: budova_theme_branding
-theme: budova_theme
-region: navbar_branding
+id: budova_admin_theme_branding
+theme: budova_admin_theme
+region: header
 weight: -1
 provider: null
 plugin: system_branding_block

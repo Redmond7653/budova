@@ -1,0 +1,27 @@
+uuid: 6c91bb21-7b09-438d-8362-c471576f7aa4
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - system
+  theme:
+    - budova_admin_theme
+_core:
+  default_config_hash: ZMw7vqEboIvAULC_1hzAb0S-UmINXTg686LKrC0Hj3Q
+id: budova_admin_theme_footer
+theme: budova_admin_theme
+region: header
+weight: -5
+provider: null
+plugin: 'system_menu_block:footer'
+settings:
+  id: 'system_menu_block:footer'
+  label: 'Footer menu'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

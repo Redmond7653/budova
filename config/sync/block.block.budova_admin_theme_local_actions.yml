@@ -1,13 +1,13 @@
-uuid: 2b01bcc0-9e8c-42e4-ab1b-e5137e8ff392
+uuid: 353085cd-b14c-46fc-b21f-453207f4f1a1
 langcode: en
-status: false
+status: true
 dependencies:
   theme:
-    - budova_theme
+    - budova_admin_theme
 _core:
   default_config_hash: 0_IS12E1cebjAa4MfckgXVXgGcgWt5jtxiSLCp4P5JY
-id: budova_theme_local_actions
-theme: budova_theme
+id: budova_admin_theme_local_actions
+theme: budova_admin_theme
 region: header
 weight: -4
 provider: null

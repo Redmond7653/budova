@@ -1587,9 +1587,6 @@ display:
                 title: Всі
                 operator: or
                 value:
-                  all: all
-                  content_editor: content_editor
-                  administrator: administrator
                   buyer: buyer
                   seller: seller
               2:
@@ -1613,11 +1610,6 @@ display:
                 operator: or
                 value:
                   content_editor: content_editor
-              6:
-                title: Адміністратор
-                operator: or
-                value:
-                  administrator: administrator
           reduce_duplicates: false
         field_code_value:
           id: field_code_value
