@@ -6,6 +6,7 @@ package: Custom
 core_version_requirement: ^10
 libraries:
   - budova_admin_theme/global
+  - budova_admin_theme/row_highlight
 regions:
   header: Header
   pre_content: Pre-content

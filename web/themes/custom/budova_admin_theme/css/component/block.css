@@ -166,3 +166,8 @@ div#block-budova-admin-theme-breadcrumbs {display: none;}
 nav#block-budova-admin-theme-footer {
   display: none;
 }
+
+
+.highlight-today {
+  background-color: #faf;
+}

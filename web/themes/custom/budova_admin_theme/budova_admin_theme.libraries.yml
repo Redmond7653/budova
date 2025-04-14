@@ -23,3 +23,10 @@ global:
     theme:
       css/theme/test.css: {}
       css/theme/print.css: { media: print }
+
+row_highlight:
+  version: 1.x
+  js:
+    js/row_highlight.js: {}
+  dependencies:
+    - core/drupal

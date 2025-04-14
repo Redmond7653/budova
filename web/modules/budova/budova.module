@@ -255,8 +255,30 @@ function budova_form_budova_real_estate_add_form_alter(&$form, \Drupal\Core\Form
   $child_city_field_name = 'field_subdistrict_of_city';
   $parent_type_real_estate_field_name = 'field_type_of_real_estate';
   $child_type_real_estate_field_name = 'field_subtype_of_real_estate';
+  $chosen_client_field_name = 'field_related_to';
 
   $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'type_of_real_estate']);
+
+
+
+  // З'являється поле/поля Контакт коли вибираєш клієнта
+
+
+  if ($triggering_element["#field_name"] == $chosen_client_field_name) {
+
+    $client_id = $triggering_element["#value"];
+
+    $clients_info_array = \Drupal::entityTypeManager()->getStorage('user')->loadByProperties(['uid' => $client_id]);
+
+    foreach ($clients_info_array as $client_info) {
+      $client_contacts_values = $client_info->get('field_contact')->value;
+
+      $client_contacts = explode(',', $client_contacts_values);
+    }
+  }
+
+
+
 
   $term_names_and_ids = [];
   foreach ($terms as $term) {
@@ -322,6 +344,12 @@ function budova_form_budova_real_estate_add_form_alter(&$form, \Drupal\Core\Form
       'callback' => 'budova_reloadCity',
       'wrapper' => $form[$child_city_field_name]['#attributes']['id'],
     ];
+
+  $form[$chosen_client_field_name]['widget']['#ajax'] = [
+    'callback' => 'budova_reloadClient',
+    'wrapper' => $form['field_real_estate_operation']['#attributes']['id'],
+  ];
+
 //  }
 
 //  if ($selected_type_real_estate !== FALSE) {
@@ -1633,6 +1661,11 @@ function budova_form_budova_events_edit_form_alter(&$form, \Drupal\Core\Form\For
 function budova_reloadType(array $form, FormStateInterface $form_state) {
   return $form['technical_characteristics']["field_subtype_of_real_estate"];
 }
+
+function budova_reloadClient(array $form, FormStateInterface $form_state) {
+  return $form['technical_characteristics']["field_real_estate_operation"];
+}
+
 
 function budova_reloadUser(array $form, FormStateInterface $form_state) {
   return $form["account"];
