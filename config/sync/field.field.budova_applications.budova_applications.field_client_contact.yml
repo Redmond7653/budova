@@ -1,0 +1,20 @@
+uuid: 5bb66855-e918-4081-8d82-366741b396b0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.budova_applications.field_client_contact
+  module:
+    - budova
+id: budova_applications.budova_applications.field_client_contact
+field_name: field_client_contact
+entity_type: budova_applications
+bundle: budova_applications
+label: 'Контакти клієнта'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

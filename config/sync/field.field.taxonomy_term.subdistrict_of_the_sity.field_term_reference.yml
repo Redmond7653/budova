@@ -4,8 +4,8 @@ status: true
 dependencies:
   config:
     - field.storage.taxonomy_term.field_term_reference
+    - taxonomy.vocabulary.district_of_the_city
     - taxonomy.vocabulary.subdistrict_of_the_sity
-    - taxonomy.vocabulary.type_of_real_estate
 id: taxonomy_term.subdistrict_of_the_sity.field_term_reference
 field_name: field_term_reference
 entity_type: taxonomy_term
@@ -20,7 +20,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      type_of_real_estate: type_of_real_estate
+      district_of_the_city: district_of_the_city
     sort:
       field: name
       direction: asc

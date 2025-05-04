@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.budova_applications.budova_applications.field_appartment_plan
+    - field.field.budova_applications.budova_applications.field_client_contact
     - field.field.budova_applications.budova_applications.field_code
     - field.field.budova_applications.budova_applications.field_contact
     - field.field.budova_applications.budova_applications.field_currency
@@ -66,6 +67,14 @@ content:
       link: true
     third_party_settings: {  }
     weight: 71
+    region: content
+  field_client_contact:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 81
     region: content
   field_code:
     type: string

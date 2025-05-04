@@ -8,6 +8,7 @@ dependencies:
     - field.field.budova_real_estate.budova_real_estate.field_area_region
     - field.field.budova_real_estate.budova_real_estate.field_autonomous_heating
     - field.field.budova_real_estate.budova_real_estate.field_ceiling_height
+    - field.field.budova_real_estate.budova_real_estate.field_client_contact
     - field.field.budova_real_estate.budova_real_estate.field_contact
     - field.field.budova_real_estate.budova_real_estate.field_contiguity_of_rooms
     - field.field.budova_real_estate.budova_real_estate.field_cost
@@ -119,6 +120,14 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     weight: 68
+    region: content
+  field_client_contact:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 101
     region: content
   field_contact:
     type: string

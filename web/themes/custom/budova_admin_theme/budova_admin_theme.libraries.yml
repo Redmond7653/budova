@@ -30,3 +30,11 @@ row_highlight:
     js/row_highlight.js: {}
   dependencies:
     - core/drupal
+
+change_user_confirm:
+  version: 1.x
+  js:
+    js/change-user-confirm.js: {}
+  dependencies:
+    - core/drupal
+    - core/once

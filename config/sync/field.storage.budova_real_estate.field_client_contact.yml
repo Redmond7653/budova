@@ -1,0 +1,21 @@
+uuid: d58fd05f-2654-4ac0-90f1-1a8cfc96a600
+langcode: en
+status: true
+dependencies:
+  module:
+    - budova
+id: budova_real_estate.field_client_contact
+field_name: field_client_contact
+entity_type: budova_real_estate
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

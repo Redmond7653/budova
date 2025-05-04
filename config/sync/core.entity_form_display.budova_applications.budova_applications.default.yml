@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.budova_applications.budova_applications.field_appartment_plan
+    - field.field.budova_applications.budova_applications.field_client_contact
     - field.field.budova_applications.budova_applications.field_code
     - field.field.budova_applications.budova_applications.field_contact
     - field.field.budova_applications.budova_applications.field_currency
@@ -40,19 +41,27 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 3
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }
   field_appartment_plan:
     type: options_select
-    weight: 41
+    weight: 23
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_client_contact:
+    type: string_textfield
+    weight: 6
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_code:
     type: string_textfield
-    weight: 4
+    weight: 3
     region: content
     settings:
       size: 60
@@ -60,7 +69,7 @@ content:
     third_party_settings: {  }
   field_contact:
     type: string_textfield
-    weight: 57
+    weight: 30
     region: content
     settings:
       size: 60
@@ -68,13 +77,13 @@ content:
     third_party_settings: {  }
   field_currency:
     type: options_select
-    weight: 45
+    weight: 25
     region: content
     settings: {  }
     third_party_settings: {  }
   field_description:
     type: string_textarea
-    weight: 43
+    weight: 24
     region: content
     settings:
       rows: 5
@@ -82,141 +91,141 @@ content:
     third_party_settings: {  }
   field_district_of_the_city:
     type: options_select
-    weight: 22
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
   field_heating:
     type: options_select
-    weight: 26
+    weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }
   field_last_date_contact:
     type: datetime_default
-    weight: 53
+    weight: 28
     region: content
     settings: {  }
     third_party_settings: {  }
   field_max_area:
     type: number
-    weight: 31
+    weight: 18
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   field_max_floor:
     type: number
-    weight: 35
+    weight: 20
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   field_max_rooms:
     type: number
-    weight: 39
+    weight: 22
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   field_metro:
     type: boolean_checkbox
-    weight: 27
+    weight: 16
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   field_min_area:
     type: number
-    weight: 29
+    weight: 17
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   field_min_floor:
     type: number
-    weight: 33
+    weight: 19
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   field_min_rooms:
     type: number
-    weight: 37
+    weight: 21
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   field_motivation_status:
     type: options_select
-    weight: 14
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
   field_operaciya_new:
     type: options_select
-    weight: 10
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
   field_price:
     type: number
-    weight: 47
+    weight: 26
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   field_realtor:
     type: options_select
-    weight: 49
+    weight: 27
     region: content
     settings: {  }
     third_party_settings: {  }
   field_related_to:
     type: options_select
-    weight: 8
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
   field_state_of_application:
     type: options_select
-    weight: 12
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
   field_state_of_the_object:
     type: options_select
-    weight: 16
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
   field_subdistrict_of_city:
     type: options_select
-    weight: 24
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }
   field_subtype_of_real_estate:
     type: options_select
-    weight: 20
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
   field_type_of_contact:
     type: options_select
-    weight: 55
+    weight: 29
     region: content
     settings: {  }
     third_party_settings: {  }
   field_type_of_person:
     type: options_select
-    weight: 6
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
   field_type_of_real_estate:
     type: options_select
-    weight: 18
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -230,14 +239,14 @@ content:
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 1
+    weight: 0
     region: content
     settings:
       display_label: false
     third_party_settings: {  }
   uid:
     type: options_select
-    weight: 2
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }

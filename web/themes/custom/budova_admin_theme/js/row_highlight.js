@@ -11,7 +11,7 @@
       const dateOnly = dateText.split(' ')[0];
 
       if (dateOnly === todayStr) {
-        row.style.backgroundColor = '#ffe5e5';
+        row.style.backgroundColor = 'rgb(255, 170, 255)';
       }
     });
   });
