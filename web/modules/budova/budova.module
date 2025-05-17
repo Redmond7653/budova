@@ -312,30 +312,13 @@ function budova_form_budova_real_estate_add_form_alter(&$form, \Drupal\Core\Form
 
     if ($triggering_element["#field_name"] == $chosen_client_field_name) {
 
-//      $form['field_client_contact']['#access'] = TRUE;
-//      unset($form['field_client_contact']['#attributes']['style']);
-
       $client_id = $triggering_element["#value"];
       $clients_info_array = \Drupal::entityTypeManager()->getStorage('user')->loadByProperties(['uid' => $client_id]);
 
       foreach ($clients_info_array as $client_info) {
         $client_contacts_values = $client_info->get('field_contact')->value;
-        $client_contacts = explode(',', $client_contacts_values);
-//        $entity = $form_state->getFormObject()->getEntity();
-//
-//        $entity->set('field_client_contact', $client_contacts_values);
-//
-//        $form['status_characteristics']['field_client_contact']['widget'][0]['value']['#value'] = $client_contacts_values;
-
-//        $form['field_client_contact']['widget'][0]['value']['#default_value'] = $client_contacts_values;
-
-
+        $form['field_client_contact']['widget'][0]['value']['#value'] = $client_contacts_values;
       }
-
-      //    foreach ($client_contacts as $client_contact) {
-      //      $form['status_characteristics']['field_user_contacts'] = $form["$client_contact"];
-      //    }
-
     }
   }
 
@@ -345,15 +328,18 @@ function budova_form_budova_real_estate_add_form_alter(&$form, \Drupal\Core\Form
   $form[$child_type_real_estate_field_name]['#attributes']['id'] = $child_type_real_estate_field_name . '__id';
   $form['field_client_contact']['#attributes']['id'] = 'field_client_contact' . '__id';
 
+  $form['field_client_contact']['#prefix'] = '<div id="client-contact-wrapper">';
+  $form['field_client_contact']['#suffix'] = '</div>';
+
+
+  $form[$chosen_client_field_name]['widget']['#ajax'] = [
+    'callback' => 'budova_reloadClient',
+    'wrapper' => 'client-contact-wrapper',
+  ];
 
   $form[$parent_city_field_name]['widget']['#ajax'] = [
     'callback' => 'budova_reloadCity',
     'wrapper' => $form[$child_city_field_name]['#attributes']['id'],
-  ];
-
-  $form[$chosen_client_field_name]['widget']['#ajax'] = [
-    'callback' => 'budova_reloadClient',
-    'wrapper' => $form['field_client_contact']['#attributes']['id'],
   ];
 
   $form[$parent_type_real_estate_field_name]['widget']['#ajax'] = [
@@ -680,28 +666,45 @@ function budova_form_budova_real_estate_edit_form_alter(&$form, \Drupal\Core\For
       }
       $selected_type_real_estate = TRUE;
     }
+
+
+    if ($triggering_element["#field_name"] == $chosen_client_field_name) {
+
+      $client_id = $triggering_element["#value"];
+      $clients_info_array = \Drupal::entityTypeManager()->getStorage('user')->loadByProperties(['uid' => $client_id]);
+
+      foreach ($clients_info_array as $client_info) {
+        $client_contacts_values = $client_info->get('field_contact')->value;
+        $form['field_client_contact']['widget'][0]['value']['#value'] = $client_contacts_values;
+      }
+    }
   }
 
-  //if ($triggering_element["#field_name"] == $parent_city_field_name) {
 
   $form[$child_city_field_name]['#attributes']['id'] = $child_city_field_name . '__id';
   $form[$child_type_real_estate_field_name]['#attributes']['id'] = $child_type_real_estate_field_name . '__id';
 
-  //  if ($selected_city_rayon !== FALSE) {
   $form[$parent_city_field_name]['widget']['#ajax'] = [
     'callback' => 'budova_reloadCity',
     'wrapper' => $form[$child_city_field_name]['#attributes']['id'],
   ];
-  //  }
 
-  //  if ($selected_type_real_estate !== FALSE) {
+
+
   $form[$parent_type_real_estate_field_name]['widget']['#ajax'] = [
     'callback' => 'budova_reloadType',
     'wrapper' => $form[$child_type_real_estate_field_name]['#attributes']['id'],
   ];
-  //  }
 
-  $value_type_real_estate = $triggering_element["#value"];
+
+  $form['field_client_contact']['#prefix'] = '<div id="client-contact-wrapper">';
+  $form['field_client_contact']['#suffix'] = '</div>';
+
+
+  $form[$chosen_client_field_name]['widget']['#ajax'] = [
+    'callback' => 'budova_reloadClient',
+    'wrapper' => 'client-contact-wrapper',
+  ];
 
 
 
@@ -967,6 +970,8 @@ function budova_form_budova_applications_add_form_alter(&$form, \Drupal\Core\For
   $parent_applications_type_real_estate_field_name = 'field_type_of_real_estate';
   $child_applications_type_real_estate_field_name = 'field_subtype_of_real_estate';
 
+  $chosen_client_field_name = 'field_related_to';
+
 
   $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'type_of_real_estate']);
 
@@ -1020,26 +1025,43 @@ function budova_form_budova_applications_add_form_alter(&$form, \Drupal\Core\For
       $selected_applications_type_real_estate = TRUE;
     }
 
+    if ($triggering_element["#field_name"] == $chosen_client_field_name) {
+
+      $client_id = $triggering_element["#value"];
+      $clients_info_array = \Drupal::entityTypeManager()->getStorage('user')->loadByProperties(['uid' => $client_id]);
+
+      foreach ($clients_info_array as $client_info) {
+        $client_contacts_values = $client_info->get('field_contact')->value;
+        $form['field_client_contact']['widget'][0]['value']['#value'] = $client_contacts_values;
+      }
+    }
+
   }
 
-  //if ($triggering_element["#field_name"] == $parent_city_field_name) {
 
   $form[$child_applications_city_field_name]['#attributes']['id'] = $child_applications_city_field_name . '__id';
   $form[$child_applications_type_real_estate_field_name]['#attributes']['id'] = $child_applications_type_real_estate_field_name . '__id';
 
-//  if ($selected_applications_city_rayon !== FALSE) {
+
     $form[$parent_applications_city_field_name]['widget']['#ajax'] = [
       'callback' => 'budova_reloadCity',
       'wrapper' => $form[$child_applications_city_field_name]['#attributes']['id'],
     ];
-//  }
 
-//  if ($selected_applications_type_real_estate !== FALSE) {
     $form[$parent_applications_type_real_estate_field_name]['widget']['#ajax'] = [
       'callback' => 'budova_reloadType',
       'wrapper' => $form[$child_applications_type_real_estate_field_name]['#attributes']['id'],
     ];
-//  }
+
+  $form['field_client_contact']['#prefix'] = '<div id="client-contact-wrapper">';
+  $form['field_client_contact']['#suffix'] = '</div>';
+
+
+  $form[$chosen_client_field_name]['widget']['#ajax'] = [
+    'callback' => 'budova_reloadClient',
+    'wrapper' => 'client-contact-wrapper',
+  ];
+
 
 
   // Hide field 'Поверх' when picking select 'Вид нерухомості -> Земельна ділянка'
@@ -1271,26 +1293,46 @@ function budova_form_budova_applications_edit_form_alter(&$form, \Drupal\Core\Fo
       $selected_applications_type_real_estate = TRUE;
     }
 
+    if ($triggering_element["#field_name"] == $chosen_client_field_name) {
+
+      $client_id = $triggering_element["#value"];
+      $clients_info_array = \Drupal::entityTypeManager()->getStorage('user')->loadByProperties(['uid' => $client_id]);
+
+      foreach ($clients_info_array as $client_info) {
+        $client_contacts_values = $client_info->get('field_contact')->value;
+        $form['field_client_contact']['widget'][0]['value']['#value'] = $client_contacts_values;
+      }
+    }
+
   }
 
-  //if ($triggering_element["#field_name"] == $parent_city_field_name) {
+
 
   $form[$child_applications_city_field_name]['#attributes']['id'] = $child_applications_city_field_name . '__id';
   $form[$child_applications_type_real_estate_field_name]['#attributes']['id'] = $child_applications_type_real_estate_field_name . '__id';
 
-  //  if ($selected_applications_city_rayon !== FALSE) {
+
   $form[$parent_applications_city_field_name]['widget']['#ajax'] = [
     'callback' => 'budova_reloadCity',
     'wrapper' => $form[$child_applications_city_field_name]['#attributes']['id'],
   ];
-  //  }
 
-  //  if ($selected_applications_type_real_estate !== FALSE) {
+
+
   $form[$parent_applications_type_real_estate_field_name]['widget']['#ajax'] = [
     'callback' => 'budova_reloadType',
     'wrapper' => $form[$child_applications_type_real_estate_field_name]['#attributes']['id'],
   ];
-  //  }
+
+  $form['field_client_contact']['#prefix'] = '<div id="client-contact-wrapper">';
+  $form['field_client_contact']['#suffix'] = '</div>';
+
+
+  $form[$chosen_client_field_name]['widget']['#ajax'] = [
+    'callback' => 'budova_reloadClient',
+    'wrapper' => 'client-contact-wrapper',
+  ];
+
 
 
   // Hide field 'Поверх' when picking select 'Вид нерухомості -> Земельна ділянка'
