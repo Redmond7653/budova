@@ -3,6 +3,15 @@ drush sql-drop #- Скинути базу
 
 drush sql-cli < private/backup/2024-02-28-23-30.sql  -- Загрузити базу
 
+drush deploy - ОБОВ'ЯЗКОВО ПІСЛЯ drush sql-cli (загрузити базу)
+
+ssh ubuntu@150.136.62.231 - підключення до Oracle Cloud через SSH
+
+nano /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini - правка xdebug конфігу у ВМ
+
+docker cp $(docker compose ps -q php):/tmp/xdebug/cachegrind.out.XXXX ./cachegrind.out.XXXX
+
+scp -i ~/Downloads/ssh-key-2025-06-09.key ubuntu@150.136.62.231:/home/ubuntu/cachegrind.out.XXXX ./
 
 
 

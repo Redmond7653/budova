@@ -21,6 +21,7 @@ services:
     environment:
       # By default xdebug extension also disabled.
       PHP_EXTENSIONS_DISABLE: xhprof,spx
+      PHP_MEMORY_LIMIT: 128M
       PHP_MAIL_MIXED_LF_AND_CRLF: 'On'
       # Mailpit:
       MSMTP_HOST: mailpit

@@ -282,15 +282,19 @@ function budova_form_budova_real_estate_add_form_alter(&$form, \Drupal\Core\Form
 
     if ($triggering_element["#field_name"] == $parent_city_field_name) {
       $selected_rayon_city_id = $triggering_element["#value"];
-      foreach ($form[$child_city_field_name]["widget"]["#options"] as $key => $option) {
-       $taxonomy_entity =  \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($key);
-       if ($taxonomy_entity) {
-         $field_rayon = $taxonomy_entity->field_term_reference->target_id;
+
+      $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadMultiple(array_keys($form[$child_city_field_name]["widget"]["#options"]));
+//      foreach ($form[$child_city_field_name]["widget"]["#options"] as $key => $option) {
+        foreach ($terms as $key => $term) {
+          //       $taxonomy_entity =  \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($key);
+          //       if ($taxonomy_entity) {
+          $field_rayon = $term->field_term_reference->target_id;
           if ($field_rayon !== $selected_rayon_city_id) {
             unset($form[$child_city_field_name]["widget"]["#options"][$key]);
-         }
-       }
-      }
+          }
+        }
+//       }
+//      }
       $selected_city_rayon = TRUE;
     }
 
@@ -1779,34 +1783,52 @@ function budova_users_submit_do_redirect($form, &$form_state) {
 /**
  * Implements hook_ENTITY_TYPE_presave().
  */
+//function budova_user_presave(\Drupal\Core\Entity\EntityInterface $entity) {
+//  if ($entity->isNew()) {
+//    $name = $entity->field_user_name->getValue();
+//    $surname = $entity->field_surname->getValue();
+//    if (empty($surname[0]['value'])) {
+//      $surname[0]['value'] = ' ';
+//    }
+//
+//    $phone = $entity->field_contact->getValue();
+//    /** @var \Drupal\user\Entity\User $entity */
+//    $roles_array = $entity->roles->getValue();
+//
+//    foreach ($roles_array as $key => $role) {
+//      $roles[$key] = $role['target_id'];
+//    }
+//
+//    if (!empty($roles_array)) {
+//      if (in_array("buyer", $roles) || in_array("seller", $roles)) {
+//        /** @var \Drupal\user\Entity\User $entity */
+//        if ($entity->name->value == "default") {
+//          /** @var \Drupal\user\Entity\User $entity */
+//          $entity->name->value = $name[0]['value'] . ' ' . $surname[0]['value'];
+//          $entity->pass->value = '12345';
+//        }
+//      }
+//    }
+//  }
+//}
 function budova_user_presave(\Drupal\Core\Entity\EntityInterface $entity) {
   if ($entity->isNew()) {
-    $name = $entity->field_user_name->getValue();
-    $surname = $entity->field_surname->getValue();
-    if (empty($surname[0]['value'])) {
-      $surname[0]['value'] = ' ';
-    }
 
-    $phone = $entity->field_contact->getValue();
-    /** @var \Drupal\user\Entity\User $entity */
-    $roles_array = $entity->roles->getValue();
+    $name = $entity->get('field_user_name')->value;
+    $surname = $entity->get('field_surname')->value ?? ' ';
+    $phone = $entity->get('field_contact')->value;
 
-    foreach ($roles_array as $key => $role) {
-      $roles[$key] = $role['target_id'];
-    }
+    $roles = $entity->getRoles();
 
-    if (!empty($roles_array)) {
-      if (in_array("buyer", $roles) || in_array("seller", $roles)) {
-        /** @var \Drupal\user\Entity\User $entity */
-        if ($entity->name->value == "default") {
-          /** @var \Drupal\user\Entity\User $entity */
-          $entity->name->value = $name[0]['value'] . ' ' . $surname[0]['value'];
-          $entity->pass->value = '12345';
-        }
+    if (!empty($roles) && (in_array("buyer", $roles) || in_array("seller", $roles))) {
+      if ($entity->getAccountName() === "default") {
+        $entity->setUsername($name . ' ' . $surname);
+        $entity->setPassword('12345');
       }
     }
   }
 }
+
 
 
 //function budova_toolbar_alter(&$toolbar) {
