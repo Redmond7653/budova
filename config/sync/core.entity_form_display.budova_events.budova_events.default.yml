@@ -24,10 +24,14 @@ bundle: budova_events
 mode: default
 content:
   field_applications:
-    type: options_select
+    type: entity_reference_autocomplete
     weight: 4
     region: content
-    settings: {  }
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_beggining:
     type: datetime_default
@@ -56,16 +60,24 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_real_estate:
-    type: options_select
+    type: entity_reference_autocomplete
     weight: 5
     region: content
-    settings: {  }
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_realtor:
-    type: options_select
+    type: entity_reference_autocomplete
     weight: 11
     region: content
-    settings: {  }
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_result:
     type: options_select

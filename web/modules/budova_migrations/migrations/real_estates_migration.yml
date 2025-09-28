@@ -4,7 +4,7 @@ migration_group: default
 
 source:
   plugin: 'csv'
-  path: './real_estates_without_dublicates.csv'
+  path: './updated_real_estate_migration_2025.csv'
   delimiter: ','
   enclosure: '"'
   header_offset: 0

@@ -1,6 +1,6 @@
 uuid: 5dc4d167-08f7-4606-a285-c3e893a3d2d0
 langcode: en
-status: false
+status: true
 dependencies:
   module:
     - system
@@ -11,7 +11,7 @@ _core:
 id: budova_theme_breadcrumbs
 theme: budova_theme
 region: header
-weight: -5
+weight: -4
 provider: null
 plugin: system_breadcrumb_block
 settings:

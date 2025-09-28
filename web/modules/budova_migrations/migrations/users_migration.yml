@@ -4,7 +4,7 @@ migration_group: default
 
 source:
   plugin: 'csv'
-  path: './induviduals_with_combined_concacts_with_coma.csv'
+  path: './induviduals_with_combined_contacts_2025.csv'
   delimiter: ','
   enclosure: '"'
   header_offset: 0

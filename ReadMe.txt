@@ -95,6 +95,81 @@ ORDER BY realties.kod DESC;
 
 
 
+# Команда на міграцію юзерів в Budova
+
+SELECT
+ individuals.kod,
+HEX(`id_individuals`) AS `id_individuals`,
+HEX(`id_client_type`) AS `id_client_type`,
+HEX(`id_contact_source`) AS `id_contact_source`,
+HEX(individuals.id_realtor) AS `individuals.id_realtor`,
+individuals.name_individuals,
+individuals.name2_individuals,
+individuals.birthday,
+individuals.description,
+HEX(individuals.id_access_type) AS `id_access_type`,
+HEX(individuals.id_access_status) AS `id_access_status`,
+individuals.access_change_date,
+individuals.create_date,
+individuals.change_date,
+contacts.group_number,
+contacts.name_contacts,
+HEX(contacts.id_contact_type) AS `id_contact_type`
+FROM `individuals`
+LEFT JOIN `contacts`
+on id_individuals = id_row
+
+
+
+
+
+SELECT
+    i.kod,
+    HEX(i.id_individuals) AS id_individuals,
+    HEX(i.id_client_type) AS id_client_type,
+    HEX(i.id_contact_source) AS id_contact_source,
+    HEX(i.id_realtor) AS id_realtor,
+    i.name_individuals,
+    i.name2_individuals,
+    i.birthday,
+    i.description,
+    HEX(i.id_access_type) AS id_access_type,
+    HEX(i.id_access_status) AS id_access_status,
+    i.access_change_date,
+    i.create_date,
+    i.change_date,
+    MAX(c.group_number) AS group_number,
+    GROUP_CONCAT(DISTINCT c.name_contacts ORDER BY c.name_contacts SEPARATOR ', ') AS name_contacts,
+    GROUP_CONCAT(DISTINCT HEX(c.id_contact_type) ORDER BY c.id_contact_type SEPARATOR ', ') AS id_contact_type
+FROM individuals i
+LEFT JOIN contacts c
+    ON i.id_individuals = c.id_row
+GROUP BY
+    i.kod,
+    i.id_individuals,
+    i.id_client_type,
+    i.id_contact_source,
+    i.id_realtor,
+    i.name_individuals,
+    i.name2_individuals,
+    i.birthday,
+    i.description,
+    i.id_access_type,
+    i.id_access_status,
+    i.access_change_date,
+    i.create_date,
+    i.change_date;
+
+
+
+
+
+
+
+
+
+
+
 
 
 Зробити відображення контактів у view Applications ( номер телефону ) у Заявках ( entity Applications)

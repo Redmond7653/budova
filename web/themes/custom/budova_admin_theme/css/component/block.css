@@ -161,11 +161,11 @@ form#budova-events-edit-form .field--name-status {
 }
 
 
-div#block-budova-admin-theme-breadcrumbs {display: none;}
+/*div#block-budova-admin-theme-breadcrumbs {display: none;}*/
 
-nav#block-budova-admin-theme-footer {
-  display: none;
-}
+/*nav#block-budova-admin-theme-footer {*/
+/*  display: none;*/
+/*}*/
 
 
 /*.highlight-today {*/

@@ -9,7 +9,7 @@ _core:
 id: budova_theme_page_title
 theme: budova_theme
 region: header
-weight: -2
+weight: 0
 provider: null
 plugin: page_title_block
 settings:
